@@ -17,18 +17,18 @@ public class BackGammon extends Application
     public void start(Stage stage) throws FileNotFoundException
     {
         //Creating an image
-        Image backGround = new Image(new FileInputStream("BoardPicture.jpeg"));
+        Image backGround = new Image("BoardPicture.jpeg");
 
         //Setting the image view
         ImageView imageView = new ImageView(backGround);
 
         //Setting the position of the image
-        imageView.setX(50);
-        imageView.setY(25);
+        imageView.setX(100);
+        imageView.setY(50);
 
         //setting the fit height and width of the image view
-        imageView.setFitHeight(455);
-        imageView.setFitWidth(500);
+        imageView.setFitHeight(910);
+        imageView.setFitWidth(1000);
 
         //Setting the preserve ratio of the image view
         imageView.setPreserveRatio(true);
@@ -37,10 +37,10 @@ public class BackGammon extends Application
         Group root = new Group(imageView);
 
         //Creating a scene object
-        Scene scene = new Scene(root, 600, 500);
+        Scene scene = new Scene(root, 1200, 1000);
 
         //Setting title to the Stage
-        stage.setTitle("BackGammon.BackGammon Game");
+        stage.setTitle("BackGammon Game");
 
         //Adding scene to the stage
         stage.setScene(scene);
