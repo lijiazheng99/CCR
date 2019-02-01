@@ -1,5 +1,6 @@
 package BackGammon;
-
+//created by Jiwei Zhang, 1/1/2019
+//edited by Jiwei Zhang, 2/1/2019
 public class Bar {
     private Color CheckerColor;
     private int CheckerNumber;

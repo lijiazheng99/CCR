@@ -1,13 +1,17 @@
 Patch 0.0.0
-
-Functional Update
+Updated by Jiwei Zhang
+Functional Initialization Update
 -Classes are created
     Enum BackGammon.Color: Red. White. Empty
+        Assign the type Color for Player and Bar
     BackGammon.Bar: BackGammon.Color and number
-    BackGammon.Player: Name, BackGammon.Color
-    BackGammon.Dice: Points
+        Basic part of this game.
+    BackGammon.Player: Name, Color, and Points needed to win
+    BackGammon.Dice: Points(1-6)
     BackGammon.Board: array of Bars,2 Players
+        *:the array is size 25(0-24) but the bar[0] is not used at all.
 -Basic rules update
     Red moves from 1 to 24
     White moves from 24 to 1
+    "used in counting the points needed to win"
 

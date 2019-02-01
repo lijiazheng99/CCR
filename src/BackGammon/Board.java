@@ -1,5 +1,6 @@
 package BackGammon;
-
+//created by Jiwei Zhang, 1/1/2019
+//edited by Jiwei Zhang, 2/1/2019
 public class Board {
 
     private Bar[] bars;
@@ -68,7 +69,15 @@ public class Board {
 
     public void move()
     {
-
+        /*basic idea:
+            1: roll the dice twice
+            2: depending on color, the check the moving direction
+            3: check whether the target bar satisfies the moving conditions
+                1: empty
+                2: same color
+                3: different color but number is 1
+            4: check whether the second target aviable(using same function - "check")
+         */
     }
 
     public void pointsNeedToWinForBoth()
