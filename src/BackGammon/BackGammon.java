@@ -23,12 +23,12 @@ public class BackGammon extends Application
         ImageView imageView = new ImageView(backGround);
 
         //Setting the position of the image
-        imageView.setX(100);
-        imageView.setY(50);
+        imageView.setX(0);
+        imageView.setY(0);
 
         //setting the fit height and width of the image view
         imageView.setFitHeight(910);
-        imageView.setFitWidth(1000);
+        imageView.setFitWidth(910);
 
         //Setting the preserve ratio of the image view
         imageView.setPreserveRatio(true);
@@ -37,7 +37,7 @@ public class BackGammon extends Application
         Group root = new Group(imageView);
 
         //Creating a scene object
-        Scene scene = new Scene(root, 1200, 1000);
+        Scene scene = new Scene(root, 1250, 790);
 
         //Setting title to the Stage
         stage.setTitle("BackGammon Game");

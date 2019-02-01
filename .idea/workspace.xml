@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/BackGammon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/BackGammon.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +34,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="240" />
+          <entry key="JAVA" value="289" />
           <entry key="PLAIN_TEXT" value="130" />
         </counts>
       </usages-collector>
@@ -133,8 +134,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="431">
+              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -223,9 +224,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549018183053" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549020599699" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -275,7 +276,7 @@
       <workItem from="1548799054869" duration="532000" />
       <workItem from="1548892877084" duration="1041000" />
       <workItem from="1549012274886" duration="2308000" />
-      <workItem from="1549017671936" duration="579000" />
+      <workItem from="1549017671936" duration="1623000" />
     </task>
     <task id="LOCAL-00001" summary="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function">
       <created>1549016916950</created>
@@ -305,11 +306,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549018153381</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package">
+      <created>1549018267444</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549018267444</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6232000" />
+    <option name="totallyTimeSpent" value="7276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -333,7 +341,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993895" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4981685" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.497558" visible="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,8 +349,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4993895" weight="0.32959184" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502442" side_tool="true" visible="true" weight="0.29897958" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.497558" visible="true" weight="0.29897958" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.502442" side_tool="true" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.497558" weight="0.29897958" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.498779" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -516,8 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state relative-caret-position="431">
+          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -564,7 +572,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
