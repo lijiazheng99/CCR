@@ -1,4 +1,5 @@
 Patch 0.0.0
+
 Functional Update
 -Classes are created
     Enum BackGammon.Color: Red. White. Empty
@@ -9,3 +10,4 @@ Functional Update
 -Basic rules update
     Red moves from 1 to 24
     White moves from 24 to 1
+
