@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Patch Notes" beforeDir="false" afterPath="$PROJECT_DIR$/Patch Notes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/BackGammon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/BackGammon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Bar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Bar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Dice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Dice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CCR_BackGammon/BackGammon/Player.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Patch Notes">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -51,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="1224">
+              <caret line="72" column="34" lean-forward="true" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -63,8 +60,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state relative-caret-position="223">
+              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="method#setName#0;class#Player#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Dice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="2" selection-end-column="33" />
+            <state>
+              <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -176,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549030870080" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549031001554" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -280,11 +280,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549022306269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit by Jiwei Zhang&#10;1. update the patch notes&#10;2. finish basic initialization in functionality">
+      <created>1549030996455</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1549030996455</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9694000" />
+    <option name="totallyTimeSpent" value="9988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -297,9 +304,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18496802" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18496802" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -308,7 +314,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993895" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4957265" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4957265" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -317,7 +323,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4993895" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50427353" side_tool="true" visible="true" weight="0.29897958" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4957265" visible="true" weight="0.2979415" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4957265" weight="0.2979415" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.498779" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -378,7 +384,8 @@
     <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function" />
     <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package" />
     <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package&#10;4. Edit width and height" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package&#10;4. Edit width and height" />
+    <MESSAGE value="Commit by Jiwei Zhang&#10;1. update the patch notes&#10;2. finish basic initialization in functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit by Jiwei Zhang&#10;1. update the patch notes&#10;2. finish basic initialization in functionality" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -426,48 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/MainInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Dice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Bar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -489,6 +454,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Dice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/MainInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="method#setName#0;class#Player#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="34" lean-forward="true" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
         </state>
       </provider>
     </entry>
