@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Player {
     private String name;
     private Color color;
+    private int pointsNeededToWin;
 
     public Player()
     {
@@ -17,7 +18,7 @@ public class Player {
 
     public void setName()
     {
-        Scanner scan = new Scanner();
+        Scanner scan = new Scanner(System.in);
         name = scan.nextLine();
     }
 
@@ -34,5 +35,15 @@ public class Player {
     public Color getColor()
     {
         return this.color;
+    }
+
+    public void setPointsNeeded(int num)
+    {
+        this.pointsNeededToWin = num;
+    }
+
+    public int getPointsNeeded()
+    {
+        return this.pointsNeededToWin;
     }
 }

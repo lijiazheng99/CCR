@@ -9,10 +9,10 @@ public class Bar {
     public Bar (Color cheCol, int cheNum)
     {
         this.setCheckerNumber(cheNum);
-        this.setChekerColor(cheCol);
+        this.setCheckerColor(cheCol);
     }
 
-    public void setChekerColor(Color color)
+    public void setCheckerColor(Color color)
     {
         this.CheckerColor = color;
     }
@@ -40,6 +40,8 @@ public class Bar {
     public void moveOut()
     {
         this.CheckerNumber--;
+        if(this.CheckerNumber == 0)
+            this.setCheckerColor(Color.Empty);
     }
 }
 
