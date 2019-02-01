@@ -1,3 +1,5 @@
+package BackGammon;
+
 public class Board {
 
     private Bar[] bars;
@@ -59,7 +61,7 @@ public class Board {
 
     public void sideDecide()
     {
-        System.out.println("Rolling The Dice To Decide the Color");
+        System.out.println("Rolling The BackGammon.Dice To Decide the BackGammon.Color");
         points1 = diceToRoll.roll();
         points2 = diceToRoll.roll();
     }
