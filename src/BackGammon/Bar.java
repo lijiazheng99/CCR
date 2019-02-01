@@ -1,3 +1,5 @@
+package BackGammon;
+
 public class Bar {
     private Color CheckerColor;
     private int CheckerNumber;

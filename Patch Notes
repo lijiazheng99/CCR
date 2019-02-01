@@ -2,11 +2,11 @@ Patch 0.0.0
 
 Functional Update
 -Classes are created
-    Enum Color: Red. White. Empty
-    Bar: Color and number
-    Player: Name, Color
-    Dice: Points
-    Board: array of Bars,2 Players
+    Enum BackGammon.Color: Red. White. Empty
+    BackGammon.Bar: BackGammon.Color and number
+    BackGammon.Player: Name, BackGammon.Color
+    BackGammon.Dice: Points
+    BackGammon.Board: array of Bars,2 Players
 -Basic rules update
     Red moves from 1 to 24
     White moves from 24 to 1
