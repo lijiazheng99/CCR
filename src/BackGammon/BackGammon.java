@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 public class BackGammon extends Application
 {
 
+    public static final int TILE_SIZE = 30;
+    public static final int WIDTH = 14;
+    public static final int HEIGHT = 10;
+
     public void start(Stage stage) throws FileNotFoundException
     {
         //Creating an image
