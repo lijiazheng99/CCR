@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BackGammon/Checker_vis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/BackGammon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/BackGammon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Checker_Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +22,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="225" />
-          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="JAVA" value="233" />
+          <entry key="PLAIN_TEXT" value="85" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -67,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="375">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding>
                 <element signature="method#setName#0;class#Player#0" />
               </folding>
@@ -128,14 +126,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Checker_vis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
                 <element signature="e#320#321#0" expanded="true" />
               </folding>
             </state>
@@ -162,13 +159,13 @@
         <option value="$PROJECT_DIR$/Patch Notes" />
         <option value="$PROJECT_DIR$/src/BackGammon/Frame.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Dice.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Player.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Bar.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/BackGammon.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Color.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Checker_Color.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Checker_vis.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Player.java" />
       </list>
     </option>
   </component>
@@ -219,7 +216,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549162331245" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549162530697" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -273,7 +270,7 @@
       <workItem from="1549012274886" duration="2308000" />
       <workItem from="1549017671936" duration="2991000" />
       <workItem from="1549027888516" duration="26000" />
-      <workItem from="1549161160506" duration="1162000" />
+      <workItem from="1549161160506" duration="1331000" />
     </task>
     <task id="LOCAL-00001" summary="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function">
       <created>1549016916950</created>
@@ -338,11 +335,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549161596209</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Jiazheng Li&#10;update color enum type&#10;&amp;&#10;Create Checker_Vis">
+      <created>1549162377420</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1549162377420</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11150000" />
+    <option name="totallyTimeSpent" value="11319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,7 +361,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18681319" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18681319" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -365,7 +369,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.498779" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.498779" weight="0.32959184" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4957265" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -374,9 +378,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4993895" weight="0.32959184" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501221" side_tool="true" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50183153" side_tool="true" visible="true" weight="0.14591837" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4957265" weight="0.2979415" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.498779" weight="0.32959184" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.4981685" visible="true" weight="0.14591837" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -427,7 +431,8 @@
     <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package&#10;4. Edit width and height" />
     <MESSAGE value="Commit by Jiwei Zhang&#10;1. update the patch notes&#10;2. finish basic initialization in functionality" />
     <MESSAGE value="Jiazheng Li&#10;update color enum type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jiazheng Li&#10;update color enum type" />
+    <MESSAGE value="Jiazheng Li&#10;update color enum type&#10;&amp;&#10;Create Checker_Vis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jiazheng Li&#10;update color enum type&#10;&amp;&#10;Create Checker_Vis" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -479,16 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="method#setName#0;class#Player#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -550,12 +545,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Checker_vis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="285">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
             <element signature="e#320#321#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="method#setName#0;class#Player#0" />
           </folding>
         </state>
       </provider>

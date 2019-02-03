@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Player {
     private String name;
-    private Color color;
+    private Checker_Color color;
     private int pointsNeededToWin;
 
     public Player()
@@ -13,7 +13,7 @@ public class Player {
         this(null,null);
     }
 
-    public Player(String name, Color color)
+    public Player(String name, Checker_Color color)
     {
         this.setName();
         this.setColor(color);
@@ -30,12 +30,12 @@ public class Player {
         return this.name;
     }
 
-    public void setColor(Color color)
+    public void setColor(Checker_Color color)
     {
         this.color = color;
     }
 
-    public Color getColor()
+    public Checker_Color getColor()
     {
         return this.color;
     }
