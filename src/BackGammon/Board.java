@@ -24,11 +24,11 @@ public class Board {
         for(int i = 1; i <= 24; i++)
         {
             if(i == 1 || i == 12 || i == 17 || i == 19 )
-                bars[i].setCheckerColor(Color.Red);
+                bars[i].setCheckerColor(Checker_Color.RED);
             else if(i == 24 || i == 13 || i == 8 || i == 6 )
-                bars[i].setCheckerColor(Color.White);
+                bars[i].setCheckerColor(Checker_Color.WHITE);
             else
-                bars[i].setCheckerColor(Color.Empty);
+                bars[i].setCheckerColor(Checker_Color.EMPTY);
 
             if(i == 6 || i == 12 || i == 13 || i == 19 )
                 bars[i].setCheckerNumber(5);
@@ -45,13 +45,13 @@ public class Board {
 
         this.sideDecide();
         if(points1 > points2) {
-            playerOne.setColor(Color.Red);
-            playerTwo.setColor(Color.White);
+            playerOne.setColor(Checker_Color.RED);
+            playerTwo.setColor(Checker_Color.WHITE);
         }
         else if(points1 < points2)
         {
-            playerOne.setColor(Color.White);
-            playerTwo.setColor(Color.Red);
+            playerOne.setColor(Checker_Color.WHITE);
+            playerTwo.setColor(Checker_Color.RED);
         }
         else this.sideDecide();
 
@@ -86,14 +86,14 @@ public class Board {
         int redPoints = 0;
 
         for(int i = 1; i <= 24; i++) {
-            if (bars[i].getColor() == Color.Red)
+            if (bars[i].getColor() == Checker_Color.RED)
                 redPoints += bars[i].getCheckerNumber() * (25-i);
-            else if(bars[i].getColor() == Color.White)
+            else if(bars[i].getColor() == Checker_Color.WHITE)
                 whitePoints += bars[i].getCheckerNumber() * i;
             else
                 System.out.println("Errors in points counting");
         }
-        if(playerOne.getColor() == Color.Red) {
+        if(playerOne.getColor() == Checker_Color.RED) {
             playerOne.setPointsNeeded(redPoints);
             playerTwo.setPointsNeeded(whitePoints);
         }

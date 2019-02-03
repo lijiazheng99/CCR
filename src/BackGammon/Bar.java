@@ -2,20 +2,20 @@ package BackGammon;
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
 public class Bar {
-    private Color CheckerColor;
+    private Checker_Color CheckerColor;
     private int CheckerNumber;
 
     public Bar()
     {
-        this(Color.Empty, 0);
+        this(Checker_Color.EMPTY, 0);
     }
-    public Bar (Color cheCol, int cheNum)
+    public Bar (Checker_Color cheCol, int cheNum)
     {
         this.setCheckerNumber(cheNum);
         this.setCheckerColor(cheCol);
     }
 
-    public void setCheckerColor(Color color)
+    public void setCheckerColor(Checker_Color color)
     {
         this.CheckerColor = color;
     }
@@ -25,7 +25,7 @@ public class Bar {
         this.CheckerNumber = num;
     }
 
-    public Color getColor()
+    public Checker_Color getColor()
     {
         return this.CheckerColor;
     }
@@ -44,7 +44,7 @@ public class Bar {
     {
         this.CheckerNumber--;
         if(this.CheckerNumber == 0)
-            this.setCheckerColor(Color.Empty);
+            this.setCheckerColor(Checker_Color.EMPTY);
     }
 }
 
