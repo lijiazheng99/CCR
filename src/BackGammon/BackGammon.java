@@ -23,9 +23,11 @@ public class BackGammon extends Application
     public static final int PREFWIDTH = 1250;
     public static final int PREFHEIGHT = 860;
 
+    double WIDTH = Screen.getPrimary().getBounds().getWidth() * 0.7;
+    double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.7;
 
-    int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
-    int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
+    int screenWidth = (int) WIDTH;
+    int screenHeight = (int) HEIGHT;
 
     private Group backgroundpicture = new Group();
 
@@ -38,7 +40,7 @@ public class BackGammon extends Application
         scale.xProperty().bind(root.widthProperty().divide(PREFWIDTH));     //must match with the one in the controller
         scale.yProperty().bind(root.heightProperty().divide(PREFHEIGHT));   //must match with the one in the controller
 
-        Scene scene = new Scene(buildScene(),PREFWIDTH,PREFHEIGHT);
+        Scene scene = new Scene(buildScene(),screenWidth,screenHeight);
 
         scene.getRoot().getTransforms().add(scale);
 
@@ -46,7 +48,7 @@ public class BackGammon extends Application
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.show();
-        primaryStage.setFullScreen(true);
+        //primaryStage.setFullScreen(true);
     }
 
     private Parent buildScene()
