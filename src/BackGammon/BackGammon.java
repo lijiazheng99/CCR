@@ -48,7 +48,7 @@ public class BackGammon extends Application
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.show();
-        primaryStage.setFullScreen(true);
+        //primaryStage.setFullScreen(true);
     }
 
     private Parent buildScene()
