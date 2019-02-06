@@ -37,8 +37,8 @@ public class BackGammon extends Application
 
 
         Scale scale = new Scale(1, 1, 0, 0);
-        scale.xProperty().bind(root.widthProperty().divide(PREFWIDTH));     //must match with the one in the controller
-        scale.yProperty().bind(root.heightProperty().divide(PREFHEIGHT));   //must match with the one in the controller
+        scale.xProperty().bind(root.widthProperty().divide(PREFWIDTH));
+        scale.yProperty().bind(root.heightProperty().divide(PREFHEIGHT));
 
         Scene scene = new Scene(buildScene(),screenWidth,screenHeight);
 
@@ -87,7 +87,7 @@ public class BackGammon extends Application
         //Insert background picture
         Image image = new Image("BoardPicture.jpeg");
         root.add(new ImageView(image), 0, 0);
-        root.setPrefSize(1250,860);
+        root.setPrefSize(1246,856);
 
         //ONLY FOR DEVELOP USE
         //grid.setGridLinesVisible(true);
