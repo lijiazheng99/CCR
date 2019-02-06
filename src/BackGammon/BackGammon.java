@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.transform.Scale;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 
@@ -18,19 +20,33 @@ public class BackGammon extends Application
 {
 
     public static final int TILE_SIZE = 70;
-    public static final int WIDTH = 1250;
-    public static final int HEIGHT = 860;
+    public static final int PREFWIDTH = 1250;
+    public static final int PREFHEIGHT = 860;
 
+
+    int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
+    int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
 
     private Group backgroundpicture = new Group();
 
     public void start(Stage primaryStage) throws Exception
     {
-        Scene scene = new Scene(buildScene());
+        Scene root = new Scene(buildScene(),screenWidth, screenHeight);
+
+
+        Scale scale = new Scale(1, 1, 0, 0);
+        scale.xProperty().bind(root.widthProperty().divide(PREFWIDTH));     //must match with the one in the controller
+        scale.yProperty().bind(root.heightProperty().divide(PREFHEIGHT));   //must match with the one in the controller
+
+        Scene scene = new Scene(buildScene(),PREFWIDTH,PREFHEIGHT);
+
+        scene.getRoot().getTransforms().add(scale);
 
         primaryStage.setTitle("CCR BackGammon Game");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(true);
         primaryStage.show();
+        primaryStage.setFullScreen(true);
     }
 
     private Parent buildScene()
@@ -144,7 +160,7 @@ public class BackGammon extends Application
 
         root.getChildren().addAll(grid);
 
-        return root;
+        return root ;
     }
 
 
