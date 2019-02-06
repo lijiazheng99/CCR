@@ -20,11 +20,11 @@ public class BackGammon extends Application
 {
 
     public static final int TILE_SIZE = 70;
-    public static final int PREFWIDTH = 1250;
-    public static final int PREFHEIGHT = 860;
+    public static final int PREFWIDTH = 1246;
+    public static final int PREFHEIGHT = 856;
 
     double WIDTH = Screen.getPrimary().getBounds().getWidth() * 0.7;
-    double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.7;
+    double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.8;
 
     int screenWidth = (int) WIDTH;
     int screenHeight = (int) HEIGHT;
