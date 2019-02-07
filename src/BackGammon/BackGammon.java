@@ -32,12 +32,6 @@ public class BackGammon extends Application
     public static final int PREFWIDTH = 1250;
     public static final int PREFHEIGHT = 856;
 
-    private TextField consoleOutput;
-
-//    private TextArea console;
-//    private PrintStream ps = new PrintStream(new Console(console));
-
-
     double WIDTH = Screen.getPrimary().getBounds().getWidth() * 0.7;
     double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.8;
 
@@ -107,7 +101,6 @@ public class BackGammon extends Application
         //ONLY FOR DEVELOP USE
         grid.setGridLinesVisible(true);
 
-
         Label backGammon = new Label("BackGammon");
         backGammon.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.setColumnSpan(backGammon,4);
@@ -117,18 +110,6 @@ public class BackGammon extends Application
         player1.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.setColumnSpan(player1,4);
         grid.add(player1, 1, 0);
-
-
-
-
-
-        consoleOutput.setEditable(false);
-        consoleOutput.setPrefHeight(132);
-        consoleOutput.setPrefWidth(220);
-        grid.setColumnSpan(consoleOutput, 4);
-        grid.setRowSpan(consoleOutput,6);
-        grid.add(consoleOutput,15,2);
-
 
         TextArea insertbox = new TextArea("Inset...");
         HBox textbox = new HBox();
