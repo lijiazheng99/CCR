@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.transform.Scale;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -46,7 +48,7 @@ public class BackGammon extends Application
 
         primaryStage.setTitle("CCR BackGammon Game");
         primaryStage.setScene(scene);
-        primaryStage.setResizable(true);
+        primaryStage.setResizable(false);
         primaryStage.show();
         //primaryStage.setFullScreen(true);
     }
@@ -90,13 +92,16 @@ public class BackGammon extends Application
         root.setPrefSize(1246,856);
 
         //ONLY FOR DEVELOP USE
-        //grid.setGridLinesVisible(true);
+        grid.setGridLinesVisible(true);
 
 
 
 //        Button button = new Button();
 //        grid.add(new Button(), 2, 0);
 
+        Label label = new Label("Test");
+        label.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(label, 0, 0);
 
 
 
@@ -154,6 +159,8 @@ public class BackGammon extends Application
 
 
 
+        grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 7,16);
+        grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 14,16);
 
 
 
