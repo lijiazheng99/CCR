@@ -1,18 +1,25 @@
 package BackGammon;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.scene.transform.Scale;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -22,8 +29,14 @@ public class BackGammon extends Application
 {
 
     public static final int TILE_SIZE = 70;
-    public static final int PREFWIDTH = 1246;
+    public static final int PREFWIDTH = 1250;
     public static final int PREFHEIGHT = 856;
+
+    private TextField consoleOutput;
+
+//    private TextArea console;
+//    private PrintStream ps = new PrintStream(new Console(console));
+
 
     double WIDTH = Screen.getPrimary().getBounds().getWidth() * 0.7;
     double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.8;
@@ -77,11 +90,11 @@ public class BackGammon extends Application
         for (int i = 0; i < 35;i++)
         {
             if (i == 0)
-                grid.getRowConstraints().add(new RowConstraints(60));
+                grid.getRowConstraints().add(new RowConstraints(55));
             else if (i >= 1 && i <= 33)
                 grid.getRowConstraints().add(new RowConstraints(22));
             else
-                grid.getRowConstraints().add(new RowConstraints(70));
+                grid.getRowConstraints().add(new RowConstraints(75));
         }
 
 
@@ -89,23 +102,48 @@ public class BackGammon extends Application
         //Insert background picture
         Image image = new Image("BoardPicture.jpeg");
         root.add(new ImageView(image), 0, 0);
-        root.setPrefSize(1246,856);
+        root.setPrefSize(screenWidth,screenHeight);
 
         //ONLY FOR DEVELOP USE
         grid.setGridLinesVisible(true);
 
 
+        Label backGammon = new Label("BackGammon");
+        backGammon.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.setColumnSpan(backGammon,4);
+        grid.add(backGammon, 15, 0);
 
-//        Button button = new Button();
-//        grid.add(new Button(), 2, 0);
-
-        Label label = new Label("Test");
-        label.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-        grid.add(label, 0, 0);
+        Label player1 = new Label("Player Name Here");
+        player1.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.setColumnSpan(player1,4);
+        grid.add(player1, 1, 0);
 
 
 
 
+
+        consoleOutput.setEditable(false);
+        consoleOutput.setPrefHeight(132);
+        consoleOutput.setPrefWidth(220);
+        grid.setColumnSpan(consoleOutput, 4);
+        grid.setRowSpan(consoleOutput,6);
+        grid.add(consoleOutput,15,2);
+
+
+        TextArea insertbox = new TextArea("Inset...");
+        HBox textbox = new HBox();
+        textbox.getChildren().addAll(insertbox);
+        textbox.setSpacing(10);
+        grid.setColumnSpan(textbox,4);
+        grid.setRowSpan(textbox,2);
+        grid.add(textbox,15,30);
+
+        Button insertTextBox = new Button("Insert");
+        grid.add(insertTextBox,18,33);
+
+
+
+//Here to insert connect bar methods
         grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,1);
         grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,2);
         grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,3);
@@ -127,11 +165,6 @@ public class BackGammon extends Application
 
         grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,1);
         grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,2);
-
-
-
-
-
 
         grid.add(new Checker_vis(Checker_Color.RED,1,1),1,32);
         grid.add(new Checker_vis(Checker_Color.RED,1,1),1,31);
@@ -156,9 +189,6 @@ public class BackGammon extends Application
         grid.add(new Checker_vis(Checker_Color.RED,1,1),13,31);
 
 
-
-
-
         grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 7,16);
         grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 14,16);
 
@@ -171,7 +201,6 @@ public class BackGammon extends Application
 
         return root ;
     }
-
 
 
 

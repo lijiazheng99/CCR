@@ -91,7 +91,7 @@ public class Board {
             else if(bars[i].getColor() == Checker_Color.WHITE)
                 whitePoints += bars[i].getCheckerNumber() * i;
             else
-                System.out.println("Errors in points counting");
+            System.out.println("Errors in points counting");
         }
         if(playerOne.getColor() == Checker_Color.RED) {
             playerOne.setPointsNeeded(redPoints);
