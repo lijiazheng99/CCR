@@ -122,57 +122,95 @@ public class BackGammon extends Application
     outputTextBox.setEditable(false);
     grid.add(outputTextBox,15, 1,4,35);
 
+    System.out.println("OK1");
+
+
+
+    Board board = new Board();
+    System.out.println("OK2");
+    board.setUp();
+    System.out.println("OK4");
+//
+//    int indexNum;
+//    int bottomNum;
+//
+//    for (int i = 1; i < 25; i++)
+//    {
+//        indexNum = board.bars[i].getCheckerNumber();
+//
+//        if (i <= 12)
+//        {
+//            bottomNum = 32;
+//            while(indexNum != 0)
+//            {
+//                grid.add(new Checker_vis(board.bars[i].getColor(),1,1),14-i,bottomNum);
+//                bottomNum--;
+//                indexNum--;
+//            }
+//        }
+//
+//        if (i > 12)
+//        {
+//            while(indexNum != 0)
+//            {
+//                grid.add(new Checker_vis(board.bars[i].getColor(),1,1),i - 12,indexNum+1);
+//                indexNum--;
+//            }
+//        }
+//    }
+
+
 
 
 
 //Here to insert connect bar methods
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,1);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,2);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,3);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,4);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,5);
-
-
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,1);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,2);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,3);
-
-
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,1);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,2);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,3);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,4);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,5);
-
-
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,1);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,2);
-
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,32);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,31);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,30);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,29);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,28);
-
-
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,32);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,31);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,30);
-
-
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,32);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,31);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,30);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,29);
-    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,28);
-
-
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),13,32);
-    grid.add(new Checker_vis(Checker_Color.RED,1,1),13,31);
-
-
-    grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 7,16);
-    grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 14,16);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,1);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,2);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,3);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,4);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,5);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,1);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,2);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,3);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,1);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,2);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,3);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,4);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,5);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,1);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,2);
+//
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,32);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,31);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,30);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,29);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,28);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,32);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,31);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,30);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,32);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,31);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,30);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,29);
+//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,28);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),13,32);
+//    grid.add(new Checker_vis(Checker_Color.RED,1,1),13,31);
+//
+//
+//    grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 7,16);
+//    grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 14,16);
 
 
 

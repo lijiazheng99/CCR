@@ -3,7 +3,7 @@ package BackGammon;
 //edited by Jiwei Zhang, 2/1/2019
 public class Board {
 
-    private Bar[] bars;
+    public Bar[] bars;
     private Player playerOne;
     private Player playerTwo;
     private int points1,points2;
@@ -12,10 +12,11 @@ public class Board {
 
     public Board()
     {
+        System.out.println("OK3");
         bars = new Bar[25];
         //"0" IS NOT FOR USE
-        playerOne = new Player();
-        playerTwo = new Player();
+//        playerOne = new Player();
+//        playerTwo = new Player();
 
     }
 
@@ -40,24 +41,24 @@ public class Board {
                 bars[i].setCheckerNumber(0);
         }
 
-        diceToRoll = new Dice();
-        steps = 0;
-
-        this.sideDecide();
-        if(points1 > points2) {
-            playerOne.setColor(Checker_Color.RED);
-            playerTwo.setColor(Checker_Color.WHITE);
-        }
-        else if(points1 < points2)
-        {
-            playerOne.setColor(Checker_Color.WHITE);
-            playerTwo.setColor(Checker_Color.RED);
-        }
-        else this.sideDecide();
-
-        this.pointsNeedToWinForBoth();
-
-        System.out.println(playerOne.getPointsNeeded() + playerTwo.getPointsNeeded());
+//        diceToRoll = new Dice();
+//        steps = 0;
+//
+//        this.sideDecide();
+//        if(points1 > points2) {
+//            playerOne.setColor(Checker_Color.RED);
+//            playerTwo.setColor(Checker_Color.WHITE);
+//        }
+//        else if(points1 < points2)
+//        {
+//            playerOne.setColor(Checker_Color.WHITE);
+//            playerTwo.setColor(Checker_Color.RED);
+//        }
+//        else this.sideDecide();
+//
+//        this.pointsNeedToWinForBoth();
+//
+//        System.out.println(playerOne.getPointsNeeded() + playerTwo.getPointsNeeded());
     }
 
     public void sideDecide()
