@@ -2,10 +2,12 @@ package BackGammon;
 
 import java.io.*;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -103,7 +105,7 @@ public class BackGammon extends Application
     root.setPrefSize(screenWidth,screenHeight);
 
     //ONLY FOR DEVELOP USE
-    //grid.setGridLinesVisible(true);
+    grid.setGridLinesVisible(true);
 
     Label backGammon = new Label("BackGammon");
     backGammon.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
@@ -128,8 +130,6 @@ public class BackGammon extends Application
 
     System.out.println("OK1");
 
-
-
     Board board = new Board();
     System.out.println("OK2");
     board.setUp();
@@ -149,13 +149,13 @@ public class BackGammon extends Application
             {
                 if (i <= 6)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),14-i,bottomNum);
+                    grid.add(new Checker_vis(board.bars[i].getColor(),14 - i,bottomNum),14-i,bottomNum);
                     bottomNum--;
                     indexNum--;
                 }
                 else if (i > 6)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),13-i,bottomNum);
+                    grid.add(new Checker_vis(board.bars[i].getColor(),13-i,bottomNum),13-i,bottomNum);
                     bottomNum--;
                     indexNum--;
                 }
@@ -169,34 +169,89 @@ public class BackGammon extends Application
             {
                 if (i <= 18)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),i - 12,bottomNum);
+                    grid.add(new Checker_vis(board.bars[i].getColor(),i - 12,bottomNum),i - 12,bottomNum);
                     bottomNum++;
                 }
                 else if (i > 18)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),i - 11,bottomNum);
+                    grid.add(new Checker_vis(board.bars[i].getColor(),i - 11,bottomNum),i - 11,bottomNum);
                     bottomNum++;
                 }
             }
         }
     }
 
-    String input = insertbox.getText();
-
-    if (input.equals("exit"))
+    for (int i = 1; i <= 24; i++)
     {
-        exitFun();
+        Label colNum = new Label(""+i);
+        //colNum.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 1));
+        if (i <= 12)
+        {
+            bottomNum = 32;
+            if (i <= 6)
+            {
+                grid.add(colNum,14-i,18);
+            }
+            else if (i > 6)
+            {
+                grid.add(colNum,13-i,18);
+            }
+
+        }
+
+        else if (i > 12)
+        {
+            if (i <= 18)
+            {
+                grid.add(colNum,i-12,17);
+            }
+            else if (i > 18)
+            {
+                grid.add(colNum,i-11,17);
+            }
+        }
     }
 
-    insertTextBox.setOnAction(action -> {
 
-//        getTextSystem.out.println(outputTextBox.getText());
-        outputTextBox.setText(input);
 
-        outputTextBox.setText("Clicked!");
+    LinkedList output = new LinkedList();
+    output.add("Welcome to BackGammon!\n");
+    output.add("Game instruction:\n");
+    output.add("Type move to move\n");
+    output.add("Then type bar number to move\n");
+    outputTextBox.setText(output.toString());
+
+    Checker_vis remove = new Checker_vis(board.bars[1].getColor(),12,32);
+    grid.add(remove,12,32);
+
+
+    insertTextBox.setOnAction(new EventHandler<ActionEvent>()
+    {
+        @Override
+        public void handle(ActionEvent e)
+        {
+            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()))
+            {
+                if(insertbox.getText().equals("move"))
+                {
+                    output.add("Plsease type the bar you want move from:\n");
+                    outputTextBox.setText(output.toString());
+                    grid.getChildren().remove(remove);
+                    board.bars[1].setCheckerNumber(1);
+                    board.bars[2].setCheckerNumber(1);
+                    board.bars[2].setCheckerColor(Checker_Color.RED);
+                    grid.add(new Checker_vis(board.bars[2].getColor(),11,32), 11, 32);
+                }
+                else if (insertbox.getText().equals("exit"))
+                {
+                    exitFun();
+                }
+            }
+            else {
+                insertbox.setText("Nothing entered");
+            }
+        }
     });
-
-
 
 
     root.getChildren().addAll(grid);
