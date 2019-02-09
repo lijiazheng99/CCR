@@ -3,7 +3,8 @@ package BackGammon;
 //edited by Jiwei Zhang, 2/1/2019
 public class Board {
 
-    public Bar[] bars;
+    //public Bar[] bars;
+    public Bar[] bars = new Bar[25];
     private Player playerOne;
     private Player playerTwo;
     private int points1,points2;
@@ -13,7 +14,13 @@ public class Board {
     public Board()
     {
         System.out.println("OK3");
-        bars = new Bar[25];
+        int i = 0;
+        while(i != 25)
+        {
+            bars[i] = new Bar();
+            i++;
+
+        }
         //"0" IS NOT FOR USE
 //        playerOne = new Player();
 //        playerTwo = new Player();

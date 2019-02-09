@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -16,6 +17,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -31,6 +33,8 @@ public class BackGammon extends Application
     public static final int TILE_SIZE = 70;
     public static final int PREFWIDTH = 1250;
     public static final int PREFHEIGHT = 856;
+
+    public TextArea textField;
 
     double WIDTH = Screen.getPrimary().getBounds().getWidth() * 0.7;
     double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.8;
@@ -130,89 +134,67 @@ public class BackGammon extends Application
     System.out.println("OK2");
     board.setUp();
     System.out.println("OK4");
-//
-//    int indexNum;
-//    int bottomNum;
-//
-//    for (int i = 1; i < 25; i++)
-//    {
-//        indexNum = board.bars[i].getCheckerNumber();
-//
-//        if (i <= 12)
-//        {
-//            bottomNum = 32;
-//            while(indexNum != 0)
-//            {
-//                grid.add(new Checker_vis(board.bars[i].getColor(),1,1),14-i,bottomNum);
-//                bottomNum--;
-//                indexNum--;
-//            }
-//        }
-//
-//        if (i > 12)
-//        {
-//            while(indexNum != 0)
-//            {
-//                grid.add(new Checker_vis(board.bars[i].getColor(),1,1),i - 12,indexNum+1);
-//                indexNum--;
-//            }
-//        }
-//    }
 
+    int indexNum;
+    int bottomNum;
 
+    for (int i = 1; i < 25; i++)
+    {
+        indexNum = board.bars[i].getCheckerNumber();
 
+        if (i <= 12)
+        {
+            bottomNum = 32;
+            while(indexNum != 0)
+            {
+                if (i <= 6)
+                {
+                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),14-i,bottomNum);
+                    bottomNum--;
+                    indexNum--;
+                }
+                else if (i > 6)
+                {
+                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),13-i,bottomNum);
+                    bottomNum--;
+                    indexNum--;
+                }
+            }
+        }
 
+        else if (i > 12)
+        {
+            bottomNum = 1;
+            while(bottomNum < indexNum + 1)
+            {
+                if (i <= 18)
+                {
+                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),i - 12,bottomNum);
+                    bottomNum++;
+                }
+                else if (i > 18)
+                {
+                    grid.add(new Checker_vis(board.bars[i].getColor(),1,1),i - 11,bottomNum);
+                    bottomNum++;
+                }
+            }
+        }
+    }
 
-//Here to insert connect bar methods
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,1);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,2);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,3);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,4);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),1,5);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,1);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,2);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),5,3);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,1);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,2);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,3);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,4);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),8,5);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,1);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),13,2);
-//
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,32);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,31);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,30);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,29);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),1,28);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,32);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,31);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),5,30);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,32);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,31);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,30);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,29);
-//    grid.add(new Checker_vis(Checker_Color.WHITE,1,1),8,28);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),13,32);
-//    grid.add(new Checker_vis(Checker_Color.RED,1,1),13,31);
-//
-//
-//    grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 7,16);
-//    grid.add(new Checker_vis(Checker_Color.RED, 1 ,1), 14,16);
+    String input = insertbox.getText();
 
+    if (input.equals("exit"))
+    {
+        exitFun();
+    }
 
+    insertTextBox.setOnAction(action -> {
+
+//        getTextSystem.out.println(outputTextBox.getText());
+        outputTextBox.setText(input);
+
+        outputTextBox.setText("Clicked!");
+    });
 
 
 
@@ -228,6 +210,11 @@ public class BackGammon extends Application
     public static void main(String args[])
     {
         launch(args);
+    }
+
+    public void exitFun ()
+    {
+        System.exit(0);
     }
 
 }

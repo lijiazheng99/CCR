@@ -11,8 +11,8 @@ public class Bar {
     }
     public Bar (Checker_Color cheCol, int cheNum)
     {
-        this.setCheckerNumber(cheNum);
-        this.setCheckerColor(cheCol);
+        CheckerNumber = cheNum;
+        CheckerColor = cheCol;
     }
 
     public void setCheckerColor(Checker_Color color)
