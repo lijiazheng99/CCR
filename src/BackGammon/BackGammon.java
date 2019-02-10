@@ -1,16 +1,10 @@
 package BackGammon;
 
-import java.io.*;
-import java.net.URL;
 import java.util.LinkedList;
-import java.util.ResourceBundle;
-
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,11 +13,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.scene.transform.Scale;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -98,7 +90,6 @@ public class BackGammon extends Application
     }
 
 
-
     //Insert background picture
     Image image = new Image("BoardPicture.jpeg");
     root.add(new ImageView(image), 0, 0);
@@ -114,8 +105,13 @@ public class BackGammon extends Application
 
     Label player1 = new Label("Player Name Here");
     player1.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-    grid.setColumnSpan(player1,4);
+    grid.setColumnSpan(player1,6);
     grid.add(player1, 1, 0);
+
+    Label player2 = new Label("Player Name Here");
+    player2.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+    grid.setColumnSpan(player2,6);
+    grid.add(player2, 8, 0);
 
     TextField insertbox = new TextField();
     insertbox.setPromptText("Please insert...");
@@ -137,6 +133,8 @@ public class BackGammon extends Application
 
     int indexNum;
     int bottomNum;
+    Checker_vis[] checkers = new Checker_vis[30];
+    int checkerCount = 0;
 
     for (int i = 1; i < 25; i++)
     {
@@ -149,13 +147,23 @@ public class BackGammon extends Application
             {
                 if (i <= 6)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),14 - i,bottomNum),14-i,bottomNum);
+                    checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),14 - i,bottomNum);
+                    grid.add(checkers[checkerCount],14-i,bottomNum);
+                    if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                {
+                    checkerCount++;
+                }
                     bottomNum--;
                     indexNum--;
                 }
                 else if (i > 6)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),13-i,bottomNum),13-i,bottomNum);
+                    checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),13-i,bottomNum);
+                    grid.add(checkers[checkerCount],13-i,bottomNum);
+                    if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                    {
+                        checkerCount++;
+                    }
                     bottomNum--;
                     indexNum--;
                 }
@@ -169,12 +177,22 @@ public class BackGammon extends Application
             {
                 if (i <= 18)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),i - 12,bottomNum),i - 12,bottomNum);
+                    checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),i - 11,bottomNum);
+                    grid.add(checkers[checkerCount],i - 12,bottomNum);
+                    if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                    {
+                        checkerCount++;
+                    }
                     bottomNum++;
                 }
                 else if (i > 18)
                 {
-                    grid.add(new Checker_vis(board.bars[i].getColor(),i - 11,bottomNum),i - 11,bottomNum);
+                    checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),i - 12,bottomNum);
+                    grid.add(checkers[checkerCount],i - 11,bottomNum);
+                    if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                    {
+                        checkerCount++;
+                    }
                     bottomNum++;
                 }
             }
@@ -212,21 +230,18 @@ public class BackGammon extends Application
         }
     }
 
-
-
     LinkedList output = new LinkedList();
-    output.add("Welcome to BackGammon!\n");
-    output.add("Game instruction:\n");
-    output.add("Type move to move\n");
-    output.add("Then type bar number to move\n");
+    output.add("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
     outputTextBox.setText(output.toString());
-
-    Checker_vis remove = new Checker_vis(board.bars[1].getColor(),12,32);
-    grid.add(remove,12,32);
+    System.out.println("this"+checkerCount);
 
 
     insertTextBox.setOnAction(new EventHandler<ActionEvent>()
     {
+        int row = 12;
+        int col = 32;
+        int counter = 2;
+
         @Override
         public void handle(ActionEvent e)
         {
@@ -234,15 +249,31 @@ public class BackGammon extends Application
             {
                 if(insertbox.getText().equals("move"))
                 {
-                    output.add("Plsease type the bar you want move from:\n");
+                    output.add("Plsease type the bar you want \nmove from:\n");
                     outputTextBox.setText(output.toString());
-                    grid.getChildren().remove(remove);
+
+                    grid.getChildren().remove(checkers[1]);
                     board.bars[1].setCheckerNumber(1);
-                    board.bars[2].setCheckerNumber(1);
-                    board.bars[2].setCheckerColor(Checker_Color.RED);
-                    grid.add(new Checker_vis(board.bars[2].getColor(),11,32), 11, 32);
+                    board.bars[counter].setCheckerNumber(1);
+                    board.bars[counter].setCheckerColor(Checker_Color.RED);
+
+                    checkers[1] = new Checker_vis(board.bars[1].getColor(),11,32);
+                    if (row > 8)
+                        grid.add(checkers[1], row--, 32);
+                    else if (row == 8 && row == 7)
+                    {
+                        row = 6;
+                        grid.add(checkers[1], row--, 32);
+                    }
+                    //grid.add(checkers[1], row--, 32);
                 }
-                else if (insertbox.getText().equals("exit"))
+                else if (insertbox.getText().equals("clear"))
+                {
+                    output.clear();
+                    output.add("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
+                    outputTextBox.setText(output.toString());
+                }
+                else if (insertbox.getText().equals("quit"))
                 {
                     exitFun();
                 }
