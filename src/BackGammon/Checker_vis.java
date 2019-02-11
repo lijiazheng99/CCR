@@ -8,7 +8,7 @@ import static BackGammon.BackGammon.TILE_SIZE;
 
 
 
-public class Checker_vis extends StackPane {
+public class Checker_vis extends StackPane { //class for visual part
 
     private Checker_Color type;
 

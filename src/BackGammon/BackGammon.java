@@ -90,7 +90,7 @@ public class BackGammon extends Application
     }
 
 
-    //Insert background picture
+    //Insert Background picture
     Image image = new Image("BoardPicture.jpeg");
     root.add(new ImageView(image), 0, 0);
     root.setPrefSize(screenWidth,screenHeight);

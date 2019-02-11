@@ -22,12 +22,9 @@ public class Board {
 
         }
         //"0" IS NOT FOR USE
-//        playerOne = new Player();
-//        playerTwo = new Player();
-
     }
 
-    public void setUp()
+    public void setUp() //initializing the board bars
     {
         for(int i = 1; i <= 24; i++)
         {

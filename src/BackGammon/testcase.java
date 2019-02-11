@@ -3,6 +3,7 @@ package BackGammon;
 public class testcase {
     public static void main(String args[])
     {
+        //creating new instances for testing
         Board board = new Board();
         System.out.println("New board tested");
 
