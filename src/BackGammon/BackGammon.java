@@ -230,6 +230,7 @@ public class BackGammon extends Application
         }
     }
 
+    //output game instructions
     LinkedList output = new LinkedList();
     output.add("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
     outputTextBox.setText(output.toString());
