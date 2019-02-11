@@ -96,7 +96,7 @@ public class BackGammon extends Application
     root.setPrefSize(screenWidth,screenHeight);
 
     //ONLY FOR DEVELOP USE
-    grid.setGridLinesVisible(true);
+    //grid.setGridLinesVisible(true);
 
     Label backGammon = new Label("BackGammon");
     backGammon.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
