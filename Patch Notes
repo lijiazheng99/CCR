@@ -14,4 +14,22 @@ Functional Initialization Update
     Red moves from 1 to 24
     White moves from 24 to 1
     "used in counting the points needed to win"
+Patch 1.1.1
+Version for submission
+Lorand:
+    comments and help for build scene.
+Jiazheng:
+    build the board and checkers, connect them with functional movement
+    write the main function for test
+    created
+        BackGammon.javas
+        Checker_vis.java
+Jiwei:
+    write the functional and algorithm part
+    help Jiazheng partly in building scene
+
+In this version:
+board and checkers are initialized.
+few movement has been tested successfully.
+I/O system is finished.
 
