@@ -250,7 +250,7 @@ public class BackGammon extends Application
             {
                 if(insertbox.getText().equals("move"))
                 {
-                    output.add("Plsease type the bar you want \nmove from:\n");
+                    output.add("Moving test now");
                     outputTextBox.setText(output.toString());
 
                     grid.getChildren().remove(checkers[1]);
