@@ -1,4 +1,4 @@
-package BackGammon;
+package sprint1;
 
 public class testcase {
     public static void main(String args[])

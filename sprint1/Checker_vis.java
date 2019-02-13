@@ -1,10 +1,10 @@
-package BackGammon;
+package sprint1;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 
-import static BackGammon.BackGammon.TILE_SIZE;
+import static sprint1.BackGammon.TILE_SIZE;
 
 
 

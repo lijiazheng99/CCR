@@ -1,4 +1,4 @@
-package BackGammon;
+package sprint1;
 //created by Jiwei Zhang, 1/1/2019
 //REfine by Jiazheng 2/2/2019
 public enum Checker_Color {

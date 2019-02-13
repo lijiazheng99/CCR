@@ -1,4 +1,4 @@
-package BackGammon;
+package sprint1;
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
 import java.util.Random;

@@ -1,4 +1,4 @@
-package BackGammon;
+package sprint1;
 
 public class Checker {
     /*
@@ -6,7 +6,7 @@ public class Checker {
     private int position;
     private int pointsNeeded;
 
-    public BackGammon.Checker(BackGammon.Color cheCol, int pos)
+    public sprint1.Checker(BackGammon.Color cheCol, int pos)
     {
         this.checkerColor = cheCol;
         this.position = pos;
@@ -15,7 +15,7 @@ public class Checker {
         else if(this.checkerColor == BackGammon.Color.White)
             this.pointsNeeded = pos;
         else
-            System.out.println("Error in BackGammon.Checker Setting");
+            System.out.println("Error in sprint1.Checker Setting");
     }
 
     public int moveTo(int points)
@@ -25,7 +25,7 @@ public class Checker {
         else if(this.getColor() == BackGammon.Color.White)
             return this.position - points;
         else
-            System.out.println("Error in BackGammon.Checker Moving");
+            System.out.println("Error in sprint1.Checker Moving");
     }
 
     public BackGammon.Color getColor()
