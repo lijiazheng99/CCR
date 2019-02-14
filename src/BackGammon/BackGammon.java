@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 
 
-public class Backgammon {
+public class BackGammon {
 
     public static final int NUM_PLAYERS = 2;
 
@@ -33,7 +33,7 @@ public class Backgammon {
     }
 
     public static void main (String[] args) throws InterruptedException {
-        Backgammon game = new Backgammon();
+        BackGammon game = new BackGammon();
         game.testUI();
         System.exit(0);
     }

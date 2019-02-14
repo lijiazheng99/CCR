@@ -1,11 +1,12 @@
-package sprint1;
+package BackGammon;
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
 import java.util.Scanner;
+import java.lang.String;
 
 public class Player {
     private String name;
-    private Checker_Color color;
+    private Color color;
     private int pointsNeededToWin;
 
     public Player()
@@ -13,16 +14,15 @@ public class Player {
         this(null,null);
     }
 
-    public Player(String name, Checker_Color color)
+    public Player(String name, Color color)
     {
         this.setName(name);
         this.setColor(color);
     }
 
-    public void setName()
+    public void setName(String name)
     {
-        Scanner scan = new Scanner(System.in);
-        name = scan.nextLine();
+        this.name = name;
     }
 
     public String getName()
@@ -30,12 +30,12 @@ public class Player {
         return this.name;
     }
 
-    public void setColor(Checker_Color color)
+    public void setColor(Color color)
     {
         this.color = color;
     }
 
-    public Checker_Color getColor()
+    public Color getColor()
     {
         return this.color;
     }

@@ -2,39 +2,40 @@ package BackGammon;
 
 public class Board {
 
-    private static final int[] RESET = {0,0,0,0,0,0,5,0,3,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,2,0};
-    public static final int BAR = 25;           // index of the BAR
-    public static final int BEAR_OFF = 0;       // index of the BEAR OFF
+    private static final int[] RESET = {0,2,0,0,0,0,5,0,3,0,0,0,5,5,0,0,0,3,0,5,0,0,0,0,2};
     private static final int INNER_END = 6;     // index for the end of the inner board
-    public static final int NUM_PIPS = 24;      // excluding BAR and BEAR OFF
-    public static final int NUM_SLOTS = 26;     // including BAR and BEAR OFF
-    private static final int NUM_CHECKERS = 15;
+    public static final int NUM_SLOTS = 25;     // index 0 is not used -> means 24 slots on board
+    private static final int NUM_CHECKERS = 15; // number of checkers in total
 
-
-    private int[][] checkers;
-            // 2D array of checkers
-            // 1st index is the player id
-            // 2nd index is the pip number 0 to 25
-            // pip 0 is bear off, pip 25 is the bar, pips 1-24 are on the main board
-            // the value is the number of checkers on the point
+    private Slot[] slots;
+    private Slot[] bearOff;
+    private Player playerOne;
+    private Player playerTwo;
 
     Board () {
-        checkers = new int[Backgammon.NUM_PLAYERS][NUM_SLOTS];
-        for (int player=0; player<Backgammon.NUM_PLAYERS; player++)  {
-            for (int pip=0; pip<NUM_SLOTS; pip++)   {
-                checkers[player][pip] = RESET[pip];
-            }
-        }
+        slots = new Slot[NUM_SLOTS];
+        for (int pip=0; pip<NUM_SLOTS; pip++)
+            slots[pip] = new Slot(Color.EMPTY, RESET[pip]);
+        bearOff = new Slot[2];
+        for(int i = 0; i < 2; i++)
+            bearOff[i] = new Slot(null,0);
+
+        slots[1].setCheckerColor(Color.RED);
+        slots[12].setCheckerColor(Color.RED);
+        slots[17].setCheckerColor(Color.RED);
+        slots[19].setCheckerColor(Color.RED);
+        slots[6].setCheckerColor(Color.WHITE);
+        slots[8].setCheckerColor(Color.WHITE);
+        slots[13].setCheckerColor(Color.WHITE);
+        slots[24].setCheckerColor(Color.WHITE);
+
+        playerOne = new Player(null,Color.RED);
+        playerTwo = new Player(null, Color.WHITE);
     }
 
-    public void move (int player, int from, int to) {
-        checkers[player][from]--;
-        checkers[player][to]++;
+    public void move (Color color, int from, int to) {
+        slots[from].moveOut(color);
+        slots[to].moveIn(color);
     }
-
-    public int getNumCheckers (int player, int pip) {
-        return checkers[player][pip];
-    }
-
 
 }
