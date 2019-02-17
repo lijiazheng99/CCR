@@ -1,64 +1,86 @@
-package BackGammon;
+package BackGammonGUI;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Rectangle2D;
+import BackGammon.*;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
+
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.awt.image.BufferedImage;
-import java.awt.*;
+
+import static BackGammon.BackGammon.NUM_PLAYERS;
+
+//import javax.imageio.ImageIO;
+//import javax.swing.*;
+//import java.awt.geom.Ellipse2D;
+//import java.awt.geom.Rectangle2D;
+//import java.io.IOException;
+//import java.awt.image.BufferedImage;
+//import java.awt.*;
 
 
 
-class BoardPanel extends JPanel {
-
+class BoardPanel extends Pane
+{
     private static final long serialVersionUID = 1L;
     private static final int FRAME_WIDTH = 752, FRAME_HEIGHT = 552;  // must be multiples of 4
     private static final int BORDER_TOP = 40, BORDER_BOTTOM = 75, BORDER_LEFT = 66, BORDER_RIGHT = 60;
     public static final int PIP_WIDTH = 47, BAR_WIDTH = 66;
     private static final int CHECKER_RADIUS = 16, CHECKER_DEPTH = 8, LINE_WIDTH = 2;   // must be even
 
-    private Color[] checkerColors;
+    private CheckerColor[] checkerColors;
     private Board board;
-    private BufferedImage boardImage;
-    private Graphics2D g2;
+    private Image boardImage;
+    private GraphicsContext g2;
 
-    BoardPanel(Board board) {
-        checkerColors = new Color[Backgammon.NUM_PLAYERS];
+    public BoardPanel(Board board)
+    {
+        checkerColors = new CheckerColor[NUM_PLAYERS];
         this.board = board;
+
+
+
         setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
-        setBackground(Color.YELLOW);
-        checkerColors[0] = Color.RED;
-        checkerColors[1] = Color.GREEN;
-        try {
-            boardImage = ImageIO.read(this.getClass().getResource("board.jpg"));
-        } catch (IOException ex) {
-            System.out.println("Could not find the image file " + ex.toString());
-        }
+        setBackground(BackGammon.Color.YELLOW);
+
+        checkerColors[0] = CheckerColor.RED;
+        checkerColors[1] = CheckerColor.WHITE;
+        boardImage = new Image("board.jpg");
+
+//        try
+//        {
+//            boardImage = new Image("board.jpg");
+//        }
+//        catch (IOException ex)
+//        {
+//            System.out.println("Could not find the image file " + ex.toString());
+//        }
     }
 
-
-    private void displayChecker (int player, int x, int y) {
-        g2.setColor(Color.BLACK);
+    private void displayChecker (int player, int x, int y)
+    {
+        g2.setColor(BackGammon.Color.BLACK);
         Ellipse2D.Double ellipseBlack = new Ellipse2D.Double(x,y,2*CHECKER_RADIUS,2*CHECKER_RADIUS);
         g2.fill(ellipseBlack);
         Ellipse2D.Double ellipseColour = new Ellipse2D.Double(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),2*(CHECKER_RADIUS-LINE_WIDTH));
-        g2.setColor(checkerColors[player]);
+        g2.setColor(checkerCheckerColors[player]);
         g2.fill(ellipseColour);
     }
 
 
-    private void displayCheckerSide (int player, int x, int y) {
-        g2.setColor(Color.BLACK);
+    private void displayCheckerSide (int player, int x, int y)
+    {
+        g2.setColor(BackGammon.Color.BLACK);
         Rectangle2D.Double rectangleBlack = new Rectangle2D.Double(x,y,2*CHECKER_RADIUS,CHECKER_DEPTH);
         g2.fill(rectangleBlack);
         Rectangle2D.Double rectangleColour = new Rectangle2D.Double(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),CHECKER_DEPTH-2*LINE_WIDTH);
-        g2.setColor(checkerColors[player]);
+        g2.setColor(checkerCheckerColors[player]);
         g2.fill(rectangleColour);
     }
 
 
-    public void paintComponent(Graphics g) {
+    public void paintComponent(GraphicsContext g) {
         super.paintComponent(g);
         g2 =(Graphics2D) g;
         g2.drawImage(boardImage, 0, 0, FRAME_WIDTH, FRAME_HEIGHT, this);
@@ -80,7 +102,7 @@ class BoardPanel extends JPanel {
                 } else {
                     y = FRAME_HEIGHT-BORDER_BOTTOM/4;
                 }
-                g2.setColor(Color.WHITE);
+                g2.setColor(CheckerColor.WHITE);
                 g2.setFont(new Font("Courier",Font.BOLD,16));
                 g2.drawString(Integer.toString(pip),x,y);
             }

@@ -1,22 +1,22 @@
 package BackGammon;
 
 public class Slot {
-    private Color checkerColor;
+    private CheckerColor checkerColor;
     private int checkerNumber;
 
     public Slot()
     {
-        this(Color.EMPTY, 0);
+        this(CheckerColor.EMPTY, 0);
     }
-    public Slot (Color cheCol, int cheNum)
+    public Slot (CheckerColor cheCol, int cheNum)
     {
         checkerNumber = cheNum;
         checkerColor = cheCol;
     }
 
-    public void setCheckerColor(Color color)
+    public void setCheckerColor(CheckerColor checkerColor)
     {
-        this.checkerColor = color;
+        this.checkerColor = checkerColor;
     }
 
     public void setCheckerNumber(int num)
@@ -24,7 +24,7 @@ public class Slot {
         this.checkerNumber = num;
     }
 
-    public Color getColor()
+    public CheckerColor getColor()
     {
         return this.checkerColor;
     }
@@ -34,20 +34,20 @@ public class Slot {
         return this.checkerNumber;
     }
 
-    public void moveIn(Color color)
+    public void moveIn(CheckerColor checkerColor)
     {
-        if(color == this.checkerColor)
+        if(checkerColor == this.checkerColor)
             this.checkerNumber++;
         else;
     }
 
-    public void moveOut(Color color)
+    public void moveOut(CheckerColor checkerColor)
     {
-        if(color == this.checkerColor)
+        if(checkerColor == this.checkerColor)
             this.checkerNumber--;
         else;
         if(this.checkerNumber == 0)
-            this.setCheckerColor(Color.EMPTY);
+            this.setCheckerColor(CheckerColor.EMPTY);
         else;
     }
 }

@@ -50,13 +50,13 @@ public class Board {
 //
 //        this.sideDecide();
 //        if(points1 > points2) {
-//            playerOne.setColor(Checker_Color.RED);
-//            playerTwo.setColor(Checker_Color.WHITE);
+//            playerOne.setCheckerColor(Checker_Color.RED);
+//            playerTwo.setCheckerColor(Checker_Color.WHITE);
 //        }
 //        else if(points1 < points2)
 //        {
-//            playerOne.setColor(Checker_Color.WHITE);
-//            playerTwo.setColor(Checker_Color.RED);
+//            playerOne.setCheckerColor(Checker_Color.WHITE);
+//            playerTwo.setCheckerColor(Checker_Color.RED);
 //        }
 //        else this.sideDecide();
 //
@@ -67,7 +67,7 @@ public class Board {
 
     public void sideDecide()
     {
-        System.out.println("Rolling The sprint1.Dice To Decide the BackGammon.Color");
+        System.out.println("Rolling The sprint1.Dice To Decide the BackGammon.CheckerColor");
         points1 = diceToRoll.roll();
         points2 = diceToRoll.roll();
     }

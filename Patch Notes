@@ -2,9 +2,9 @@ Patch 0.0.0
 Updated by Jiwei Zhang
 Functional Initialization Update
 -Classes are created
-    Enum BackGammon.Color: Red. White. Empty
+    Enum BackGammon.CheckerColor: Red. White. Empty
         Assign the type Color for Player and Bar
-    sprint1.Bar: BackGammon.Color and number
+    sprint1.Bar: BackGammon.CheckerColor and number
         Basic part of this game.
     sprint1.Player: Name, Color, and Points needed to win
     sprint1.Dice: Points(1-6)

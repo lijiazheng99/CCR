@@ -1,21 +1,29 @@
 package BackGammon;
 
+import BackGammonGUI.*;
+import javafx.stage.Stage;
+
 import java.util.concurrent.TimeUnit;
 
 
 
-public class BackGammon {
+public class BackGammon
+{
 
     public static final int NUM_PLAYERS = 2;
 
     private final Board board = new Board();
     private final UI ui = new UI(board);
 
-    private void testUI() throws InterruptedException {
+
+
+    private void testUI() throws InterruptedException
+    {
         // Moves a checker on to the bar and then moves it one pip at a time around the board.
         // Does this for both players.
         ui.display();
-        for (int player=0; player<NUM_PLAYERS; player++) {
+        for (int player=0; player<NUM_PLAYERS; player++)
+        {
             board.move(player,Board.NUM_PIPS,Board.BAR);
             ui.display();
             TimeUnit.SECONDS.sleep(1);
@@ -32,7 +40,18 @@ public class BackGammon {
         } while (!message.equals("quit"));
     }
 
-    public static void main (String[] args) throws InterruptedException {
+    public void start(Stage primaryStage) throws Exception
+    {
+
+    }
+
+
+
+
+
+
+    public static void main (String[] args) throws InterruptedException
+    {
         BackGammon game = new BackGammon();
         game.testUI();
         System.exit(0);

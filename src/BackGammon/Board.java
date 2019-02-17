@@ -12,30 +12,31 @@ public class Board {
     private Player playerOne;
     private Player playerTwo;
 
-    Board () {
+    public Board ()
+    {
         slots = new Slot[NUM_SLOTS];
         for (int pip=0; pip<NUM_SLOTS; pip++)
-            slots[pip] = new Slot(Color.EMPTY, RESET[pip]);
+            slots[pip] = new Slot(CheckerColor.EMPTY, RESET[pip]);
         bearOff = new Slot[2];
         for(int i = 0; i < 2; i++)
             bearOff[i] = new Slot(null,0);
 
-        slots[1].setCheckerColor(Color.RED);
-        slots[12].setCheckerColor(Color.RED);
-        slots[17].setCheckerColor(Color.RED);
-        slots[19].setCheckerColor(Color.RED);
-        slots[6].setCheckerColor(Color.WHITE);
-        slots[8].setCheckerColor(Color.WHITE);
-        slots[13].setCheckerColor(Color.WHITE);
-        slots[24].setCheckerColor(Color.WHITE);
+        slots[1].setCheckerColor(CheckerColor.RED);
+        slots[12].setCheckerColor(CheckerColor.RED);
+        slots[17].setCheckerColor(CheckerColor.RED);
+        slots[19].setCheckerColor(CheckerColor.RED);
+        slots[6].setCheckerColor(CheckerColor.WHITE);
+        slots[8].setCheckerColor(CheckerColor.WHITE);
+        slots[13].setCheckerColor(CheckerColor.WHITE);
+        slots[24].setCheckerColor(CheckerColor.WHITE);
 
-        playerOne = new Player(null,Color.RED);
-        playerTwo = new Player(null, Color.WHITE);
+        playerOne = new Player(null, CheckerColor.RED);
+        playerTwo = new Player(null, CheckerColor.WHITE);
     }
 
-    public void move (Color color, int from, int to) {
-        slots[from].moveOut(color);
-        slots[to].moveIn(color);
+    public void move (CheckerColor checkerColor, int from, int to) {
+        slots[from].moveOut(checkerColor);
+        slots[to].moveIn(checkerColor);
     }
 
 }
