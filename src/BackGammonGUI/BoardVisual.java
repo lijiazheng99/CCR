@@ -110,7 +110,6 @@ public class BoardVisual
             }
         }
 
-
         return this.grid;
     }
 }

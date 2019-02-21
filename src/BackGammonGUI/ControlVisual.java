@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -60,71 +62,93 @@ public class ControlVisual
 
     public GridPane initControlVisual(GridPane grid)
     {
-        //Label backGammon = new Label("BackGammon");
+        //Game Title
         backGammon.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.setColumnSpan(backGammon,4);
         grid.add(backGammon, 15, 0);
 
-        //Label player1 = new Label("Player Name Here");
+        //Player 1 Label
         player1.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.setColumnSpan(player1,6);
         grid.add(player1, 1, 0);
 
-        //Label player2 = new Label("Player Name Here");
+        //Player 2 Label
         player2.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.setColumnSpan(player2,6);
         grid.add(player2, 8, 0);
 
-        //TextField insertbox = new TextField();
+        //Insert box
         insertbox.setPromptText("Please insert...");
         grid.add(insertbox,0,35, 14, 1);
 
-        //Button insertTextBox = new Button("       Return      ");
+        //Insert button
         grid.add(insertTextBox,14,35);
 
-        //TextArea outputTextBox = new TextArea();
+        //Output Area
         outputTextBox.setEditable(false);
+        outputTextBox.setFont(Font.font("Comic Sans MS", FontWeight.LIGHT, 15));
         grid.add(outputTextBox,15, 1,4,35);
         outputTextBox.setWrapText(true);
         return grid;
     }
 
-    public void getInsert ()
+    public void getInsert()
     {
         insertTextBox.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override
             public void handle(ActionEvent e)
             {
-                if ((insertbox.getText() != null && !insertbox.getText().isEmpty()))
+                judgeInsert();
+            }
+        });
+
+        insertbox.setOnKeyPressed(new EventHandler<KeyEvent>()
+        {
+            @Override
+            public void handle(KeyEvent ke)
+            {
+                if (ke.getCode().equals(KeyCode.ENTER))
                 {
-                    if(insertbox.getText().equals("move"))
-                    {
-                        outputTextBox.appendText("Move");
-                    }
-                    else if (insertbox.getText().equals("clear"))
-                    {
-                        output.clear();
-                        output.add("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
-                        outputTextBox.setText(output.toString());
-                    }
-                    else if (insertbox.getText().equals("quit"))
-                    {
-                        System.exit(0);
-                    }
-                }
-                else {
-                    insertbox.setText("Nothing entered");
+                    judgeInsert();
                 }
             }
         });
     }
 
-    public void output()
+    public void judgeInsert ()
     {
-        output.add("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
-        outputTextBox.setText(output.toString());
-        //System.out.println("this"+checkerCount);
+        if ((insertbox.getText() != null && !insertbox.getText().isEmpty()))
+        {
+            if(insertbox.getText().equals("move") && insertbox.getText().equals("MOVE"))
+            {
+                outputTextBox.appendText("Move\n");
+                insertbox.clear();
+            }
+            else if (insertbox.getText().equals("clear") && insertbox.getText().equals("CLEAR") )
+            {
+                outputTextBox.clear();
+                insertbox.clear();
+                instructMessage();
+            }
+            else if (insertbox.getText().equals("quit") && insertbox.getText().equals("QUIT"))
+            {
+                System.exit(0);
+            }
+        }
+        else
+            outputTextBox.appendText("Nothing Entered\n");
+    }
+
+    public void gameStart()
+    {
+        outputTextBox.appendText("Game Start!\n");
+    }
+
+    public void instructMessage()
+    {
+        outputTextBox.appendText("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
+        outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
 
     }
 

@@ -14,6 +14,9 @@ import javafx.scene.transform.Scale;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+
 
 public class BackGammon extends Application
 {
@@ -29,6 +32,8 @@ public class BackGammon extends Application
 
     public int screenWidth = (int) WIDTH;
     public int screenHeight = (int) HEIGHT;
+
+    Image background;
 
     public void start(Stage primaryStage) throws Exception
     {
@@ -47,36 +52,42 @@ public class BackGammon extends Application
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.show();
-        //primaryStage.setFullScreen(true);
     }
 
     private Parent buildScene()
-{
-    GridPane root = new GridPane();
-    //Insert Background picture
-    Image image = new Image("BoardPicture.jpeg");
-    root.add(new ImageView(image), 0, 0);
-    root.setPrefSize(screenWidth,screenHeight);
+    {
+        GridPane root = new GridPane();
+        try
+        {
+            background = new Image(new FileInputStream("src//BoardPicture.jpeg"));
+        }
+        catch(java.io.IOException ex)
+        {
+            System.out.println("Load image failed");
+        }
+        root.add(new ImageView(background), 0, 0);
+        root.setPrefSize(screenWidth,screenHeight);
 
-    Board board = new Board();
-    board.setUp();
+        Board board = new Board();
+        board.setUp();
 
-    BoardVisual boardVisual = new BoardVisual();
-    boardVisual.BoardVisual();
+        BoardVisual boardVisual = new BoardVisual();
+        boardVisual.BoardVisual();
 
-    ControlVisual controlVisual = new ControlVisual();
-    controlVisual.ControlVisual();
-    controlVisual.initControlVisual(controlVisual.ControlVisual());
-    controlVisual.getInsert();
-    controlVisual.output();
+        ControlVisual controlVisual = new ControlVisual();
+        controlVisual.ControlVisual();
+        controlVisual.initControlVisual(controlVisual.ControlVisual());
+        controlVisual.getInsert();
+        controlVisual.instructMessage();
+        controlVisual.gameStart();
 
-    Pane main = new Pane();
-    main.getChildren().add(root);
-    main.getChildren().add(boardVisual.BoardVisual(board));
-    main.getChildren().add(controlVisual.getControls());
+        Pane main = new Pane();
+        main.getChildren().add(root);
+        main.getChildren().add(boardVisual.BoardVisual(board));
+        main.getChildren().add(controlVisual.getControls());
 
-    return main ;
-}
+        return main ;
+    }
     public static void main(String args[])
     {
         launch(args);
