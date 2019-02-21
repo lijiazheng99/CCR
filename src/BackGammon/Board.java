@@ -1,70 +1,114 @@
 package BackGammon;
+//created by Jiwei Zhang, 1/1/2019
+//edited by Jiwei Zhang, 2/1/2019
+public class Board {
 
-public class Board
-{
-
-    private static final int[] RESET = {0,2,0,0,0,0,5,0,3,0,0,0,5,5,0,0,0,3,0,5,0,0,0,0,2};
-    private static final int INNER_END = 6;     // index for the end of the inner board
-    public static final int NUM_SLOTS = 25;     // index 0 is not used -> means 24 slots on board
-    private static final int NUM_CHECKERS = 15; // number of checkers in total
-    public static final int BAR = 25;           // index of the BAR
-    public static final int BEAR_OFF = 0;       // index of the BEAR OFF
-    public static final int NUM_PIPS = 24;      // excluding BAR and BEAR OFF
-
-    private Slot[] slots;
-    private Slot[] bearOff;
+    //public Bar[] bars;
+    public Bar[] bars = new Bar[25];
     private Player playerOne;
     private Player playerTwo;
+    private int points1,points2;
+    private Dice diceToRoll;
+    private int steps;
 
-//    public Board ()
-//    {
-//        slots = new Slot[NUM_SLOTS];
-//        for (int pip=0; pip<NUM_SLOTS; pip++)
-//            slots[pip] = new Slot(CheckerColor.EMPTY, RESET[pip]);
-//        bearOff = new Slot[2];
-//        for(int i = 0; i < 2; i++)
-//            bearOff[i] = new Slot(null,0);
-//
-//        slots[1].setCheckerColor(CheckerColor.RED);
-//        slots[12].setCheckerColor(CheckerColor.RED);
-//        slots[17].setCheckerColor(CheckerColor.RED);
-//        slots[19].setCheckerColor(CheckerColor.RED);
-//        slots[6].setCheckerColor(CheckerColor.WHITE);
-//        slots[8].setCheckerColor(CheckerColor.WHITE);
-//        slots[13].setCheckerColor(CheckerColor.WHITE);
-//        slots[24].setCheckerColor(CheckerColor.WHITE);
-//
-//        playerOne = new Player(null, CheckerColor.RED);
-//        playerTwo = new Player(null, CheckerColor.WHITE);
-//    }
-//
-//    public void move (CheckerColor checkerColor, int from, int to)
-//    {
-//        slots[from].moveOut(checkerColor);
-//        slots[to].moveIn(checkerColor);
-//    }
+    public Board()
+    {
+        System.out.println("OK3");
+        int i = 0;
+        while(i != 25)
+        {
+            bars[i] = new Bar();
+            i++;
 
-    private int[][] checkers;
-    // 2D array of checkers
-    // 1st index is the player id
-    // 2nd index is the pip number 0 to 25
-    // pip 0 is bear off, pip 25 is the bar, pips 1-24 are on the main board
-    // the value is the number of checkers on the point
-
-    Board () {
-        checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];
-        for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
-            for (int pip=0; pip<NUM_SLOTS; pip++)   {
-                checkers[player][pip] = RESET[pip];
-            }
         }
+        //"0" IS NOT FOR USE
     }
 
-    public void move (int player, int from, int to) {
-        checkers[player][from]--;
-        checkers[player][to]++;
+    public void setUp() //initializing the board bars
+    {
+        for(int i = 1; i <= 24; i++)
+        {
+            if(i == 1 || i == 12 || i == 17 || i == 19 )
+                bars[i].setCheckerColor(Checker_Color.RED);
+            else if(i == 24 || i == 13 || i == 8 || i == 6 )
+                bars[i].setCheckerColor(Checker_Color.WHITE);
+            else
+                bars[i].setCheckerColor(Checker_Color.EMPTY);
+
+            if(i == 6 || i == 12 || i == 13 || i == 19 )
+                bars[i].setCheckerNumber(5);
+            else if(i == 1 || i == 24)
+                bars[i].setCheckerNumber(2);
+            else if(i == 8 || i == 17)
+                bars[i].setCheckerNumber(3);
+            else
+                bars[i].setCheckerNumber(0);
+        }
+
+//        diceToRoll = new Dice();
+//        steps = 0;
+//
+//        this.sideDecide();
+//        if(points1 > points2) {
+//            playerOne.setCheckerColor(Checker_Color.RED);
+//            playerTwo.setCheckerColor(Checker_Color.WHITE);
+//        }
+//        else if(points1 < points2)
+//        {
+//            playerOne.setCheckerColor(Checker_Color.WHITE);
+//            playerTwo.setCheckerColor(Checker_Color.RED);
+//        }
+//        else this.sideDecide();
+//
+//        this.pointsNeedToWinForBoth();
+//
+//        System.out.println(playerOne.getPointsNeeded() + playerTwo.getPointsNeeded());
     }
 
-    public int getNumCheckers (int player, int pip) {
-        return checkers[player][pip];
-    }}
+    public void sideDecide()
+    {
+        System.out.println("Rolling The sprint1.Dice To Decide the BackGammon.CheckerColor");
+        points1 = diceToRoll.roll();
+        points2 = diceToRoll.roll();
+    }
+
+    public void move()
+    {
+        /*basic idea:
+            1: roll the dice twice
+            2: depending on color, the check the moving direction
+            3: check whether the target bar satisfies the moving conditions
+                1: empty
+                2: same color
+                3: different color but number is 1
+            4: check whether the second target aviable(using same function - "check")
+         */
+    }
+
+    public void pointsNeedToWinForBoth()
+    {
+        int whitePoints = 0;
+        int redPoints = 0;
+
+        for(int i = 1; i <= 24; i++) {
+            if (bars[i].getColor() == Checker_Color.RED)
+                redPoints += bars[i].getCheckerNumber() * (25-i);
+            else if(bars[i].getColor() == Checker_Color.WHITE)
+                whitePoints += bars[i].getCheckerNumber() * i;
+            else
+            System.out.println("Errors in points counting");
+        }
+        if(playerOne.getColor() == Checker_Color.RED) {
+            playerOne.setPointsNeeded(redPoints);
+            playerTwo.setPointsNeeded(whitePoints);
+        }
+        else
+        {
+            playerOne.setPointsNeeded(whitePoints);
+            playerTwo.setPointsNeeded(redPoints);
+        }
+
+    }
+
+}
+

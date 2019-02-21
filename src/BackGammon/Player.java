@@ -1,11 +1,11 @@
 package BackGammon;
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
-import java.lang.String;
+import java.util.Scanner;
 
 public class Player {
     private String name;
-    private CheckerColor checkerColor;
+    private Checker_Color color;
     private int pointsNeededToWin;
 
     public Player()
@@ -13,15 +13,16 @@ public class Player {
         this(null,null);
     }
 
-    public Player(String name, CheckerColor checkerColor)
+    public Player(String name, Checker_Color color)
     {
         this.setName(name);
-        this.setCheckerColor(checkerColor);
+        this.setColor(color);
     }
 
-    public void setName(String name)
+    public void setName()
     {
-        this.name = name;
+        Scanner scan = new Scanner(System.in);
+        name = scan.nextLine();
     }
 
     public String getName()
@@ -29,14 +30,14 @@ public class Player {
         return this.name;
     }
 
-    public void setCheckerColor(CheckerColor checkerColor)
+    public void setColor(Checker_Color color)
     {
-        this.checkerColor = checkerColor;
+        this.color = color;
     }
 
-    public CheckerColor getCheckerColor()
+    public Checker_Color getColor()
     {
-        return this.checkerColor;
+        return this.color;
     }
 
     public void setPointsNeeded(int num)

@@ -1,4 +1,4 @@
-package sprint1;
+package BackGammon;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
