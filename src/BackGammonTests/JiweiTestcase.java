@@ -7,6 +7,6 @@ import BackGammonGUI.*;
 public class JiweiTestcase {
     public static void main(String args[])
     {
-        Board myBoard = new Board();
+        //Board myBoard = new Board();
     }
 }

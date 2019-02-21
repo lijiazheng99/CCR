@@ -4,7 +4,12 @@ import BackGammon.*;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,70 +26,107 @@ import static BackGammon.BackGammon.NUM_PLAYERS;
 
 
 
-class BoardPanel extends Pane
+class BoardPanel extends StackPane
 {
     private static final long serialVersionUID = 1L;
     private static final int FRAME_WIDTH = 752, FRAME_HEIGHT = 552;  // must be multiples of 4
     private static final int BORDER_TOP = 40, BORDER_BOTTOM = 75, BORDER_LEFT = 66, BORDER_RIGHT = 60;
     public static final int PIP_WIDTH = 47, BAR_WIDTH = 66;
     private static final int CHECKER_RADIUS = 16, CHECKER_DEPTH = 8, LINE_WIDTH = 2;   // must be even
+    public static final int TILE_SIZE = 70;
 
-    private CheckerColor[] checkerColors;
+    private Color[] checkerColors;
     private Board board;
     private Image boardImage;
     private GraphicsContext g2;
 
     public BoardPanel(Board board)
     {
-        checkerColors = new CheckerColor[NUM_PLAYERS];
+        checkerColors = new Color[NUM_PLAYERS];
         this.board = board;
 
+        setHeight(FRAME_HEIGHT);
+        setWidth(FRAME_WIDTH);
 
+        setStyle("-fx-background-color: yellow");
+        //setBackground(new Background());
 
-        setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
-        setBackground(BackGammon.Color.YELLOW);
+        checkerColors[0] = Color.rgb(219,59,37);
+        checkerColors[1] = Color.rgb(213,213,213);
 
-        checkerColors[0] = CheckerColor.RED;
-        checkerColors[1] = CheckerColor.WHITE;
-        boardImage = new Image("board.jpg");
-
-//        try
-//        {
-//            boardImage = new Image("board.jpg");
-//        }
-//        catch (IOException ex)
-//        {
-//            System.out.println("Could not find the image file " + ex.toString());
-//        }
+        try
+        {
+            boardImage  = new Image(new FileInputStream("src//board.jpg"));
+            System.out.println("Good");
+        }
+        catch (IOException ex)
+        {
+            System.out.println("Could not find the image file " + ex.toString());
+        }
     }
 
     private void displayChecker (int player, int x, int y)
     {
-        g2.setColor(BackGammon.Color.BLACK);
-        Ellipse2D.Double ellipseBlack = new Ellipse2D.Double(x,y,2*CHECKER_RADIUS,2*CHECKER_RADIUS);
-        g2.fill(ellipseBlack);
-        Ellipse2D.Double ellipseColour = new Ellipse2D.Double(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),2*(CHECKER_RADIUS-LINE_WIDTH));
-        g2.setColor(checkerCheckerColors[player]);
-        g2.fill(ellipseColour);
+        Ellipse bg = new Ellipse(TILE_SIZE * 0.3125, TILE_SIZE * 0.26);
+        bg.setFill(Color.BLACK);
+
+        bg.setStroke(Color.BLACK);
+        bg.setStrokeWidth(TILE_SIZE * 0.03);
+
+        bg.setTranslateX((TILE_SIZE - TILE_SIZE * 0.3125 * 2) / 2);
+        bg.setTranslateY((TILE_SIZE - TILE_SIZE * 0.26 * 2) / 2 + TILE_SIZE * 0.07);
+
+        Ellipse ellipse = new Ellipse(TILE_SIZE * 0.3125, TILE_SIZE * 0.26);
+        ellipse.setFill(checkerColors[player]);
+
+        ellipse.setStroke(Color.BLACK);
+        ellipse.setStrokeWidth(TILE_SIZE * 0.03);
+
+        ellipse.setTranslateX((TILE_SIZE - TILE_SIZE * 0.3125 * 2) / 2);
+        ellipse.setTranslateY((TILE_SIZE - TILE_SIZE * 0.26 * 2) / 2);
+
+        /*
+        *
+         */
+
+//        Ellipse bkg = new Ellipse(x , y,TILE_SIZE * 0.3125,TILE_SIZE * 0.26);
+//        bkg.setFill(Color.BLACK);
+//        bkg.setStroke(Color.BLACK);
+//        bkg.setStrokeWidth(TILE_SIZE * 0.03);
+
+
+//        g2.setColor(BackGammon.Color.BLACK);
+//        Ellipse2D.Double ellipseBlack = new Ellipse2D.Double(x,y,2*CHECKER_RADIUS,2*CHECKER_RADIUS);
+//        g2.fill(ellipseBlack);
+//        Ellipse2D.Double ellipseColour = new Ellipse2D.Double(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),2*(CHECKER_RADIUS-LINE_WIDTH));
+//        g2.setColor(checkerCheckerColors[player]);
+//        g2.fill(ellipseColour);
     }
 
 
     private void displayCheckerSide (int player, int x, int y)
     {
-        g2.setColor(BackGammon.Color.BLACK);
-        Rectangle2D.Double rectangleBlack = new Rectangle2D.Double(x,y,2*CHECKER_RADIUS,CHECKER_DEPTH);
-        g2.fill(rectangleBlack);
-        Rectangle2D.Double rectangleColour = new Rectangle2D.Double(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),CHECKER_DEPTH-2*LINE_WIDTH);
-        g2.setColor(checkerCheckerColors[player]);
-        g2.fill(rectangleColour);
+//        g2.setColor(BackGammon.Color.BLACK);
+//        Rectangle2D.Double rectangleBlack = new Rectangle2D.Double(x,y,2*CHECKER_RADIUS,CHECKER_DEPTH);
+//        g2.fill(rectangleBlack);
+//        Rectangle2D.Double rectangleColour = new Rectangle2D.Double(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),CHECKER_DEPTH-2*LINE_WIDTH);
+//        g2.setColor(checkerCheckerColors[player]);
+//        g2.fill(rectangleColour);
+
+        Rectangle rectangleBlack = new Rectangle(x,y,2*CHECKER_RADIUS, CHECKER_DEPTH);
+        rectangleBlack.setFill(Color.BLACK);
+        Rectangle rectangleColor = new Rectangle(x+LINE_WIDTH,y+LINE_WIDTH,2*(CHECKER_RADIUS-LINE_WIDTH),CHECKER_DEPTH-2*LINE_WIDTH);
+        rectangleColor.setFill(checkerColors[player]);
+
     }
 
 
+
     public void paintComponent(GraphicsContext g) {
-        super.paintComponent(g);
-        g2 =(Graphics2D) g;
-        g2.drawImage(boardImage, 0, 0, FRAME_WIDTH, FRAME_HEIGHT, this);
-        for (int player=0; player<Backgammon.NUM_PLAYERS; player++) {
+        //super.paintComponent(g);
+//        g2 =(Graphics2D) g;
+        //g2.drawImage(boardImage, 0, 0, FRAME_WIDTH, FRAME_HEIGHT, this);
+        for (int player=0; player<BackGammon.NUM_PLAYERS; player++) {
             int x,y;
             // Display Pip Numbers
             for (int pip=1; pip<=Board.NUM_PIPS; pip++) {
@@ -102,9 +144,9 @@ class BoardPanel extends Pane
                 } else {
                     y = FRAME_HEIGHT-BORDER_BOTTOM/4;
                 }
-                g2.setColor(CheckerColor.WHITE);
-                g2.setFont(new Font("Courier",Font.BOLD,16));
-                g2.drawString(Integer.toString(pip),x,y);
+                g2.setFill(checkerColors[1]);
+                g2.setFont(new Font("Courier",16));
+                //g2.drawString(Integer.toString(pip),x,y);
             }
             // Display Bar
             for (int count=1; count<=board.getNumCheckers(player, Board.BAR); count++) {
@@ -150,9 +192,9 @@ class BoardPanel extends Pane
         }
     }
 
-    public void refresh() {
-        revalidate();
-        repaint();
-    }
+//    public void refresh() {
+//        revalidate();
+//        repaint();
+//    }
 
 }

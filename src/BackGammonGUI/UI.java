@@ -6,12 +6,13 @@ import BackGammon.*;
 //import java.awt.BorderLayout;
 //import javax.swing.*;
 
-import javafx.*;
+//import javafx.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-public class UI {
+public class UI
+{
 
     private static final int FRAME_WIDTH = 1100;
     private static final int FRAME_HEIGHT = 600;
@@ -19,6 +20,7 @@ public class UI {
     private final BoardPanel boardPanel;
     private final InfoPanel infoPanel;
     private final CommandPanel commandPanel;
+    private BorderPane mainPane;
 
     public UI(Board board)
     {
@@ -35,28 +37,38 @@ public class UI {
 //        frame.add(commandPanel,BorderLayout.PAGE_END);
 //        frame.setResizable(false);
 //        frame.setVisible(true);
-
         infoPanel = new InfoPanel();
         commandPanel = new CommandPanel();
         boardPanel = new BoardPanel(board);
-        BorderPane mainPane = new BorderPane();
-        mainPane.setPrefSize(FRAME_WIDTH,FRAME_HEIGHT);
-        mainPane.setLeft(boardPanel);
+        mainPane = new BorderPane();
+        initUI();
+    }
+
+    private void initUI()
+    {
+        mainPane.setPrefSize(FRAME_WIDTH, FRAME_HEIGHT);
+        //mainPane.setLeft(boardPanel);
         mainPane.setRight(infoPanel);
         mainPane.setBottom(commandPanel);
         mainPane.setVisible(true);
 
     }
 
+    public BorderPane returnMainpane() {
+        return this.mainPane;
+    }
+
+
+
     public String getCommand()
     {
         return commandPanel.getCommand();
     }
 
-    public void display()
-    {
-        boardPanel.refresh();
-    }
+//    public void display()
+//    {
+//        boardPanel.refresh();
+//    }
 
     public void displayString(String string)
     {
