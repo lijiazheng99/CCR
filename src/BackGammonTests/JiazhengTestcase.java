@@ -1,12 +1,12 @@
 package BackGammonTests;
 
-import BackGammonGUI.*;
+//import BackGammonGUI.*;
 
 public class JiazhengTestcase
 {
     public static void main(String args[])
     {
-        CommandPanel command = new CommandPanel();
+        //CommandPanel command = new CommandPanel();
 
 
     }

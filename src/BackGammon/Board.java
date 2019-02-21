@@ -85,30 +85,30 @@ public class Board {
          */
     }
 
-    public void pointsNeedToWinForBoth()
-    {
-        int whitePoints = 0;
-        int redPoints = 0;
-
-        for(int i = 1; i <= 24; i++) {
-            if (bars[i].getColor() == Checker_Color.RED)
-                redPoints += bars[i].getCheckerNumber() * (25-i);
-            else if(bars[i].getColor() == Checker_Color.WHITE)
-                whitePoints += bars[i].getCheckerNumber() * i;
-            else
-            System.out.println("Errors in points counting");
-        }
-        if(playerOne.getColor() == Checker_Color.RED) {
-            playerOne.setPointsNeeded(redPoints);
-            playerTwo.setPointsNeeded(whitePoints);
-        }
-        else
-        {
-            playerOne.setPointsNeeded(whitePoints);
-            playerTwo.setPointsNeeded(redPoints);
-        }
-
-    }
+//    public void pointsNeedToWinForBoth()
+//    {
+//        int whitePoints = 0;
+//        int redPoints = 0;
+//
+//        for(int i = 1; i <= 24; i++) {
+//            if (bars[i].getColor() == Checker_Color.RED)
+//                redPoints += bars[i].getCheckerNumber() * (25-i);
+//            else if(bars[i].getColor() == Checker_Color.WHITE)
+//                whitePoints += bars[i].getCheckerNumber() * i;
+//            else
+//            System.out.println("Errors in points counting");
+//        }
+//        if(playerOne.getColor() == Checker_Color.RED) {
+//            playerOne.setPointsNeeded(redPoints);
+//            playerTwo.setPointsNeeded(whitePoints);
+//        }
+//        else
+//        {
+//            playerOne.setPointsNeeded(whitePoints);
+//            playerTwo.setPointsNeeded(redPoints);
+//        }
+//
+//    }
 
 }
 

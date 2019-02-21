@@ -2,7 +2,7 @@ package BackGammonTests;
 
 
 import BackGammon.*;
-import BackGammonGUI.*;
+//import BackGammonGUI.*;
 
 
 public class LorandTestcase {
