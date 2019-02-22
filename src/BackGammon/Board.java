@@ -1,15 +1,20 @@
 package BackGammon;
+
+import BackGammonGUI.ControlVisual;
+
+import java.util.Scanner;
+
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
 public class Board {
 
     //public Bar[] bars;
     public Bar[] bars = new Bar[25];
-    private Player playerOne;
-    private Player playerTwo;
-    private int points1,points2;
-    private Dice diceToRoll;
-    private int steps;
+    public Player playerOne;
+    public Player playerTwo;
+    public int points1,points2;
+    public Dice diceToRoll;
+    public int steps;
 
     public Board()
     {
@@ -45,34 +50,14 @@ public class Board {
                 bars[i].setCheckerNumber(0);
         }
 
-//        diceToRoll = new Dice();
-//        steps = 0;
-//
-//        this.sideDecide();
-//        if(points1 > points2) {
-//            playerOne.setCheckerColor(Checker_Color.RED);
-//            playerTwo.setCheckerColor(Checker_Color.WHITE);
-//        }
-//        else if(points1 < points2)
-//        {
-//            playerOne.setCheckerColor(Checker_Color.WHITE);
-//            playerTwo.setCheckerColor(Checker_Color.RED);
-//        }
-//        else this.sideDecide();
-//
-//        this.pointsNeedToWinForBoth();
-//
-//        System.out.println(playerOne.getPointsNeeded() + playerTwo.getPointsNeeded());
+        playerOne = new Player();
+        playerTwo = new Player();
+        diceToRoll = new Dice();
+
+
     }
 
-    public void sideDecide()
-    {
-        System.out.println("Rolling The sprint1.Dice To Decide the BackGammon.CheckerColor");
-        points1 = diceToRoll.roll();
-        points2 = diceToRoll.roll();
-    }
-
-    public void move()
+    public void move(int start, int end)
     {
         /*basic idea:
             1: roll the dice twice
@@ -83,6 +68,10 @@ public class Board {
                 3: different color but number is 1
             4: check whether the second target aviable(using same function - "check")
          */
+
+        //MOVE FROM A TO B WITHOUT ANY RULE:
+        bars[start].moveOut();
+        bars[end].moveIn(bars[start].getColor());
     }
 
 //    public void pointsNeedToWinForBoth()

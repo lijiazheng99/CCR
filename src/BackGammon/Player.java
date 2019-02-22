@@ -5,49 +5,38 @@ import java.util.Scanner;
 
 public class Player
 {
-//    private String name;
-//    private Checker_Color color;
-//    private int pointsNeededToWin;
+    private String name;
+    private Checker_Color color;
+    private int pointsNeededToWin;
+
+    public Player()
+    {
+        this(null,null);
+    }
+
+    public Player(String name, Checker_Color color)
+    {
+        this.setName(name);
+        this.setColor(color);
+    }
 //
-//    public Player()
-//    {
-//        this(null,null);
-//    }
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 //
-//    public Player(String name, Checker_Color color)
-//    {
-//        this.setName(name);
-//        this.setColor(color);
-//    }
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public void setColor(Checker_Color color)
+    {
+        this.color = color;
+    }
 //
-//    public void setName()
-//    {
-//        Scanner scan = new Scanner(System.in);
-//        name = scan.nextLine();
-//    }
-//
-//    public String getName()
-//    {
-//        return this.name;
-//    }
-//
-//    public void setColor(Checker_Color color)
-//    {
-//        this.color = color;
-//    }
-//
-//    public Checker_Color getColor()
-//    {
-//        return this.color;
-//    }
-//
-//    public void setPointsNeeded(int num)
-//    {
-//        this.pointsNeededToWin = num;
-//    }
-//
-//    public int getPointsNeeded()
-//    {
-//        return this.pointsNeededToWin;
-//    }
+    public Checker_Color getColor()
+    {
+        return this.color;
+    }
 }

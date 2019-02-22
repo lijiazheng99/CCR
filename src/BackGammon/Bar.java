@@ -2,8 +2,8 @@ package BackGammon;
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
 public class Bar {
-    private Checker_Color CheckerColor;
-    private int CheckerNumber;
+    private Checker_Color checkerColor;
+    private int checkerNumber;
 
     public Bar()
     {
@@ -11,39 +11,53 @@ public class Bar {
     }
     public Bar (Checker_Color cheCol, int cheNum)
     {
-        CheckerNumber = cheNum;
-        CheckerColor = cheCol;
+        checkerNumber = cheNum;
+        checkerColor = cheCol;
     }
 
     public void setCheckerColor(Checker_Color color)
     {
-        this.CheckerColor = color;
+        this.checkerColor = color;
     }
 
     public void setCheckerNumber(int num)
     {
-        this.CheckerNumber = num;
+        this.checkerNumber = num;
     }
 
     public Checker_Color getColor()
     {
-        return this.CheckerColor;
+        return this.checkerColor;
     }
 
     public int getCheckerNumber()
     {
-        return this.CheckerNumber;
+        return this.checkerNumber;
     }
 
-    public void moveIn()
+    public void moveIn(Checker_Color color)
     {
-        this.CheckerNumber++;
+        if(this.checkerNumber == 0)
+        {
+            this.setCheckerColor(color);
+            this.checkerNumber++;
+        }
+        else if(this.checkerColor != color && this.checkerNumber!= 1)
+        {
+            System.out.println("Unvalid Movement");
+        }
+        else if(this.checkerColor != color && this.checkerNumber == 1)
+        {
+            this.setCheckerColor(color);
+        }
+        else
+             this.checkerNumber++;
     }
 
     public void moveOut()
     {
-        this.CheckerNumber--;
-        if(this.CheckerNumber == 0)
+        this.checkerNumber--;
+        if(this.checkerNumber == 0)
             this.setCheckerColor(Checker_Color.EMPTY);
     }
 }

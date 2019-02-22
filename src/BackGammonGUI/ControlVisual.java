@@ -23,7 +23,7 @@ public class ControlVisual
     Label player2 = new Label("Player Name Here");
     TextField insertbox = new TextField();
     Button insertTextBox = new Button("       Return      ");
-    TextArea outputTextBox = new TextArea();
+    public TextArea outputTextBox = new TextArea();
     String messegeBuffer;
 
     public GridPane ControlVisual()
