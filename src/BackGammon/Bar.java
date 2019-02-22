@@ -56,7 +56,10 @@ public class Bar {
 
     public void moveOut()
     {
-        this.checkerNumber--;
+        if(this.checkerNumber > 0)
+            this.checkerNumber--;
+        else
+            System.out.println("Unvalid Movement");
         if(this.checkerNumber == 0)
             this.setCheckerColor(Checker_Color.EMPTY);
     }
