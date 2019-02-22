@@ -24,6 +24,7 @@ public class ControlVisual
     TextField insertbox = new TextField();
     Button insertTextBox = new Button("       Return      ");
     TextArea outputTextBox = new TextArea();
+    String messegeBuffer;
 
     public GridPane ControlVisual()
     {
@@ -112,7 +113,7 @@ public class ControlVisual
 
     public void judgeInsert ()
     {
-        String messegeBuffer =  new String(insertbox.getText());
+        messegeBuffer =  new String(insertbox.getText());
         messegeBuffer = messegeBuffer.toUpperCase();
         System.out.println("Reached");
         if ((insertbox.getText() != null && !insertbox.getText().isEmpty()))
@@ -138,6 +139,11 @@ public class ControlVisual
         }
         else
             outputTextBox.appendText("Nothing Entered\n");
+    }
+
+    public String getTypeIn()
+    {
+        return this.messegeBuffer;
     }
 
     public void gameStart()
