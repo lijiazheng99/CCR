@@ -1,15 +1,14 @@
-package BackGammon;
+package BackGammonGUI;
 
+import BackGammon.Checker_Color;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
 
 import static BackGammon.BackGammon.TILE_SIZE;
 
-
-
-
-public class Checker_vis extends StackPane { //class for visual part
+public class CheckerVisual extends StackPane
+{
 
     private Checker_Color type;
 
@@ -28,7 +27,7 @@ public class Checker_vis extends StackPane { //class for visual part
         return oldY;
     }
 
-    public Checker_vis(Checker_Color type, int x, int y) {
+    public CheckerVisual(Checker_Color type, int x, int y) {
         this.type = type;
 
         move(x, y);

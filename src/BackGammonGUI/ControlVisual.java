@@ -1,7 +1,5 @@
 package BackGammonGUI;
 
-import BackGammon.Checker_Color;
-import BackGammon.Checker_vis;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -16,8 +14,6 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-import java.util.LinkedList;
-
 public class ControlVisual
 {
     GridPane grid = new GridPane();
@@ -28,8 +24,6 @@ public class ControlVisual
     TextField insertbox = new TextField();
     Button insertTextBox = new Button("       Return      ");
     TextArea outputTextBox = new TextArea();
-    LinkedList output = new LinkedList();
-
 
     public GridPane ControlVisual()
     {
@@ -118,23 +112,29 @@ public class ControlVisual
 
     public void judgeInsert ()
     {
+        String messegeBuffer =  new String(insertbox.getText());
+        messegeBuffer = messegeBuffer.toUpperCase();
+        System.out.println("Reached");
         if ((insertbox.getText() != null && !insertbox.getText().isEmpty()))
         {
-            if(insertbox.getText().equals("move") && insertbox.getText().equals("MOVE"))
+            if(messegeBuffer.substring(0,4).equals("MOVE"))
             {
                 outputTextBox.appendText("Move\n");
                 insertbox.clear();
+                outputTextBox.appendText("Please insert start pip:\n");
             }
-            else if (insertbox.getText().equals("clear") && insertbox.getText().equals("CLEAR") )
+            else if (messegeBuffer.substring(0,4).equals("QUIT") ||messegeBuffer.substring(0,4).equals("EXIT")  )
+            {
+                System.exit(0);
+            }
+            else if (messegeBuffer.substring(0,5).equals("CLEAR") )
             {
                 outputTextBox.clear();
                 insertbox.clear();
                 instructMessage();
             }
-            else if (insertbox.getText().equals("quit") && insertbox.getText().equals("QUIT"))
-            {
-                System.exit(0);
-            }
+            else
+                outputTextBox.appendText(messegeBuffer);
         }
         else
             outputTextBox.appendText("Nothing Entered\n");
@@ -147,15 +147,12 @@ public class ControlVisual
 
     public void instructMessage()
     {
-        outputTextBox.appendText("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear;\nType quit to exit;\n");
+        outputTextBox.appendText("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear board messages;\nType quit to exit;\n");
         outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
-
     }
 
     public GridPane getControls ()
     {
         return this.grid;
     }
-
-
 }

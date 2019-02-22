@@ -3,7 +3,6 @@ package BackGammon;
 import BackGammonGUI.BoardVisual;
 import BackGammonGUI.ControlVisual;
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -15,7 +14,6 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 
 
 public class BackGammon extends Application

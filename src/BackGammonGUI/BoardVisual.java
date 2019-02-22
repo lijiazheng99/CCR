@@ -2,7 +2,6 @@ package BackGammonGUI;
 
 import BackGammon.Board;
 import BackGammon.Checker_Color;
-import BackGammon.Checker_vis;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -44,7 +43,7 @@ public class BoardVisual
     {
         int indexNum;
         int bottomNum;
-        Checker_vis[] checkers = new Checker_vis[30];
+        CheckerVisual[] checkers = new CheckerVisual[30];
         int checkerCount = 0;
 
         for (int i = 1; i < 25; i++)
@@ -58,7 +57,7 @@ public class BoardVisual
                 {
                     if (i <= 6)
                     {
-                        checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),14 - i,bottomNum);
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),14 - i,bottomNum);
                         grid.add(checkers[checkerCount],14-i,bottomNum);
                         if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
                         {
@@ -69,7 +68,7 @@ public class BoardVisual
                     }
                     else if (i > 6)
                     {
-                        checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),13-i,bottomNum);
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),13-i,bottomNum);
                         grid.add(checkers[checkerCount],13-i,bottomNum);
                         if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
                         {
@@ -88,7 +87,7 @@ public class BoardVisual
                 {
                     if (i <= 18)
                     {
-                        checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),i - 11,bottomNum);
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),i - 11,bottomNum);
                         grid.add(checkers[checkerCount],i - 12,bottomNum);
                         if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
                         {
@@ -98,7 +97,7 @@ public class BoardVisual
                     }
                     else if (i > 18)
                     {
-                        checkers[checkerCount] = new Checker_vis(board.bars[i].getColor(),i - 12,bottomNum);
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),i - 12,bottomNum);
                         grid.add(checkers[checkerCount],i - 11,bottomNum);
                         if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
                         {
@@ -109,7 +108,6 @@ public class BoardVisual
                 }
             }
         }
-
         return this.grid;
     }
 }
