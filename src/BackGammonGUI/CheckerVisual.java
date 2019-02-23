@@ -12,20 +12,20 @@ public class CheckerVisual extends StackPane
 
     private Checker_Color type;
 
-    private double mouseX, mouseY;
+//    private double mouseX, mouseY;
     private double oldX, oldY;
 
     public Checker_Color getType() {
         return type;
     }
 
-    public double getOldX() {
-        return oldX;
-    }
-
-    public double getOldY() {
-        return oldY;
-    }
+//    public double getOldX() {
+//        return oldX;
+//    }
+//
+//    public double getOldY() {
+//        return oldY;
+//    }
 
     public CheckerVisual(Checker_Color type, int x, int y) {
         this.type = type;
@@ -53,14 +53,14 @@ public class CheckerVisual extends StackPane
 
         getChildren().addAll(bg, ellipse);
 
-        setOnMousePressed(e -> {
-            mouseX = e.getSceneX();
-            mouseY = e.getSceneY();
-        });
-
-        setOnMouseDragged(e -> {
-            relocate(e.getSceneX() - mouseX + oldX, e.getSceneY() - mouseY + oldY);
-        });
+//        setOnMousePressed(e -> {
+//            mouseX = e.getSceneX();
+//            mouseY = e.getSceneY();
+//        });
+//
+//        setOnMouseDragged(e -> {
+//            relocate(e.getSceneX() - mouseX + oldX, e.getSceneY() - mouseY + oldY);
+//        });
     }
 
     public void move(int x, int y) {
@@ -69,7 +69,7 @@ public class CheckerVisual extends StackPane
         relocate(oldX, oldY);
     }
 
-    public void abortMove() {
-        relocate(oldX, oldY);
-    }
+//    public void abortMove() {
+//        relocate(oldX, oldY);
+//    }
 }

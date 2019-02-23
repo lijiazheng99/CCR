@@ -14,17 +14,20 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+import java.util.Scanner;
+
 public class ControlVisual
 {
     GridPane grid = new GridPane();
 
     Label backGammon = new Label("BackGammon");
-    Label player1 = new Label("Player Name Here");
-    Label player2 = new Label("Player Name Here");
+    Label player1 = new Label();
+    Label player2 = new Label();
     TextField insertbox = new TextField();
     Button insertTextBox = new Button("       Return      ");
     public TextArea outputTextBox = new TextArea();
     String messegeBuffer;
+    String messegeBufferForCom;
 
     public GridPane ControlVisual()
     {
@@ -114,36 +117,70 @@ public class ControlVisual
     public void judgeInsert ()
     {
         messegeBuffer =  new String(insertbox.getText());
-        messegeBuffer = messegeBuffer.toUpperCase();
-        System.out.println("Reached");
-        if ((insertbox.getText() != null && !insertbox.getText().isEmpty()))
+        messegeBufferForCom = messegeBuffer.toUpperCase();
+        if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
         {
-            if(messegeBuffer.substring(0,4).equals("MOVE"))
+            if(messegeBufferForCom.substring(0,4).equals("MOVE"))
             {
-                outputTextBox.appendText("Move\n");
                 insertbox.clear();
+                outputTextBox.appendText("Make a Move:\n");
+
+                Scanner input = new Scanner(messegeBuffer);
+                int startPip = input.nextInt();
+                int endPip = input.nextInt();
+
+//                String move = new String(messegeBuffer.substring(4,messegeBuffer.length()));
+//                int startNumPos = move.indexOf("<");
+//                int startPip = (int)move.charAt(startNumPos+1);
+
+                outputTextBox.appendText("Move from "+startPip+" to "+endPip+".\n");
+
+
                 outputTextBox.appendText("Please insert start pip:\n");
+                outputTextBox.appendText("--------------------------------\n");
             }
-            else if (messegeBuffer.substring(0,4).equals("QUIT") ||messegeBuffer.substring(0,4).equals("EXIT")  )
+            else if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT")  )
             {
                 System.exit(0);
             }
-            else if (messegeBuffer.substring(0,5).equals("CLEAR") )
+            else if (messegeBufferForCom.length() >= 5 )
             {
-                outputTextBox.clear();
-                insertbox.clear();
-                instructMessage();
+                if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
+                {
+                    insertbox.clear();
+                    outputTextBox.clear();
+                    instructMessage();
+                }
+                else
+                    throwInalidTypo();
             }
             else
-                outputTextBox.appendText(messegeBuffer);
+                throwInalidTypo();
         }
         else
-            outputTextBox.appendText("Nothing Entered\n");
+            throwInalidTypo();
+    }
+
+    public void throwInalidTypo()
+    {
+        outputTextBox.appendText("Your typed: "+messegeBuffer+", it seems an invalid type.\n");
+        outputTextBox.appendText("--------------------------------\n");
+        insertbox.clear();
     }
 
     public String getTypeIn()
     {
         return this.messegeBuffer;
+    }
+
+    public void enterName ()
+    {
+        outputTextBox.appendText("Enter First player name:\n");
+        getInsert();
+        player1 = new Label(getTypeIn());
+        outputTextBox.appendText("Enter Second player name:\n");
+        getInsert();
+        player2 = new Label(getTypeIn());
     }
 
     public void gameStart()
@@ -153,8 +190,12 @@ public class ControlVisual
 
     public void instructMessage()
     {
-        outputTextBox.appendText("Welcome to BackGammon!\nGame instruction:\nType move to move;\nType clear to clear board messages;\nType quit to exit;\n");
+        outputTextBox.appendText("Welcome to BackGammon!\n");
+        outputTextBox.appendText("*************************\n");
+        outputTextBox.appendText("Game instruction:\n");
         outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
+        outputTextBox.appendText("Type CLEAR to clear board messages\nType QUIT to exit\n");
+        outputTextBox.appendText("*************************\n");
     }
 
     public GridPane getControls ()

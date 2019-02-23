@@ -10,6 +10,7 @@ public class BoardVisual
 {
     GridPane grid = new GridPane();
 
+    //Assign gridpane
     public GridPane BoardVisual ()
     {
         for (int i = 0; i < 19;i++)
