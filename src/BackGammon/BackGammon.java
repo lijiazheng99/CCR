@@ -2,6 +2,7 @@ package BackGammon;
 
 import BackGammonGUI.BoardVisual;
 import BackGammonGUI.ControlVisual;
+import BackGammonGUI.DiceVisual;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -83,10 +84,18 @@ public class BackGammon extends Application
         controlVisual.instructMessage();
         controlVisual.gameStart();
 
+        DiceVisual diceVisual = new DiceVisual();
+        diceVisual.DiceVisual();
+        diceVisual.inPutDiceImages();
+        diceVisual.diceDisplay(2,2);
+
+
+
         Pane main = new Pane();
         main.getChildren().add(root);
         main.getChildren().add(boardVisual.BoardVisual(board));
         main.getChildren().add(controlVisual.getControls());
+        main.getChildren().add(diceVisual.getGrid());
 
 
 
