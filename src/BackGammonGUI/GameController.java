@@ -114,68 +114,6 @@ public class GameController
         grid.add(outputTextBox,15, 1,4,35);
         outputTextBox.setWrapText(true);
 
-        piplabels[0] =  new Label("   12");
-        piplabels[0].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[1] =  new Label("   11");
-        piplabels[1].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[2] =  new Label("   10");
-        piplabels[2].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[3] =  new Label("    9");
-        piplabels[3].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[4] =  new Label("    8");
-        piplabels[4].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[5] =  new Label("    7");
-        piplabels[5].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[6] =  new Label("    6");
-        piplabels[6].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[7] =  new Label("    5");
-        piplabels[7].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[8] =  new Label("    4");
-        piplabels[8].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[9] =  new Label("    3");
-        piplabels[9].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[10] =  new Label("    2");
-        piplabels[10].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[11] =  new Label("    1");
-        piplabels[11].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[12] =  new Label("   13");
-        piplabels[12].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[13] =  new Label("   14");
-        piplabels[13].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[14] =  new Label("   15");
-        piplabels[14].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[15] =  new Label("   16");
-        piplabels[15].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[16] =  new Label("   17");
-        piplabels[16].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[17] =  new Label("   18");
-        piplabels[17].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[18] =  new Label("   19");
-        piplabels[18].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[19] =  new Label("   20");
-        piplabels[19].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[20] =  new Label("   21");
-        piplabels[20].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[21] =  new Label("   22");
-        piplabels[21].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[22] =  new Label("   23");
-        piplabels[22].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-        piplabels[23] =  new Label("   24");
-        piplabels[23].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
-
-        grid.add(piplabels[0],1,16);
-        grid.add(piplabels[1],2,16);
-        grid.add(piplabels[2],3,16);
-        grid.add(piplabels[3],4,16);
-        grid.add(piplabels[4],5,16);
-        grid.add(piplabels[5],6,16);
-        grid.add(piplabels[6],8,16);
-        grid.add(piplabels[7],9,16);
-        grid.add(piplabels[8],10,16);
-        grid.add(piplabels[9],11,16);
-        grid.add(piplabels[10],12,16);
-        grid.add(piplabels[11],13,16);
-
         return grid;
     }
 
