@@ -220,6 +220,10 @@ public class GameController
                 {
                     diceInGame();
                 }
+                else if (messegeBufferForCom.substring(0,4).equals("NEXT"))
+                {
+                    passTurn();
+                }
                 else if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT")  )
                 {
                     exit();
@@ -270,7 +274,7 @@ public class GameController
         }
         else if (player2.getColor() == currentTurn)
         {
-            outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
+            outputTextBox.appendText("->"+player2.getName()+"'s turn\n");
             outputTextBox.appendText("type ROLL to roll dice\n");
             assignPipNum(currentTurn);
         }
@@ -278,8 +282,17 @@ public class GameController
             throwLogicFailure();
     }
 
+    private void passTurn()
+    {
+        insertbox.clear();
+        diceVisual.removeDisplay();
+        currentTurn = changeTurn(currentTurn);
+        currentTurn();
+    }
+
     private Checker_Color changeTurn(Checker_Color currentTurn)
     {
+        outputTextBox.appendText("-----------------------------\n");
         if (currentTurn == Checker_Color.WHITE)
             return Checker_Color.RED;
         else if (currentTurn == Checker_Color.RED)
@@ -351,30 +364,30 @@ public class GameController
             piplabels[23] =  new Label("   24");
             piplabels[23].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
 
-            grid.add(piplabels[0],1,16);
-            grid.add(piplabels[1],2,16);
-            grid.add(piplabels[2],3,16);
-            grid.add(piplabels[3],4,16);
-            grid.add(piplabels[4],5,16);
-            grid.add(piplabels[5],6,16);
-            grid.add(piplabels[6],8,16);
-            grid.add(piplabels[7],9,16);
-            grid.add(piplabels[8],10,16);
-            grid.add(piplabels[9],11,16);
-            grid.add(piplabels[10],12,16);
-            grid.add(piplabels[11],13,16);
-            grid.add(piplabels[12],1,19);
-            grid.add(piplabels[13],2,19);
-            grid.add(piplabels[14],3,19);
-            grid.add(piplabels[15],4,19);
-            grid.add(piplabels[16],5,19);
-            grid.add(piplabels[17],6,19);
-            grid.add(piplabels[18],8,19);
-            grid.add(piplabels[19],9,19);
-            grid.add(piplabels[20],10,19);
-            grid.add(piplabels[21],11,19);
-            grid.add(piplabels[22],12,19);
-            grid.add(piplabels[23],13,19);
+            grid.add(piplabels[0],1,14);
+            grid.add(piplabels[1],2,14);
+            grid.add(piplabels[2],3,14);
+            grid.add(piplabels[3],4,14);
+            grid.add(piplabels[4],5,14);
+            grid.add(piplabels[5],6,14);
+            grid.add(piplabels[6],8,14);
+            grid.add(piplabels[7],9,14);
+            grid.add(piplabels[8],10,14);
+            grid.add(piplabels[9],11,14);
+            grid.add(piplabels[10],12,14);
+            grid.add(piplabels[11],13,14);
+            grid.add(piplabels[12],1,21);
+            grid.add(piplabels[13],2,21);
+            grid.add(piplabels[14],3,21);
+            grid.add(piplabels[15],4,21);
+            grid.add(piplabels[16],5,21);
+            grid.add(piplabels[17],6,21);
+            grid.add(piplabels[18],8,21);
+            grid.add(piplabels[19],9,21);
+            grid.add(piplabels[20],10,21);
+            grid.add(piplabels[21],11,21);
+            grid.add(piplabels[22],12,21);
+            grid.add(piplabels[23],13,21);
         }
         else if (currentTurn == Checker_Color.WHITE)
         {
@@ -427,30 +440,30 @@ public class GameController
             piplabels[23] =  new Label("    1");
             piplabels[23].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
 
-            grid.add(piplabels[0],1,16);
-            grid.add(piplabels[1],2,16);
-            grid.add(piplabels[2],3,16);
-            grid.add(piplabels[3],4,16);
-            grid.add(piplabels[4],5,16);
-            grid.add(piplabels[5],6,16);
-            grid.add(piplabels[6],8,16);
-            grid.add(piplabels[7],9,16);
-            grid.add(piplabels[8],10,16);
-            grid.add(piplabels[9],11,16);
-            grid.add(piplabels[10],12,16);
-            grid.add(piplabels[11],13,16);
-            grid.add(piplabels[12],1,19);
-            grid.add(piplabels[13],2,19);
-            grid.add(piplabels[14],3,19);
-            grid.add(piplabels[15],4,19);
-            grid.add(piplabels[16],5,19);
-            grid.add(piplabels[17],6,19);
-            grid.add(piplabels[18],8,19);
-            grid.add(piplabels[19],9,19);
-            grid.add(piplabels[20],10,19);
-            grid.add(piplabels[21],11,19);
-            grid.add(piplabels[22],12,19);
-            grid.add(piplabels[23],13,19);
+            grid.add(piplabels[0],1,14);
+            grid.add(piplabels[1],2,14);
+            grid.add(piplabels[2],3,14);
+            grid.add(piplabels[3],4,14);
+            grid.add(piplabels[4],5,14);
+            grid.add(piplabels[5],6,14);
+            grid.add(piplabels[6],8,14);
+            grid.add(piplabels[7],9,14);
+            grid.add(piplabels[8],10,14);
+            grid.add(piplabels[9],11,14);
+            grid.add(piplabels[10],12,14);
+            grid.add(piplabels[11],13,14);
+            grid.add(piplabels[12],1,21);
+            grid.add(piplabels[13],2,21);
+            grid.add(piplabels[14],3,21);
+            grid.add(piplabels[15],4,21);
+            grid.add(piplabels[16],5,21);
+            grid.add(piplabels[17],6,21);
+            grid.add(piplabels[18],8,21);
+            grid.add(piplabels[19],9,21);
+            grid.add(piplabels[20],10,21);
+            grid.add(piplabels[21],11,21);
+            grid.add(piplabels[22],12,21);
+            grid.add(piplabels[23],13,21);
         }
         else
             throwLogicFailure();
@@ -477,6 +490,7 @@ public class GameController
             outputTextBox.appendText("Second dice point: " + player2StartPoint + ".\n");
             if (player1StartPoint == player2StartPoint)
             {
+                clear();
                 outputTextBox.appendText("Got same point. Roll again.\n");
                 player1StartPoint = 7;
                 player2StartPoint = 7;
@@ -576,6 +590,8 @@ public class GameController
         outputTextBox.appendText("Game instruction:\n");
         outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
         outputTextBox.appendText("Type CLEAR to clear board messages\nType QUIT to exit\n");
+        outputTextBox.appendText("Type START to do start dice roll\n");
+        outputTextBox.appendText("Type NEXT to pass move right to next player\n");
         outputTextBox.appendText("Type NAME1 to enter player1 name\n");
         outputTextBox.appendText("Type NAME2 to enter player2 name\n");
         outputTextBox.appendText("***********************\n");

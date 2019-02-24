@@ -25,7 +25,7 @@
     <session id="1560775944">
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4541" />
+          <entry key="JAVA" value="4813" />
           <entry key="PLAIN_TEXT" value="44" />
         </counts>
       </usages-collector>
@@ -72,23 +72,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+            <state relative-caret-position="259">
+              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2525#2526#0" expanded="true" />
+                <element signature="e#2598#2599#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2279">
-              <caret line="499" column="30" selection-start-line="499" selection-start-column="30" selection-end-line="499" selection-end-column="30" />
+            <state relative-caret-position="596">
+              <caret line="465" column="42" selection-start-line="465" selection-start-column="42" selection-end-line="465" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4508#4509#0" expanded="true" />
@@ -203,8 +205,8 @@
         <option value="$PROJECT_DIR$/src/BackGammon/Dice.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/ControlVisual.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/BackGammon.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java" />
+        <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
       </list>
     </option>
   </component>
@@ -273,7 +275,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550978948949" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550980571733" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -848,11 +850,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550977921336</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Updated a lot of things">
+      <created>1550978993217</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1550978993217</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158373000" />
+    <option name="totallyTimeSpent" value="159802000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -867,7 +876,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12271062" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12271062" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -876,7 +885,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46855012" visible="true" weight="0.19795918" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46855012" visible="true" weight="0.19795918" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1131,26 +1140,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2525#2526#0" expanded="true" />
+            <element signature="e#2598#2599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2279">
-          <caret line="499" column="30" selection-start-line="499" selection-start-column="30" selection-end-line="499" selection-end-column="30" />
+        <state relative-caret-position="596">
+          <caret line="465" column="42" selection-start-line="465" selection-start-column="42" selection-end-line="465" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4508#4509#0" expanded="true" />
             <element signature="e#4553#4554#0" expanded="true" />
             <element signature="e#9149#9150#0" expanded="true" />
             <element signature="e#9179#9180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

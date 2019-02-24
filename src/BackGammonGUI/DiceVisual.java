@@ -64,10 +64,14 @@ public class DiceVisual extends GridPane
         }
     }
 
-    public void diceDisplay(int first, int second)
+    public void removeDisplay()
     {
         grid.getChildren().removeAll(image1,image2,image3,image4);
+    }
 
+    public void diceDisplay(int first, int second)
+    {
+        removeDisplay();
         image1 = new ImageView(images[first-1]);
         image2 = new ImageView(images[second-1]);
         image3 = new ImageView(images[second-1]);
@@ -84,7 +88,9 @@ public class DiceVisual extends GridPane
 
     public void singleDisplay(int roll)
     {
-        grid.add(new ImageView(images[roll-1]),9,18);
+        removeDisplay();
+        image1 = new ImageView(images[roll-1]);
+        grid.add(image1,9,18);
     }
 
     public GridPane getGrid()
