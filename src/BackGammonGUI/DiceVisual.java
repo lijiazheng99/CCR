@@ -46,6 +46,7 @@ public class DiceVisual extends GridPane
             else
                 grid.getRowConstraints().add(new RowConstraints(35));
         }
+        System.out.println("BackGammonGUI.DiceVisual.DiceVisual(): Dice gridpane assign successful");
         return this.grid;
     }
 
@@ -65,6 +66,7 @@ public class DiceVisual extends GridPane
         {
             System.out.println("Dice image failed");
         }
+        System.out.println("BackGammonGUI.DiceVisual.DiceVisual(): Dice image insert successful");
     }
 
     //remove dice from the pane

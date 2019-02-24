@@ -38,6 +38,7 @@ public class BoardVisual
             else
                 grid.getRowConstraints().add(new RowConstraints(35));
         }
+        System.out.println("BackGammonGUI.BoardVisual.BoardVisual(): Gridpane assign successful");
         return this.grid;
     }
 
@@ -110,6 +111,7 @@ public class BoardVisual
                 }
             }
         }
+        System.out.println("BackGammonGUI.BoardVisual.BoardVisual(board): Checkers map on gridpane successful");
         return this.grid;
     }
 
@@ -118,6 +120,7 @@ public class BoardVisual
     {
         for (int i = 0; i < 30; i++)
         grid.getChildren().removeAll(checkers[i]);
+        System.out.println("BackGammonGUI.BoardVisual.removeElements(): Checkers remove from gridpane successful");
     }
 
 }

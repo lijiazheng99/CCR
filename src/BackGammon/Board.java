@@ -14,7 +14,6 @@ public class Board {
 
     public Board()
     {
-        System.out.println("OK3");
         int i = 0;
         while(i != 25)
         {
