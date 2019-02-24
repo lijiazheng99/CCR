@@ -41,6 +41,7 @@ public class BoardVisual
         return this.grid;
     }
 
+    //Paint checkers on the board
     public GridPane BoardVisual (Board board)
     {
         int indexNum;
@@ -112,6 +113,7 @@ public class BoardVisual
         return this.grid;
     }
 
+    //Remove all checkers on the gridpane
     public void removeElements()
     {
         for (int i = 0; i < 30; i++)

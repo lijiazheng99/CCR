@@ -8,7 +8,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/BackGammon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/BackGammon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/Checker_Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Checker_Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BoardPicture.jpeg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,14 +33,14 @@
     <session id="1560775944">
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4921" />
+          <entry key="JAVA" value="6490" />
           <entry key="PLAIN_TEXT" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="13" />
         </counts>
       </usages-collector>
     </session>
@@ -41,8 +50,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="117" column="50" selection-start-line="117" selection-start-column="50" selection-end-line="117" selection-end-column="50" />
+            <state relative-caret-position="544">
+              <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="499">
+              <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,12 +72,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
+        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="326">
+              <caret line="299" column="17" lean-forward="true" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5769#5770#0" expanded="true" />
+                <element signature="e#5814#5815#0" expanded="true" />
+                <element signature="e#22258#22259#0" expanded="true" />
+                <element signature="e#22288#22289#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,28 +99,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+            <state relative-caret-position="570">
+              <caret line="97" column="47" lean-forward="true" selection-start-line="97" selection-start-column="47" selection-end-line="97" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2525#2526#0" expanded="true" />
-                <element signature="e#2598#2599#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="247" column="21" selection-start-line="247" selection-start-column="21" selection-end-line="247" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4508#4509#0" expanded="true" />
-                <element signature="e#4553#4554#0" expanded="true" />
-                <element signature="e#9149#9150#0" expanded="true" />
-                <element signature="e#9179#9180#0" expanded="true" />
+                <element signature="e#3474#3475#0" expanded="true" />
+                <element signature="e#3506#3507#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="315">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -120,10 +129,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammon/Dice.java">
+        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="634">
+              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Checker_Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="135">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -140,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="30">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -165,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/MainInterface.java" />
         <option value="$PROJECT_DIR$/src/BackGammon.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Frame.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Checker_Color.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Tile.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/testcase.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Checker_Color" />
@@ -194,18 +205,19 @@
         <option value="$PROJECT_DIR$/src/BackGammonGUI/BackGroundImage.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/Checker_vis.java" />
         <option value="$PROJECT_DIR$/src/BackGammonTests/JiazhengTestcase.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Player.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Bar.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/DiceImages.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/Dice.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Dice.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/ControlVisual.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/BackGammon.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Dice.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Checker_Color.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java" />
+        <option value="$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java" />
+        <option value="$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Player.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/BackGammon.java" />
       </list>
     </option>
   </component>
@@ -274,7 +286,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551027359397" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551039292685" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -884,11 +896,25 @@
       <option name="project" value="LOCAL" />
       <updated>1550980856608</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Updated a lot of things">
+      <created>1551027364320</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1551027364320</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Updated a lot of things">
+      <created>1551027369775</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1551027369775</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160775000" />
+    <option name="totallyTimeSpent" value="162751000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -903,7 +929,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12271062" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12271062" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -912,7 +938,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46855012" visible="true" weight="0.19795918" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46855012" visible="true" weight="0.19795918" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1095,34 +1121,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java">
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="115" column="41" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Dice.java">
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/CheckerVisual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="634">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="570">
+          <caret line="97" column="47" lean-forward="true" selection-start-line="97" selection-start-column="47" selection-end-line="97" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
+            <element signature="e#3506#3507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="299" column="17" lean-forward="true" selection-start-line="299" selection-start-column="17" selection-end-line="299" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5769#5770#0" expanded="true" />
+            <element signature="e#5814#5815#0" expanded="true" />
+            <element signature="e#22258#22259#0" expanded="true" />
+            <element signature="e#22288#22289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Checker_Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="135">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1133,10 +1195,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="315">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1147,48 +1209,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="117" column="50" selection-start-line="117" selection-start-column="50" selection-end-line="117" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+        <state relative-caret-position="499">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2525#2526#0" expanded="true" />
-            <element signature="e#2598#2599#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="247" column="21" selection-start-line="247" selection-start-column="21" selection-end-line="247" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4508#4509#0" expanded="true" />
-            <element signature="e#4553#4554#0" expanded="true" />
-            <element signature="e#9149#9150#0" expanded="true" />
-            <element signature="e#9179#9180#0" expanded="true" />
           </folding>
         </state>
       </provider>

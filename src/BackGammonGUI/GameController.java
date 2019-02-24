@@ -22,32 +22,36 @@ import java.util.Scanner;
 
 public class GameController
 {
+    //mainPane for add other pane together, grid for map contollers
+    private GridPane mainPane = new GridPane();
     private GridPane grid = new GridPane();
 
-    private GridPane mainPane = new GridPane();
+    //Create all needed elements
     private BoardVisual boardVisual = new BoardVisual();
     private DiceVisual diceVisual = new DiceVisual();
     private Board board = new Board();
     private Player player1 = new Player();
     private Player player2 = new Player();
 
+    //Assign all control elements on the girdpane
     private Label backGammon = new Label("BackGammon");
     private Label player1Lab = new Label();
     private Label player2Lab = new Label();
     private TextField insertbox = new TextField();
-    private Button insertTextBox = new Button("       Return      ");
+    private Button enterClickButton = new Button("       Return      ");
     private TextArea outputTextBox = new TextArea();
     private String messegeBuffer;
     private String messegeBufferForCom;
     private Label[] piplabels = new Label[24];
 
+    //two player's start dice point
     private int player1StartPoint = 7;
     private int player2StartPoint = 7;
 
-
-
+    //current Turn for mark current turn
     private Checker_Color currentTurn;
 
+    //Assign gridpane for all the control elements
     public GridPane GameController()
     {
         grid = new GridPane();
@@ -78,7 +82,7 @@ public class GameController
         return this.grid;
     }
 
-
+    //Game start settings
     public void gameStart()
     {
         board.setUp();
@@ -94,6 +98,22 @@ public class GameController
         outputTextBox.appendText("Game Start!\nType START to roll start dice\n");
     }
 
+    //instruction message for game
+    private void instructMessage()
+    {
+        outputTextBox.appendText("Welcome to BackGammon!\n");
+        outputTextBox.appendText("***********************\n");
+        outputTextBox.appendText("Game instruction:\n");
+        outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
+        outputTextBox.appendText("Type CLEAR to clear board messages\nType QUIT to exit\n");
+        outputTextBox.appendText("Type START to do start dice roll\n");
+        outputTextBox.appendText("Type NEXT to pass move right to next player\n");
+        outputTextBox.appendText("Type NAME1 to enter player1 name\n");
+        outputTextBox.appendText("Type NAME2 to enter player2 name\n");
+        outputTextBox.appendText("***********************\n");
+    }
+
+    //Map control elements on the gridpane
     private GridPane initControlVisual()
     {
         //Game Title
@@ -106,7 +126,7 @@ public class GameController
         grid.add(insertbox,0,35, 14, 1);
 
         //Insert button
-        grid.add(insertTextBox,14,35);
+        grid.add(enterClickButton,14,35);
 
         //Output Area
         outputTextBox.setEditable(false);
@@ -117,6 +137,7 @@ public class GameController
         return grid;
     }
 
+    //assign players name label
     private void assignPlayerLabel()
     {
         //Player 1 Label
@@ -132,9 +153,10 @@ public class GameController
         grid.add(player2Lab, 8, 0);
     }
 
+    //event handler for get button click or return key type
     public void getInsert()
     {
-        insertTextBox.setOnAction(new EventHandler<ActionEvent>()
+        enterClickButton.setOnAction(new EventHandler<ActionEvent>()
         {
             @Override
             public void handle(ActionEvent e)
@@ -156,11 +178,13 @@ public class GameController
         });
     }
 
+    //judge insert in the insertbox
     private void judgeInsert ()
     {
         messegeBuffer =  new String(insertbox.getText());
         messegeBufferForCom = messegeBuffer.toUpperCase();
 
+        //Judge current status, if is EMPTY lead user to roll dice
         if (currentTurn == Checker_Color.EMPTY)
         {
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 5)
@@ -216,10 +240,10 @@ public class GameController
                     outputTextBox.appendText("Please insert start pip:\n");
                     outputTextBox.appendText("-----------------------------\n");
                 }
-//                else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
-//                {
-//                    diceInGame();
-//                }
+                else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
+                {
+                    diceInGame();
+                }
                 else if (messegeBufferForCom.substring(0,4).equals("NEXT"))
                 {
                     passTurn();
@@ -240,16 +264,21 @@ public class GameController
                     }
                     else if (messegeBufferForCom.substring(0,5).equals("START"))
                     {
-                        outputTextBox.appendText("Sorry START roll dice is not valid call anymore\n");
+                        outputTextBox.appendText("Sorry START roll dice is not a valid call anymore\n");
                     }
                     else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
                     {
                         clear();
                     }
-                    else if (messegeBufferForCom.substring(0,7).equals("RESTART"))
+                    else if (messegeBufferForCom.length() >= 7)
                     {
-                        insertbox.clear();
-                        GameController();
+                        if (messegeBufferForCom.substring(0,7).equals("RESTART"))
+                        {
+                            insertbox.clear();
+                            GameController();
+                        }
+                        else
+                            throwInalidTypo();
                     }
                     else
                         throwInalidTypo();
@@ -264,24 +293,17 @@ public class GameController
             throwLogicFailure();
     }
 
-    private void currentTurn()
+    /*
+    Game turn controls
+     */
+
+    //Make a move
+    private void makeMove()
     {
-        if (player1.getColor() == currentTurn)
-        {
-            outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
-            //outputTextBox.appendText("type ROLL to roll dice\n");
-            assignPipNum(currentTurn);
-        }
-        else if (player2.getColor() == currentTurn)
-        {
-            outputTextBox.appendText("->"+player2.getName()+"'s turn\n");
-            //outputTextBox.appendText("type ROLL to roll dice\n");
-            assignPipNum(currentTurn);
-        }
-        else
-            throwLogicFailure();
+
     }
 
+    //enter NEXT to pass to next player
     private void passTurn()
     {
         insertbox.clear();
@@ -291,6 +313,24 @@ public class GameController
         diceInGame();
     }
 
+    //Current turn instruction
+    private void currentTurn()
+    {
+        if (player1.getColor() == currentTurn)
+        {
+            outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
+            assignPipNum(currentTurn);
+        }
+        else if (player2.getColor() == currentTurn)
+        {
+            outputTextBox.appendText("->"+player2.getName()+"'s turn\n");
+            assignPipNum(currentTurn);
+        }
+        else
+            throwLogicFailure();
+    }
+
+    //Automatically change turn
     private Checker_Color changeTurn(Checker_Color currentTurn)
     {
         outputTextBox.appendText("-----------------------------\n");
@@ -305,6 +345,7 @@ public class GameController
         }
     }
 
+    //Each turn assign current pip numbers for current player
     private void assignPipNum(Checker_Color currentTurn)
     {
         if (piplabels[0]!=null)
@@ -470,7 +511,7 @@ public class GameController
             throwLogicFailure();
     }
 
-
+    //Start game roll dice to decide who start first
     private void startRoll()
     {
         insertbox.clear();
@@ -524,6 +565,7 @@ public class GameController
             throwLogicFailure();
     }
 
+    //Roll dice in the game
     private void diceInGame()
     {
         insertbox.clear();
@@ -536,11 +578,13 @@ public class GameController
         outputTextBox.appendText("Dice point: "+Num1+" and "+Num2+".\n");
     }
 
+    //exit game
     private void exit()
     {
         System.exit(0);
     }
 
+    //clear control output box
     private void clear()
     {
         insertbox.clear();
@@ -548,6 +592,7 @@ public class GameController
         instructMessage();
     }
 
+    //ReAssign player's name
     private void player1Name()
     {
         insertbox.clear();
@@ -561,6 +606,7 @@ public class GameController
         grid.add(player1Lab, 1, 0);
     }
 
+    //ReAssign player's name
     private void player2Name()
     {
         insertbox.clear();
@@ -574,12 +620,14 @@ public class GameController
         grid.add(player2Lab, 8, 0);
     }
 
+    //Invalid type warn
      private void throwInalidTypo()
     {
         insertbox.clear();
         outputTextBox.appendText("! Your typed: "+messegeBuffer+", it seems an invalid type.\n");
     }
 
+    //Warn when game faceing impossible game logic failure
     private  void throwLogicFailure()
     {
         outputTextBox.appendText("! Sorry currently meet a logic failure. We recommend you reopen game.\n");
@@ -587,20 +635,7 @@ public class GameController
         insertbox.clear();
     }
 
-    private void instructMessage()
-    {
-        outputTextBox.appendText("Welcome to BackGammon!\n");
-        outputTextBox.appendText("***********************\n");
-        outputTextBox.appendText("Game instruction:\n");
-        outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
-        outputTextBox.appendText("Type CLEAR to clear board messages\nType QUIT to exit\n");
-        outputTextBox.appendText("Type START to do start dice roll\n");
-        outputTextBox.appendText("Type NEXT to pass move right to next player\n");
-        outputTextBox.appendText("Type NAME1 to enter player1 name\n");
-        outputTextBox.appendText("Type NAME2 to enter player2 name\n");
-        outputTextBox.appendText("***********************\n");
-    }
-
+    //return this gridpane
     public GridPane getPane()
     {
         mainPane.getChildren().add(boardVisual.BoardVisual(board));

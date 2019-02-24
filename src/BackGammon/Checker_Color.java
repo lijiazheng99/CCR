@@ -1,7 +1,8 @@
 package BackGammon;
 //created by Jiwei Zhang, 1/1/2019
 //REfine by Jiazheng 2/2/2019
-public enum Checker_Color {
+public enum Checker_Color
+{
     RED(1), WHITE(-1), EMPTY(0);
 
     final int moveDir;

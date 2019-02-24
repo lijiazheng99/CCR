@@ -63,14 +63,17 @@ public class BackGammon extends Application
         {
             System.out.println("Load image failed");
         }
+
         backgroundPic.add(new ImageView(background), 0, 0);
         backgroundPic.setPrefSize(screenWidth,screenHeight);
-        rootPane.getChildren().add(backgroundPic);
 
         GameController gameController = new GameController();
+
         gameController.GameController();
         gameController.gameStart();
         gameController.getInsert();
+
+        rootPane.getChildren().add(backgroundPic);
         rootPane.getChildren().add(gameController.getPane());
         return rootPane ;
     }

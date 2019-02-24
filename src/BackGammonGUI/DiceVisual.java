@@ -6,18 +6,20 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 public class DiceVisual extends GridPane
 {
+    //create gridpane and input images
     private final GridPane grid = new GridPane();
     private final Image[] images = new Image[6];
 
+    //Images for four dices
     private ImageView image1 = new ImageView();
     private ImageView image2 = new ImageView();
     private ImageView image3 = new ImageView();
     private ImageView image4 = new ImageView();
 
+    //Assign dice pane
     public GridPane DiceVisual()
     {
         for (int i = 0; i < 19;i++)
@@ -47,6 +49,7 @@ public class DiceVisual extends GridPane
         return this.grid;
     }
 
+    //insert dice image in the program
     public void inPutDiceImages()
     {
         try
@@ -64,11 +67,13 @@ public class DiceVisual extends GridPane
         }
     }
 
+    //remove dice from the pane
     public void removeDisplay()
     {
         grid.getChildren().removeAll(image1,image2,image3,image4);
     }
 
+    //dice display (during the game)
     public void diceDisplay(int first, int second)
     {
         removeDisplay();
@@ -86,6 +91,7 @@ public class DiceVisual extends GridPane
         }
     }
 
+    //dice display (at game start)
     public void singleDisplay(int roll)
     {
         removeDisplay();
@@ -93,9 +99,9 @@ public class DiceVisual extends GridPane
         grid.add(image1,9,18);
     }
 
+    //return grid
     public GridPane getGrid()
     {
         return this.grid;
-
     }
 }

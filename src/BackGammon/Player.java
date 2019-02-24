@@ -1,7 +1,6 @@
 package BackGammon;
 //created by Jiwei Zhang, 1/1/2019
 //edited by Jiwei Zhang, 2/1/2019
-import java.util.Scanner;
 
 public class Player
 {
@@ -19,12 +18,12 @@ public class Player
         this.setName(name);
         this.setColor(color);
     }
-//
+
     public void setName(String name)
     {
         this.name = name;
     }
-//
+
     public String getName()
     {
         return this.name;
@@ -34,7 +33,7 @@ public class Player
     {
         this.color = color;
     }
-//
+
     public Checker_Color getColor()
     {
         return this.color;

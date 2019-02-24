@@ -20,7 +20,6 @@ public class Board {
         {
             bars[i] = new Bar();
             i++;
-
         }
         //"0" IS NOT FOR USE
     }
