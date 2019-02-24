@@ -226,7 +226,22 @@ public class GameController
                     insertbox.clear();
                     outputTextBox.appendText("Make a Move:\n");
 
-                    Scanner input = new Scanner(messegeBuffer);
+                    int start = -1;
+                    int end = -1;
+
+                    for(int i = 1; messegeBuffer.charAt(i) != '\u0000'; i++)
+                    {
+                        if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i-1) == '>' && start == end)
+                            start = messegeBuffer.charAt(i);
+                        else if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i-1) == '>'  && start != end)
+                            end = messegeBuffer.charAt(i);
+                        else if(start > 0 && end > 0)
+                            break;
+                        else
+                        {}
+                    }
+
+                    //Scanner input = new Scanner(messegeBuffer);
                     //int startPip = input.nextInt();
                     //int endPip = input.nextInt();
 
@@ -236,8 +251,7 @@ public class GameController
 
                     //outputTextBox.appendText("Move from "+startPip+" to "+endPip+".\n");
 
-
-                    outputTextBox.appendText("Please insert start pip:\n");
+                    outputTextBox.appendText("Move from " + start + " to " + end + "\n");
                     outputTextBox.appendText("-----------------------------\n");
                 }
                 else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
