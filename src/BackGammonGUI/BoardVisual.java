@@ -9,6 +9,7 @@ import javafx.scene.layout.RowConstraints;
 public class BoardVisual
 {
     GridPane grid = new GridPane();
+    CheckerVisual[] checkers = new CheckerVisual[30];
 
     //Assign gridpane
     public GridPane BoardVisual ()
@@ -44,7 +45,6 @@ public class BoardVisual
     {
         int indexNum;
         int bottomNum;
-        CheckerVisual[] checkers = new CheckerVisual[30];
         int checkerCount = 0;
 
         for (int i = 1; i < 25; i++)
@@ -111,4 +111,11 @@ public class BoardVisual
         }
         return this.grid;
     }
+
+    public void removeElements()
+    {
+        for (int i = 0; i < 30; i++)
+        grid.getChildren().removeAll(checkers[i]);
+    }
+
 }
