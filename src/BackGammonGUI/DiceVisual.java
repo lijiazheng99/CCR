@@ -13,6 +13,11 @@ public class DiceVisual extends GridPane
     private final GridPane grid = new GridPane();
     private final Image[] images = new Image[6];
 
+    private ImageView image1 = new ImageView();
+    private ImageView image2 = new ImageView();
+    private ImageView image3 = new ImageView();
+    private ImageView image4 = new ImageView();
+
     public GridPane DiceVisual()
     {
         for (int i = 0; i < 19;i++)
@@ -61,12 +66,19 @@ public class DiceVisual extends GridPane
 
     public void diceDisplay(int first, int second)
     {
-        grid.add(new ImageView(images[first-1]),9,18);
-        grid.add(new ImageView(images[second-1]),10,18);
+        grid.getChildren().removeAll(image1,image2,image3,image4);
+
+        image1 = new ImageView(images[first-1]);
+        image2 = new ImageView(images[second-1]);
+        image3 = new ImageView(images[second-1]);
+        image4 = new ImageView(images[second-1]);
+
+        grid.add(image1,9,18);
+        grid.add(image2,10,18);
         if (first == second)
         {
-            grid.add(new ImageView(images[first-1]),11,18);
-            grid.add(new ImageView(images[second-1]),12,18);
+            grid.add(image3,11,18);
+            grid.add(image4,12,18);
         }
     }
 

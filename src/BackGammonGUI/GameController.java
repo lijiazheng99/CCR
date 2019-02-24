@@ -265,11 +265,13 @@ public class GameController
         if (player1.getColor() == currentTurn)
         {
             outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
+            outputTextBox.appendText("type ROLL to roll dice\n");
             assignPipNum(currentTurn);
         }
         else if (player2.getColor() == currentTurn)
         {
             outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
+            outputTextBox.appendText("type ROLL to roll dice\n");
             assignPipNum(currentTurn);
         }
         else
@@ -291,9 +293,12 @@ public class GameController
 
     private void assignPipNum(Checker_Color currentTurn)
     {
-        for (int i = 0; i <24; i++)
+        if (piplabels[0]!=null)
         {
-            grid.getChildren().remove(piplabels[i]);
+            for (int i = 0; i <24; i++)
+            {
+                grid.getChildren().remove(piplabels[i]);
+            }
         }
         if (currentTurn == Checker_Color.RED)
         {
@@ -480,11 +485,19 @@ public class GameController
             {
                 outputTextBox.appendText("->"+player1.getName()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
+                player1.setColor(Checker_Color.WHITE);
+                player2.setColor(Checker_Color.RED);
+                currentTurn = Checker_Color.WHITE;
+                currentTurn();
             }
             else if (player2StartPoint > player1StartPoint)
             {
                 outputTextBox.appendText("->"+player2.getName()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
+                player1.setColor(Checker_Color.RED);
+                player2.setColor(Checker_Color.WHITE);
+                currentTurn =  Checker_Color.RED;
+                currentTurn();
             }
             else
                 throwLogicFailure();
