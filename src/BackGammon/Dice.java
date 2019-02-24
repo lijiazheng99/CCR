@@ -3,7 +3,8 @@ package BackGammon;
 //edited by Jiwei Zhang, 2/1/2019
 import java.util.Random;
 
-public class Dice {
+public class Dice
+{
 
     private int points;
 

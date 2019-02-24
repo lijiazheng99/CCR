@@ -10,8 +10,8 @@ import java.io.FileNotFoundException;
 
 public class DiceVisual extends GridPane
 {
-    GridPane grid = new GridPane();
-    final Image[] images = new Image[6];
+    private final GridPane grid = new GridPane();
+    private final Image[] images = new Image[6];
 
     public GridPane DiceVisual()
     {
@@ -61,13 +61,18 @@ public class DiceVisual extends GridPane
 
     public void diceDisplay(int first, int second)
     {
-        grid.add(new ImageView(images[first]),9,18);
-        grid.add(new ImageView(images[second]),10,18);
+        grid.add(new ImageView(images[first-1]),9,18);
+        grid.add(new ImageView(images[second-1]),10,18);
         if (first == second)
         {
-            grid.add(new ImageView(images[first]),11,18);
-            grid.add(new ImageView(images[second]),12,18);
+            grid.add(new ImageView(images[first-1]),11,18);
+            grid.add(new ImageView(images[second-1]),12,18);
         }
+    }
+
+    public void singleDisplay(int roll)
+    {
+        grid.add(new ImageView(images[roll-1]),9,18);
     }
 
     public GridPane getGrid()

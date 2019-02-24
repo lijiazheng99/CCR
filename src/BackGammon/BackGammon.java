@@ -1,8 +1,6 @@
 package BackGammon;
 
-import BackGammonGUI.BoardVisual;
-import BackGammonGUI.ControlVisual;
-import BackGammonGUI.DiceVisual;
+import BackGammonGUI.GameController;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -36,18 +34,14 @@ public class BackGammon extends Application
     {
         //Root Scene set up
         Scene root = new Scene(buildScene(),screenWidth, screenHeight);
-
         // scale for automatically suit for current screen
         Scale scale = new Scale(1, 1, 0, 0);
         scale.xProperty().bind(root.widthProperty().divide(PREFWIDTH));
         scale.yProperty().bind(root.heightProperty().divide(PREFHEIGHT));
-
         //Rebuild root scene
         Scene scene = new Scene(buildScene(),screenWidth,screenHeight);
-
         //Scale root scene
         scene.getRoot().getTransforms().add(scale);
-
         //Set stage title, set scene, set
         primaryStage.setTitle("CCR BackGammon Game");
         primaryStage.setScene(scene);
@@ -58,8 +52,9 @@ public class BackGammon extends Application
     //Parent class for build root scene
     private Parent buildScene()
     {
+        GridPane rootPane =  new GridPane();
         //Create root pane for insert background image
-        GridPane root = new GridPane();
+        GridPane backgroundPic = new GridPane();
         try
         {
             background = new Image(new FileInputStream("src//BoardPicture.jpeg"));
@@ -68,75 +63,21 @@ public class BackGammon extends Application
         {
             System.out.println("Load image failed");
         }
-        root.add(new ImageView(background), 0, 0);
-        root.setPrefSize(screenWidth,screenHeight);
+        backgroundPic.add(new ImageView(background), 0, 0);
+        backgroundPic.setPrefSize(screenWidth,screenHeight);
+        rootPane.getChildren().add(backgroundPic);
 
-        Board board = new Board();
-        board.setUp();
-
-        BoardVisual boardVisual = new BoardVisual();
-        boardVisual.BoardVisual();
-
-        ControlVisual controlVisual = new ControlVisual();
-        controlVisual.ControlVisual();
-        controlVisual.initControlVisual(controlVisual.ControlVisual());
-        controlVisual.getInsert();
-        controlVisual.instructMessage();
-        controlVisual.gameStart();
-
-        DiceVisual diceVisual = new DiceVisual();
-        diceVisual.DiceVisual();
-        diceVisual.inPutDiceImages();
-        diceVisual.diceDisplay(2,2);
-
-
-
-        Pane main = new Pane();
-        main.getChildren().add(root);
-        main.getChildren().add(boardVisual.BoardVisual(board));
-        main.getChildren().add(controlVisual.getControls());
-        main.getChildren().add(diceVisual.getGrid());
-
-
-
-        //Set Player Name:
-//        controlVisual.outputTextBox.appendText("Please enter the name for Player One: ");
-//        board.playerOne.setName(controlVisual.getTypeIn());
-//        controlVisual.outputTextBox.appendText("Please enter the name for Player Two: ");
-//        board.playerTwo.setName(controlVisual.getTypeIn());
-
-
-        //Color Decide:
-//        do {
-//            board.points1 = board.diceToRoll.roll();
-//            controlVisual.outputTextBox.appendText("The point for P1: " + board.points1);
-//            board.points2 = board.diceToRoll.roll();
-//            controlVisual.outputTextBox.appendText("The point for P2: " + board.points2);
-//        }while(board.points1 == board.points2);
-//
-//        if(board.points1 > board.points2)
-//        {
-//            board.playerOne.setColor(Checker_Color.RED);
-//            board.playerTwo.setColor(Checker_Color.WHITE);
-//            controlVisual.outputTextBox.appendText(board.playerOne.getName() + ": " + "RED");
-//            controlVisual.outputTextBox.appendText(board.playerTwo.getName() + ": " + "WHITE");
-//        }else
-//        {
-//            board.playerOne.setColor(Checker_Color.WHITE);
-//            board.playerTwo.setColor(Checker_Color.RED);
-//            controlVisual.outputTextBox.appendText(board.playerOne.getName() + ": " + "WHITE");
-//            controlVisual.outputTextBox.appendText(board.playerTwo.getName() + ": " + "RED");
-//        }
-        //move function: (please change the 0 and 1 into others)
-//        board.move(0,1);
-
-        return main ;
+        GameController gameController = new GameController();
+        gameController.GameController();
+        gameController.gameStart();
+        gameController.getInsert();
+        rootPane.getChildren().add(gameController.getPane());
+        return rootPane ;
     }
     public static void main(String args[])
     {
         launch(args);
     }
-
 }
 
 
