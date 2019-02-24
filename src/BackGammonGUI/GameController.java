@@ -91,7 +91,7 @@ public class GameController
         player1.setName("Player1");
         player2.setName("Player2");
         assignPlayerLabel();
-        outputTextBox.appendText("Game Start! Type START to roll start dice\n");
+        outputTextBox.appendText("Game Start!\nType START to roll start dice\n");
     }
 
     private GridPane initControlVisual()
@@ -216,10 +216,10 @@ public class GameController
                     outputTextBox.appendText("Please insert start pip:\n");
                     outputTextBox.appendText("-----------------------------\n");
                 }
-                else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
-                {
-                    diceInGame();
-                }
+//                else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
+//                {
+//                    diceInGame();
+//                }
                 else if (messegeBufferForCom.substring(0,4).equals("NEXT"))
                 {
                     passTurn();
@@ -242,14 +242,14 @@ public class GameController
                     {
                         outputTextBox.appendText("Sorry START roll dice is not valid call anymore\n");
                     }
+                    else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
+                    {
+                        clear();
+                    }
                     else if (messegeBufferForCom.substring(0,7).equals("RESTART"))
                     {
                         insertbox.clear();
                         GameController();
-                    }
-                    else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
-                    {
-                        clear();
                     }
                     else
                         throwInalidTypo();
@@ -269,13 +269,13 @@ public class GameController
         if (player1.getColor() == currentTurn)
         {
             outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
-            outputTextBox.appendText("type ROLL to roll dice\n");
+            //outputTextBox.appendText("type ROLL to roll dice\n");
             assignPipNum(currentTurn);
         }
         else if (player2.getColor() == currentTurn)
         {
             outputTextBox.appendText("->"+player2.getName()+"'s turn\n");
-            outputTextBox.appendText("type ROLL to roll dice\n");
+            //outputTextBox.appendText("type ROLL to roll dice\n");
             assignPipNum(currentTurn);
         }
         else
@@ -288,6 +288,7 @@ public class GameController
         diceVisual.removeDisplay();
         currentTurn = changeTurn(currentTurn);
         currentTurn();
+        diceInGame();
     }
 
     private Checker_Color changeTurn(Checker_Color currentTurn)
@@ -476,6 +477,7 @@ public class GameController
         Dice dice = new Dice();
         if (player1StartPoint == 7)
         {
+            outputTextBox.appendText("-----------------------------\n");
             player1StartPoint = dice.roll();
             diceVisual.DiceVisual();
             diceVisual.singleDisplay(player1StartPoint);
@@ -490,7 +492,7 @@ public class GameController
             outputTextBox.appendText("Second dice point: " + player2StartPoint + ".\n");
             if (player1StartPoint == player2StartPoint)
             {
-                clear();
+                outputTextBox.appendText("-----------------------------\n");
                 outputTextBox.appendText("Got same point. Roll again.\n");
                 player1StartPoint = 7;
                 player2StartPoint = 7;
@@ -503,6 +505,7 @@ public class GameController
                 player2.setColor(Checker_Color.RED);
                 currentTurn = Checker_Color.WHITE;
                 currentTurn();
+                diceInGame();
             }
             else if (player2StartPoint > player1StartPoint)
             {
@@ -512,6 +515,7 @@ public class GameController
                 player2.setColor(Checker_Color.WHITE);
                 currentTurn =  Checker_Color.RED;
                 currentTurn();
+                diceInGame();
             }
             else
                 throwLogicFailure();
