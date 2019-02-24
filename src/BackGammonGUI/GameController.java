@@ -231,14 +231,12 @@ public class GameController
 
                     for(int i = 1; messegeBuffer.charAt(i) != '\u0000'; i++)
                     {
-                        if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i-1) == '>' && start == end)
-                            start = messegeBuffer.charAt(i);
-                        else if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i-1) == '>'  && start != end)
-                            end = messegeBuffer.charAt(i);
-                        else if(start > 0 && end > 0)
+                        if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>' && start == -1)
+                            start = messegeBuffer.charAt(i) - '0';
+                        else if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>'  && start != -1)
+                            end =  messegeBuffer.charAt(i) - '0';
+                        if(start > 0 && end > 0)
                             break;
-                        else
-                        {}
                     }
 
                     //Scanner input = new Scanner(messegeBuffer);
