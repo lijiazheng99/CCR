@@ -64,7 +64,7 @@ public class Board {
             4: check whether the second target aviable(using same function - "check")
          */
         //MOVE FROM A TO B WITHOUT ANY RULE:
-        if(bars[start].checkMoveIn(c) && bars[end].checkMoveOut(c))
+        if(bars[start].checkMoveOut(c) && bars[end].checkMoveIn(c))
         {
             bars[start].moveOut();
             bars[end].moveIn(c);

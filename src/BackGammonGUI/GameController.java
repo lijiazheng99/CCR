@@ -300,7 +300,7 @@ public class GameController
 
         if (currentTurn == Checker_Color.WHITE)
         {
-            status = board.move(Checker_Color.WHITE,start,end);
+            status = board.move(Checker_Color.WHITE,25-start,25-end);
             boardVisual.removeElements();
             boardVisual.BoardVisual(board);
             if (status == true)
@@ -310,7 +310,7 @@ public class GameController
         }
         else if (currentTurn == Checker_Color.RED)
         {
-            status = board.move(Checker_Color.WHITE,25-start,25-end);
+            status = board.move(Checker_Color.RED,start,end);
             boardVisual.removeElements();
             boardVisual.BoardVisual(board);
             if (status == true)
