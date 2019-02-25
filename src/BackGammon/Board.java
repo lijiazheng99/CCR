@@ -51,8 +51,9 @@ public class Board {
 
     }
 
-    public void move(int start, int end)
+    public void move(Checker_Color c, int start, int end)
     {
+
         /*basic idea:
             1: roll the dice twice
             2: depending on color, the check the moving direction
@@ -62,10 +63,16 @@ public class Board {
                 3: different color but number is 1
             4: check whether the second target aviable(using same function - "check")
          */
-
         //MOVE FROM A TO B WITHOUT ANY RULE:
-        bars[start].moveOut();
-        bars[end].moveIn(bars[start].getColor());
+        if(bars[start].checkMoveIn(c) && bars[end].checkMoveOut(c))
+        {
+            bars[start].moveOut();
+            bars[end].moveIn(c);
+        }
+        else
+        {
+            //Unvaild movement - append
+        }
     }
 
 //    public void pointsNeedToWinForBoth()

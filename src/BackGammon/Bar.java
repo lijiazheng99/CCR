@@ -35,12 +35,11 @@ public class Bar {
         return this.checkerNumber;
     }
 
-    public Boolean moveIn(Checker_Color color)
+    public Boolean checkMoveIn(Checker_Color color)
     {
         if(this.checkerNumber == 0)
         {
             this.setCheckerColor(color);
-            this.checkerNumber++;
             return true;
         }
         else if(this.checkerColor != color && this.checkerNumber!= 1)
@@ -54,12 +53,11 @@ public class Bar {
             return true;
         }
         else {
-            this.checkerNumber++;
             return true;
         }
     }
 
-    public Boolean moveOut(Checker_Color color)
+    public Boolean checkMoveOut(Checker_Color color)
     {
         if(this.checkerNumber == 0 || this.checkerColor != color)
         {
@@ -67,11 +65,21 @@ public class Bar {
         }
         else
         {
-            this.checkerNumber--;
-            if (this.checkerNumber == 0)
-                this.checkerColor = Checker_Color.EMPTY;
             return true;
         }
+    }
+
+    public void moveIn(Checker_Color color)
+    {
+        this.checkerNumber++;
+        this.setCheckerColor(color);
+    }
+
+    public void moveOut()
+    {
+        this.checkerNumber--;
+        if(this.checkerNumber == 0)
+            this.setCheckerColor(Checker_Color.EMPTY);
     }
 }
 
