@@ -298,6 +298,7 @@ public class GameController
 
         Boolean status;
 
+        //Judge move valid or not
         if (currentTurn == Checker_Color.WHITE)
         {
             status = board.move(Checker_Color.WHITE,25-start,25-end);
