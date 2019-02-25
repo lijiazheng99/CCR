@@ -35,33 +35,43 @@ public class Bar {
         return this.checkerNumber;
     }
 
-    public void moveIn(Checker_Color color)
+    public Boolean moveIn(Checker_Color color)
     {
         if(this.checkerNumber == 0)
         {
             this.setCheckerColor(color);
             this.checkerNumber++;
+            return true;
         }
         else if(this.checkerColor != color && this.checkerNumber!= 1)
         {
-            System.out.println("Unvalid Movement");
+            //System.out.println("Unvalid Movement");
+            return false;
         }
         else if(this.checkerColor != color && this.checkerNumber == 1)
         {
             this.setCheckerColor(color);
+            return true;
         }
-        else
-             this.checkerNumber++;
+        else {
+            this.checkerNumber++;
+            return true;
+        }
     }
 
-    public void moveOut()
+    public Boolean moveOut(Checker_Color color)
     {
-        if(this.checkerNumber > 0)
-            this.checkerNumber--;
+        if(this.checkerNumber == 0 || this.checkerColor != color)
+        {
+            return false;
+        }
         else
-            System.out.println("Unvalid Movement");
-        if(this.checkerNumber == 0)
-            this.setCheckerColor(Checker_Color.EMPTY);
+        {
+            this.checkerNumber--;
+            if (this.checkerNumber == 0)
+                this.checkerColor = Checker_Color.EMPTY;
+            return true;
+        }
     }
 }
 

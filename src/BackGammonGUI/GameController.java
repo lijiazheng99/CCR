@@ -108,8 +108,8 @@ public class GameController
         outputTextBox.appendText("Type CLEAR to clear board messages\nType QUIT to exit\n");
         outputTextBox.appendText("Type START to do start dice roll\n");
         outputTextBox.appendText("Type NEXT to pass move right to next player\n");
-        outputTextBox.appendText("Type NAME1 to enter player1 name\n");
-        outputTextBox.appendText("Type NAME2 to enter player2 name\n");
+        outputTextBox.appendText("Type NAME1+YourName to enter player1 name\n");
+        outputTextBox.appendText("Type NAME2+YourName to enter player2 name\n");
         outputTextBox.appendText("***********************\n");
     }
 
@@ -223,34 +223,7 @@ public class GameController
             {
                 if(messegeBufferForCom.substring(0,4).equals("MOVE"))
                 {
-                    insertbox.clear();
-                    outputTextBox.appendText("Make a Move:\n");
-
-                    int start = -1;
-                    int end = -1;
-
-                    for(int i = 1; messegeBuffer.charAt(i) != '\u0000'; i++)
-                    {
-                        if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>' && start == -1)
-                            start = messegeBuffer.charAt(i) - '0';
-                        else if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>'  && start != -1)
-                            end =  messegeBuffer.charAt(i) - '0';
-                        if(start > 0 && end > 0)
-                            break;
-                    }
-
-                    //Scanner input = new Scanner(messegeBuffer);
-                    //int startPip = input.nextInt();
-                    //int endPip = input.nextInt();
-
-//                String move = new String(messegeBuffer.substring(4,messegeBuffer.length()));
-//                int startNumPos = move.indexOf("<");
-//                int startPip = (int)move.charAt(startNumPos+1);
-
-                    //outputTextBox.appendText("Move from "+startPip+" to "+endPip+".\n");
-
-                    outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-                    outputTextBox.appendText("-----------------------------\n");
+                    makeMove();
                 }
                 else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
                 {
@@ -308,10 +281,45 @@ public class GameController
     /*
     Game turn controls
      */
-
     //Make a move
     private void makeMove()
     {
+        insertbox.clear();
+        outputTextBox.appendText("Make a Move:\n");
+        int start = -1;
+        int end = -1;
+        for(int i = 1; messegeBuffer.charAt(i) != '\u0000'; i++)
+        {
+            if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>' && start == -1)
+                start = messegeBuffer.charAt(i) - '0';
+            else if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>'  && start != -1)
+                end =  messegeBuffer.charAt(i) - '0';
+            if(start > 0 && end > 0)
+                break;
+        }
+        Boolean moveInStatus;
+        Boolean moveOutStatus;
+
+        if (currentTurn == Checker_Color.WHITE)
+        {
+
+
+        }
+        else if (currentTurn == Checker_Color.RED)
+        {
+
+        }
+        else
+            throwLogicFailure();
+
+
+
+        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
+
+
+
+
+        outputTextBox.appendText("-----------------------------\n");
 
     }
 
@@ -558,7 +566,7 @@ public class GameController
                 player2.setColor(Checker_Color.RED);
                 currentTurn = Checker_Color.WHITE;
                 currentTurn();
-                diceInGame();
+                outputTextBox.appendText("Dice point: "+player1StartPoint+" and "+player2StartPoint+".\n");
             }
             else if (player2StartPoint > player1StartPoint)
             {
@@ -568,7 +576,7 @@ public class GameController
                 player2.setColor(Checker_Color.WHITE);
                 currentTurn =  Checker_Color.RED;
                 currentTurn();
-                diceInGame();
+                outputTextBox.appendText("Dice point: "+player1StartPoint+" and "+player2StartPoint+".\n");
             }
             else
                 throwLogicFailure();
