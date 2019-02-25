@@ -185,23 +185,35 @@ public class GameController
         //Judge current status, if is EMPTY lead user to roll dice
         if (currentTurn == Checker_Color.EMPTY)
         {
-            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 5)
+            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
             {
-                if (messegeBufferForCom.substring(0,5).equals("START"))
+                if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
                 {
-                    startRoll();
+                    exit();
                 }
-                else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                else if (insertbox.getText().length()>= 5)
                 {
-                    player1Name();
-                }
-                else if(messegeBufferForCom.substring(0,5).equals("NAME2"))
-                {
-                    player2Name();
-                }
-                else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
-                {
-                    clear();
+                    if (messegeBufferForCom.substring(0,5).equals("START"))
+                    {
+                        startRoll();
+                    }
+                    else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                    {
+                        player1Name();
+                    }
+                    else if(messegeBufferForCom.substring(0,5).equals("NAME2"))
+                    {
+                        player2Name();
+                    }
+                    else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
+                    {
+                        clear();
+                    }
+                    else
+                    {
+                        throwInalidTypo();
+                        outputTextBox.appendText("You must type START to do start game roll\n");
+                    }
                 }
                 else
                 {
