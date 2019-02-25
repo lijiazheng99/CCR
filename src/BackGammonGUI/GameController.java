@@ -102,12 +102,12 @@ public class GameController
         outputTextBox.appendText("Welcome to BackGammon!\n");
         outputTextBox.appendText("***********************\n");
         outputTextBox.appendText("Game instruction:\n");
-        outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
-        outputTextBox.appendText("Type CLEAR to clear board messages\nType QUIT to exit\n");
         outputTextBox.appendText("Type START to do start dice roll\n");
-        outputTextBox.appendText("Type NEXT to pass move right to next player\n");
         outputTextBox.appendText("Type NAME1+YourName to enter player1 name\n");
         outputTextBox.appendText("Type NAME2+YourName to enter player2 name\n");
+        outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
+        outputTextBox.appendText("Type NEXT to pass move right to next player\n");
+        outputTextBox.appendText("Type CLEAR to clear board messages. Type QUIT to exit\n");
         outputTextBox.appendText("***********************\n");
     }
 
@@ -283,44 +283,71 @@ public class GameController
     private void makeMove()
     {
         insertbox.clear();
-        outputTextBox.appendText("Make a Move:\n");
+        //Pip number getter
         int start = -1;
         int end = -1;
-        for(int i = 1; messegeBuffer.charAt(i) != '\u0000'; i++)
+        //String index getter
+        int firstLBra = -1;
+        int firstRBra = -1;
+        int secondLBra = -1;
+        int secondRBra = -1;
+
+        //Scan whole string get index locations
+        for(int i = 0; i < messegeBuffer.length(); i++)
         {
-            if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>' && start == -1)
-                start = messegeBuffer.charAt(i) - '0';
-            else if(messegeBuffer.charAt(i-1) == '<' && messegeBuffer.charAt(i+1) == '>'  && start != -1)
-                end =  messegeBuffer.charAt(i) - '0';
-            if(start > 0 && end > 0)
-                break;
+            if (messegeBuffer.charAt(i) == '<' && firstLBra == -1)
+                firstLBra = i;
+            else if (messegeBuffer.charAt(i) == '>' &&  firstRBra == -1 && firstLBra != -1)
+                firstRBra = i;
+            else if (messegeBuffer.charAt(i) == '<' && secondLBra == -1 && firstRBra != -1)
+                secondLBra = i;
+            else if (messegeBuffer.charAt(i) == '>' && secondRBra == -1 && secondLBra != -1)
+                secondRBra = i;
         }
 
-        Boolean status;
+        if (firstLBra != -1 && firstRBra != -1 && secondLBra != -1 && secondRBra != -1)
+        {
+            start = Integer.parseInt(messegeBuffer.substring(firstLBra+1,firstRBra));
+            end = Integer.parseInt(messegeBuffer.substring(secondLBra+1,secondRBra));
 
-        //Judge move valid or not
-        if (currentTurn == Checker_Color.WHITE)
-        {
-            status = board.move(Checker_Color.WHITE,25-start,25-end);
-            boardVisual.removeElements();
-            boardVisual.BoardVisual(board);
-            if (status == true)
-                outputTextBox.appendText("Move from " + start + " to " + end + "\n");
+            Boolean status;
+
+            //Judge move valid or not
+            if (start == end)
+            {
+                throwInalidTypo();
+                outputTextBox.appendText("Sorry you can't move into original position\n");
+            }
             else
-                outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
+            {
+                if (currentTurn == Checker_Color.WHITE)
+                {
+                    status = board.move(Checker_Color.WHITE,25-start,25-end);
+                    boardVisual.removeElements();
+                    boardVisual.BoardVisual(board);
+                    if (status == true)
+                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
+                    else
+                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
+                }
+                else if (currentTurn == Checker_Color.RED)
+                {
+                    status = board.move(Checker_Color.RED,start,end);
+                    boardVisual.removeElements();
+                    boardVisual.BoardVisual(board);
+                    if (status == true)
+                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
+                    else
+                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
+                }
+                else
+                    throwLogicFailure();
+            }
         }
-        else if (currentTurn == Checker_Color.RED)
-        {
-            status = board.move(Checker_Color.RED,start,end);
-            boardVisual.removeElements();
-            boardVisual.BoardVisual(board);
-            if (status == true)
-                outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-            else
-                outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
+        else {
+            throwInalidTypo();
+            outputTextBox.appendText("You must type MOVE<Pip1><Pip2> to make a move.\n");
         }
-        else
-            throwLogicFailure();
     }
 
     //enter NEXT to pass to next player
@@ -387,7 +414,7 @@ public class GameController
                 grid.getChildren().remove(piplabels[i]);
             }
         }
-        if (currentTurn == Checker_Color.RED)
+        if (currentTurn == Checker_Color.WHITE)
         {
             piplabels[0] =  new Label("   12");
             piplabels[0].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
@@ -463,7 +490,7 @@ public class GameController
             grid.add(piplabels[22],12,21);
             grid.add(piplabels[23],13,21);
         }
-        else if (currentTurn == Checker_Color.WHITE)
+        else if (currentTurn == Checker_Color.RED)
         {
             piplabels[0] =  new Label("   13");
             piplabels[0].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
