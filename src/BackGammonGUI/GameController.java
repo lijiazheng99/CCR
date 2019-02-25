@@ -18,8 +18,6 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-import java.util.Scanner;
-
 public class GameController
 {
     //mainPane for add other pane together, grid for map contollers
@@ -297,30 +295,31 @@ public class GameController
             if(start > 0 && end > 0)
                 break;
         }
-        Boolean moveInStatus;
-        Boolean moveOutStatus;
+
+        Boolean status;
 
         if (currentTurn == Checker_Color.WHITE)
         {
-
-
+            status = board.move(Checker_Color.WHITE,start,end);
+            boardVisual.removeElements();
+            boardVisual.BoardVisual(board);
+            if (status == true)
+                outputTextBox.appendText("Move from " + start + " to " + end + "\n-----------------------------\n");
+            else
+                outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
         }
         else if (currentTurn == Checker_Color.RED)
         {
-
+            status = board.move(Checker_Color.WHITE,25-start,25-end);
+            boardVisual.removeElements();
+            boardVisual.BoardVisual(board);
+            if (status == true)
+                outputTextBox.appendText("Move from " + start + " to " + end + "\n-----------------------------\n");
+            else
+                outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
         }
         else
             throwLogicFailure();
-
-
-
-        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-
-
-
-
-        outputTextBox.appendText("-----------------------------\n");
-
     }
 
     //enter NEXT to pass to next player

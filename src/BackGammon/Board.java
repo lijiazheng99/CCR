@@ -51,7 +51,7 @@ public class Board {
 
     }
 
-    public void move(Checker_Color c, int start, int end)
+    public boolean move(Checker_Color c, int start, int end)
     {
 
         /*basic idea:
@@ -68,10 +68,12 @@ public class Board {
         {
             bars[start].moveOut();
             bars[end].moveIn(c);
+            return true;
         }
         else
         {
             //Unvaild movement - append
+            return false;
         }
     }
 
