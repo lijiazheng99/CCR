@@ -7,8 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CCR_BackGammon_jar.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/CCR_BackGammon_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Manifest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/board.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/dice_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/dice_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/dice_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/dice_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/dice_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/dice_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/board.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/dice_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/dice_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/dice_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/dice_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/dice_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/dice_6.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+            <state relative-caret-position="420">
+              <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,6 +235,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="26" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="982" />
@@ -237,6 +254,17 @@
             <path>
               <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
               <item name="CCR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCR" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CCR" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
@@ -262,13 +290,13 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551093807370" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551094641833" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -277,16 +305,16 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="BackGammon" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/BackGammonGUI" />
+      <recent name="$PROJECT_DIR$/src/BackGammon" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/BackGammonPIC" />
       <recent name="$PROJECT_DIR$/src/BackGammon" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/BackGammonGUI" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/BackGammonGUI" />
-      <recent name="$PROJECT_DIR$/src/BackGammon" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -443,14 +471,7 @@
       <workItem from="1551091454892" duration="37000" />
       <workItem from="1551091648276" duration="722000" />
       <workItem from="1551093088544" duration="378000" />
-      <workItem from="1551093714827" duration="134000" />
-    </task>
-    <task id="LOCAL-00009" summary="Jiazheng Li&#10;update color enum type">
-      <created>1549161596209</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1549161596209</updated>
+      <workItem from="1551093714827" duration="616000" />
     </task>
     <task id="LOCAL-00010" summary="Jiazheng Li&#10;update color enum type&#10;&amp;&#10;Create Checker_Vis">
       <created>1549162377420</created>
@@ -788,11 +809,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551093299118</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="add images">
+      <created>1551094320381</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1551094320382</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173852000" />
+    <option name="totallyTimeSpent" value="174334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -804,7 +832,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="982" extended-state="0" />
+    <frame x="26" y="23" width="1680" height="982" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18559219" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1065,8 +1094,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+        <state relative-caret-position="420">
+          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1080,9 +1109,9 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="javaee-facet-resources" />
               <type id="jpa-descriptors" />
               <type id="artifact" />
+              <type id="javaee-facet-resources" />
               <type id="library" />
             </show-content>
           </artifact-editor>
@@ -1091,6 +1120,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
