@@ -304,7 +304,7 @@ public class GameController
             boardVisual.removeElements();
             boardVisual.BoardVisual(board);
             if (status == true)
-                outputTextBox.appendText("Move from " + start + " to " + end + "\n-----------------------------\n");
+                outputTextBox.appendText("Move from " + start + " to " + end + "\n");
             else
                 outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
         }
@@ -314,7 +314,7 @@ public class GameController
             boardVisual.removeElements();
             boardVisual.BoardVisual(board);
             if (status == true)
-                outputTextBox.appendText("Move from " + start + " to " + end + "\n-----------------------------\n");
+                outputTextBox.appendText("Move from " + start + " to " + end + "\n");
             else
                 outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
         }
@@ -337,12 +337,24 @@ public class GameController
     {
         if (player1.getColor() == currentTurn)
         {
-            outputTextBox.appendText("->"+player1.getName()+"'s turn\n");
+            outputTextBox.appendText("->"+player1.getName()+"'s turn. ");
+            if (player1.getColor() == Checker_Color.WHITE)
+                outputTextBox.appendText("Checker color WHITE.\n");
+            else if (player1.getColor() == Checker_Color.RED)
+                outputTextBox.appendText("Checker color RED.\n");
+            else
+                throwInalidTypo();
             assignPipNum(currentTurn);
         }
         else if (player2.getColor() == currentTurn)
         {
-            outputTextBox.appendText("->"+player2.getName()+"'s turn\n");
+            outputTextBox.appendText("->"+player2.getName()+"'s turn.");
+            if (player2.getColor() == Checker_Color.WHITE)
+                outputTextBox.appendText("Checker color WHITE.\n");
+            else if (player2.getColor() == Checker_Color.RED)
+                outputTextBox.appendText("Checker color RED.\n");
+            else
+                throwInalidTypo();
             assignPipNum(currentTurn);
         }
         else
@@ -542,7 +554,7 @@ public class GameController
             diceVisual.DiceVisual();
             diceVisual.singleDisplay(player1StartPoint);
             outputTextBox.appendText("First dice point: " + player1StartPoint + ".\n");
-            outputTextBox.appendText("Please do second roll.\n");
+            outputTextBox.appendText("Please type START to do second roll.\n");
         }
         else if (player2StartPoint == 7)
         {
@@ -573,7 +585,7 @@ public class GameController
                 outputTextBox.appendText("-----------------------------\n");
                 player1.setColor(Checker_Color.RED);
                 player2.setColor(Checker_Color.WHITE);
-                currentTurn =  Checker_Color.RED;
+                currentTurn =  Checker_Color.WHITE;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+player1StartPoint+" and "+player2StartPoint+".\n");
             }
