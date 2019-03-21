@@ -89,10 +89,88 @@ public class Board {
         }
     }
 
-    public void rounds(Checker_Color c)
-    {
+    public void rounds(Checker_Color c) {
+        boolean doubleSame = false;
+        boolean moveFinish = false;
+
+
+        int num = 0;
         int num1 = 0;
         int num2 = 0;
+
+        //reading dice numbers
+        if (num1 == num2)
+        {
+            num = num1;
+            doubleSame = true;
+        }
+        //whether get 2 same number.
+
+
+        int[] possibleMove = new int[24];
+        int possibleNum = 0;
+        //list of possible move starting list and its index
+
+
+
+
+
+            if(doubleSame)
+            {
+
+            }
+            else {//2 numbers are different
+                while (!moveFinish) {
+                    possibleMove[0] = 0;
+                    //setting the empty status
+
+                    for (int i = 1; i <= 24; i++) {
+                        if (checkMove(c, i, num1) || checkMove(c, i, num2))
+                            possibleMove[possibleNum++] = i;
+                    }
+                    //give a possible move starting list
+                    //***Doing output
+                    if((possibleMove[0] == 0))
+                        //PASS!
+                        break;
+                    int a,b;//(a,b)
+                    boolean moveValid = false;
+                    do {
+                        //***ask for a move(a,b)
+                        a = 0;
+                        b = 0;
+                        moveValid = ((a-b) == num1 || (a-b) == num2);
+                        //whether number valid
+                        if(moveValid)
+                            moveValid = move(c,a,b);
+                            //whether move valid
+                    }while(!moveValid);//loop when not valid
+
+                    //move finish, erase a number
+                    if(a-b == num1)
+                        num1 = 0;
+                    else
+                        num2 = 0;
+                    //when 2 numver all used
+                    if((num1 == 0) && (num2 == 0))
+                        moveFinish = true;
+                }
+            }
+
+
+
+
+
+    }
+
+    public boolean checkMove(Checker_Color c, int start, int steps)
+    {
+        if(steps == 0)
+           return false;
+        else if(bars[start].checkMoveOut(c) && bars[start+steps].checkMoveIn(c))
+            return true;
+        else
+            return false;
     }
 }
 
