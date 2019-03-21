@@ -86,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
+            <state relative-caret-position="247">
+              <caret line="93" column="11" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -271,7 +271,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553180975128" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553186062097" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -453,14 +453,7 @@
       <workItem from="1551091648276" duration="722000" />
       <workItem from="1551093088544" duration="378000" />
       <workItem from="1551093714827" duration="3689000" />
-      <workItem from="1553168558180" duration="9230000" />
-    </task>
-    <task id="LOCAL-00015" summary="Jiazheng Li&#10;Fixed auto resize">
-      <created>1549412972131</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1549412972131</updated>
+      <workItem from="1553168558180" duration="12443000" />
     </task>
     <task id="LOCAL-00016" summary="Jiazheng Li&#10;Fixed auto resize">
       <created>1549413368544</created>
@@ -798,11 +791,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553180348168</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="updates&#10;functions deleted.">
+      <created>1553181000492</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1553181000492</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186637000" />
+    <option name="totallyTimeSpent" value="189850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -916,7 +916,8 @@
     <MESSAGE value="updates&#10;game function." />
     <MESSAGE value="updates&#10;basic rule added" />
     <MESSAGE value="updates&#10;reEnter function and kicking out function added" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;reEnter function and kicking out function added" />
+    <MESSAGE value="updates&#10;functions deleted." />
+    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;functions deleted." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1104,8 +1105,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
+        <state relative-caret-position="247">
+          <caret line="93" column="11" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
         </state>
       </provider>
     </entry>

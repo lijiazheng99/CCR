@@ -13,8 +13,10 @@ public class Board {
     public int points1,points2;
     public Dice diceToRoll;
     public int steps;
-    public int red = 0;
-    public int white = 0;
+    private int redHit = 0;
+    private int whiteHit = 0;
+    private int redBear = 0;
+    private int whiteBear = 0;
     //kicking numbers
 
     public Board()
@@ -56,26 +58,17 @@ public class Board {
 
     public boolean move(Checker_Color c, int start, int end)
     {
-        /*basic idea:
-            1: roll the dice twice
-            2: depending on color, the check the moving direction
-            3: check whether the target bar satisfies the moving conditions
-                1: empty
-                2: same color
-                3: different color but number is 1
-            4: check whether the second target aviable(using same function - "check")
-         */
         //MOVE FROM A TO B WITHOUT ANY RULE:
-        if(bars[start].checkMoveOut(c) && bars[end].checkMoveIn(c))
+        if(checkMove(c,start,end))
         {
             bars[start].moveOut();
             if(bars[end].checkKick(c))
             {
                 bars[end].kick(c);
                 if(c == Checker_Color.RED)
-                    white++;
+                    whiteHit++;
                 else
-                    red++;
+                    redHit++;
             }
             else
                 bars[end].moveIn(c);
@@ -88,11 +81,20 @@ public class Board {
         }
     }
 
-    public boolean checkMove(Checker_Color c, int start, int steps)
+    public boolean checkMove(Checker_Color c, int start, int end)
     {
-        if(steps == 0)
+        /*basic idea:
+            1: roll the dice twice
+            2: depending on color, the check the moving direction
+            3: check whether the target bar satisfies the moving conditions
+                1: empty
+                2: same color
+                3: different color but number is 1
+            4: check whether the second target aviable(using same function - "check")
+         */
+        if(start - end == 0)
             return false;
-        else if(bars[start].checkMoveOut(c) && bars[start+steps].checkMoveIn(c))
+        else if(bars[start].checkMoveOut(c) && bars[end].checkMoveIn(c))
             return true;
         else
             return false;
@@ -112,91 +114,7 @@ public class Board {
     }
 
     public void rounds(Checker_Color c) {
-        boolean doubleSame = false;//whether get 2 same dice numbers
-        boolean moveFinish = false;//whether this turn finished
-        boolean reEnter = false;//re-enter the board from kicking area
-        boolean movingOut = false;//final state
 
-        int num = 0;
-        int num1 = 0;
-        int num2 = 0;
-        //reading dice numbers
-
-        if (num1 == num2)
-        {
-            num = num1;
-            doubleSame = true;
-        }
-        //whether get 2 same number.
-
-        int[] possibleMove = new int[24];
-        int possibleNum = 0;
-        //list of possible move starting list and its index
-
-        if(doubleSame)//2 numbers are the same
-        {
-            int count = 0;
-            while (!moveFinish) {
-                possibleMove[0] = 0;
-                for (int i = 1; i <= 24; i++) {
-                    if (checkMove(c, i, num))
-                        possibleMove[possibleNum++] = i;
-                }
-                if ((possibleMove[0] == 0))
-                    //PASS!
-                    break;
-                int a, b;//(a,b)
-                boolean moveValid = false;
-                do {
-                    //***ask for a move(a,b)
-                    a = 0;
-                    b = 0;
-                    moveValid = ((a - b) == num);
-                    //whether number valid
-                    if (moveValid)
-                        moveValid = move(c, a, b);
-                    //whether move valid
-                } while (!moveValid);//loop when not valid
-
-                if (count == 4)
-                    moveFinish = true;
-            }
-        }
-        else {//2 numbers are different
-            while (!moveFinish) {
-                possibleMove[0] = 0;
-                //setting the empty status
-                for (int i = 1; i <= 24; i++) {
-                    if (checkMove(c, i, num1) || checkMove(c, i, num2))
-                        possibleMove[possibleNum++] = i;
-                }
-                //give a possible move starting list
-                //***Doing output
-                if((possibleMove[0] == 0))
-                    //PASS!
-                    break;
-                int a,b;//(a,b)
-                boolean moveValid = false;
-                do {
-                    //***ask for a move(a,b)
-                    a = 0;
-                    b = 0;
-                    moveValid = ((a-b) == num1 || (a-b) == num2);
-                    //whether number valid
-                    if(moveValid)
-                        moveValid = move(c,a,b);
-                        //whether move valid
-                }while(!moveValid);//loop when not valid
-                //move finish, erase a number
-                if(a-b == num1)
-                    num1 = 0;
-                else
-                    num2 = 0;
-                //when 2 numver all used
-                if((num1 == 0) && (num2 == 0))
-                    moveFinish = true;
-            }
-        }
     }
 
 
