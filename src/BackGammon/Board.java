@@ -53,7 +53,6 @@ public class Board {
 
     public boolean move(Checker_Color c, int start, int end)
     {
-
         /*basic idea:
             1: roll the dice twice
             2: depending on color, the check the moving direction
@@ -77,30 +76,23 @@ public class Board {
         }
     }
 
-//    public void pointsNeedToWinForBoth()
-//    {
-//        int whitePoints = 0;
-//        int redPoints = 0;
-//
-//        for(int i = 1; i <= 24; i++) {
-//            if (bars[i].getColor() == Checker_Color.RED)
-//                redPoints += bars[i].getCheckerNumber() * (25-i);
-//            else if(bars[i].getColor() == Checker_Color.WHITE)
-//                whitePoints += bars[i].getCheckerNumber() * i;
-//            else
-//            System.out.println("Errors in points counting");
-//        }
-//        if(playerOne.getColor() == Checker_Color.RED) {
-//            playerOne.setPointsNeeded(redPoints);
-//            playerTwo.setPointsNeeded(whitePoints);
-//        }
-//        else
-//        {
-//            playerOne.setPointsNeeded(whitePoints);
-//            playerTwo.setPointsNeeded(redPoints);
-//        }
-//
-//    }
+    public void game()
+    {
+        int round = 0;
+        while(!playerOne.getStatus() && !playerTwo.getStatus())//When both not win
+        {
+            if(round %2 == 0)
+                rounds(Checker_Color.RED);
+            else
+                rounds(Checker_Color.WHITE);
+            round++;
+        }
+    }
 
+    public void rounds(Checker_Color c)
+    {
+        int num1 = 0;
+        int num2 = 0;
+    }
 }
 

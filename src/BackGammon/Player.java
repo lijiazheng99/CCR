@@ -7,6 +7,7 @@ public class Player
     private String name;
     private Checker_Color color;
     private int pointsNeededToWin;
+    private boolean winningStatus = false;
 
     public Player()
     {
@@ -37,5 +38,10 @@ public class Player
     public Checker_Color getColor()
     {
         return this.color;
+    }
+
+    public boolean getStatus()
+    {
+        return this.winningStatus;
     }
 }
