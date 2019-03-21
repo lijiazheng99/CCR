@@ -38,10 +38,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="757">
-              <caret line="222" column="17" lean-forward="true" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
+            <state relative-caret-position="1029">
+              <caret line="233" column="23" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
               <folding>
-                <element signature="e#7526#7527#0" expanded="true" />
+                <element signature="e#7825#7826#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,7 +183,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553197492611" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553197916900" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -365,14 +365,7 @@
       <workItem from="1551091648276" duration="722000" />
       <workItem from="1551093088544" duration="378000" />
       <workItem from="1551093714827" duration="3689000" />
-      <workItem from="1553168558180" duration="21817000" />
-    </task>
-    <task id="LOCAL-00018" summary="Jiazheng Li&#10;Fixed auto resize">
-      <created>1549447568665</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1549447568665</updated>
+      <workItem from="1553168558180" duration="22235000" />
     </task>
     <task id="LOCAL-00019" summary="Jiazheng Li&#10;Fixed auto resize">
       <created>1549447774503</created>
@@ -710,11 +703,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553195898276</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="updates&#10;bear off functions added">
+      <created>1553197509166</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1553197509166</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199224000" />
+    <option name="totallyTimeSpent" value="199642000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -805,7 +805,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function" />
     <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package" />
     <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package&#10;4. Edit width and height" />
     <MESSAGE value="Commit by Jiwei Zhang&#10;1. update the patch notes&#10;2. finish basic initialization in functionality" />
@@ -830,7 +829,8 @@
     <MESSAGE value="updates&#10;reEnter function and kicking out function added" />
     <MESSAGE value="updates&#10;functions deleted." />
     <MESSAGE value="updates&#10;re-enter function added." />
-    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;re-enter function added." />
+    <MESSAGE value="updates&#10;bear off functions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;bear off functions added" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1018,10 +1018,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="222" column="17" lean-forward="true" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
+        <state relative-caret-position="1029">
+          <caret line="233" column="23" selection-start-line="233" selection-start-column="23" selection-end-line="233" selection-end-column="23" />
           <folding>
-            <element signature="e#7526#7527#0" expanded="true" />
+            <element signature="e#7825#7826#0" expanded="true" />
           </folding>
         </state>
       </provider>

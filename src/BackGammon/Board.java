@@ -116,7 +116,7 @@ public class Board {
         boolean reEnter = false;//re-enter the board from kicking area
         boolean movingOut = false;//final state
         int countOfList;
-
+        int doublesNum = 0;
         int currentHit;
 
         if(c == Checker_Color.RED)
@@ -135,7 +135,7 @@ public class Board {
         if(points1 == points2)
         {
             doubles = true;
-            int doublesNum = points1;
+            doublesNum = points1;
         }
 
         while(!moveFinish)
@@ -225,7 +225,13 @@ public class Board {
             {
 
             }
-
+            if(points1 == 0 && points2 == 0 && doubles){
+                doubles = false;
+                points1 = doublesNum;
+                points2 = doublesNum;
+            }
+            else if(points1 == 0 && points2 == 0 && !doubles)
+                moveFinish = true;
         }
     }
 
