@@ -114,7 +114,6 @@ public class Board {
         boolean doubles = false;//whether get 2 same dice numbers
         boolean moveFinish = false;//whether this turn finished
         boolean reEnter = false;//re-enter the board from kicking area
-        boolean movingOut = false;//final state
         int countOfList;
         int doublesNum = 0;
         int currentHit;
@@ -125,8 +124,6 @@ public class Board {
             currentHit = whiteHit;
         if(currentHit != 0)
             reEnter = true;
-
-        movingOut = checkBear(c);
 
         points1 = 0;
         points2 = 0;
@@ -142,7 +139,6 @@ public class Board {
         {
             list = new int[2][50];//save all the move (0:start,1:end)
             countOfList = 0;
-
             if(reEnter)
             {
                 if(bars[25-points1].checkMoveIn(c))
@@ -177,7 +173,7 @@ public class Board {
                         points2 = 0;
                     //erase the used number
                 }
-            }else if(movingOut)
+            }else if(checkBear(c))
             {
                 if(points2 >= points1)
                 {
