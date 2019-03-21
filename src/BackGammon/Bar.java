@@ -35,11 +35,10 @@ public class Bar {
         return this.checkerNumber;
     }
 
-    public Boolean checkMoveIn(Checker_Color color)
+    public boolean checkMoveIn(Checker_Color color)
     {
         if(this.checkerNumber == 0)
         {
-            this.setCheckerColor(color);
             return true;
         }
         else if(this.checkerColor != color && this.checkerNumber!= 1)
@@ -49,15 +48,14 @@ public class Bar {
         }
         else if(this.checkerColor != color && this.checkerNumber == 1)
         {
-            this.setCheckerColor(color);
             return true;
         }
-        else {
+        else{
             return true;
         }
     }
 
-    public Boolean checkMoveOut(Checker_Color color)
+    public boolean checkMoveOut(Checker_Color color)
     {
         if(this.checkerNumber == 0 || this.checkerColor != color)
         {
@@ -67,6 +65,19 @@ public class Bar {
         {
             return true;
         }
+    }
+
+    public boolean checkKick(Checker_Color color)
+    {
+        if(this.checkerColor != color && this.checkerNumber == 1)
+            return true;
+        else
+            return false;
+    }
+
+    public void kick(Checker_Color color)
+    {
+        this.setCheckerColor(color);
     }
 
     public void moveIn(Checker_Color color)
