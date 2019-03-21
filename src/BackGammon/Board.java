@@ -52,8 +52,6 @@ public class Board {
         playerOne = new Player();
         playerTwo = new Player();
         diceToRoll = new Dice();
-
-
     }
 
     public boolean move(Checker_Color c, int start, int end)
@@ -106,44 +104,35 @@ public class Board {
         while(!playerOne.getStatus() && !playerTwo.getStatus())//When both not win
         {
             if(round %2 == 0)//red turn
-            {
-                if(red == 0)
-                    rounds(Checker_Color.RED);
-                else
-                    reEnter(Checker_Color.RED);
-            }
+                rounds(Checker_Color.RED);
             else//white turn
-            {
-                if(white == 0)
-                    rounds(Checker_Color.WHITE);
-                else
-                    reEnter(Checker_Color.WHITE);
-            }
+                rounds(Checker_Color.WHITE);
             round++;
         }
     }
 
-    public void reEnter(Checker_Color c)
-    {
-
-    }
-
     public void rounds(Checker_Color c) {
-        boolean doubleSame = false;
-        boolean moveFinish = false;
+        boolean doubleSame = false;//whether get 2 same dice numbers
+        boolean moveFinish = false;//whether this turn finished
+        boolean reEnter = false;//re-enter the board from kicking area
+        boolean movingOut = false;//final state
+
         int num = 0;
         int num1 = 0;
         int num2 = 0;
         //reading dice numbers
+
         if (num1 == num2)
         {
             num = num1;
             doubleSame = true;
         }
         //whether get 2 same number.
+
         int[] possibleMove = new int[24];
         int possibleNum = 0;
         //list of possible move starting list and its index
+
         if(doubleSame)//2 numbers are the same
         {
             int count = 0;
