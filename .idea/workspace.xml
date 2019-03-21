@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Bar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,10 +38,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="177" column="39" selection-start-line="177" selection-start-column="39" selection-end-line="177" selection-end-column="39" />
+            <state relative-caret-position="757">
+              <caret line="222" column="17" lean-forward="true" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
               <folding>
-                <element signature="e#5517#5518#0" expanded="true" />
+                <element signature="e#7526#7527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,7 +183,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553195875354" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553197492611" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -366,14 +365,7 @@
       <workItem from="1551091648276" duration="722000" />
       <workItem from="1551093088544" duration="378000" />
       <workItem from="1551093714827" duration="3689000" />
-      <workItem from="1553168558180" duration="20222000" />
-    </task>
-    <task id="LOCAL-00017" summary="Jiazheng Li&#10;Fixed auto resize">
-      <created>1549413414147</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1549413414147</updated>
+      <workItem from="1553168558180" duration="21817000" />
     </task>
     <task id="LOCAL-00018" summary="Jiazheng Li&#10;Fixed auto resize">
       <created>1549447568665</created>
@@ -711,11 +703,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553186075924</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="updates&#10;re-enter function added.">
+      <created>1553195898276</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1553195898276</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197629000" />
+    <option name="totallyTimeSpent" value="199224000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -830,7 +829,8 @@
     <MESSAGE value="updates&#10;basic rule added" />
     <MESSAGE value="updates&#10;reEnter function and kicking out function added" />
     <MESSAGE value="updates&#10;functions deleted." />
-    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;functions deleted." />
+    <MESSAGE value="updates&#10;re-enter function added." />
+    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;re-enter function added." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1018,10 +1018,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="177" column="39" selection-start-line="177" selection-start-column="39" selection-end-line="177" selection-end-column="39" />
+        <state relative-caret-position="757">
+          <caret line="222" column="17" lean-forward="true" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
           <folding>
-            <element signature="e#5517#5518#0" expanded="true" />
+            <element signature="e#7526#7527#0" expanded="true" />
           </folding>
         </state>
       </provider>

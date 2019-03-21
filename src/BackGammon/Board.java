@@ -115,8 +115,7 @@ public class Board {
         boolean moveFinish = false;//whether this turn finished
         boolean reEnter = false;//re-enter the board from kicking area
         boolean movingOut = false;//final state
-        list = new int[2][50];//save all the move (0:start,1:end)
-        int countOfList = 0;
+        int countOfList;
 
         int currentHit;
 
@@ -141,6 +140,9 @@ public class Board {
 
         while(!moveFinish)
         {
+            list = new int[2][50];//save all the move (0:start,1:end)
+            countOfList = 0;
+
             if(reEnter)
             {
                 if(bars[25-points1].checkMoveIn(c))
@@ -149,36 +151,76 @@ public class Board {
                     list[1][countOfList++] = 25-points2;
                 //list output
 
-                if(countOfList == 0)
-                    break;
-                //empty possible move list
+                if(countOfList != 0)
+                {
+                    //moving list is not empty
+                    int choice = 0;//ask for a move(A OR B) (0 or 1)
+                    if (bars[list[1][choice]].checkKick(c)) {
+                        bars[list[1][choice]].kick(c);
+                        if (c == Checker_Color.RED)
+                            whiteHit++;
+                        else
+                            redHit++;
+                    } else
+                        bars[list[1][choice]].moveIn(c);
+                    //move into the target bar
 
-                int choice = 0;//ask for a move(A OR B) (0 or 1)
-                if(bars[list[1][choice]].checkKick(c)) {
-                    bars[list[1][choice]].kick(c);
                     if (c == Checker_Color.RED)
-                        whiteHit++;
+                        redHit--;
                     else
-                        redHit++;
+                        whiteHit--;
+                    //reduce the Hit number by 1
+
+                    if (points1 == list[1][choice])
+                        points1 = 0;
+                    else
+                        points2 = 0;
+                    //erase the used number
                 }
-                else
-                    bars[list[1][choice]].moveIn(c);
-                //move 1 into the target bar
-
-                if(c == Checker_Color.RED)
-                    redHit--;
-                else
-                    whiteHit--;
-                //reduce the Hit number by 1
-
-                if(points1 == list[1][choice])
-                    points1 = 0;
-                else
-                    points2 = 0;
-                //erase the used number
             }else if(movingOut)
             {
+                if(points2 >= points1)
+                {
+                    for(int i = 1; i <= points2; i++)
+                        if(bars[i].checkMoveOut(c))
+                            list[0][countOfList++] = i;
+                }
+                else
+                {
+                    for(int i = 1; i <= points1; i++)
+                        if(bars[i].checkMoveOut(c))
+                            list[0][countOfList++] = i;
+                }
+                //list output
+                if(countOfList != 0)
+                {
+                    //moving list is not empty
+                    int choice = 0;//ask for a move(A,B,C,D,...)
 
+                    bars[list[0][choice]].moveOut();
+                    //move out from target bar
+
+                    if (c == Checker_Color.RED)
+                        redBear++;
+                    else
+                        whiteBear++;
+                    //increse the Bear Off number by 1
+
+                    if (points1 == list[0][choice])
+                        points1 = 0;//use points 1 to do exact move
+                    else if(points2 == list[0][choice])
+                        points2 = 0;//use points 2 to do exact move
+                    else if(list[0][choice] < points1 && list[0][choice] > points2)
+                        points1 = 0;//this is a mid number, use the larger one, points1
+                    else if(list[0][choice] > points1 && list[0][choice] < points2)
+                        points2 = 0;//this is a mid number, use the larger one, points2
+                    //choice number is smaller than both:
+                    else if(points2 >= points1)//points2 is larger, then use the smaller one.
+                        points1 = 0;
+                    else//points1 is larger, then use the smaller one.
+                        points2 = 0;
+                    //erase the used number
+                }
             }else//normal round
             {
 
