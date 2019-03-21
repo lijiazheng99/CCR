@@ -11,12 +11,11 @@ public class Board {
     public Player playerOne;
     public Player playerTwo;
     public int points1,points2;
-    public Dice diceToRoll;
-    public int steps;
     private int redHit = 0;
     private int whiteHit = 0;
     private int redBear = 0;
     private int whiteBear = 0;
+    private int[][] list;
     //kicking numbers
 
     public Board()
@@ -50,10 +49,6 @@ public class Board {
             else
                 bars[i].setCheckerNumber(0);
         }
-
-        playerOne = new Player();
-        playerTwo = new Player();
-        diceToRoll = new Dice();
     }
 
     public boolean move(Checker_Color c, int start, int end)
@@ -62,6 +57,7 @@ public class Board {
         if(checkMove(c,start,end))
         {
             bars[start].moveOut();
+
             if(bars[end].checkKick(c))
             {
                 bars[end].kick(c);
@@ -72,6 +68,7 @@ public class Board {
             }
             else
                 bars[end].moveIn(c);
+
             return true;
         }
         else
@@ -114,9 +111,94 @@ public class Board {
     }
 
     public void rounds(Checker_Color c) {
+        boolean doubles = false;//whether get 2 same dice numbers
+        boolean moveFinish = false;//whether this turn finished
+        boolean reEnter = false;//re-enter the board from kicking area
+        boolean movingOut = false;//final state
+        list = new int[2][50];//save all the move (0:start,1:end)
+        int countOfList = 0;
 
+        int currentHit;
+
+        if(c == Checker_Color.RED)
+            currentHit = redHit;
+        else
+            currentHit = whiteHit;
+        if(currentHit != 0)
+            reEnter = true;
+
+        movingOut = checkBear(c);
+
+        points1 = 0;
+        points2 = 0;
+        //read the number of dice.
+
+        if(points1 == points2)
+        {
+            doubles = true;
+            int doublesNum = points1;
+        }
+
+        while(!moveFinish)
+        {
+            if(reEnter)
+            {
+                if(bars[25-points1].checkMoveIn(c))
+                    list[1][countOfList++] = 25-points1;
+                if(bars[25-points2].checkMoveIn(c))
+                    list[1][countOfList++] = 25-points2;
+                //list output
+
+                if(countOfList == 0)
+                    break;
+                //empty possible move list
+
+                int choice = 0;//ask for a move(A OR B) (0 or 1)
+                if(bars[list[1][choice]].checkKick(c)) {
+                    bars[list[1][choice]].kick(c);
+                    if (c == Checker_Color.RED)
+                        whiteHit++;
+                    else
+                        redHit++;
+                }
+                else
+                    bars[list[1][choice]].moveIn(c);
+                //move 1 into the target bar
+
+                if(c == Checker_Color.RED)
+                    redHit--;
+                else
+                    whiteHit--;
+                //reduce the Hit number by 1
+
+                if(points1 == list[1][choice])
+                    points1 = 0;
+                else
+                    points2 = 0;
+                //erase the used number
+            }else if(movingOut)
+            {
+
+            }else//normal round
+            {
+
+            }
+
+        }
     }
 
+    public boolean checkBear(Checker_Color c) {
+        for (int i = 24; i > 6 ; i--)
+        {
+            if((bars[i].getColor() == c))
+                return false;
+        }
+        return true;
+    }
 
+    public int toNumber(char a)
+    {
+        return a - 'A';
+    }
 }
 

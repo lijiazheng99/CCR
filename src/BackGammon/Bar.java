@@ -82,8 +82,8 @@ public class Bar {
 
     public void moveIn(Checker_Color color)
     {
-        this.checkerNumber++;
-        this.setCheckerColor(color);
+            this.checkerNumber++;
+            this.setCheckerColor(color);
     }
 
     public void moveOut()
