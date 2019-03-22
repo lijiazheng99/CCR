@@ -113,6 +113,7 @@ public class BoardVisual
             }
         }
 
+
         finishCheckerVisuals[0] = new FinishCheckerVisual(Checker_Color.RED,0,0);
 
         grid.add(finishCheckerVisuals[0], 14,16);
