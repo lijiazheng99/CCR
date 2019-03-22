@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Bar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+            <state relative-caret-position="969">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
               <folding>
                 <element signature="e#1684#1685#0" expanded="true" />
                 <element signature="e#1727#1728#0" expanded="true" />
@@ -38,10 +38,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+            <state relative-caret-position="596">
+              <caret line="241" column="43" selection-start-line="241" selection-start-column="43" selection-end-line="241" selection-end-column="43" />
               <folding>
-                <element signature="e#7744#7745#0" expanded="true" />
+                <element signature="e#8601#8602#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,7 +183,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553198209960" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553242029520" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -365,14 +365,8 @@
       <workItem from="1551091648276" duration="722000" />
       <workItem from="1551093088544" duration="378000" />
       <workItem from="1551093714827" duration="3689000" />
-      <workItem from="1553168558180" duration="22524000" />
-    </task>
-    <task id="LOCAL-00020" summary="Jiazheng Li&#10;Fixed auto resize">
-      <created>1549535385277</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1549535385279</updated>
+      <workItem from="1553168558180" duration="23570000" />
+      <workItem from="1553241102647" duration="914000" />
     </task>
     <task id="LOCAL-00021" summary="Jiazheng Li&#10;Fixed auto resize">
       <created>1549558585152</created>
@@ -710,11 +704,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553197937732</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="updates&#10;remove 1 useless variable">
+      <created>1553198244872</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1553198244872</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199931000" />
+    <option name="totallyTimeSpent" value="201891000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -729,7 +730,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18763326" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -805,7 +806,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit by Jiazheng&#10;1. Delete the space in the name of jpeg&#10;2. Wrote main function&#10;3. Create package&#10;4. Edit width and height" />
     <MESSAGE value="Commit by Jiwei Zhang&#10;1. update the patch notes&#10;2. finish basic initialization in functionality" />
     <MESSAGE value="Jiazheng Li&#10;update color enum type" />
     <MESSAGE value="Jiazheng Li&#10;update color enum type&#10;&amp;&#10;Create Checker_Vis" />
@@ -830,7 +830,8 @@
     <MESSAGE value="updates&#10;re-enter function added." />
     <MESSAGE value="updates&#10;bear off functions added" />
     <MESSAGE value="updates&#10;round loop check conditions added" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;round loop check conditions added" />
+    <MESSAGE value="updates&#10;remove 1 useless variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates&#10;remove 1 useless variable" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1007,8 +1008,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Bar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="72" column="24" lean-forward="true" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        <state relative-caret-position="969">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
           <folding>
             <element signature="e#1684#1685#0" expanded="true" />
             <element signature="e#1727#1728#0" expanded="true" />
@@ -1018,10 +1019,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="596">
+          <caret line="241" column="43" selection-start-line="241" selection-start-column="43" selection-end-line="241" selection-end-column="43" />
           <folding>
-            <element signature="e#7744#7745#0" expanded="true" />
+            <element signature="e#8601#8602#0" expanded="true" />
           </folding>
         </state>
       </provider>

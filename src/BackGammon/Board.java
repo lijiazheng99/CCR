@@ -219,7 +219,28 @@ public class Board {
                 }
             }else//normal round
             {
+                for (int i = 1; i <= 24; i++) {
+                    if (checkMove(c, i, i + points1)) {
+                        list[0][countOfList] = i;
+                        list[1][countOfList++] = i + points1;
+                    } else if (checkMove(c, i, i + points2)) {
+                        list[0][countOfList] = i;
+                        list[1][countOfList++] = i + points2;
+                    }
+                }//output the list
 
+                int choice = 0;//ask for a move(A,B,C,D,...)
+
+                if(countOfList != 0)
+                {
+                    move(c,list[0][choice],list[1][choice]);
+
+                    if(list[1][choice] - list[0][choice] == points1)
+                        points1 = 0;
+                    else
+                        points2 = 0;
+                    //erase the used number
+                }
             }
             if(points1 == 0 && points2 == 0 && doubles){
                 doubles = false;
