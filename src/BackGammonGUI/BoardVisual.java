@@ -10,6 +10,7 @@ public class BoardVisual
 {
     GridPane grid = new GridPane();
     CheckerVisual[] checkers = new CheckerVisual[30];
+    FinishCheckerVisual[] finishCheckerVisuals = new FinishCheckerVisual[30];
 
     //Assign gridpane
     public GridPane BoardVisual ()
@@ -111,6 +112,11 @@ public class BoardVisual
                 }
             }
         }
+
+        finishCheckerVisuals[0] = new FinishCheckerVisual(Checker_Color.RED,0,0);
+
+        grid.add(finishCheckerVisuals[0], 14,16);
+
         System.out.println("BackGammonGUI.BoardVisual.BoardVisual(board): Checkers map on gridpane successful");
         return this.grid;
     }
