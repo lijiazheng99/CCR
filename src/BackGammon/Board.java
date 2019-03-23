@@ -110,6 +110,70 @@ public class Board {
         }
     }
 
+    public boolean checkDoubleNumber(int p1, int p2)
+    {
+        if(points1 == points2)
+           return true;
+        else
+            return false;
+    }
+
+    public boolean checkColorReEnter(Checker_Color c)
+    {
+        int currentHit;
+        if(c == Checker_Color.RED)
+            currentHit = redHit;
+        else
+            currentHit = whiteHit;
+
+        if(currentHit != 0)
+            return true;
+        else
+            return false;
+    }
+
+    public void listForReEnter(Checker_Color c, int p1, int p2)
+    {
+        int i = 0;
+
+        if(bars[25-points1].checkMoveIn(c))
+            list[1][i++] = 25-p1;
+        if(bars[25-points2].checkMoveIn(c))
+            list[1][i++] = 25-p2;
+    }
+
+    public void listForBearOff(Checker_Color c, int p1, int p2)
+    {
+        int j = 0;
+
+        if(points2 >= points1)
+        {
+            for(int i = 1; i <= points2; i++)
+                if(bars[i].checkMoveOut(c))
+                    list[0][j++] = i;
+        }
+        else
+        {
+            for(int i = 1; i <= points1; i++)
+                if(bars[i].checkMoveOut(c))
+                    list[0][j++] = i;
+        }
+    }
+
+    public void listForNormalMove(Checker_Color c, int p1, int p2) {
+        int j = 0;
+
+        for (int i = 1; i <= 24; i++) {
+            if (checkMove(c, i, i + points1)) {
+                list[0][j] = i;
+                list[1][j++] = i + points1;
+            } else if (checkMove(c, i, i + points2)) {
+                list[0][j] = i;
+                list[1][j++] = i + points2;
+            }
+        }
+    }
+
 
     public void rounds(Checker_Color c) {
         boolean doubles = false;//whether get 2 same dice numbers
