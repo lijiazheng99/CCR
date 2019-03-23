@@ -42,9 +42,14 @@ public class GameController
     private String messegeBuffer;
     private String messegeBufferForCom;
 
-    //two player's start dice point
-    private int player1StartPoint = 7;
-    private int player2StartPoint = 7;
+    //possibleMove store
+    private int [][]possibleMoves = new int[15][3];
+
+    //in game dice point
+    private int dicePoint1 = 7;
+    private int dicePoint2 = 7;
+    private int dicePoint3 = 7;
+    private int dicePoint4 = 7;
 
     //current Turn for mark current turn
     private Checker_Color currentTurn;
@@ -232,11 +237,7 @@ public class GameController
         {
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
             {
-                if(messegeBufferForCom.substring(0,4).equals("MOVE"))
-                {
-                    makeMove();
-                }
-                else if (messegeBufferForCom.substring(0,4).equals("ROLL"))
+                if (messegeBufferForCom.substring(0,4).equals("ROLL"))
                 {
                     diceInGame();
                 }
@@ -250,7 +251,11 @@ public class GameController
                 }
                 else if (messegeBufferForCom.length() >= 5 )
                 {
-                    if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                    if (messegeBufferForCom.substring(0,4).equals("CHEAT"))
+                    {
+                        cheatMove();
+                    }
+                    else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
                     {
                         player1Name();
                     }
@@ -293,7 +298,7 @@ public class GameController
     Game turn controls
      */
     //Make a move
-    private void makeMove()
+    private void cheatMove()
     {
         insertbox.clear();
         //Pip number getter
@@ -371,8 +376,195 @@ public class GameController
         diceVisual.removeDisplay();
         currentTurn = changeTurn(currentTurn);
         currentTurn();
+        dicePoint1 = 7;
+        dicePoint2 = 7;
+        dicePoint3 = 7;
+        dicePoint4 = 7;
+        for (int i = 0; i < 2 ; i ++)
+            for (int j = 0; j < 15; j++)
+                possibleMoves[i][j] = 0;
         diceInGame();
+        checkAvaliable();
+
     }
+
+    private void checkAvaliable()
+    {
+        //check move
+
+
+        //check finish
+
+
+        //check kill
+
+        //check moveout
+
+
+    }
+
+    private void checkDupliacteOption()
+    {
+
+    }
+
+
+    public void rounds(Checker_Color c) {
+        boolean doubles = false;//whether get 2 same dice numbers
+        boolean moveFinish = false;//whether this turn finished
+        boolean reEnter = false;//re-enter the board from kicking area
+        int countOfList;
+        int doublesNum = 0;
+        int currentHit;
+
+        if(c == Checker_Color.RED)
+            currentHit = redHit;
+        else
+            currentHit = whiteHit;
+        if(currentHit != 0)
+            reEnter = true;
+
+        points1 = 0;
+        points2 = 0;
+        //read the number of dice.
+
+        if(points1 == points2)
+        {
+            doubles = true;
+            doublesNum = points1;
+        }
+
+        while(!moveFinish)
+        {
+            list = new int[2][50];//save all the move (0:start,1:end)
+            countOfList = 0;
+            if(reEnter)
+            {
+                if(bars[25-points1].checkMoveIn(c))
+                    list[1][countOfList++] = 25-points1;
+                if(bars[25-points2].checkMoveIn(c))
+                    list[1][countOfList++] = 25-points2;
+                //list output
+
+                if(countOfList != 0)
+                {
+                    //moving list is not empty
+                    int choice = 0;//ask for a move(A OR B) (0 or 1)
+                    if (bars[list[1][choice]].checkKick(c)) {
+                        bars[list[1][choice]].kick(c);
+                        if (c == Checker_Color.RED)
+                            whiteHit++;
+                        else
+                            redHit++;
+                    } else
+                        bars[list[1][choice]].moveIn(c);
+                    //move into the target bar
+
+                    if (c == Checker_Color.RED)
+                        redHit--;
+                    else
+                        whiteHit--;
+                    //reduce the Hit number by 1
+
+                    if (points1 == list[1][choice])
+                        points1 = 0;
+                    else
+                        points2 = 0;
+                    //erase the used number
+                }
+            }else if(checkBear(c))
+            {
+                if(points2 >= points1)
+                {
+                    for(int i = 1; i <= points2; i++)
+                        if(bars[i].checkMoveOut(c))
+                            list[0][countOfList++] = i;
+                }
+                else
+                {
+                    for(int i = 1; i <= points1; i++)
+                        if(bars[i].checkMoveOut(c))
+                            list[0][countOfList++] = i;
+                }
+                //list output
+                if(countOfList != 0)
+                {
+                    //moving list is not empty
+                    int choice = 0;//ask for a move(A,B,C,D,...)
+
+                    bars[list[0][choice]].moveOut();
+                    //move out from target bar
+
+                    if (c == Checker_Color.RED)
+                        redBear++;
+                    else
+                        whiteBear++;
+                    //increse the Bear Off number by 1
+
+                    if (points1 == list[0][choice])
+                        points1 = 0;//use points 1 to do exact move
+                    else if(points2 == list[0][choice])
+                        points2 = 0;//use points 2 to do exact move
+                    else if(list[0][choice] < points1 && list[0][choice] > points2)
+                        points1 = 0;//this is a mid number, use the larger one, points1
+                    else if(list[0][choice] > points1 && list[0][choice] < points2)
+                        points2 = 0;//this is a mid number, use the larger one, points2
+                        //choice number is smaller than both:
+                    else if(points2 >= points1)//points2 is larger, then use the smaller one.
+                        points1 = 0;
+                    else//points1 is larger, then use the smaller one.
+                        points2 = 0;
+                    //erase the used number
+                }
+            }else//normal round
+            {
+                for (int i = 1; i <= 24; i++) {
+                    if (checkMove(c, i, i + points1)) {
+                        list[0][countOfList] = i;
+                        list[1][countOfList++] = i + points1;
+                    } else if (checkMove(c, i, i + points2)) {
+                        list[0][countOfList] = i;
+                        list[1][countOfList++] = i + points2;
+                    }
+                }//output the list
+
+                int choice = 0;//ask for a move(A,B,C,D,...)
+
+                if(countOfList != 0)
+                {
+                    move(c,list[0][choice],list[1][choice]);
+
+                    if(list[1][choice] - list[0][choice] == points1)
+                        points1 = 0;
+                    else
+                        points2 = 0;
+                    //erase the used number
+                }
+            }
+            if(points1 == 0 && points2 == 0 && doubles){
+                doubles = false;
+                points1 = doublesNum;
+                points2 = doublesNum;
+            }
+            else if(points1 == 0 && points2 == 0 && !doubles)
+                moveFinish = true;
+        }
+    }
+
+
+    private void printAvaliableMove()
+    {
+        for (int i = 0; i < 15; i++)
+        {
+            if (possibleMoves[0][i]!=0 && possibleMoves[1][i]!=0)
+            {
+                outputTextBox.appendText('A'+ i + " "+ possibleMoves[0][i] + "-" + possibleMoves[1][i]);
+            }
+        }
+    }
+
+
+
 
     //Current turn instruction
     private void currentTurn()
@@ -429,29 +621,29 @@ public class GameController
     {
         insertbox.clear();
         Dice dice = new Dice();
-        if (player1StartPoint == 7)
+        if (dicePoint1 == 7)
         {
             outputTextBox.appendText("-----------------------------\n");
-            player1StartPoint = dice.roll();
+            dicePoint1 = dice.roll();
             diceVisual.DiceVisual();
-            diceVisual.singleDisplay(player1StartPoint);
-            outputTextBox.appendText("First dice point: " + player1StartPoint + ".\n");
+            diceVisual.singleDisplay(dicePoint1);
+            outputTextBox.appendText("First dice point: " + dicePoint1 + ".\n");
             outputTextBox.appendText("Please type START to do second roll.\n");
         }
-        else if (player2StartPoint == 7)
+        else if (dicePoint2 == 7)
         {
-            player2StartPoint = dice.roll();
+            dicePoint2 = dice.roll();
             diceVisual.DiceVisual();
-            diceVisual.singleDisplay(player2StartPoint);
-            outputTextBox.appendText("Second dice point: " + player2StartPoint + ".\n");
-            if (player1StartPoint == player2StartPoint)
+            diceVisual.singleDisplay(dicePoint2);
+            outputTextBox.appendText("Second dice point: " + dicePoint2 + ".\n");
+            if (dicePoint1 == dicePoint2)
             {
                 outputTextBox.appendText("-----------------------------\n");
                 outputTextBox.appendText("Got same point. Roll again.\n");
-                player1StartPoint = 7;
-                player2StartPoint = 7;
+                dicePoint1 = 7;
+                dicePoint2 = 7;
             }
-            else if (player1StartPoint > player2StartPoint)
+            else if (dicePoint1 > dicePoint2)
             {
                 outputTextBox.appendText("->"+player1.getName()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
@@ -459,9 +651,9 @@ public class GameController
                 player2.setColor(Checker_Color.RED);
                 currentTurn = Checker_Color.WHITE;
                 currentTurn();
-                outputTextBox.appendText("Dice point: "+player1StartPoint+" and "+player2StartPoint+".\n");
+                outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
             }
-            else if (player2StartPoint > player1StartPoint)
+            else if (dicePoint2 > dicePoint1)
             {
                 outputTextBox.appendText("->"+player2.getName()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
@@ -469,7 +661,7 @@ public class GameController
                 player2.setColor(Checker_Color.WHITE);
                 currentTurn =  Checker_Color.WHITE;
                 currentTurn();
-                outputTextBox.appendText("Dice point: "+player1StartPoint+" and "+player2StartPoint+".\n");
+                outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
             }
             else
                 throwLogicFailure();
@@ -489,6 +681,13 @@ public class GameController
         diceVisual.DiceVisual();
         diceVisual.diceDisplay(Num1,Num2);
         outputTextBox.appendText("Dice point: "+Num1+" and "+Num2+".\n");
+        dicePoint1 = Num1;
+        dicePoint2 = Num2;
+        if (Num1 == Num2)
+        {
+            dicePoint3 = Num1;
+            dicePoint4 = Num1;
+        }
     }
 
     //exit game

@@ -110,6 +110,7 @@ public class Board {
         }
     }
 
+
     public void rounds(Checker_Color c) {
         boolean doubles = false;//whether get 2 same dice numbers
         boolean moveFinish = false;//whether this turn finished
