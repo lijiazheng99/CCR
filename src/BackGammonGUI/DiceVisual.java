@@ -55,12 +55,12 @@ public class DiceVisual extends GridPane
     {
         try
         {
-            images[0] = new Image(new FileInputStream("src//dice_1.png"),55,55,false,false);
-            images[1] = new Image(new FileInputStream("src//dice_2.png"),55,55,false,false);
-            images[2] = new Image(new FileInputStream("src//dice_3.png"),55,55,false,false);
-            images[3] = new Image(new FileInputStream("src//dice_4.png"),55,55,false,false);
-            images[4] = new Image(new FileInputStream("src//dice_5.png"),55,55,false,false);
-            images[5] = new Image(new FileInputStream("src//dice_6.png"),55,55,false,false);
+            images[0] = new Image(new FileInputStream("src//resources//dice_1.png"),55,55,false,false);
+            images[1] = new Image(new FileInputStream("src//resources//dice_2.png"),55,55,false,false);
+            images[2] = new Image(new FileInputStream("src//resources//dice_3.png"),55,55,false,false);
+            images[3] = new Image(new FileInputStream("src//resources//dice_4.png"),55,55,false,false);
+            images[4] = new Image(new FileInputStream("src//resources//dice_5.png"),55,55,false,false);
+            images[5] = new Image(new FileInputStream("src//resources//dice_6.png"),55,55,false,false);
         }
         catch (java.io.IOException ex)
         {

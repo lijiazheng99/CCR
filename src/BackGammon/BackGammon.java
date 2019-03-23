@@ -57,7 +57,7 @@ public class BackGammon extends Application
         GridPane backgroundPic = new GridPane();
         try
         {
-            background = new Image(new FileInputStream("src//board.jpg"));
+            background = new Image(new FileInputStream("src//resources//board.jpg"));
             System.out.println("BackGammon.BackGammon: Background image load successful");
         }
         catch(java.io.IOException e)
