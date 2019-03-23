@@ -10,7 +10,7 @@ public class BoardVisual
 {
     GridPane grid = new GridPane();
     CheckerVisual[] checkers = new CheckerVisual[30];
-    CheckerVisual[] hitcheckers = new CheckerVisual[10];
+    CheckerVisual[] hitcheckers = new CheckerVisual[30];
     FinishCheckerVisual[] finishCheckerVisuals = new FinishCheckerVisual[30];
 
     //Assign gridpane
@@ -179,7 +179,11 @@ public class BoardVisual
     public void removeElements()
     {
         for (int i = 0; i < 30; i++)
-        grid.getChildren().removeAll(checkers[i]);
+            grid.getChildren().removeAll(checkers[i]);
+        for (int i = 0; i < 30; i++)
+            grid.getChildren().removeAll(hitcheckers[i]);
+        for (int i = 0; i < 30; i++)
+            grid.getChildren().removeAll(finishCheckerVisuals[i]);
         System.out.println("BackGammonGUI.BoardVisual.removeElements(): Checkers remove from gridpane successful");
     }
 
