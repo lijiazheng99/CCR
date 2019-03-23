@@ -252,6 +252,26 @@ public class Board {
         }
     }
 
+    public int getRedHit()
+    {
+        return redHit;
+    }
+
+    public int getWhiteHit()
+    {
+        return whiteHit;
+    }
+
+    public int getRedBear()
+    {
+        return redBear;
+    }
+
+    public int getWhiteBear()
+    {
+        return whiteBear;
+    }
+
     public boolean checkBear(Checker_Color c) {
         for (int i = 24; i > 6 ; i--)
         {
