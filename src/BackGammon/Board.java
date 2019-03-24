@@ -156,6 +156,8 @@ public class Board {
 
         if(doubles)//double situation
         {
+            int number = points1;
+
 
         }else {//not a double situation
             if (reEnter) //there is no bear check after the enter, cuz it is impossible
@@ -288,9 +290,30 @@ public class Board {
                     }
 
                 }
+            }else//normal movement
+            {
+                for(int i = 24; i >= 1; i--)
+                {
+                    if(checkMove(c,i,i-points1))
+                    {
+                        bars[i].moveOut();
+                        for(int j = 24; j >= 1; j--)
+                        {
+                            if(checkMove(c,j,j-points2))
+                            {
+                                curr.setMoveOne(i,i-points1,bars[i-points1].checkKick(c));
+                                curr.setMoveTwo(j,j-points2,bars[j-points2].checkKick(c));
+                                if (!repeat(curr))//a new possible move
+                                {
+                                    moveList[count++] = curr;
+                                    curr = null;
+                                }
+                            }
+                        }
+                        bars[i].moveIn(c);
+                    }
+                }
             }
-
-
         }
         return moveList;
     }
