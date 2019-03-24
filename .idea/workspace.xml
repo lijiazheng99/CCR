@@ -6,10 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="re-enter from the bar updated">
-      <change afterPath="$PROJECT_DIR$/src/BackGammon/MoveRecord.java" afterDir="false" />
+    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/MoveRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/MoveRecord.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +26,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Bar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
+            <state relative-caret-position="859">
               <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
               <folding>
                 <element signature="e#1684#1685#0" expanded="true" />
@@ -39,8 +39,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="145" column="43" lean-forward="true" selection-start-line="145" selection-start-column="43" selection-end-line="145" selection-end-column="43" />
+            <state relative-caret-position="706">
+              <caret line="282" column="48" lean-forward="true" selection-start-line="282" selection-start-column="48" selection-end-line="282" selection-end-column="48" />
+              <folding>
+                <element signature="e#7535#9476#1" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/MoveRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="383">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -188,7 +191,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553409570306" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553412519021" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -374,14 +377,7 @@
       <workItem from="1553241102647" duration="1010000" />
       <workItem from="1553361363131" duration="654000" />
       <workItem from="1553362106141" duration="1050000" />
-      <workItem from="1553396082128" duration="7904000" />
-    </task>
-    <task id="LOCAL-00023" summary="Jiazheng Li&#10;Fixed auto resize">
-      <created>1549668625250</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1549668625250</updated>
+      <workItem from="1553396082128" duration="10809000" />
     </task>
     <task id="LOCAL-00024" summary="comments">
       <created>1549883846159</created>
@@ -719,11 +715,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553362014403</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="re-enter from the bar updated">
+      <created>1553409581556</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1553409581556</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211595000" />
+    <option name="totallyTimeSpent" value="214500000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -738,7 +741,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -757,7 +760,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.496337" weight="0.32857144" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5143923" side_tool="true" visible="true" weight="0.09534128" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48400852" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" sideWeight="0.48560768" visible="true" weight="0.09534128" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48560768" visible="true" weight="0.09534128" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1012,7 +1015,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Bar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
+        <state relative-caret-position="859">
           <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
           <folding>
             <element signature="e#1684#1685#0" expanded="true" />
@@ -1023,15 +1026,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/MoveRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        <state relative-caret-position="383">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="145" column="43" lean-forward="true" selection-start-line="145" selection-start-column="43" selection-end-line="145" selection-end-column="43" />
+        <state relative-caret-position="706">
+          <caret line="282" column="48" lean-forward="true" selection-start-line="282" selection-start-column="48" selection-end-line="282" selection-end-column="48" />
+          <folding>
+            <element signature="e#7535#9476#1" />
+          </folding>
         </state>
       </provider>
     </entry>

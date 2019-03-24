@@ -38,7 +38,9 @@ public class MoveRecord {
 
     public boolean equalsTo(MoveRecord mr)
     {
-        if(this.start1 == mr.start1 && this.end2 == mr.end2 && this.hit1 == false && mr.hit1 == false)
+        if(this.start1 == mr.start1 && this.end2 == mr.end2 && !this.hit1 && !mr.hit1)
+            return true;
+        else if(this.start1 == mr.start2 && this.end1 == mr.end2 && this.start2 == mr.start1 && this.end2 == mr.end1)
             return true;
         else
             return false;
