@@ -98,6 +98,22 @@ public class Board {
         return whiteBear;
     }
 
+    public void moveIn(Checker_Color c, int num)
+    {
+        if(c == Checker_Color.RED)
+            bars[25-num].moveIn(c);
+        else
+            bars[num].moveIn(c);
+    }
+
+    public void moveOut(Checker_Color c, int num)
+    {
+        if(c == Checker_Color.RED)
+            bars[25-num].moveOut();
+        else
+            bars[num].moveOut();
+    }
+
     public boolean checkBear(Checker_Color c) {
         if(c == Checker_Color.RED)
         {
@@ -186,6 +202,249 @@ public class Board {
     public DoubleMoveRecord[] getDoubleMoveList(Checker_Color c, int p)
     {
         doubleMoveList = new DoubleMoveRecord[100];
+        boolean reEnter;
+        boolean doubles;
+
+        boolean exist = false;
+        boolean exist1 = false;
+        boolean exist2 = false;
+        boolean exist3 = false;
+
+        int point = p;
+
+        DoubleMoveRecord curr = new DoubleMoveRecord();
+        int count = 0;
+        int currHit;
+        if(c == Checker_Color.RED)
+            currHit = redHit;
+        else
+            currHit = whiteHit;
+
+        if(currHit == 0)
+        {
+            for(int w = 24; w >= 1; w--)
+            {
+                if(checkMove(c,w,point))
+                {
+                    moveOut(c,w);
+                    for(int x = w; x >= 1; x--)
+                    {
+                        if(checkMove(c,x,point))
+                        {
+                            exist1 = true;
+                            moveOut(c,x);
+                            for (int y = x; y >= 1; y--)
+                            {
+                                if (checkMove(c, y, point))
+                                {
+                                    exist2 = true;
+                                    moveOut(c,y);
+                                    for (int z = y; z >=1; z--)
+                                    {
+                                        if (checkMove(c, z, point))
+                                        {
+                                            //4 possible movements
+                                            exist3 = true;
+                                            curr.setMoveOne(w,25-point,checkHit(c,w-point));
+                                            curr.setMoveTwo(x,25-point,checkHit(c,x-point));
+                                            curr.setMoveThree(y,25-point,checkHit(c,y-point));
+                                            curr.setMoveFour(z,25-point,checkHit(c,z-point));
+                                            doubleMoveList[count++] = curr;
+                                            curr = new DoubleMoveRecord();
+                                        }
+
+                                    }
+                                    if(!exist3)
+                                    {
+                                        curr.setMoveOne(w,25-point,checkHit(c,w-point));
+                                        curr.setMoveTwo(x,25-point,checkHit(c,x-point));
+                                        curr.setMoveThree(y,25-point,checkHit(c,y-point));
+                                        curr.setMoveFour(-1,-1,false);
+                                        doubleMoveList[count++] = curr;
+                                        curr = new DoubleMoveRecord();
+                                    }
+                                    moveIn(c,y);
+                                }
+                            }
+                            if(!exist2)
+                            {
+                                curr.setMoveOne(w,25-point,checkHit(c,w-point));
+                                curr.setMoveTwo(x,25-point,checkHit(c,x-point));
+                                curr.setMoveThree(-1,-1,false);
+                                curr.setMoveFour(-1,-1,false);
+                                doubleMoveList[count++] = curr;
+                                curr = new DoubleMoveRecord();
+                            }
+                            moveIn(c,x);
+                        }
+                    }
+                    if(!exist1)
+                    {
+                        curr.setMoveOne(w,25-point,checkHit(c,w-point));
+                        curr.setMoveTwo(-1,-1,false);
+                        curr.setMoveThree(-1,-1,false);
+                        curr.setMoveFour(-1,-1,false);
+                        doubleMoveList[count++] = curr;
+                        curr = new DoubleMoveRecord();
+                    }
+                    moveIn(c,w);
+                }
+            }
+        }else if(currHit == 1)
+        {
+            if(checkReEnter(c,point))
+            {
+                for(int w = 24; w >= 1; w--)
+                {
+                    if(checkMove(c,w,point))
+                    {
+                        exist = true;
+                        moveOut(c,w);
+                        for (int x = w; x >= 1; x--)
+                        {
+                            if (checkMove(c, w, point))
+                            {
+                                exist1 = true;
+                                moveOut(c,x);
+                                for (int y = x; y >= 1; y--)
+                                {
+                                    if (checkMove(c, w, point))
+                                    {
+                                        exist2 = true;
+                                        curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                                        curr.setMoveTwo(w, 25 - point, checkHit(c, w - point));
+                                        curr.setMoveThree(x, 25 - point, checkHit(c, x - point));
+                                        curr.setMoveFour(y, 25 - point, checkHit(c, y - point));
+                                        doubleMoveList[count++] = curr;
+                                        curr = new DoubleMoveRecord();
+                                    }
+                                }
+                                if (!exist2) {
+                                    curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                                    curr.setMoveTwo(w, 25 - point, checkHit(c, w - point));
+                                    curr.setMoveThree(x, 25 - point, checkHit(c, x - point));
+                                    curr.setMoveFour(-1, -1, false);
+                                    doubleMoveList[count++] = curr;
+                                    curr = new DoubleMoveRecord();
+                                }
+                                moveIn(c,x);
+                            }
+                        }
+                        if (!exist1)
+                        {
+                            curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                            curr.setMoveTwo(w, 25 - point, checkHit(c, w - point));
+                            curr.setMoveThree(-1,-1,false);
+                            curr.setMoveFour(-1, -1, false);
+                            doubleMoveList[count++] = curr;
+                            curr = new DoubleMoveRecord();
+                        }
+                       moveIn(c,w);
+                    }
+                }
+                if(!exist)
+                {
+                    curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                    curr.setMoveTwo(-1,-1,false);
+                    curr.setMoveThree(-1,-1,false);
+                    curr.setMoveFour(-1, -1, false);
+                    doubleMoveList[count++] = curr;
+                    curr = new DoubleMoveRecord();
+                }
+            }
+        }else if(currHit == 2)
+        {
+            if(checkReEnter(c,point))
+            {
+                for(int w = 24; w >= 1; w--)
+                {
+                    if(checkMove(c,w,point))
+                    {
+                        exist = true;
+                        moveOut(c,w);
+                        for (int x = w; x >= 1; x--)
+                        {
+                            if (checkMove(c, w, point))
+                            {
+                                exist1 = true;
+                                curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                                curr.setMoveTwo(25, 25 - point, checkHit(c, 25 - point));
+                                curr.setMoveThree(w,25-point,checkHit(c,w-point));
+                                curr.setMoveFour(x,25-point,checkHit(c,x-point));
+                                doubleMoveList[count++] = curr;
+                                curr = new DoubleMoveRecord();
+                            }
+                        }
+                        if(!exist1)
+                        {
+                            curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                            curr.setMoveTwo(25, 25 - point, checkHit(c, 25 - point));
+                            curr.setMoveThree(w,25-point,checkHit(c,w-point));
+                            curr.setMoveFour(-1, -1, false);
+                            doubleMoveList[count++] = curr;
+                            curr = new DoubleMoveRecord();
+                        }
+                        moveIn(c,w);
+                    }
+                }
+                if(!exist)
+                {
+                    curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                    curr.setMoveTwo(25, 25 - point, checkHit(c, 25 - point));
+                    curr.setMoveThree(-1,-1,false);
+                    curr.setMoveFour(-1, -1, false);
+                    doubleMoveList[count++] = curr;
+                    curr = new DoubleMoveRecord();
+                }
+            }
+        }else if(currHit == 3)
+        {
+            if(checkReEnter(c,point))
+            {
+                for(int w = 24; w >= 1; w--) {
+                    if (checkMove(c, w, point)) {
+                        exist = true;
+                        curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                        curr.setMoveTwo(25, 25 - point, checkHit(c, 25 - point));
+                        curr.setMoveThree(25, 25 - point, checkHit(c, 25 - point));
+                        curr.setMoveFour(w, 25 - point, checkHit(c, w - point));
+                        doubleMoveList[count++] = curr;
+                        curr = new DoubleMoveRecord();
+                    }
+                }
+                if(!exist) {
+                    curr.setMoveOne(25, 25 - point, checkHit(c, 25 - point));
+                    curr.setMoveTwo(25, 25 - point, checkHit(c, 25 - point));
+                    curr.setMoveThree(25,25-point,checkHit(c,25-point));
+                    curr.setMoveFour(-1, -1, false);
+                    doubleMoveList[count++] = curr;
+                    curr = new DoubleMoveRecord();
+                }
+            }
+        }else if(currHit == 4)
+        {
+            if(checkReEnter(c,point))
+            {
+                curr.setMoveOne(25,25-point,checkHit(c,25-point));
+                curr.setMoveTwo(25,25-point,checkHit(c,25-point));
+                curr.setMoveThree(25,25-point,checkHit(c,25-point));
+                curr.setMoveFour(25,25-point,checkHit(c,25-point));
+            }
+        }else if(checkBear(c))
+        {
+            if(checkBearOff(c,point))
+            {
+
+            }
+            else//no bear off
+            {
+
+            }
+        }
+
+
+
+
 
         return doubleMoveList;
     }
@@ -195,7 +454,6 @@ public class Board {
     {
         moveList = new MoveRecord[50];
         boolean reEnter;
-        boolean doubles;
         boolean exist;
         points1 = p1;
         points2 = p2;
@@ -209,7 +467,6 @@ public class Board {
             currHit = whiteHit;
 
         reEnter = (currHit != 0);
-        doubles = (p1 == p2);
 
 
         MoveRecord curr = new MoveRecord();
@@ -361,7 +618,7 @@ public class Board {
                     exist = false;
                     if(checkMove(c,i,points1))
                     {
-                        bars[i].moveOut();
+                        moveOut(c,i);
                         if(checkBear(c) && checkBearOff(c,points2))
                         {
                             //number 2 bear off
@@ -398,11 +655,11 @@ public class Board {
                                 }
                             }
                         }
-                        bars[i].moveIn(c);
+                        moveIn(c,i);
                     }
                     else if(checkMove(c,i,points2))//number 1 can't move right now
                     {
-                        bars[i].moveOut();
+                        moveOut(c,i);
                         if(checkBear(c) && checkBearOff(c,points1))
                         {
                             //number 1 bear off
@@ -438,7 +695,7 @@ public class Board {
                                 }
                             }
                         }
-                        bars[i].moveIn(c);
+                        moveIn(c,i);
                     }
                 }
             }
@@ -454,7 +711,7 @@ public class Board {
                 exist = false;
                 if(checkMove(c,i,points1))
                 {
-                    bars[i].moveOut();
+                    moveOut(c,i);
                     if(checkBear(c) && checkBearOff(c,points2))
                     {
                         //number 2 bear off
@@ -491,11 +748,11 @@ public class Board {
                             }
                         }
                     }
-                    bars[i].moveIn(c);
+                    moveIn(c,i);
                 }
                 else if(checkMove(c,i,points2))//number 1 can't move right now
                 {
-                    bars[i].moveOut();
+                    moveOut(c,i);
                     if(checkBear(c) && checkBearOff(c,points1))
                     {
                         //number 1 bear off
@@ -531,7 +788,7 @@ public class Board {
                             }
                         }
                     }
-                    bars[i].moveIn(c);
+                    moveIn(c,i);
                 }
             }
         }

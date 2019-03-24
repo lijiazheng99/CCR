@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BackGammon/DoubleMoveRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
     </list>
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7931">
-              <caret line="538" column="5" lean-forward="true" selection-start-line="538" selection-start-column="5" selection-end-line="538" selection-end-column="5" />
+            <state relative-caret-position="307">
+              <caret line="774" column="55" lean-forward="true" selection-start-line="774" selection-start-column="55" selection-end-line="774" selection-end-column="55" />
               <folding>
                 <element signature="e#2850#2851#0" expanded="true" />
                 <element signature="e#2879#2880#0" expanded="true" />
@@ -55,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/DoubleMoveRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
@@ -81,6 +80,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>movein</find>
+      <find>bars[</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,8 +138,8 @@
         <option value="$PROJECT_DIR$/src/BackGammon/Bar.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/MoveRecord.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/DoubleMoveRecord.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
       </list>
     </option>
   </component>
@@ -209,7 +214,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553464293151" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553470357722" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -396,14 +401,7 @@
       <workItem from="1553361363131" duration="654000" />
       <workItem from="1553362106141" duration="1050000" />
       <workItem from="1553396082128" duration="11389000" />
-      <workItem from="1553451794915" duration="10598000" />
-    </task>
-    <task id="LOCAL-00030" summary="Upload settings for Java 11 and javafx packages">
-      <created>1550766525457</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1550766525457</updated>
+      <workItem from="1553451794915" duration="16402000" />
     </task>
     <task id="LOCAL-00031" summary="Fix different Classes">
       <created>1550772182156</created>
@@ -741,11 +739,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553463647143</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="double move list implement">
+      <created>1553464310433</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1553464310433</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225678000" />
+    <option name="totallyTimeSpent" value="231482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,7 +841,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update Dice class.&#10;Create Player Name set function.&#10;Create Player Color set by rolling dice function.&#10;Update the move function." />
     <MESSAGE value="Updated a lot of things" />
     <MESSAGE value="Put comments" />
     <MESSAGE value="move" />
@@ -861,7 +865,8 @@
     <MESSAGE value="when Hitnum = 1&#10; use the first number to do re-enter&#10; second for normal move" />
     <MESSAGE value="re-enter full finished&#10;some functions deleted" />
     <MESSAGE value="non-double situation finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="non-double situation finished" />
+    <MESSAGE value="double move list implement" />
+    <option name="LAST_COMMIT_MESSAGE" value="double move list implement" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1043,23 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7931">
-          <caret line="538" column="5" lean-forward="true" selection-start-line="538" selection-start-column="5" selection-end-line="538" selection-end-column="5" />
-          <folding>
-            <element signature="e#2850#2851#0" expanded="true" />
-            <element signature="e#2879#2880#0" expanded="true" />
-            <element signature="e#2915#2916#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
-            <element signature="e#2981#2982#0" expanded="true" />
-            <element signature="e#3011#3012#0" expanded="true" />
-            <element signature="e#3048#3049#0" expanded="true" />
-            <element signature="e#3080#3081#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/MoveRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -1071,6 +1059,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="774" column="55" lean-forward="true" selection-start-line="774" selection-start-column="55" selection-end-line="774" selection-end-column="55" />
+          <folding>
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#2879#2880#0" expanded="true" />
+            <element signature="e#2915#2916#0" expanded="true" />
+            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
+            <element signature="e#3011#3012#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+            <element signature="e#3080#3081#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
