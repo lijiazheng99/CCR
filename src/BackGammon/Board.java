@@ -103,7 +103,10 @@ public class Board {
 
     public boolean checkReEnter(Checker_Color c, int points)
     {
-        return false;
+        if(c == Checker_Color.RED)
+            return redHit != 0;
+        else
+            return whiteHit != 0;
     }
 
     public void reEnter(Checker_Color c, int points)
@@ -229,11 +232,65 @@ public class Board {
 
                     if(checkReEnter(c,points2))
                     {
-                        //calculate points1 normal move
+                        //calculate points2 normal move
+                        //assume the Re-enter
+                        reEnter(c,points2);
+                        exist = false;
+                        for(int i = 24; i >= 1; i--)
+                        {
+                            if(checkMove(c,i,points1))
+                            {
+                                exist = true;
+                                curr.setMoveOne(25,25-points2, checkHit(c,25-points2));
+                                curr.setMoveTwo(i, i-points1,checkHit(c,i-points1));
+                                if(!checkRepeat(curr)){
+                                    moveList[count++] = curr;
+                                    curr = new MoveRecord();
+                                }
+                            }
+                        }
+                        if(!exist)//second move doesn't exist
+                        {
+                            curr.setMoveOne(25,25-points2, checkHit(c,25-points2));
+                            curr.setMoveTwo(-1,-1,false);
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
+                        }
+                        reEnterUndo(c,points2);
+                        //Undo the assume
                     }
                 }else if(currHit > 1)
                 {
-                    //check 2 numbers
+                    if(checkReEnter(c,points1))
+                    {
+                        if(checkReEnter(c,points2))
+                        {
+                            curr.setMoveOne(25,25-points1, checkHit(c,25-points1));
+                            curr.setMoveTwo(25,25-points2, checkHit(c,25-points2));
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
+                        }else
+                        {
+                            curr.setMoveOne(25,25-points1, checkHit(c,25-points1));
+                            curr.setMoveTwo(-1,-1, false);
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
+                        }
+                    }else if(checkReEnter(c,points2))
+                    {
+                        curr.setMoveOne(25,25-points2, checkHit(c,25-points2));
+                        curr.setMoveTwo(-1,-1, false);
+                        if(!checkRepeat(curr)){
+                            moveList[count++] = curr;
+                            curr = new MoveRecord();
+                        }
+                    }
                 }else
                 {
                     //ERROR
@@ -286,7 +343,6 @@ public class Board {
                     }
                 }
             }
-
         }
         return moveList;
     }
