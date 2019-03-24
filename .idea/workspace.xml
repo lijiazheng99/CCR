@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="774" column="55" lean-forward="true" selection-start-line="774" selection-start-column="55" selection-end-line="774" selection-end-column="55" />
+            <state relative-caret-position="341">
+              <caret line="434" column="12" selection-start-line="434" selection-start-column="12" selection-end-line="434" selection-end-column="12" />
               <folding>
                 <element signature="e#2850#2851#0" expanded="true" />
                 <element signature="e#2879#2880#0" expanded="true" />
@@ -214,7 +214,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553470357722" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553471742445" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -401,14 +401,7 @@
       <workItem from="1553361363131" duration="654000" />
       <workItem from="1553362106141" duration="1050000" />
       <workItem from="1553396082128" duration="11389000" />
-      <workItem from="1553451794915" duration="16402000" />
-    </task>
-    <task id="LOCAL-00031" summary="Fix different Classes">
-      <created>1550772182156</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1550772182156</updated>
+      <workItem from="1553451794915" duration="17929000" />
     </task>
     <task id="LOCAL-00032" summary="Fix different Classes">
       <created>1550786398547</created>
@@ -746,11 +739,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553464310433</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="except the bear off for double number">
+      <created>1553470378998</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1553470378998</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231482000" />
+    <option name="totallyTimeSpent" value="233009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -841,7 +841,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated a lot of things" />
     <MESSAGE value="Put comments" />
     <MESSAGE value="move" />
     <MESSAGE value="update move function" />
@@ -866,7 +865,8 @@
     <MESSAGE value="re-enter full finished&#10;some functions deleted" />
     <MESSAGE value="non-double situation finished" />
     <MESSAGE value="double move list implement" />
-    <option name="LAST_COMMIT_MESSAGE" value="double move list implement" />
+    <MESSAGE value="except the bear off for double number" />
+    <option name="LAST_COMMIT_MESSAGE" value="except the bear off for double number" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1064,8 +1064,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="774" column="55" lean-forward="true" selection-start-line="774" selection-start-column="55" selection-end-line="774" selection-end-column="55" />
+        <state relative-caret-position="341">
+          <caret line="434" column="12" selection-start-line="434" selection-start-column="12" selection-end-line="434" selection-end-column="12" />
           <folding>
             <element signature="e#2850#2851#0" expanded="true" />
             <element signature="e#2879#2880#0" expanded="true" />

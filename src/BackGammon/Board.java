@@ -432,20 +432,8 @@ public class Board {
             }
         }else if(checkBear(c))
         {
-            if(checkBearOff(c,point))
-            {
 
-            }
-            else//no bear off
-            {
-
-            }
         }
-
-
-
-
-
         return doubleMoveList;
     }
 
@@ -699,9 +687,6 @@ public class Board {
                     }
                 }
             }
-
-
-
         }else
         {
             //normal move
