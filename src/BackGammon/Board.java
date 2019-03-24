@@ -15,7 +15,7 @@ public class Board {
     private int whiteHit = 0;
     private int redBear = 0;
     private int whiteBear = 0;
-    private int[][] list;
+    private MoveRecord[] moveList;
     //kicking numbers
 
     public Board()
@@ -97,226 +97,6 @@ public class Board {
             return false;
     }
 
-    public void game()
-    {
-        int round = 0;
-        while(!playerOne.getStatus() && !playerTwo.getStatus())//When both not win
-        {
-            if(round %2 == 0)//red turn
-                rounds(Checker_Color.RED);
-            else//white turn
-                rounds(Checker_Color.WHITE);
-            round++;
-        }
-    }
-
-    public boolean checkDoubleNumber(int p1, int p2)
-    {
-        if(points1 == points2)
-           return true;
-        else
-            return false;
-    }
-
-    public boolean checkColorReEnter(Checker_Color c)
-    {
-        int currentHit;
-        if(c == Checker_Color.RED)
-            currentHit = redHit;
-        else
-            currentHit = whiteHit;
-
-        if(currentHit != 0)
-            return true;
-        else
-            return false;
-    }
-
-    public void listForReEnter(Checker_Color c, int p1, int p2)
-    {
-        int i = 0;
-
-        if(bars[25-points1].checkMoveIn(c))
-            list[1][i++] = 25-p1;
-        if(bars[25-points2].checkMoveIn(c))
-            list[1][i++] = 25-p2;
-    }
-
-    public void listForBearOff(Checker_Color c, int p1, int p2)
-    {
-        int j = 0;
-
-        if(points2 >= points1)
-        {
-            for(int i = 1; i <= points2; i++)
-                if(bars[i].checkMoveOut(c))
-                    list[0][j++] = i;
-        }
-        else
-        {
-            for(int i = 1; i <= points1; i++)
-                if(bars[i].checkMoveOut(c))
-                    list[0][j++] = i;
-        }
-    }
-
-    public void listForNormalMove(Checker_Color c, int p1, int p2) {
-        int j = 0;
-
-        for (int i = 1; i <= 24; i++) {
-            if (checkMove(c, i, i + points1)) {
-                list[0][j] = i;
-                list[1][j++] = i + points1;
-            } else if (checkMove(c, i, i + points2)) {
-                list[0][j] = i;
-                list[1][j++] = i + points2;
-            }
-        }
-    }
-
-
-    public void rounds(Checker_Color c) {
-        boolean doubles = false;//whether get 2 same dice numbers
-        boolean moveFinish = false;//whether this turn finished
-        boolean reEnter = false;//re-enter the board from kicking area
-        int countOfList;
-        int doublesNum = 0;
-        int currentHit;
-
-        if(c == Checker_Color.RED)
-            currentHit = redHit;
-        else
-            currentHit = whiteHit;
-        if(currentHit != 0)
-            reEnter = true;
-
-        points1 = 0;
-        points2 = 0;
-        //read the number of dice.
-
-        if(points1 == points2)
-        {
-            doubles = true;
-            doublesNum = points1;
-        }
-
-        while(!moveFinish)
-        {
-            list = new int[2][50];//save all the move (0:start,1:end)
-            countOfList = 0;
-            if(reEnter)
-            {
-                if(bars[25-points1].checkMoveIn(c))
-                    list[1][countOfList++] = 25-points1;
-                if(bars[25-points2].checkMoveIn(c))
-                    list[1][countOfList++] = 25-points2;
-                //list output
-
-                if(countOfList != 0)
-                {
-                    //moving list is not empty
-                    int choice = 0;//ask for a move(A OR B) (0 or 1)
-                    if (bars[list[1][choice]].checkKick(c)) {
-                        bars[list[1][choice]].kick(c);
-                        if (c == Checker_Color.RED)
-                            whiteHit++;
-                        else
-                            redHit++;
-                    } else
-                        bars[list[1][choice]].moveIn(c);
-                    //move into the target bar
-
-                    if (c == Checker_Color.RED)
-                        redHit--;
-                    else
-                        whiteHit--;
-                    //reduce the Hit number by 1
-
-                    if (points1 == list[1][choice])
-                        points1 = 0;
-                    else
-                        points2 = 0;
-                    //erase the used number
-                }
-            }else if(checkBear(c))
-            {
-                if(points2 >= points1)
-                {
-                    for(int i = 1; i <= points2; i++)
-                        if(bars[i].checkMoveOut(c))
-                            list[0][countOfList++] = i;
-                }
-                else
-                {
-                    for(int i = 1; i <= points1; i++)
-                        if(bars[i].checkMoveOut(c))
-                            list[0][countOfList++] = i;
-                }
-                //list output
-                if(countOfList != 0)
-                {
-                    //moving list is not empty
-                    int choice = 0;//ask for a move(A,B,C,D,...)
-
-                    bars[list[0][choice]].moveOut();
-                    //move out from target bar
-
-                    if (c == Checker_Color.RED)
-                        redBear++;
-                    else
-                        whiteBear++;
-                    //increse the Bear Off number by 1
-
-                    if (points1 == list[0][choice])
-                        points1 = 0;//use points 1 to do exact move
-                    else if(points2 == list[0][choice])
-                        points2 = 0;//use points 2 to do exact move
-                    else if(list[0][choice] < points1 && list[0][choice] > points2)
-                        points1 = 0;//this is a mid number, use the larger one, points1
-                    else if(list[0][choice] > points1 && list[0][choice] < points2)
-                        points2 = 0;//this is a mid number, use the larger one, points2
-                    //choice number is smaller than both:
-                    else if(points2 >= points1)//points2 is larger, then use the smaller one.
-                        points1 = 0;
-                    else//points1 is larger, then use the smaller one.
-                        points2 = 0;
-                    //erase the used number
-                }
-            }else//normal round
-            {
-                for (int i = 1; i <= 24; i++) {
-                    if (checkMove(c, i, i + points1)) {
-                        list[0][countOfList] = i;
-                        list[1][countOfList++] = i + points1;
-                    } else if (checkMove(c, i, i + points2)) {
-                        list[0][countOfList] = i;
-                        list[1][countOfList++] = i + points2;
-                    }
-                }//output the list
-
-                int choice = 0;//ask for a move(A,B,C,D,...)
-
-                if(countOfList != 0)
-                {
-                    move(c,list[0][choice],list[1][choice]);
-
-                    if(list[1][choice] - list[0][choice] == points1)
-                        points1 = 0;
-                    else
-                        points2 = 0;
-                    //erase the used number
-                }
-            }
-            if(points1 == 0 && points2 == 0 && doubles){
-                doubles = false;
-                points1 = doublesNum;
-                points2 = doublesNum;
-            }
-            else if(points1 == 0 && points2 == 0 && !doubles)
-                moveFinish = true;
-        }
-    }
-
     public int getRedHit()
     {
         return redHit;
@@ -346,9 +126,102 @@ public class Board {
         return true;
     }
 
-    public int toNumber(char a)
+    public boolean repeat(MoveRecord mr) {
+        for (int i = 0; i < moveList.length; i++)
+        {if (mr.equalsTo(moveList[i]))
+                return true;
+        }
+        return false;
+    }
+    public MoveRecord[] getMoveList(Checker_Color c, int p1, int p2)
     {
-        return a - 'A';
+        moveList = new MoveRecord[50];
+        points1 = p1;
+        points2 = p2;
+        int count = 0;
+        int currHit;
+        boolean doubles = (p1 == p2);
+        boolean reEnter;
+
+        MoveRecord curr = new MoveRecord();
+
+        if(c == Checker_Color.RED)
+            currHit = redHit;
+        else
+            currHit = whiteHit;
+
+        reEnter = (currHit != 0);
+
+
+        if(reEnter)
+        /* About re-enter from the bar.
+        1. check whether the first number can be used to re-enter a checker
+            1.1 check whether only 1 checker need to be re-entered
+                1.1.1 use the second number to do a normal move
+            1.2 more checkers need to be re-entered
+                1.2.1 check whether the second number can do re=enter
+        2. checker whether the second number can be used
+            2.1 check whether only 1 checker need to be re-entered
+                2.1.1 use the first number to do a normal move
+            2.2 more need to be re-entered, cant do it.
+        */
+        {
+            if(bars[25-points1].checkMoveIn(c))//if points 1 can do Re-Enter
+            {
+                if(currHit - 1 == 0)//1 Re-enter & 1 normal move
+                {
+                    for(int i = 24; i >= 1; i--)//check points 2 possible movement
+                    {
+                        if(checkMove(c,i,i-points2)) {
+                            curr.setMoveOne(25, 25 - points1, bars[25 - points1].checkKick(c));
+                            curr.setMoveTwo(i, i - points2, bars[i - points2].checkKick(c));
+                            if (!repeat(curr))//a new possible move
+                            {
+                                moveList[count++] = curr;
+                                curr = null;
+                            }
+                        }
+                    }
+                }else if(bars[25-points2].checkMoveIn(c))//need 2 dice to do re-enter and the second number is valid to use
+                {
+                    curr.setMoveOne(25,25 - points1, bars[25 - points1].checkKick(c));
+                    curr.setMoveTwo(25,25 - points2, bars[25 - points2].checkKick(c));
+                    if (!repeat(curr))//a new possible move
+                    {
+                        moveList[count++] = curr;
+                        curr = null;
+                    }
+                }
+                else;//need 2 dice to re-enter but only the first can be used.
+            }
+            else if(bars[25-points2].checkMoveIn(c))//if points 2 can do Re-Enter
+            {
+                if(currHit - 1 == 0)//1 Re-enter & 1 normal move
+                {
+                    for(int i = 24; i >= 1; i--)//check points 1 possible movement
+                    {
+                        if(checkMove(c,i,i-points1)) {
+                            curr.setMoveOne(25, 25 - points2, bars[25 - points2].checkKick(c));
+                            curr.setMoveTwo(i, i - points1, bars[i - points1].checkKick(c));
+                            if (!repeat(curr))//a new possible move
+                            {
+                                moveList[count++] = curr;
+                                curr = null;
+                            }
+                        }
+                    }
+                }else;//need 2 need 2 dice to re-enter but only the second can be used.
+            }
+        }else if(!true){
+
+        }
+
+
+
+
+
+
+        return moveList;
     }
 }
 
