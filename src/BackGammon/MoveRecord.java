@@ -39,9 +39,9 @@ public class MoveRecord {
     public boolean equalsTo(MoveRecord mr)
     {
         if(this.start1 == mr.start1 && this.end2 == mr.end2 && !this.hit1 && !mr.hit1)
-            return true;
+            return true;//start and end are same, 2 numbers used in same checker
         else if(this.start1 == mr.start2 && this.end1 == mr.end2 && this.start2 == mr.start1 && this.end2 == mr.end1)
-            return true;
+            return true;//first move and second are the same
         else
             return false;
     }
