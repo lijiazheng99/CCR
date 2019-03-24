@@ -98,7 +98,17 @@ public class Board {
     }
 
     public boolean checkBear(Checker_Color c) {
-        return false;
+        if(c == Checker_Color.RED)
+        {
+            for(int i = 1; i <= 18; i++)
+                if(bars[i].getColor() == c) return false;
+        }else
+        {
+            for(int i = 24; i >= 7; i--)
+                if(bars[i].getColor() == c) return false;
+        }
+
+        return true;
     }
 
     public boolean checkReEnter(Checker_Color c, int points)
@@ -125,6 +135,14 @@ public class Board {
         else if(c == Checker_Color.WHITE)
             bars[25-points].moveOut();
         else;
+    }
+
+    public boolean checkBearOff(Checker_Color c, int points)
+    {
+        if(c == Checker_Color.RED)
+            return bars[25-points].checkMoveOut(c);
+        else
+            return bars[points].checkMoveOut(c);
     }
 
     public boolean checkMove(Checker_Color c, int start, int points)
@@ -291,52 +309,225 @@ public class Board {
                             curr = new MoveRecord();
                         }
                     }
-                }else
-                {
-                    //ERROR
                 }
             }else if(checkBear(c))
             {
                 //number 1 and number 2 bear off choices
+                //all the checkers <= points can just bear off
+                if(checkBearOff(c,points1) && checkBearOff(c,points2))
+                {
+                    curr.setMoveOne(points1,0, false);
+                    curr.setMoveTwo(points2,0, false);
+                    if(!checkRepeat(curr)){
+                        moveList[count++] = curr;
+                        curr = new MoveRecord();
+                    }
+                }else if(checkBearOff(c,points1))
+                {
+                    for(int i = 1; i <= 24; i++)
+                    {
+                        if(checkMove(c,i,points2))
+                        {
+                            curr.setMoveOne(points1,0, false);
+                            curr.setMoveTwo(i,i-points2,checkHit(c,i-points2));
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
+                        }
+                    }
+                }else if(checkBearOff(c,points2))
+                {
+                    for(int i = 1; i <= 24; i++)
+                    {
+                        if(checkMove(c,i,points1))
+                        {
+                            curr.setMoveOne(points2,0, false);
+                            curr.setMoveTwo(i,i-points1,checkHit(c,i-points1));
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
+                        }
+                    }
+                }else
+                {
+                    //a normal move from
+                    //normal move
+                    for(int i = 1; i <= 24; i++)
+                    {
+                        //number 1 normal move
+                        exist = false;
+                        if(checkMove(c,i,points1))
+                        {
+                            bars[i].moveOut();
+                            if(checkBear(c) && checkBearOff(c,points2))
+                            {
+                                //number 2 bear off
+                                curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
+                                curr.setMoveTwo(points2,0,false);
+                                if(!checkRepeat(curr)){
+                                    moveList[count++] = curr;
+                                    curr = new MoveRecord();
+                                }
+                            }
+                            else
+                            {
+                                for(int j = 1; j <= 24; j++)
+                                {
+                                    //number 2 normal move
+                                    if(checkMove(c,i,points2))
+                                    {
+                                        exist = true;
+                                        curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
+                                        curr.setMoveTwo(i,i-points2,checkHit(c,i-points2));
+                                        if(!checkRepeat(curr)){
+                                            moveList[count++] = curr;
+                                            curr = new MoveRecord();
+                                        }
+                                    }
+                                }
+                                if(!exist)
+                                {
+                                    curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
+                                    curr.setMoveTwo(-1,-1,false);
+                                    if(!checkRepeat(curr)){
+                                        moveList[count++] = curr;
+                                        curr = new MoveRecord();
+                                    }
+                                }
+                            }
+                            bars[i].moveIn(c);
+                        }
+                        else if(checkMove(c,i,points2))//number 1 can't move right now
+                        {
+                            bars[i].moveOut();
+                            if(checkBear(c) && checkBearOff(c,points1))
+                            {
+                                //number 1 bear off
+                                curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
+                                curr.setMoveTwo(points1,0,false);
+                                if(!checkRepeat(curr)){
+                                    moveList[count++] = curr;
+                                    curr = new MoveRecord();
+                                }
+                            }else
+                            {
+                                for(int j = 1; j <= 24; j++)
+                                {
+                                    //number 1 normal move
+                                    if(checkMove(c,i,points1))
+                                    {
+                                        exist = true;
+                                        curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
+                                        curr.setMoveTwo(i,i-points1,checkHit(c,i-points1));
+                                        if(!checkRepeat(curr)){
+                                            moveList[count++] = curr;
+                                            curr = new MoveRecord();
+                                        }
+                                    }
+                                }
+                                if(!exist)
+                                {
+                                    curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
+                                    curr.setMoveTwo(-1,-1,false);
+                                    if(!checkRepeat(curr)){
+                                        moveList[count++] = curr;
+                                        curr = new MoveRecord();
+                                    }
+                                }
+                            }
+                            bars[i].moveIn(c);
+                        }
+                    }
+                }
+
+
+
             }else
             {
                 //normal move
                 for(int i = 1; i <= 24; i++)
                 {
                     //number 1 normal move
+                    exist = false;
                     if(checkMove(c,i,points1))
                     {
                         bars[i].moveOut();
-                        if(checkBear(c))
+                        if(checkBear(c) && checkBearOff(c,points2))
                         {
                             //number 2 bear off
+                            curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
+                            curr.setMoveTwo(points2,0,false);
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
                         }
                         else
                         {
                             for(int j = 1; j <= 24; j++)
                             {
                                 //number 2 normal move
+                                if(checkMove(c,i,points2))
+                                {
+                                    exist = true;
+                                    curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
+                                    curr.setMoveTwo(i,i-points2,checkHit(c,i-points2));
+                                    if(!checkRepeat(curr)){
+                                        moveList[count++] = curr;
+                                        curr = new MoveRecord();
+                                    }
+                                }
+                            }
+                            if(!exist)
+                            {
+                                curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
+                                curr.setMoveTwo(-1,-1,false);
+                                if(!checkRepeat(curr)){
+                                    moveList[count++] = curr;
+                                    curr = new MoveRecord();
+                                }
                             }
                         }
                         bars[i].moveIn(c);
                     }
-                }
-
-                for(int i = 1; i <= 24; i++)
-                {
-                    //numver 2 normal move
-                    if(checkMove(c,i,points2))
+                    else if(checkMove(c,i,points2))//number 1 can't move right now
                     {
                         bars[i].moveOut();
-                        if(checkBear(c))
+                        if(checkBear(c) && checkBearOff(c,points1))
                         {
                             //number 1 bear off
-                        }
-                        else
+                            curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
+                            curr.setMoveTwo(points1,0,false);
+                            if(!checkRepeat(curr)){
+                                moveList[count++] = curr;
+                                curr = new MoveRecord();
+                            }
+                        }else
                         {
                             for(int j = 1; j <= 24; j++)
                             {
                                 //number 1 normal move
+                                if(checkMove(c,i,points1))
+                                {
+                                    exist = true;
+                                    curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
+                                    curr.setMoveTwo(i,i-points1,checkHit(c,i-points1));
+                                    if(!checkRepeat(curr)){
+                                        moveList[count++] = curr;
+                                        curr = new MoveRecord();
+                                    }
+                                }
+                            }
+                            if(!exist)
+                            {
+                                curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
+                                curr.setMoveTwo(-1,-1,false);
+                                if(!checkRepeat(curr)){
+                                    moveList[count++] = curr;
+                                    curr = new MoveRecord();
+                                }
                             }
                         }
                         bars[i].moveIn(c);

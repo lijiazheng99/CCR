@@ -9,7 +9,6 @@
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="295" column="27" lean-forward="true" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="27" />
+            <state relative-caret-position="750">
+              <caret line="441" column="21" selection-start-line="441" selection-start-column="21" selection-end-line="441" selection-end-column="21" />
               <folding>
                 <element signature="e#2850#2851#0" expanded="true" />
                 <element signature="e#2879#2880#0" expanded="true" />
@@ -50,17 +49,15 @@
                 <element signature="e#3011#3012#0" expanded="true" />
                 <element signature="e#3048#3049#0" expanded="true" />
                 <element signature="e#3080#3081#0" expanded="true" />
-                <element signature="e#3001#3002#0" expanded="true" />
-                <element signature="e#3028#3029#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="799">
               <caret line="403" column="5" selection-start-line="403" selection-start-column="5" selection-end-line="403" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -137,8 +134,8 @@
         <option value="$PROJECT_DIR$/src/BackGammon/Player.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Bar.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/MoveRecord.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
       </list>
     </option>
   </component>
@@ -213,7 +210,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553457071521" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553463592277" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -400,14 +397,7 @@
       <workItem from="1553361363131" duration="654000" />
       <workItem from="1553362106141" duration="1050000" />
       <workItem from="1553396082128" duration="11389000" />
-      <workItem from="1553451794915" duration="5202000" />
-    </task>
-    <task id="LOCAL-00028" summary="Upload settings for Java 11 and javafx packages">
-      <created>1550766048327</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1550766048327</updated>
+      <workItem from="1553451794915" duration="9852000" />
     </task>
     <task id="LOCAL-00029" summary="Upload settings for Java 11 and javafx packages">
       <created>1550766371688</created>
@@ -745,11 +735,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553455781251</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="re-enter full finished&#10;some functions deleted">
+      <created>1553457118035</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1553457118035</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220282000" />
+    <option name="totallyTimeSpent" value="224932000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -840,7 +837,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Upload settings for Java 11 and javafx packages" />
     <MESSAGE value="Fix different Classes" />
     <MESSAGE value="Update Dice class.&#10;Create Player Name set function.&#10;Create Player Color set by rolling dice function.&#10;Update the move function." />
     <MESSAGE value="Updated a lot of things" />
@@ -865,7 +861,8 @@
     <MESSAGE value="normal round updated" />
     <MESSAGE value="newest algorithm version structures so far" />
     <MESSAGE value="when Hitnum = 1&#10; use the first number to do re-enter&#10; second for normal move" />
-    <option name="LAST_COMMIT_MESSAGE" value="when Hitnum = 1&#10; use the first number to do re-enter&#10; second for normal move" />
+    <MESSAGE value="re-enter full finished&#10;some functions deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="re-enter full finished&#10;some functions deleted" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1044,10 +1041,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="403" column="5" selection-start-line="403" selection-start-column="5" selection-end-line="403" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="295" column="27" lean-forward="true" selection-start-line="295" selection-start-column="27" selection-end-line="295" selection-end-column="27" />
+        <state relative-caret-position="750">
+          <caret line="441" column="21" selection-start-line="441" selection-start-column="21" selection-end-line="441" selection-end-column="21" />
           <folding>
             <element signature="e#2850#2851#0" expanded="true" />
             <element signature="e#2879#2880#0" expanded="true" />
@@ -1057,18 +1064,6 @@
             <element signature="e#3011#3012#0" expanded="true" />
             <element signature="e#3048#3049#0" expanded="true" />
             <element signature="e#3080#3081#0" expanded="true" />
-            <element signature="e#3001#3002#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="403" column="5" selection-start-line="403" selection-start-column="5" selection-end-line="403" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
