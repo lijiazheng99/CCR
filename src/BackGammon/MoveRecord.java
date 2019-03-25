@@ -1,12 +1,12 @@
 package BackGammon;
 
 public class MoveRecord {
-    private int start1;
-    private int start2;
-    private int end1;
-    private int end2;
-    private boolean hit1;
-    private boolean hit2;
+    public int start1;
+    public  int start2;
+    public  int end1;
+    public  int end2;
+    public  boolean hit1;
+    public  boolean hit2;
 
     //0 for bear
     //25 for bar

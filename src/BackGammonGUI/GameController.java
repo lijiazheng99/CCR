@@ -1,9 +1,6 @@
 package BackGammonGUI;
 
-import BackGammon.Board;
-import BackGammon.Checker_Color;
-import BackGammon.Dice;
-import BackGammon.Player;
+import BackGammon.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -31,6 +28,8 @@ public class GameController
     private Board board = new Board();
     private Player player1 = new Player();
     private Player player2 = new Player();
+    private MoveRecord[] moveList;
+    private DoubleMoveRecord[] doubleMoveList;
 
     //Assign all control elements on the girdpane
     private Label backGammon = new Label("BackGammon");
@@ -41,9 +40,6 @@ public class GameController
     private TextArea outputTextBox = new TextArea();
     private String messegeBuffer;
     private String messegeBufferForCom;
-
-    //possibleMove store
-    private int [][]possibleMoves = new int[15][3];
 
     //in game dice point
     private int dicePoint1 = 7;
@@ -191,6 +187,11 @@ public class GameController
         //Judge current status, if is EMPTY lead user to roll dice
         if (currentTurn == Checker_Color.EMPTY)
         {
+            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=2)
+            {
+                makeMove();
+            }
+
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
             {
                 if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
@@ -380,36 +381,32 @@ public class GameController
         dicePoint2 = 7;
         dicePoint3 = 7;
         dicePoint4 = 7;
-        for (int i = 0; i < 2 ; i ++)
-            for (int j = 0; j < 15; j++)
-                possibleMoves[i][j] = 0;
         diceInGame();
         checkAvaliable();
 
     }
 
+
+    private void makeMove()
+    {
+
+    }
+
     private void checkAvaliable()
     {
-        //check move
-
-
-        //check finish
-
-
-        //check kill
-
-        //check moveout
-
+        moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
 
     }
 
     private void printAvaliableMove()
     {
-        for (int i = 0; i < 15; i++)
+        if (moveList.length != 0)
         {
-            if (possibleMoves[0][i]!=0 && possibleMoves[1][i]!=0)
+            for (int i = 0; i<moveList.length;i++)
             {
-                outputTextBox.appendText('A'+ i + " "+ possibleMoves[0][i] + "-" + possibleMoves[1][i]);
+                if (moveList[i].hit1 == false && moveList[i].hit2 == false)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2);
+
             }
         }
     }
