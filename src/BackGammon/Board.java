@@ -120,11 +120,12 @@ public class Board {
         {
             for(int i = 1; i <= 18; i++)
                 if(bars[i].getColor() == c) return false;
-        }else
+        }else if(c == Checker_Color.WHITE)
         {
             for(int i = 24; i >= 7; i--)
                 if(bars[i].getColor() == c) return false;
         }
+        else;
 
         return true;
     }
@@ -171,12 +172,16 @@ public class Board {
             return false;
 
         if(c == Checker_Color.RED){
+            if(25-start+points >= 25)
+                return false;
             if(bars[25-start].checkMoveOut(c) && bars[25-start+points].checkMoveIn(c))
                 return true;
             else return false;
         }
         else if(c == Checker_Color.WHITE)
         {
+            if(start - points <= 0)
+                return false;
             if(bars[start].checkMoveOut(c) && bars[start-points].checkMoveIn(c))
                 return true;
             else return false;
