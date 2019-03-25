@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
@@ -59,17 +58,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="433" column="52" selection-start-line="433" selection-start-column="52" selection-end-line="433" selection-end-column="52" />
+            <state relative-caret-position="608">
+              <caret line="596" column="9" lean-forward="true" selection-start-line="596" selection-start-column="9" selection-end-line="596" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initControlVisual#0;class#GameController#0" />
-                <element signature="method#assignPlayerLabel#0;class#GameController#0" />
-                <element signature="method#getInsert#0;class#GameController#0" />
                 <element signature="e#5844#5845#0" expanded="true" />
                 <element signature="e#5889#5890#0" expanded="true" />
-                <element signature="e#20273#20274#0" expanded="true" />
-                <element signature="e#23416#23417#0" expanded="true" />
+                <element signature="e#20470#20471#0" expanded="true" />
+                <element signature="e#23613#23614#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -287,7 +283,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553515172852" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553515903222" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -477,20 +473,6 @@
       <workItem from="1553451794915" duration="17929000" />
       <workItem from="1553476056917" duration="90000" />
       <workItem from="1553510132273" duration="1808000" />
-    </task>
-    <task id="LOCAL-00035" summary="Update Dice class.&#10;Create Player Name set function.&#10;Create Player Color set by rolling dice function.&#10;Update the move function.">
-      <created>1550864068079</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1550864068079</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Update Dice class.&#10;Create Player Name set function.&#10;Create Player Color set by rolling dice function.&#10;Update the move function.">
-      <created>1550943371177</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1550943371177</updated>
     </task>
     <task id="LOCAL-00037" summary="Updated a lot of things">
       <created>1550977114728</created>
@@ -821,11 +803,25 @@
       <option name="project" value="LOCAL" />
       <updated>1553511322927</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="update operation controller">
+      <created>1553515169353</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1553515169353</updated>
+    </task>
+    <task id="LOCAL-00085" summary="update operation controller">
+      <created>1553515176755</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1553515176755</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241029000" />
+    <option name="totallyTimeSpent" value="241717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,7 +845,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.47130647" visible="true" weight="0.07857143" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47130647" visible="true" weight="0.030612245" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -857,7 +853,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.495116" weight="0.327551" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.52869356" side_tool="true" visible="true" weight="0.07857143" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.52869356" side_tool="true" visible="true" weight="0.030612245" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48294243" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48507464" weight="0.09534128" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -916,7 +912,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update move function" />
     <MESSAGE value="update move functions" />
     <MESSAGE value="final version for sprint 2" />
     <MESSAGE value="add images" />
@@ -941,7 +936,8 @@
     <MESSAGE value="except the bear off for double number" />
     <MESSAGE value="update print controller" />
     <MESSAGE value="debugged" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugged" />
+    <MESSAGE value="update operation controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="update operation controller" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/.name">
@@ -1154,17 +1150,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="433" column="52" selection-start-line="433" selection-start-column="52" selection-end-line="433" selection-end-column="52" />
+        <state relative-caret-position="608">
+          <caret line="596" column="9" lean-forward="true" selection-start-line="596" selection-start-column="9" selection-end-line="596" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initControlVisual#0;class#GameController#0" />
-            <element signature="method#assignPlayerLabel#0;class#GameController#0" />
-            <element signature="method#getInsert#0;class#GameController#0" />
             <element signature="e#5844#5845#0" expanded="true" />
             <element signature="e#5889#5890#0" expanded="true" />
-            <element signature="e#20273#20274#0" expanded="true" />
-            <element signature="e#23416#23417#0" expanded="true" />
+            <element signature="e#20470#20471#0" expanded="true" />
+            <element signature="e#23613#23614#0" expanded="true" />
           </folding>
         </state>
       </provider>

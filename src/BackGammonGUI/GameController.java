@@ -409,6 +409,7 @@ public class GameController
             num *= 26;
             num += (c2 - 'A');
         }
+        outputTextBox.appendText("Number is:" + num +"\n");
 
         if (moveList[num].start1 == 25)
             board.reEnter(currentTurn,moveList[num].end1);
@@ -432,7 +433,8 @@ public class GameController
             throwInalidTypo();
 
         outputTextBox.appendText("You typed:" + s + "\n");
-
+        boardVisual.removeElements();
+        boardVisual.BoardVisual(board);
         passTurn();
     }
 
@@ -579,6 +581,8 @@ public class GameController
             else
                 throwInalidTypo();
             assignPipNum(currentTurn);
+            outputTextBox.appendText("22");
+            checkAvailable();
         }
         else if (player2.getColor() == currentTurn)
         {
@@ -590,6 +594,8 @@ public class GameController
             else
                 throwInalidTypo();
             assignPipNum(currentTurn);
+            outputTextBox.appendText("11");
+            checkAvailable();
         }
         else
             throwLogicFailure();
