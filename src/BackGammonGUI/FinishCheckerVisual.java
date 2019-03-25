@@ -13,9 +13,9 @@ public class FinishCheckerVisual extends StackPane
 
     private double oldX, oldY;
 
-//    public Checker_Color getType() {
-//        return type;
-//    }
+    public Checker_Color getType() {
+        return type;
+    }
 
     public FinishCheckerVisual(Checker_Color type, int x, int y)
     {
