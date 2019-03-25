@@ -623,11 +623,11 @@ public class Board {
                             for(int j = 1; j <= 24; j++)
                             {
                                 //number 2 normal move
-                                if(checkMove(c,i,points2))
+                                if(checkMove(c,j,points2))
                                 {
                                     exist = true;
                                     curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
-                                    curr.setMoveTwo(i,i-points2,checkHit(c,i-points2));
+                                    curr.setMoveTwo(j,j-points2,checkHit(c,j-points2));
                                     if(!checkRepeat(curr)){
                                         moveList[count++] = curr;
                                         curr = new MoveRecord();
@@ -663,11 +663,11 @@ public class Board {
                             for(int j = 1; j <= 24; j++)
                             {
                                 //number 1 normal move
-                                if(checkMove(c,i,points1))
+                                if(checkMove(c,j,points1))
                                 {
                                     exist = true;
                                     curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
-                                    curr.setMoveTwo(i,i-points1,checkHit(c,i-points1));
+                                    curr.setMoveTwo(j,j-points1,checkHit(c,j-points1));
                                     if(!checkRepeat(curr)){
                                         moveList[count++] = curr;
                                         curr = new MoveRecord();
@@ -713,11 +713,11 @@ public class Board {
                         for(int j = 1; j <= 24; j++)
                         {
                             //number 2 normal move
-                            if(checkMove(c,i,points2))
+                            if(checkMove(c,j,points2))
                             {
                                 exist = true;
                                 curr.setMoveOne(i,i-points1,checkHit(c,i-points1));
-                                curr.setMoveTwo(i,i-points2,checkHit(c,i-points2));
+                                curr.setMoveTwo(j,j-points2,checkHit(c,j-points2));
                                 if(!checkRepeat(curr)){
                                     moveList[count++] = curr;
                                     curr = new MoveRecord();
@@ -753,11 +753,11 @@ public class Board {
                         for(int j = 1; j <= 24; j++)
                         {
                             //number 1 normal move
-                            if(checkMove(c,i,points1))
+                            if(checkMove(c,j,points1))
                             {
                                 exist = true;
                                 curr.setMoveOne(i,i-points2,checkHit(c,i-points2));
-                                curr.setMoveTwo(i,i-points1,checkHit(c,i-points1));
+                                curr.setMoveTwo(j,j-points1,checkHit(c,j-points1));
                                 if(!checkRepeat(curr)){
                                     moveList[count++] = curr;
                                     curr = new MoveRecord();
