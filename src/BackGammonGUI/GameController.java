@@ -382,7 +382,7 @@ public class GameController
         dicePoint3 = 7;
         dicePoint4 = 7;
         diceInGame();
-        checkAvaliable();
+        checkAvailable();
 
     }
 
@@ -392,9 +392,19 @@ public class GameController
 
     }
 
-    private void checkAvaliable()
+    private void checkAvailable()
     {
-        moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
+        if (dicePoint1 != 7 && dicePoint2!= 7 && dicePoint1 != dicePoint2)
+        {
+            moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
+            if (moveList.length>0)
+                printAvaliableMove();
+            else
+            {
+                outputTextBox.appendText("There's no available move for you, next turn");
+                passTurn();
+            }
+        }
 
     }
 
@@ -404,9 +414,42 @@ public class GameController
         {
             for (int i = 0; i<moveList.length;i++)
             {
-                if (moveList[i].hit1 == false && moveList[i].hit2 == false)
+                //both hit
+                if (moveList[i].hit1 == true && moveList[i].hit2 == true)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "*  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
+                //1 hit 2 not
+                else if (moveList[i].hit1 == true && moveList[i].hit2 == false)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "*  " + moveList[i].start2 + "-" + moveList[i].end2);
+                //1 not 2 hit
+                else if (moveList[i].hit1 == false && moveList[i].hit2 == true)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
+                //1 not 2 not
+                else if (moveList[i].hit1 == false && moveList[i].hit2 == false)
                     outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2);
-
+                //1 off 2 hit
+                else if (moveList[i].end1 == 0 && moveList[i].hit2 == true)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + "Off" + "  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
+                //1 off 2 not
+                else if (moveList[i].end1 == 0 && moveList[i].hit2 == false)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + "Off" + "  " + moveList[i].start2 + "-" + moveList[i].end2);
+                //1 hit 2 off
+                else if (moveList[i].hit1 == true && moveList[i].end2 == 0)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "*  " + moveList[i].start2 + "-" + "Off");
+                //1 not 2 off
+                else if (moveList[i].hit1 == false && moveList[i].end2 == 0)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "  " + moveList[i].start2 + "-" + "Off");
+                //Bar 2 hit
+                else if (moveList[i].start1 == 0 && moveList[i].hit2 == true)
+                    outputTextBox.appendText('A'+ i + " "+ "Bar" + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
+                //Bar 2 not
+                else if (moveList[i].start1 == 0 && moveList[i].hit2 == false)
+                    outputTextBox.appendText('A'+ i + " "+ "Bar" + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2);
+                //1 hit Bar
+                else if (moveList[i].hit1 == true && moveList[i].start2 == 0)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "*  " + "Bar" + "-" + moveList[i].end2);
+                //1 not Bar
+                else if (moveList[i].hit1 == false && moveList[i].start2 == 0)
+                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "  " + "Bar" + "-" + moveList[i].end2);
             }
         }
     }
