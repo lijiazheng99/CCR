@@ -193,10 +193,10 @@ public class Board {
     }
 
     public boolean checkRepeat(MoveRecord mr) {
-//        for (int i = 0; i < moveList.length; i++)
-//        {if (mr.equalsTo(moveList[i]))
-//                return true;
-//        }
+        for (int i = 0; i < moveList.length; i++)
+        {if (mr.equalsTo(moveList[i]))
+                return true;
+        }
         return false;
     }
     public DoubleMoveRecord[] getDoubleMoveList(Checker_Color c, int p)
