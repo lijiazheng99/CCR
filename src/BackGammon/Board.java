@@ -13,6 +13,7 @@ public class Board {
     public int points1,points2;
     private int redHit = 0;
     private int whiteHit = 0;
+    int count = 0;
     private int redBear = 0;
     private int whiteBear = 0;
     private MoveRecord[] moveList;
@@ -193,8 +194,8 @@ public class Board {
     }
 
     public boolean checkRepeat(MoveRecord mr) {
-        for (int i = 0; i < moveList.length; i++)
-        {if (mr.equalsTo(moveList[i]))
+        for (int i = 0; i < count; i++)
+        {if (moveList[i].equalsTo(mr))
                 return true;
         }
         return false;
@@ -213,7 +214,7 @@ public class Board {
         int point = p;
 
         DoubleMoveRecord curr = new DoubleMoveRecord();
-        int count = 0;
+        count = 0;
         int currHit;
         if(c == Checker_Color.RED)
             currHit = redHit;
@@ -440,7 +441,7 @@ public class Board {
 
     public MoveRecord[] getMoveList(Checker_Color c, int p1, int p2)
     {
-        moveList = new MoveRecord[50];
+        moveList = new MoveRecord[1000];
         boolean reEnter;
         boolean exist;
         points1 = p1;
