@@ -390,6 +390,8 @@ public class GameController
 
     private void makeMove(String s)
     {
+        insertbox.clear();
+
         char c1 = s.charAt(0);
         char c2 = s.charAt(1);
 
@@ -419,6 +421,9 @@ public class GameController
             board.moveOut(currentTurn,moveList[num].start2);
             board.moveIn(currentTurn,moveList[num].end2);
         }
+
+        if(num > moveList.length)
+            throwInalidTypo();
 
         passTurn();
     }
