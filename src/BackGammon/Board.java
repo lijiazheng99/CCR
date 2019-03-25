@@ -447,7 +447,7 @@ public class Board {
         points1 = p1;
         points2 = p2;
 
-        int count = 0;
+        count = 0;
 
         int currHit;
         if(c == Checker_Color.RED)
