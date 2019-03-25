@@ -79,7 +79,7 @@ public class DiceVisual extends GridPane
     public void diceDisplay(int first, int second)
     {
         removeDisplay();
-         image1 = new ImageView(images[first-1]);
+        image1 = new ImageView(images[first-1]);
         image2 = new ImageView(images[second-1]);
         image3 = new ImageView(images[second-1]);
         image4 = new ImageView(images[second-1]);
