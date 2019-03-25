@@ -231,9 +231,9 @@ public class GameController
         }
         else if(currentTurn == Checker_Color.RED || currentTurn == Checker_Color.WHITE)
         {
-            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=2)
+            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=4)
             {
-                makeMove(messegeBufferForCom);
+                makeMove(messegeBufferForCom,insertbox.getText().length());
             }
 
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
@@ -388,21 +388,27 @@ public class GameController
     }
 
 
-    private void makeMove(String s)
+    private void makeMove(String s, int length)
     {
         insertbox.clear();
 
-        char c1 = s.charAt(0);
-        char c2 = s.charAt(1);
-
+        char c1;
+        char c2;
         int num;
 
-        if (c2 - 'A' >= 0 ) {
-            num = 26 * (c1 - 'A' + 1) + c2 - 'A';
+        if (length == 1)
+        {
+            c1 = s.charAt(0);
+            num = c1 - 'A';
         }
-
-        num = c1 - 'A';
-
+        else
+        {
+            c1 = s.charAt(0);
+            c2 = s.charAt(1);
+            num = c1 - 'A';
+            num *= 26;
+            num += (c2 - 'A');
+        }
 
         if (moveList[num].start1 == 25)
             board.reEnter(currentTurn,moveList[num].end1);
@@ -425,17 +431,17 @@ public class GameController
         if(num > moveList.length)
             throwInalidTypo();
 
+        outputTextBox.appendText("You typed:" + s + "\n");
+
         passTurn();
     }
 
     private void checkAvailable()
     {
-        outputTextBox.appendText("Entered checkAvaliable");
         if (dicePoint1 != 7 && dicePoint2!= 7 && dicePoint1 != dicePoint2)
         {
             moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
 
-            outputTextBox.appendText("Entered checkAvaliable if");
             if (moveList.length>0)
                 printAvaliableMove();
             else
@@ -458,6 +464,7 @@ public class GameController
             {
                 outputTextBox.appendText(printToString(i));
             }
+            outputTextBox.appendText("Type letter to choose:\n");
         }
         else if (doubleMoveList.length != 0)
         {
@@ -465,52 +472,96 @@ public class GameController
             {
                 outputTextBox.appendText(printToString(i));
             }
+            outputTextBox.appendText("Type letter to choose:\n");
         }
     }
 
     private String printToString(int num)
     {
-        String string;
+        String string = "->";
         char charNum;
-        int getcharNum = 'A' + num;
+        int getcharNum;
 
-        charNum = (char) getcharNum;
+        int num1 = num;
 
-        string = charNum + " ";
-
-        if (moveList[num].start1 == 25)
-            string+= "Bar";
+        if (num1 == 0)
+            string += 'A';
         else
-            string += moveList[num].start1;
+            while(num1>0)
+            {
+                int x = num1/26;
+                int y = num1%26;
+                if (x > 0)
+                {
+                    getcharNum = 'A' + x - 1;
+                    charNum = (char) getcharNum;
+                    string += charNum;
+                    num1-=26;
+                }
+                else
+                {
+                    if (y >= 0)
+                    {
+                        getcharNum = 'A' + y;
+                        charNum = (char) getcharNum;
+                        string += charNum;
+                        num1 = 0;
+                    }
+                }
+            }
 
-        string+="-";
+        string+=".";
 
-        if (moveList[num].end1 == 0)
-            string+= "Off";
+        if (moveList[num].start1 == -1 && moveList[num].end1 == -1)
+        {
+            string+= "N/A";
+        }
         else
-            string += moveList[num].end1;
+        {
+            if (moveList[num].start1 == 25)
+                string+= "Bar";
+            else
+                string += moveList[num].start1;
+
+            string+="-";
+
+            if (moveList[num].end1 == 0)
+                string+= "Off";
+            else
+                string += moveList[num].end1;
+        }
+
 
         if(moveList[num].hit1 == true)
             string += "*   ";
         else
             string += "   ";
 
-        if (moveList[num].start2 == 25)
-            string+= "Bar";
+        if (moveList[num].start2 == -1 && moveList[num].end2 == -1)
+        {
+            string+= "N/A";
+        }
         else
-            string += moveList[num].start2;
+        {
+            if (moveList[num].start2 == 25)
+                string+= "Bar";
+            else
+                string += moveList[num].start2;
 
-        string+="-";
+            string+="-";
 
-        if (moveList[num].end2 == 0)
-            string+= "Off";
-        else
-            string += moveList[num].end2;
+            if (moveList[num].end2 == 0)
+                string+= "Off";
+            else
+                string += moveList[num].end2;
+        }
 
         if(moveList[num].hit2 == true)
             string += "*.";
         else
             string += ".";
+
+        string += "\n";
 
         return string;
     }
