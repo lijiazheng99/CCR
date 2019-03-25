@@ -187,11 +187,6 @@ public class GameController
         //Judge current status, if is EMPTY lead user to roll dice
         if (currentTurn == Checker_Color.EMPTY)
         {
-            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=2)
-            {
-                makeMove(messegeBufferForCom);
-            }
-
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
             {
                 if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
@@ -236,6 +231,11 @@ public class GameController
         }
         else if(currentTurn == Checker_Color.RED || currentTurn == Checker_Color.WHITE)
         {
+            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=2)
+            {
+                makeMove(messegeBufferForCom);
+            }
+
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
             {
                 if (messegeBufferForCom.substring(0,4).equals("ROLL"))
@@ -381,8 +381,8 @@ public class GameController
         dicePoint2 = 7;
         dicePoint3 = 7;
         dicePoint4 = 7;
-        moveList = new MoveRecord[];
-        doubleMoveList = new DoubleMoveRecord[];
+        //MoveRecord[] moveList = new MoveRecord[];
+        //DoubleMoveRecord[] doubleMoveList = new DoubleMoveRecord[];
         diceInGame();
         checkAvailable();
     }
@@ -395,21 +395,42 @@ public class GameController
 
         int num;
 
+        if (c2 - 'A' >= 0 ) {
+            num = 26 * (c1 - 'A' + 1) + c2 - 'A';
+        }
+
         num = c1 - 'A';
 
-        moveList[num].start1;
 
+        if (moveList[num].start1 == 25)
+            board.reEnter(currentTurn,moveList[num].end1);
+        else if (moveList[num].end1 == 0)
+            board.checkBearOff(currentTurn,moveList[num].start1);
+        else {
+                board.moveOut(currentTurn,moveList[num].start1);
+                board.moveIn(currentTurn,moveList[num].end1);
+        }
 
-
+        if (moveList[num].start2 == 25)
+            board.reEnter(currentTurn,moveList[num].end2);
+        else if (moveList[num].end2 == 0)
+            board.checkBearOff(currentTurn,moveList[num].start2);
+        else {
+            board.moveOut(currentTurn,moveList[num].start2);
+            board.moveIn(currentTurn,moveList[num].end2);
+        }
 
         passTurn();
     }
 
     private void checkAvailable()
     {
+        outputTextBox.appendText("Entered checkAvaliable");
         if (dicePoint1 != 7 && dicePoint2!= 7 && dicePoint1 != dicePoint2)
         {
             moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
+
+            outputTextBox.appendText("Entered checkAvaliable if");
             if (moveList.length>0)
                 printAvaliableMove();
             else
@@ -418,7 +439,10 @@ public class GameController
                 passTurn();
             }
         }
+        else if (dicePoint1 !=7 && dicePoint1== dicePoint2)
+        {
 
+        }
     }
 
     private void printAvaliableMove()
@@ -426,6 +450,13 @@ public class GameController
         if (moveList.length != 0)
         {
             for (int i = 0; i<moveList.length;i++)
+            {
+                outputTextBox.appendText(printToString(i));
+            }
+        }
+        else if (doubleMoveList.length != 0)
+        {
+            for (int i = 0; i<doubleMoveList.length;i++)
             {
                 outputTextBox.appendText(printToString(i));
             }
@@ -447,6 +478,8 @@ public class GameController
         else
             string += moveList[num].start1;
 
+        string+="-";
+
         if (moveList[num].end1 == 0)
             string+= "Off";
         else
@@ -461,6 +494,8 @@ public class GameController
             string+= "Bar";
         else
             string += moveList[num].start2;
+
+        string+="-";
 
         if (moveList[num].end2 == 0)
             string+= "Off";
@@ -561,6 +596,7 @@ public class GameController
                 currentTurn = Checker_Color.WHITE;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
+                checkAvailable();
             }
             else if (dicePoint2 > dicePoint1)
             {
@@ -571,6 +607,7 @@ public class GameController
                 currentTurn =  Checker_Color.WHITE;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
+                checkAvailable();
             }
             else
                 throwLogicFailure();
@@ -585,8 +622,17 @@ public class GameController
         insertbox.clear();
         Dice dice1 = new Dice();
         Dice dice2 = new Dice();
-        final int Num1 = dice1.roll();
-        final int Num2 = dice2.roll();
+        //final int Num1 = dice1.roll();
+        //final int Num2 = dice2.roll();
+        int Num1 = dice1.roll();
+        int Num2 = dice2.roll();
+
+        while(Num1 == Num2)
+        {
+            Num1 = dice1.roll();
+            Num2 = dice2.roll();
+        }
+
         diceVisual.DiceVisual();
         diceVisual.diceDisplay(Num1,Num2);
         outputTextBox.appendText("Dice point: "+Num1+" and "+Num2+".\n");
