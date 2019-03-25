@@ -11,11 +11,11 @@ public class Board {
     public Player playerOne;
     public Player playerTwo;
     public int points1,points2;
-    private int redHit = 0;
-    private int whiteHit = 0;
+    public int redHit = 0;
+    public int whiteHit = 0;
     int count = 0;
-    private int redBear = 0;
-    private int whiteBear = 0;
+    public int redBear = 0;
+    public int whiteBear = 0;
     private MoveRecord[] moveList;
     private DoubleMoveRecord[] doubleMoveList;
     //kicking numbers

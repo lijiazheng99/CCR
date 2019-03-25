@@ -381,8 +381,6 @@ public class GameController
         dicePoint2 = 7;
         dicePoint3 = 7;
         dicePoint4 = 7;
-        //MoveRecord[] moveList = new MoveRecord[];
-        //DoubleMoveRecord[] doubleMoveList = new DoubleMoveRecord[];
         diceInGame();
         checkAvailable();
     }
@@ -409,13 +407,28 @@ public class GameController
             num *= 26;
             num += (c2 - 'A');
         }
-        outputTextBox.appendText("Number is:" + num +"\n");
+        //outputTextBox.appendText("Number is:" + num +"\n");
 
         if (moveList[num].start1 == 25)
             board.reEnter(currentTurn,moveList[num].end1);
         else if (moveList[num].end1 == 0)
-            board.checkBearOff(currentTurn,moveList[num].start1);
-        else {
+        {
+            board.moveOut(currentTurn,num);
+            if (currentTurn == Checker_Color.RED)
+                board.redBear++;
+            else
+                board.whiteBear++;
+        }
+        else if (moveList[num].hit1 == true)
+        {
+            board.moveOut(currentTurn,num);
+            if (currentTurn == Checker_Color.RED)
+                board.redHit++;
+            else
+                board.whiteHit++;
+        }
+        else
+            {
                 board.moveOut(currentTurn,moveList[num].start1);
                 board.moveIn(currentTurn,moveList[num].end1);
         }
@@ -423,7 +436,21 @@ public class GameController
         if (moveList[num].start2 == 25)
             board.reEnter(currentTurn,moveList[num].end2);
         else if (moveList[num].end2 == 0)
-            board.checkBearOff(currentTurn,moveList[num].start2);
+        {
+            board.moveOut(currentTurn,num);
+            if (currentTurn == Checker_Color.RED)
+                board.redBear++;
+            else
+                board.whiteBear++;
+        }
+        else if (moveList[num].hit2 == true)
+        {
+            board.moveOut(currentTurn,num);
+            if (currentTurn == Checker_Color.RED)
+                board.redHit++;
+            else
+                board.whiteHit++;
+        }
         else {
             board.moveOut(currentTurn,moveList[num].start2);
             board.moveIn(currentTurn,moveList[num].end2);
@@ -445,7 +472,9 @@ public class GameController
             moveList = null;
             moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
             if (moveList.length>0)
+            {
                 printAvaliableMove();
+            }
             else
             {
                 outputTextBox.appendText("There's no available move for you, next turn");
