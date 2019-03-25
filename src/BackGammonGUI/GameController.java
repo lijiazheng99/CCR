@@ -189,7 +189,7 @@ public class GameController
         {
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=2)
             {
-                makeMove();
+                makeMove(messegeBufferForCom);
             }
 
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
@@ -381,15 +381,28 @@ public class GameController
         dicePoint2 = 7;
         dicePoint3 = 7;
         dicePoint4 = 7;
+        moveList = new MoveRecord[];
+        doubleMoveList = new DoubleMoveRecord[];
         diceInGame();
         checkAvailable();
-
     }
 
 
-    private void makeMove()
+    private void makeMove(String s)
     {
+        char c1 = s.charAt(0);
+        char c2 = s.charAt(1);
 
+        int num;
+
+        num = c1 - 'A';
+
+        moveList[num].start1;
+
+
+
+
+        passTurn();
     }
 
     private void checkAvailable()
@@ -414,48 +427,53 @@ public class GameController
         {
             for (int i = 0; i<moveList.length;i++)
             {
-                //both hit
-                if (moveList[i].hit1 == true && moveList[i].hit2 == true)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "*  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
-                //1 hit 2 not
-                else if (moveList[i].hit1 == true && moveList[i].hit2 == false)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "*  " + moveList[i].start2 + "-" + moveList[i].end2);
-                //1 not 2 hit
-                else if (moveList[i].hit1 == false && moveList[i].hit2 == true)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
-                //1 not 2 not
-                else if (moveList[i].hit1 == false && moveList[i].hit2 == false)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2);
-                //1 off 2 hit
-                else if (moveList[i].end1 == 0 && moveList[i].hit2 == true)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + "Off" + "  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
-                //1 off 2 not
-                else if (moveList[i].end1 == 0 && moveList[i].hit2 == false)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + "Off" + "  " + moveList[i].start2 + "-" + moveList[i].end2);
-                //1 hit 2 off
-                else if (moveList[i].hit1 == true && moveList[i].end2 == 0)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "*  " + moveList[i].start2 + "-" + "Off");
-                //1 not 2 off
-                else if (moveList[i].hit1 == false && moveList[i].end2 == 0)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "  " + moveList[i].start2 + "-" + "Off");
-                //Bar 2 hit
-                else if (moveList[i].start1 == 0 && moveList[i].hit2 == true)
-                    outputTextBox.appendText('A'+ i + " "+ "Bar" + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2 + "*");
-                //Bar 2 not
-                else if (moveList[i].start1 == 0 && moveList[i].hit2 == false)
-                    outputTextBox.appendText('A'+ i + " "+ "Bar" + "-" + moveList[i].end1 + "  " + moveList[i].start2 + "-" + moveList[i].end2);
-                //1 hit Bar
-                else if (moveList[i].hit1 == true && moveList[i].start2 == 0)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "*  " + "Bar" + "-" + moveList[i].end2);
-                //1 not Bar
-                else if (moveList[i].hit1 == false && moveList[i].start2 == 0)
-                    outputTextBox.appendText('A'+ i + " "+ moveList[i].start1 + "-" + moveList[i].end1  + "  " + "Bar" + "-" + moveList[i].end2);
+                outputTextBox.appendText(printToString(i));
             }
         }
     }
 
+    private String printToString(int num)
+    {
+        String string;
+        char charNum;
+        int getcharNum = 'A' + num;
 
+        charNum = (char) getcharNum;
 
+        string = charNum + " ";
+
+        if (moveList[num].start1 == 25)
+            string+= "Bar";
+        else
+            string += moveList[num].start1;
+
+        if (moveList[num].end1 == 0)
+            string+= "Off";
+        else
+            string += moveList[num].end1;
+
+        if(moveList[num].hit1 == true)
+            string += "*   ";
+        else
+            string += "   ";
+
+        if (moveList[num].start2 == 25)
+            string+= "Bar";
+        else
+            string += moveList[num].start2;
+
+        if (moveList[num].end2 == 0)
+            string+= "Off";
+        else
+            string += moveList[num].end2;
+
+        if(moveList[num].hit2 == true)
+            string += "*.";
+        else
+            string += ".";
+
+        return string;
+    }
 
     //Current turn instruction
     private void currentTurn()
