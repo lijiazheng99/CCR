@@ -171,7 +171,7 @@ public class Board {
             return false;
 
         if(c == Checker_Color.RED){
-            if(bars[start].checkMoveOut(c) && bars[start+points].checkMoveIn(c))
+            if(bars[25-start].checkMoveOut(c) && bars[25-start+points].checkMoveIn(c))
                 return true;
             else return false;
         }
@@ -186,6 +186,8 @@ public class Board {
 
     public boolean checkHit(Checker_Color c, int index)
     {
+        if(index < 1 || index >24)
+            return false;
         if(c == Checker_Color.RED)
             return bars[25-index].checkKick(c);
         else if(c == Checker_Color.WHITE)
@@ -442,6 +444,7 @@ public class Board {
     public MoveRecord[] getMoveList(Checker_Color c, int p1, int p2)
     {
         moveList = new MoveRecord[1000];
+
         boolean reEnter;
         boolean exist;
         points1 = p1;

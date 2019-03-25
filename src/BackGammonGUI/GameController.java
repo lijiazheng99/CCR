@@ -442,8 +442,8 @@ public class GameController
     {
         if (dicePoint1 != 7 && dicePoint2!= 7 && dicePoint1 != dicePoint2)
         {
+            moveList = null;
             moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
-
             if (moveList.length>0)
                 printAvaliableMove();
             else
@@ -582,7 +582,6 @@ public class GameController
                 throwInalidTypo();
             assignPipNum(currentTurn);
             outputTextBox.appendText("22");
-            checkAvailable();
         }
         else if (player2.getColor() == currentTurn)
         {
@@ -595,7 +594,6 @@ public class GameController
                 throwInalidTypo();
             assignPipNum(currentTurn);
             outputTextBox.appendText("11");
-            checkAvailable();
         }
         else
             throwLogicFailure();
@@ -695,8 +693,8 @@ public class GameController
             Num2 = dice2.roll();
         }
 
-        diceVisual.DiceVisual();
         diceVisual.diceDisplay(Num1,Num2);
+        diceVisual.DiceVisual();
         outputTextBox.appendText("Dice point: "+Num1+" and "+Num2+".\n");
         dicePoint1 = Num1;
         dicePoint2 = Num2;
