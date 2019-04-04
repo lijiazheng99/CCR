@@ -1,187 +1,201 @@
 package BackGammon;
 
-//import com.sun.org.apache.regexp.internal.REDebugCompiler;
-
-//created by Jiwei Zhang, 1/1/2019
-//edited by Jiwei Zhang, 2/1/2019
 public class Board {
+    // Board hold the details for the current board positions, performs moves and returns the list of legal moves
 
-    //public Bar[] bars;
-    public Bar[] bars = new Bar[25];
-    public Player playerOne;
-    public Player playerTwo;
-    public int points1, points2;
-    private int redHit = 0;
-    private int whiteHit = 0;
-    int count = 0;
-    private int redBear = 0;
-    private int whiteBear = 0;
-    private MoveRecord[] moveList;
-    private DoubleMoveRecord[] doubleMoveList;
-    //kicking numbers
+    private static final int[] RESET = {0,0,0,0,0,0,5,0,3,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,2,0};
+    private static final int[][] CHEAT = {
+            {2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},   // Bear in & Bear off test
+            {3,3,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3},
+    };
 
-    public Board() {
-        int i = 0;
-        while (i != 25) {
-            bars[i] = new Bar();
-            i++;
-        }
-        //"0" IS NOT FOR USE
-    }
 
-    public void setUp() //initializing the board bars
-    {
-        for (int i = 1; i <= 24; i++) {
-            if (i == 1 || i == 12 || i == 17 || i == 19)
-                bars[i].setCheckerColor(Checker_Color.RED);
-            else if (i == 24 || i == 13 || i == 8 || i == 6)
-                bars[i].setCheckerColor(Checker_Color.WHITE);
-            else
-                bars[i].setCheckerColor(Checker_Color.EMPTY);
 
-            if (i == 6 || i == 12 || i == 13 || i == 19)
-                bars[i].setCheckerNumber(5);
-            else if (i == 1 || i == 24)
-                bars[i].setCheckerNumber(2);
-            else if (i == 8 || i == 17)
-                bars[i].setCheckerNumber(3);
-            else
-                bars[i].setCheckerNumber(0);
+    public static final int BAR = 25;           // index of the BAR
+    public static final int BEAR_OFF = 0;       // index of the BEAR OFF
+    private static final int INNER_END = 6;     // index for the end of the inner board
+    public static final int NUM_PIPS = 24;      // excluding BAR and BEAR OFF
+    public static final int NUM_SLOTS = 26;     // including BAR and BEAR OFF
+    private static final int NUM_CHECKERS = 15;
+
+    private int[][] checkers;
+    private Players players;
+    // 2D array of checkers
+    // 1st index: is the player id
+    // 2nd index is number pip number, 0 to 25
+    // pip 0 is bear off, pip 25 is the bar, pips 1-24 are on the main board
+    // the value in checkers is the number of checkers that the player has on the point
+
+    Board(Players players) {
+        this.players = players;
+        checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];
+        for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
+            for (int pip=0; pip<NUM_SLOTS; pip++)   {
+                checkers[player][pip] = RESET[pip];
+            }
         }
     }
 
-    public boolean move(Checker_Color c, int start, int end) {
-        //MOVE FROM A TO B WITHOUT ANY RULE:
-        if (checkMove(c, start, end - start)) {
-            bars[start].moveOut();
+    Board(Players players, Board board) {
+        this.players = players;
+        this.checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];
+        for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
+            for (int pip=0; pip<NUM_SLOTS; pip++)   {
+                this.checkers[player][pip] = board.checkers[player][pip];
+            }
+        }
+    }
 
-            if (bars[end].checkKick(c)) {
-                bars[end].kick(c);
-                if (c == Checker_Color.RED)
-                    whiteHit++;
-                else
-                    redHit++;
-            } else
-                bars[end].moveIn(c);
+    private int getOpposingId(Player player) {
+        if (player.getId()==0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    private int calculateOpposingPip(int pip) {
+        return NUM_PIPS-pip+1;
+    }
+
+    public void move(Player player, Move move) {
+        checkers[player.getId()][move.getFromPip()]--;
+        checkers[player.getId()][move.getToPip()]++;
+        if (move.getToPip()<BAR && move.getToPip()>BEAR_OFF &&
+                checkers[getOpposingId(player)][calculateOpposingPip(move.getToPip())] == 1) {
+            checkers[getOpposingId(player)][calculateOpposingPip(move.getToPip())]--;
+            checkers[getOpposingId(player)][BAR]++;
+        }
+    }
+
+    public void move(Player player, Play play) {
+        for (Move move : play) {
+            move(player,move);
+        }
+    }
+
+    public int getNumCheckers(int player, int pip) {
+        return checkers[player][pip];
+    }
+
+    private boolean bearOffIsLegal(Player player) {
+        int numberCheckersInInnerBoard=0;
+        for (int pip=BEAR_OFF; pip<=INNER_END; pip++) {
+            numberCheckersInInnerBoard = numberCheckersInInnerBoard + checkers[player.getId()][pip];
+        }
+        if (numberCheckersInInnerBoard==NUM_CHECKERS) {
             return true;
         } else {
-            //Unvaild movement - append
             return false;
         }
     }
 
-    public int getRedHit() {
-        return redHit;
-    }
-
-    public int getWhiteHit() {
-        return whiteHit;
-    }
-
-    public int getRedBear() {
-        return redBear;
-    }
-
-    public int getWhiteBear() {
-        return whiteBear;
-    }
-
-    public void moveIn(Checker_Color c, int num) {
-        if (c == Checker_Color.RED)
-            bars[25 - num].moveIn(c);
-        else
-            bars[num].moveIn(c);
-    }
-
-    public void moveOut(Checker_Color c, int num) {
-        if (c == Checker_Color.RED)
-            bars[25 - num].moveOut();
-        else
-            bars[num].moveOut();
-    }
-
-    public boolean checkBear(Checker_Color c) {
-        if (c == Checker_Color.RED) {
-            for (int i = 1; i <= 18; i++)
-                if (bars[i].getColor() == c) return false;
-        } else if (c == Checker_Color.WHITE) {
-            for (int i = 24; i >= 7; i--)
-                if (bars[i].getColor() == c) return false;
-        } else ;
-
-        return true;
-    }
-
-    public boolean checkReEnter(Checker_Color c, int points) {
-        if (c == Checker_Color.RED)
-            return redHit != 0;
-        else
-            return whiteHit != 0;
-    }
-
-    public void reEnter(Checker_Color c, int points) {
-        if (c == Checker_Color.RED)
-            bars[0 + points].moveIn(c);
-        else if (c == Checker_Color.WHITE)
-            bars[25 - points].moveIn(c);
-        else ;
-    }
-
-    public void reEnterUndo(Checker_Color c, int points) {
-        if (c == Checker_Color.RED)
-            bars[0 + points].moveOut();
-        else if (c == Checker_Color.WHITE)
-            bars[25 - points].moveOut();
-        else ;
-    }
-
-    public boolean checkBearOff(Checker_Color c, int points) {
-        if (c == Checker_Color.RED)
-            return bars[25 - points].checkMoveOut(c);
-        else
-            return bars[points].checkMoveOut(c);
-    }
-
-    public boolean checkMove(Checker_Color c, int start, int points) {
-        if (points == 0)
-            return false;
-        else if (start <= 0 || start >= 25)
-            return false;
-
-        if (c == Checker_Color.RED) {
-            if (25 - start + points >= 25)
-                return false;
-            if (bars[25 - start].checkMoveOut(c) && bars[25 - start + points].checkMoveIn(c))
-                return true;
-            else return false;
-        } else if (c == Checker_Color.WHITE) {
-            if (start - points <= 0)
-                return false;
-            if (bars[start].checkMoveOut(c) && bars[start - points].checkMoveIn(c))
-                return true;
-            else return false;
-        } else return false;
-    }
-
-    public boolean checkHit(Checker_Color c, int index) {
-        if (index < 1 || index > 24)
-            return false;
-        if (c == Checker_Color.RED)
-            return bars[25 - index].checkKick(c);
-        else if (c == Checker_Color.WHITE)
-            return bars[index].checkKick(c);
-        return false;
-    }
-
-    public boolean checkRepeat(MoveRecord mr) {
-        for (int i = 0; i < count; i++) {
-            if (moveList[i].equalsTo(mr))
-                return true;
+    private int lastCheckerPip(Player player) {
+        int pip;
+        for (pip=BAR; pip>=BEAR_OFF; pip--) {
+            if (checkers[player.getId()][pip]>0) {
+                break;
+            }
         }
-        return false;
+        return pip;
     }
+
+    private Plays findAllPlays(Board board, Player player, Movements movements) {
+        // Search recursively for the plays that are possible with a given sequence of movements
+        Plays plays = new Plays();
+        int fromPipLimit;
+        // must take checkers from the bar first
+        if (board.checkers[player.getId()][BAR] > 0) {
+            fromPipLimit = BAR-1;
+        } else {
+            fromPipLimit = BEAR_OFF-1;
+        }
+        // search over the board for valid moves
+        for (int fromPip=BAR; fromPip>fromPipLimit; fromPip--) {
+            if (board.checkers[player.getId()][fromPip]>0) {
+                int toPip = fromPip-movements.getFirst();
+                Move newMove = new Move();
+                Boolean isNewMove = false;
+                if (toPip>BEAR_OFF) {
+                    // check for valid moves with and without a hit
+                    if (board.checkers[getOpposingId(player)][calculateOpposingPip(toPip)]==0) {
+                        newMove = new Move(fromPip,toPip,false);
+                        isNewMove = true;
+                    } else if (board.checkers[getOpposingId(player)][calculateOpposingPip(toPip)]==1) {
+                        newMove = new Move(fromPip,toPip,true);
+                        isNewMove = true;
+                    }
+                } else {
+                    // check for valid bear off
+                    if (board.bearOffIsLegal(player) && (toPip==0 || (toPip<0 && board.lastCheckerPip(player)==fromPip))) {
+                        newMove = new Move(fromPip,BEAR_OFF, false);
+                        isNewMove = true;
+                    }
+                }
+                // apply the move to the board and search for a follow on move
+                if (isNewMove) {
+                    if (movements.number()>1) {
+                        Board childBoard = new Board(players,board);
+                        childBoard.move(player,newMove);
+                        Movements childMovements = new Movements(movements);
+                        childMovements.removeFirst();
+                        Plays childPlays = findAllPlays(childBoard, player, childMovements);
+                        if (childPlays.number()>0) {
+                            childPlays.prependAll(newMove);
+                            plays.add(childPlays);
+                        } else {
+                            plays.add(new Play(newMove));
+                        }
+                    } else {
+                        plays.add(new Play(newMove));
+                    }
+                }
+            }
+        }
+        return plays;
+    }
+
+
+    public Plays getPossiblePlays(Player player, Dice dice) {
+        // Search for the plays that are possible with all of the movements that can be made based on the dice
+        Plays possiblePlays;
+        Movements movements = new Movements(dice);
+        if (player.getDice().isDouble()) {
+            possiblePlays = findAllPlays(this,player,movements);
+        } else {
+            possiblePlays = findAllPlays(this,player,movements);
+            movements.reverse();
+            possiblePlays.add(findAllPlays(this,player,movements));
+        }
+        possiblePlays.removeIncompletePlays();
+        possiblePlays.removeDuplicatePlays();
+        return possiblePlays;
+    }
+
+    public boolean isGameOver() {
+        boolean gameOver = false;
+        if ( (checkers[0][BEAR_OFF] == NUM_CHECKERS) || (checkers[1][BEAR_OFF] == NUM_CHECKERS) ) {
+            gameOver = true;
+        }
+        return gameOver;
+    }
+
+    public Player getWinner() {
+        Player winner = players.get(0);
+        if (checkers[0][BEAR_OFF] == NUM_CHECKERS) {
+            winner = players.get(0);
+        } else if (checkers[1][BEAR_OFF] == NUM_CHECKERS) {
+            winner = players.get(1);
+        }
+        return winner;
+    }
+
+    public void cheat() {
+        for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
+            for (int pip=0; pip<NUM_SLOTS; pip++)   {
+                checkers[player][pip] = CHEAT[player][pip];
+            }
+        }
+    }
+
 }
-
-
-
-

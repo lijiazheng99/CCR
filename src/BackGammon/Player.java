@@ -1,47 +1,50 @@
 package BackGammon;
-//created by Jiwei Zhang, 1/1/2019
-//edited by Jiwei Zhang, 2/1/2019
+import java.awt.*;
+public class Player {
+        // Player holds the details for one player
 
-public class Player
-{
-    private String name;
-    private Checker_Color color;
-    private int pointsNeededToWin;
-    private boolean winningStatus = false;
+        private int id;
+        private String colorName;
+        private Color color;
+        private String name;
+        private Dice dice;
 
-    public Player()
-    {
-        this(null,null);
-    }
+        Player(int id, String colorName, Color color) {
+            this.id = id;
+            name = "";
+            this.colorName = colorName;
+            this.color = color;
+            dice = new Dice();
+        }
 
-    public Player(String name, Checker_Color color)
-    {
-        this.setName(name);
-        this.setColor(color);
-    }
+        Player(Player player) {
+            id = player.id;
+            colorName = player.colorName;
+            color = player.color;
+            name = player.name;
+            dice = new Dice(player.dice);
+        }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-    public String getName()
-    {
-        return this.name;
-    }
+        public int getId() {
+            return id;
+        }
 
-    public void setColor(Checker_Color color)
-    {
-        this.color = color;
-    }
+        public String getColorName() {
+            return this.colorName;
+        }
 
-    public Checker_Color getColor()
-    {
-        return this.color;
-    }
+        public Color getColor() {
+            return this.color;
+        }
 
-    public boolean getStatus()
-    {
-        return this.winningStatus;
-    }
+        public Dice getDice() { return dice; }
+
+        public String toString() {
+            return name;
+        }
+
 }
