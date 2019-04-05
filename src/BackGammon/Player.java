@@ -9,7 +9,7 @@ public class Player {
         private String name;
         private Dice dice;
 
-        Player(int id, String colorName, Checker_Color color) {
+        public Player(int id, String colorName, Checker_Color color) {
             this.id = id;
             name = "";
             this.colorName = colorName;
@@ -17,7 +17,7 @@ public class Player {
             dice = new Dice();
         }
 
-        Player(Player player) {
+        public Player(Player player) {
             id = player.id;
             colorName = player.colorName;
             color = player.color;

@@ -28,7 +28,7 @@ public class Board {
     // pip 0 is bear off, pip 25 is the bar, pips 1-24 are on the main board
     // the value in checkers is the number of checkers that the player has on the point
 
-    Board(Players players) {
+    public Board(Players players) {
         this.players = players;
         checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];
         for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
@@ -36,9 +36,10 @@ public class Board {
                 checkers[player][pip] = RESET[pip];
             }
         }
+        barsBuild();
     }
 
-    Board(Players players, Board board) {
+    public Board(Players players, Board board) {
         this.players = players;
         this.checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];
         for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
@@ -46,6 +47,7 @@ public class Board {
                 this.checkers[player][pip] = board.checkers[player][pip];
             }
         }
+        barsBuild();
     }
 
     private int getOpposingId(Player player) {
@@ -68,6 +70,7 @@ public class Board {
             checkers[getOpposingId(player)][calculateOpposingPip(move.getToPip())]--;
             checkers[getOpposingId(player)][BAR]++;
         }
+        barsBuild();
     }
 
     public void move(Player player, Play play) {
@@ -198,9 +201,10 @@ public class Board {
                 checkers[player][pip] = CHEAT[player][pip];
             }
         }
+        barsBuild();
     }
 
-    public void barsBuild()
+    private void barsBuild()
     {
         for(int i = 1; i <= 24; i++)
         {

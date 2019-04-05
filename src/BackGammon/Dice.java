@@ -6,12 +6,12 @@ public class Dice {
     private int[] numbers;
     private boolean oneDieRoll;
 
-    Dice() {
+    public Dice() {
         numbers = new int[]{1, 1};
         oneDieRoll = false;
     }
 
-    Dice(Dice dice) {
+    public Dice(Dice dice) {
         numbers = new int[]{dice.numbers[0],dice.numbers[1]};
         oneDieRoll = dice.oneDieRoll;
     }

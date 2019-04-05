@@ -25,11 +25,19 @@ public class GameController
     private BoardVisual boardVisual = new BoardVisual();
     private DiceVisual diceVisual = new DiceVisual();
     private PipNumVisual pipNumVisual = new PipNumVisual();
-    private Board board = new Board();
-    private Player player1 = new Player();
-    private Player player2 = new Player();
-    private MoveRecord[] moveList;
-    private DoubleMoveRecord[] doubleMoveList;
+
+    private Players players = new Players();
+    private Board board = new Board(players);
+    private Dice dice = new Dice();
+
+    private String nameBuffer;
+
+
+    //private Board board = new Board();
+//    private Player player1 = new Player();
+//    private Player player2 = new Player();
+//    private MoveRecord[] moveList;
+//    private DoubleMoveRecord[] doubleMoveList;
 
     //Assign all control elements on the girdpane
     private Label backGammon = new Label("BackGammon");
@@ -84,7 +92,6 @@ public class GameController
     //Game start settings
     public void gameStart()
     {
-        board.setUp();
         boardVisual.BoardVisual();
         diceVisual.DiceVisual();
         diceVisual.inPutDiceImages();
@@ -92,8 +99,8 @@ public class GameController
         initControlVisual();
         instructMessage();
         currentTurn = Checker_Color.EMPTY;
-        player1.setName("Player1");
-        player2.setName("Player2");
+        players.get(0).setName("Player1");
+        players.get(1).setName("Player2");
         assignPlayerLabel();
         outputTextBox.appendText("Game Start!\nType START to roll start dice\n");
     }
@@ -657,7 +664,8 @@ public class GameController
         if (dicePoint1 == 7)
         {
             outputTextBox.appendText("-----------------------------\n");
-            dicePoint1 = dice.roll();
+            dice.rollDie();
+            dicePoint1 = dice.getDie();
             diceVisual.DiceVisual();
             diceVisual.singleDisplay(dicePoint1);
             outputTextBox.appendText("First dice point: " + dicePoint1 + ".\n");
@@ -665,7 +673,8 @@ public class GameController
         }
         else if (dicePoint2 == 7)
         {
-            dicePoint2 = dice.roll();
+            dice.rollDie();
+            dicePoint2 = dice.getDie();
             diceVisual.DiceVisual();
             diceVisual.singleDisplay(dicePoint2);
             outputTextBox.appendText("Second dice point: " + dicePoint2 + ".\n");
@@ -678,22 +687,23 @@ public class GameController
             }
             else if (dicePoint1 > dicePoint2)
             {
-                outputTextBox.appendText("->"+player1.getName()+" starts first.\n");
+                outputTextBox.appendText("->"+players.get(0).toString()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
-                player1.setColor(Checker_Color.WHITE);
-                player2.setColor(Checker_Color.RED);
-                currentTurn = Checker_Color.WHITE;
+                currentTurn = Checker_Color.RED;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
                 checkAvailable();
             }
             else if (dicePoint2 > dicePoint1)
             {
-                outputTextBox.appendText("->"+player2.getName()+" starts first.\n");
+                outputTextBox.appendText("->"+players.get(1).toString()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
-                player1.setColor(Checker_Color.RED);
-                player2.setColor(Checker_Color.WHITE);
-                currentTurn =  Checker_Color.WHITE;
+
+                nameBuffer = players.get(0).toString();
+                players.get(0).setName(players.get(1).toString());
+                players.get(1).setName(nameBuffer);
+
+                currentTurn =  Checker_Color.RED;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
                 checkAvailable();
@@ -713,25 +723,26 @@ public class GameController
         Dice dice2 = new Dice();
         //final int Num1 = dice1.roll();
         //final int Num2 = dice2.roll();
-        int Num1 = dice1.roll();
-        int Num2 = dice2.roll();
 
-        while(Num1 == Num2)
+        dice.rollDice();
+
+        if (dice.isDouble())
         {
-            Num1 = dice1.roll();
-            Num2 = dice2.roll();
+            dicePoint1 = dice.getDie();
+            dicePoint2 = dice.getDie();
+            dicePoint3 = dice.getDie();
+            dicePoint4 = dice.getDie();
+        }
+        else
+        {
+            dicePoint1 = dice.getDie(0);
+            dicePoint2 = dice.getDie(1);
         }
 
-        diceVisual.diceDisplay(Num1,Num2);
+        diceVisual.diceDisplay(dicePoint1,dicePoint2);
         diceVisual.DiceVisual();
-        outputTextBox.appendText("Dice point: "+Num1+" and "+Num2+".\n");
-        dicePoint1 = Num1;
-        dicePoint2 = Num2;
-        if (Num1 == Num2)
-        {
-            dicePoint3 = Num1;
-            dicePoint4 = Num1;
-        }
+        outputTextBox.appendText("Dice point: "+dicePoint1+" and "+dicePoint2+".\n");
+
     }
 
     //exit game
@@ -754,7 +765,7 @@ public class GameController
         insertbox.clear();
         grid.getChildren().remove(player1Lab);
         player1Lab = new Label(messegeBuffer.substring(5,messegeBuffer.length()));
-        player1.setName(messegeBuffer.substring(5,messegeBuffer.length()));
+        players.get(0).setName(messegeBuffer.substring(5,messegeBuffer.length()));
         outputTextBox.appendText("Player 1 name is: "+ messegeBuffer.substring(5,messegeBuffer.length())+"\n");
         //Player 1 Label
         player1Lab.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
@@ -768,7 +779,7 @@ public class GameController
         insertbox.clear();
         grid.getChildren().remove(player2Lab);
         player2Lab = new Label(messegeBuffer.substring(5,messegeBuffer.length()));
-        player2.setName(messegeBuffer.substring(5,messegeBuffer.length()));
+        players.get(1).setName(messegeBuffer.substring(5,messegeBuffer.length()));
         outputTextBox.appendText("Player 2 name is: "+ messegeBuffer.substring(5,messegeBuffer.length())+"\n");
         //Player 2 Label
         player2Lab.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));

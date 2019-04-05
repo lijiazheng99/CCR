@@ -12,14 +12,14 @@ public class Players implements Iterable<Player>, Iterator<Player> {
     private int currentPlayer;
     private Iterator<Player> iterator;
 
-    Players() {
+    public Players() {
         players = new ArrayList<Player>();
         players.add(new Player(0,"RED", Checker_Color.RED));
         players.add(new Player(1,"WHITE", Checker_Color.WHITE));
         currentPlayer = 0;
     }
 
-    Players(Players players) {
+    public Players(Players players) {
         this.players = new ArrayList<Player>();
         for (Player player : players) {
             this.players.add(new Player(player));
