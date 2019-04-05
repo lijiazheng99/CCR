@@ -18,7 +18,7 @@ public class Board {
     public static final int NUM_SLOTS = 26;     // including BAR and BEAR OFF
     private static final int NUM_CHECKERS = 15;
 
-    private Bar[] bars = new Bar[25];
+    public Bar[] bars = new Bar[25];
 
     private int[][] checkers;
     private Players players;
@@ -221,4 +221,11 @@ public class Board {
             }
         }
     }
+
+    public void  getHit ()
+    {
+
+    }
+
+
 }

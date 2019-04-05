@@ -114,6 +114,8 @@ public class BoardVisual
             }
         }
 
+        int hitred = board.
+
         int hitred = board.getRedHit();
         int hitwhite = board.getWhiteHit();
         int hitCounter = 0;

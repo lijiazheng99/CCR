@@ -14,8 +14,8 @@ public class Players implements Iterable<Player>, Iterator<Player> {
 
     Players() {
         players = new ArrayList<Player>();
-        players.add(new Player(0,"RED", new Color(255,51,51)));
-        players.add(new Player(1,"GREEN",Color.GREEN));
+        players.add(new Player(0,"RED", Checker_Color.RED));
+        players.add(new Player(1,"WHITE", Checker_Color.WHITE));
         currentPlayer = 0;
     }
 

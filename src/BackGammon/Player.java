@@ -5,11 +5,11 @@ public class Player {
 
         private int id;
         private String colorName;
-        private Color color;
+        private Checker_Color color;
         private String name;
         private Dice dice;
 
-        Player(int id, String colorName, Color color) {
+        Player(int id, String colorName, Checker_Color color) {
             this.id = id;
             name = "";
             this.colorName = colorName;
@@ -37,7 +37,7 @@ public class Player {
             return this.colorName;
         }
 
-        public Color getColor() {
+        public Checker_Color getColor() {
             return this.color;
         }
 
