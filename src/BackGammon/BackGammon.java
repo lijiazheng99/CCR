@@ -20,6 +20,12 @@ public class BackGammon extends Application
     public static final int PREFWIDTH = 1250;
     public static final int PREFHEIGHT = 856;
 
+
+    public static final int NUM_PLAYERS = 2;
+    private final Players players = new Players();
+    private final Board board = new Board(players);
+
+
     //Get suitable size for the current displaying screen
     double WIDTH = Screen.getPrimary().getBounds().getWidth() * 0.7;
     double HEIGHT = Screen.getPrimary().getBounds().getHeight() * 0.8;
@@ -57,7 +63,7 @@ public class BackGammon extends Application
         GridPane backgroundPic = new GridPane();
         try
         {
-            background = new Image(new FileInputStream("src//resources//board.jpg"));
+            background = new Image(new FileInputStream("src//board.jpg"));
             System.out.println("BackGammon.BackGammon: Background image load successful");
         }
         catch(java.io.IOException e)
