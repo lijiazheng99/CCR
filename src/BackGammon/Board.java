@@ -206,12 +206,12 @@ public class Board {
         {
             if(checkers[0][i] != 0)
             {
-                bars[i].setCheckerColor(Checker_Color.WHITE);
+                bars[i].setCheckerColor(Checker_Color.RED);
                 bars[i].setCheckerNumber(checkers[0][i]);
             }
             else if(checkers[1][i] != 0)
             {
-                bars[i].setCheckerColor(Checker_Color.RED);
+                bars[i].setCheckerColor(Checker_Color.WHITE);
                 bars[i].setCheckerNumber(checkers[1][i]);
             }
             else
