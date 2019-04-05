@@ -18,6 +18,8 @@ public class Board {
     public static final int NUM_SLOTS = 26;     // including BAR and BEAR OFF
     private static final int NUM_CHECKERS = 15;
 
+    private Bar[] bars = new Bar[25];
+
     private int[][] checkers;
     private Players players;
     // 2D array of checkers
@@ -198,4 +200,25 @@ public class Board {
         }
     }
 
+    public void barsBuild()
+    {
+        for(int i = 1; i <= 24; i++)
+        {
+            if(checkers[0][i] != 0)
+            {
+                bars[i].setCheckerColor(Checker_Color.WHITE);
+                bars[i].setCheckerNumber(checkers[0][i]);
+            }
+            else if(checkers[1][i] != 0)
+            {
+                bars[i].setCheckerColor(Checker_Color.RED);
+                bars[i].setCheckerNumber(checkers[1][i]);
+            }
+            else
+            {
+                bars[i].setCheckerColor(Checker_Color.EMPTY);
+                bars[i].setCheckerNumber(0);
+            }
+        }
+    }
 }
