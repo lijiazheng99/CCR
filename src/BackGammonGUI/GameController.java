@@ -607,7 +607,18 @@ public class GameController
     //Current turn instruction
     private void currentTurn()
     {
-        if (player1.getColor() == currentTurn)
+        if (currentTurn == Checker_Color.RED)
+        {
+
+        }
+        else if (currentTurn == Checker_Color.WHITE)
+        {
+
+        }
+        else
+            throwLogicFailure();
+
+        if (players.getColor() == currentTurn)
         {
             outputTextBox.appendText("->"+player1.getName()+"'s turn. ");
             if (player1.getColor() == Checker_Color.WHITE)
@@ -721,8 +732,6 @@ public class GameController
         insertbox.clear();
         Dice dice1 = new Dice();
         Dice dice2 = new Dice();
-        //final int Num1 = dice1.roll();
-        //final int Num2 = dice2.roll();
 
         dice.rollDice();
 
