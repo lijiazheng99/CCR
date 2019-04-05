@@ -222,10 +222,24 @@ public class Board {
         }
     }
 
-    public void  getHit ()
+    public int getRedHit ()
     {
-
+        return checkers[0][0];
     }
 
+    public int getWhiteHit ()
+    {
+        return checkers[1][0];
+    }
+
+    public int getRedBear ()
+    {
+        return checkers[0][25];
+    }
+
+    public int getWhiteBear ()
+    {
+        return checkers[1][25];
+    }
 
 }
