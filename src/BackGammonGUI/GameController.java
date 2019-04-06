@@ -609,38 +609,15 @@ public class GameController
     {
         if (currentTurn == Checker_Color.RED)
         {
-
+            outputTextBox.appendText("->" + players.get(0).toString() + "'s turn.\n");
+            outputTextBox.appendText("->" + "Checker color RED.\n");
+            assignPipNum(currentTurn);
         }
         else if (currentTurn == Checker_Color.WHITE)
         {
-
-        }
-        else
-            throwLogicFailure();
-
-        if (players.getColor() == currentTurn)
-        {
-            outputTextBox.appendText("->"+player1.getName()+"'s turn. ");
-            if (player1.getColor() == Checker_Color.WHITE)
-                outputTextBox.appendText("Checker color WHITE.\n");
-            else if (player1.getColor() == Checker_Color.RED)
-                outputTextBox.appendText("Checker color RED.\n");
-            else
-                throwInalidTypo();
+            outputTextBox.appendText("->" + players.get(1).toString() + "'s turn.\n");
+            outputTextBox.appendText("->" + "Checker color WHITE.\n");
             assignPipNum(currentTurn);
-            outputTextBox.appendText("22");
-        }
-        else if (player2.getColor() == currentTurn)
-        {
-            outputTextBox.appendText("->"+player2.getName()+"'s turn.");
-            if (player2.getColor() == Checker_Color.WHITE)
-                outputTextBox.appendText("Checker color WHITE.\n");
-            else if (player2.getColor() == Checker_Color.RED)
-                outputTextBox.appendText("Checker color RED.\n");
-            else
-                throwInalidTypo();
-            assignPipNum(currentTurn);
-            outputTextBox.appendText("11");
         }
         else
             throwLogicFailure();
