@@ -36,6 +36,10 @@ public class Board {
                 checkers[player][pip] = RESET[pip];
             }
         }
+        for(int i = 1; i <= 24; i++) {
+            bars[i] = new Bar();
+        }
+
         barsBuild();
     }
 
