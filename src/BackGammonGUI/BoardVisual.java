@@ -168,7 +168,7 @@ public class BoardVisual
                 finishCheckerVisuals[bearCounter] = new FinishCheckerVisual(Checker_Color.WHITE,0,0);
                 grid.add(finishCheckerVisuals[bearCounter],14,32 - i);
                 bearCounter++;
-                bearred--;
+                bearwhite--;
             }
             else break;
         }

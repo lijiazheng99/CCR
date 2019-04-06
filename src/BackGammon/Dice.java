@@ -33,6 +33,12 @@ public class Dice {
         return numbers[index];
     }
 
+    public void setDice(int dice1, int dice2)
+    {
+        numbers[0]=dice1;
+        numbers[1]=dice2;
+    }
+
     public void rollDice() {
         numbers[0] = 1 + (int)(Math.random() * 6);
         numbers[1] = 1 + (int)(Math.random() * 6);

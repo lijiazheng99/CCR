@@ -51,6 +51,9 @@ public class Board {
                 this.checkers[player][pip] = board.checkers[player][pip];
             }
         }
+        for(int i = 1; i <= 24; i++) {
+            bars[i] = new Bar();
+        }
         barsBuild();
     }
 
@@ -217,12 +220,12 @@ public class Board {
                 bars[i].setCheckerColor(Checker_Color.RED);
                 bars[i].setCheckerNumber(checkers[0][i]);
             }
-            else if(checkers[1][i] != 0)
+            if(checkers[1][i] != 0)
             {
-                bars[i].setCheckerColor(Checker_Color.WHITE);
-                bars[i].setCheckerNumber(checkers[1][i]);
+                bars[25-i].setCheckerColor(Checker_Color.WHITE);
+                bars[25-i].setCheckerNumber(checkers[1][i]);
             }
-            else
+            if(checkers[0][i] == 0 && checkers[1][25-i] == 0)
             {
                 bars[i].setCheckerColor(Checker_Color.EMPTY);
                 bars[i].setCheckerNumber(0);
@@ -232,22 +235,22 @@ public class Board {
 
     public int getRedHit ()
     {
-        return checkers[0][0];
+        return checkers[0][25];
     }
 
     public int getWhiteHit ()
     {
-        return checkers[1][0];
+        return checkers[1][25];
     }
 
     public int getRedBear ()
     {
-        return checkers[0][25];
+        return checkers[0][0];
     }
 
     public int getWhiteBear ()
     {
-        return checkers[1][25];
+        return checkers[1][0];
     }
 
 }

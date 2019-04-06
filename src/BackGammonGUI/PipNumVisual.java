@@ -43,7 +43,7 @@ public class PipNumVisual
         return this.grid;
     }
 
-    private void assignPipRED()
+    private void assignPipWHITE()
     {
         piplabels[0] =  new Label("   12");
         piplabels[0].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
@@ -95,7 +95,7 @@ public class PipNumVisual
         piplabels[23].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));
     }
 
-    private void assignPipWHITE()
+    private void assignPipRED()
     {
         piplabels[0] =  new Label("   13");
         piplabels[0].setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 20));

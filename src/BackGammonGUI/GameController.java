@@ -15,6 +15,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+import java.util.concurrent.TimeUnit;
+
 public class GameController
 {
     //mainPane for add other pane together, grid for map contollers
@@ -238,10 +240,9 @@ public class GameController
         {
             if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=4)
             {
-                makeMove(messegeBufferForCom,insertbox.getText().length());
+                getMoveDecision(messegeBufferForCom,insertbox.getText().length());
             }
-
-            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
+            else if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
             {
                 if (messegeBufferForCom.substring(0,4).equals("ROLL"))
                 {
@@ -378,9 +379,9 @@ public class GameController
     //enter NEXT to pass to next player
     private void passTurn()
     {
+        insertbox.clear();
         if (!board.isGameOver())
         {
-            insertbox.clear();
             diceVisual.removeDisplay();
             currentTurn = changeTurn(currentTurn);
             currentTurn();
@@ -396,7 +397,7 @@ public class GameController
             throwLogicFailure();
     }
 
-    private void makeMove(String s, int length)
+    private void getMoveDecision(String s, int length)
     {
         insertbox.clear();
 
@@ -417,8 +418,15 @@ public class GameController
             num *= 26;
             num += (c2 - 'A');
         }
-        //outputTextBox.appendText("Number is:" + num +"\n");
+        outputTextBox.appendText("You typed:" + s + "\n");
+        makeMove(num);
+        boardVisual.removeElements();
+        boardVisual.BoardVisual(board);
+        passTurn();
+    }
 
+    private void makeMove(int num)
+    {
         Play play;
         play = plays.get(num);
 
@@ -430,12 +438,9 @@ public class GameController
         {
             board.move(players.get(1),play);
         }
-
-        outputTextBox.appendText("You typed:" + s + "\n");
-        boardVisual.removeElements();
-        boardVisual.BoardVisual(board);
-        passTurn();
     }
+
+
 
     private void checkAvailable()
     {
@@ -452,18 +457,34 @@ public class GameController
 
         if (plays.number() == 0)
         {
-            outputTextBox.appendText("No available this turn.\n");
+            outputTextBox.appendText(">No available this turn.\n");
             passTurn();
+            try{
+                TimeUnit.SECONDS.sleep(2);
+            }catch (InterruptedException e)
+            {
+                throw new RuntimeException(e);
+            }
         }
         else if (plays.number() == 1)
         {
-            outputTextBox.appendText("There's only move available:\n");
+            outputTextBox.appendText(">There's only one move available:\n");
             printMoves(plays);
+            makeMove(0);
+            outputTextBox.appendText("Move made.\n");
+            passTurn();
+            try{
+                TimeUnit.SECONDS.sleep(2);
+            }catch (InterruptedException e)
+            {
+                throw new RuntimeException(e);
+            }
         }
         else
         {
-            outputTextBox.appendText("Available moves:\n");
+            outputTextBox.appendText(">Available moves:\n");
             printMoves(plays);
+            outputTextBox.appendText("Please type letter to move:\n");
         }
     }
 
@@ -481,7 +502,8 @@ public class GameController
             else {
                 code = "" + (char) (index/26 - 1 + (int) 'A') + (char) (index % 26 + (int) 'A');
             }
-            outputTextBox.appendText(code + ". " + plays);
+
+            outputTextBox.appendText(code + ". " + play + "\n");
             index++;
         }
     }
@@ -551,6 +573,8 @@ public class GameController
             {
                 outputTextBox.appendText("-----------------------------\n");
                 outputTextBox.appendText("Got same point. Roll again.\n");
+                dicePoint1 = 7;
+                dicePoint2 = 7;
             }
             else if (dicePoint1 > dicePoint2)
             {
@@ -559,20 +583,23 @@ public class GameController
                 currentTurn = Checker_Color.RED;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
+                diceVisual.removeDisplay();
+                diceVisual.diceDisplay(dicePoint1,dicePoint2);
+                dice.setDice(dicePoint1,dicePoint2);
                 checkAvailable();
             }
             else if (dicePoint2 > dicePoint1)
             {
                 outputTextBox.appendText("->"+players.get(1).toString()+" starts first.\n");
                 outputTextBox.appendText("-----------------------------\n");
-
                 nameBuffer = players.get(0).toString();
                 players.get(0).setName(players.get(1).toString());
                 players.get(1).setName(nameBuffer);
-
                 currentTurn =  Checker_Color.RED;
                 currentTurn();
                 outputTextBox.appendText("Dice point: "+ dicePoint1 +" and "+ dicePoint2 +".\n");
+                diceVisual.diceDisplay(dicePoint1,dicePoint2);
+                dice.setDice(dicePoint1,dicePoint2);
                 checkAvailable();
             }
             else
