@@ -112,9 +112,9 @@ public class GameController
         outputTextBox.appendText("***********************\n");
         outputTextBox.appendText("Game instruction:\n");
         outputTextBox.appendText("Type START to do start dice roll\n");
-        outputTextBox.appendText("Type NAME1+YourName to enter player1 name\n");
-        outputTextBox.appendText("Type NAME2+YourName to enter player2 name\n");
-        outputTextBox.appendText("Type Move<pip1><pip2>, move one disk from pip1 to pip2\n");
+        outputTextBox.appendText("Type NAME1+YourName to set player1 name\n");
+        outputTextBox.appendText("Type NAME2+YourName to set player2 name\n");
+        outputTextBox.appendText("Type CHEAT to do a cheat move\n");
         outputTextBox.appendText("Type NEXT to pass move right to next player\n");
         outputTextBox.appendText("Type CLEAR to clear board messages. Type QUIT to exit\n");
         outputTextBox.appendText("***********************\n");
@@ -307,73 +307,8 @@ public class GameController
     //Make a move
     private void cheatMove()
     {
-//        insertbox.clear();
-//        //Pip number getter
-//        int start = -1;
-//        int end = -1;
-//        //String index getter
-//        int firstLBra = -1;
-//        int firstRBra = -1;
-//        int secondLBra = -1;
-//        int secondRBra = -1;
-//
-//        //Scan whole string get index locations
-//        for(int i = 0; i < messegeBuffer.length(); i++)
-//        {
-//            if (messegeBuffer.charAt(i) == '<' && firstLBra == -1)
-//                firstLBra = i;
-//            else if (messegeBuffer.charAt(i) == '>' &&  firstRBra == -1 && firstLBra != -1)
-//                firstRBra = i;
-//            else if (messegeBuffer.charAt(i) == '<' && secondLBra == -1 && firstRBra != -1)
-//                secondLBra = i;
-//            else if (messegeBuffer.charAt(i) == '>' && secondRBra == -1 && secondLBra != -1)
-//                secondRBra = i;
-//        }
-//
-//        if (firstLBra != -1 && firstRBra != -1 && secondLBra != -1 && secondRBra != -1)
-//        {
-//            start = Integer.parseInt(messegeBuffer.substring(firstLBra+1,firstRBra));
-//            end = Integer.parseInt(messegeBuffer.substring(secondLBra+1,secondRBra));
-//
-//            Boolean status;
-//
-//            //Judge move valid or not
-//            if (start == end)
-//            {
-//                throwInalidTypo();
-//                outputTextBox.appendText("Sorry you can't move into original position\n");
-//            }
-//            else
-//            {
-//                if (currentTurn == Checker_Color.WHITE)
-//                {
-//                    status = board.move(Checker_Color.WHITE,start,end);
-//                    boardVisual.removeElements();
-//                    boardVisual.BoardVisual(board);
-//                    if (status == true)
-//                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-//                    else
-//                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
-//                }
-//                else if (currentTurn == Checker_Color.RED)
-//                {
-//                    status = board.move(Checker_Color.RED,25-start,25-end);
-//                    boardVisual.removeElements();
-//                    boardVisual.BoardVisual(board);
-//                    if (status == true)
-//                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-//                    else
-//                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
-//                }
-//                else
-//                    throwLogicFailure();
-//            }
-//        }
-//        else
-//            {
-//            throwInalidTypo();
-//            outputTextBox.appendText("You must type MOVE<Pip1><Pip2> to make a move.\n");
-//        }
+        board.cheat();
+        passTurn();
     }
 
     //enter NEXT to pass to next player
@@ -457,28 +392,16 @@ public class GameController
 
         if (plays.number() == 0)
         {
-            outputTextBox.appendText(">No available this turn.\n");
+            outputTextBox.appendText("=>No available this turn.\n");
             passTurn();
-            try{
-                TimeUnit.SECONDS.sleep(2);
-            }catch (InterruptedException e)
-            {
-                throw new RuntimeException(e);
-            }
         }
         else if (plays.number() == 1)
         {
-            outputTextBox.appendText(">There's only one move available:\n");
+            outputTextBox.appendText("=>There's only one move available:\n");
             printMoves(plays);
             makeMove(0);
             outputTextBox.appendText("Move made.\n");
             passTurn();
-            try{
-                TimeUnit.SECONDS.sleep(2);
-            }catch (InterruptedException e)
-            {
-                throw new RuntimeException(e);
-            }
         }
         else
         {
