@@ -31,6 +31,9 @@ public class GameController
     private Dice dice = new Dice();
     private Plays plays = new Plays();
 
+    private int dicePoint1 = 7;
+    private int dicePoint2 = 7;
+
     private String nameBuffer;
 
 
@@ -527,7 +530,6 @@ public class GameController
     private void startRoll()
     {
         insertbox.clear();
-        int dicePoint1 = 7, dicePoint2 = 7;
         if (dicePoint1 == 7)
         {
             outputTextBox.appendText("-----------------------------\n");
