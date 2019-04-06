@@ -8,11 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/Players.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Players.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,8 +95,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="744" lean-forward="true" selection-start-line="744" selection-end-line="744" />
+            <state relative-caret-position="2145">
+              <caret line="610" column="9" lean-forward="true" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3009#3518#0" />
@@ -116,9 +111,9 @@
                 <element signature="e#16129#16716#0" />
                 <element signature="e#16722#17302#0" />
                 <element signature="e#17308#19378#0" />
-                <element signature="e#19384#20565#0" />
                 <element signature="e#20571#21018#0" />
                 <element signature="e#21203#23523#0" />
+                <element signature="e#23529#24263#0" />
                 <element signature="e#24346#24494#0" />
                 <element signature="e#24500#25092#0" />
                 <element signature="e#25098#25690#0" />
@@ -239,10 +234,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="36" />
-    <option name="y" value="25" />
     <option name="width" value="1680" />
-    <option name="height" value="982" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -298,7 +291,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554467314886" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554554206766" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -494,20 +487,6 @@
       <workItem from="1554022998045" duration="1830000" />
       <workItem from="1554459437358" duration="266000" />
       <workItem from="1554459807259" duration="3638000" />
-    </task>
-    <task id="LOCAL-00042" summary="Updated a lot of things">
-      <created>1550980581343</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1550980581343</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Updated a lot of things">
-      <created>1550980776423</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1550980776423</updated>
     </task>
     <task id="LOCAL-00044" summary="Updated a lot of things">
       <created>1550980852162</created>
@@ -838,11 +817,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554463771118</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="update dice methods in controller, player name set">
+      <created>1554467509037</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1554467509037</updated>
+    </task>
+    <task id="LOCAL-00092" summary="editing currentTurn methods">
+      <created>1554470634409</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1554470634409</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253414000" />
+    <option name="totallyTimeSpent" value="255746000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -854,10 +847,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="498" y="0" width="1182" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16578947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.115384616" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -965,8 +958,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates&#10;game function." />
-    <MESSAGE value="updates&#10;basic rule added" />
     <MESSAGE value="updates&#10;reEnter function and kicking out function added" />
     <MESSAGE value="updates&#10;functions deleted." />
     <MESSAGE value="updates&#10;re-enter function added." />
@@ -990,7 +981,9 @@
     <MESSAGE value="finished" />
     <MESSAGE value="sprint3 sofar" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update dice methods in controller, player name set" />
+    <MESSAGE value="editing currentTurn methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="editing currentTurn methods" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sprint1/testcase.java" />
@@ -1301,8 +1294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="744" lean-forward="true" selection-start-line="744" selection-end-line="744" />
+        <state relative-caret-position="2145">
+          <caret line="610" column="9" lean-forward="true" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3009#3518#0" />
@@ -1317,9 +1310,9 @@
             <element signature="e#16129#16716#0" />
             <element signature="e#16722#17302#0" />
             <element signature="e#17308#19378#0" />
-            <element signature="e#19384#20565#0" />
             <element signature="e#20571#21018#0" />
             <element signature="e#21203#23523#0" />
+            <element signature="e#23529#24263#0" />
             <element signature="e#24346#24494#0" />
             <element signature="e#24500#25092#0" />
             <element signature="e#25098#25690#0" />
