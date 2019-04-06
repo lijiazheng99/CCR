@@ -29,6 +29,7 @@ public class GameController
     private Players players = new Players();
     private Board board = new Board(players);
     private Dice dice = new Dice();
+    private Plays plays = new Plays();
 
     private String nameBuffer;
 
@@ -48,12 +49,6 @@ public class GameController
     private TextArea outputTextBox = new TextArea();
     private String messegeBuffer;
     private String messegeBufferForCom;
-
-    //in game dice point
-    private int dicePoint1 = 7;
-    private int dicePoint2 = 7;
-    private int dicePoint3 = 7;
-    private int dicePoint4 = 7;
 
     //current Turn for mark current turn
     private Checker_Color currentTurn;
@@ -386,10 +381,6 @@ public class GameController
             diceVisual.removeDisplay();
             currentTurn = changeTurn(currentTurn);
             currentTurn();
-            dicePoint1 = 7;
-            dicePoint2 = 7;
-            dicePoint3 = 7;
-            dicePoint4 = 7;
             diceInGame();
             checkAvailable();
         }
@@ -425,55 +416,8 @@ public class GameController
         }
         //outputTextBox.appendText("Number is:" + num +"\n");
 
-        if (moveList[num].start1 == 25)
-            board.reEnter(currentTurn,moveList[num].end1);
-        else if (moveList[num].end1 == 0)
-        {
-            board.moveOut(currentTurn,num);
-            if (currentTurn == Checker_Color.RED)
-                board.redBear++;
-            else
-                board.whiteBear++;
-        }
-        else if (moveList[num].hit1 == true)
-        {
-            board.moveOut(currentTurn,num);
-            if (currentTurn == Checker_Color.RED)
-                board.redHit++;
-            else
-                board.whiteHit++;
-        }
-        else
-            {
-                board.moveOut(currentTurn,moveList[num].start1);
-                board.moveIn(currentTurn,moveList[num].end1);
-        }
 
-        if (moveList[num].start2 == 25)
-            board.reEnter(currentTurn,moveList[num].end2);
-        else if (moveList[num].end2 == 0)
-        {
-            board.moveOut(currentTurn,num);
-            if (currentTurn == Checker_Color.RED)
-                board.redBear++;
-            else
-                board.whiteBear++;
-        }
-        else if (moveList[num].hit2 == true)
-        {
-            board.moveOut(currentTurn,num);
-            if (currentTurn == Checker_Color.RED)
-                board.redHit++;
-            else
-                board.whiteHit++;
-        }
-        else {
-            board.moveOut(currentTurn,moveList[num].start2);
-            board.moveIn(currentTurn,moveList[num].end2);
-        }
 
-        if(num > moveList.length)
-            throwInalidTypo();
 
         outputTextBox.appendText("You typed:" + s + "\n");
         boardVisual.removeElements();
@@ -483,24 +427,33 @@ public class GameController
 
     private void checkAvailable()
     {
-        if (dicePoint1 != 7 && dicePoint2!= 7 && dicePoint1 != dicePoint2)
+        if (currentTurn == players.get(0).getColor())
         {
-            moveList = null;
-            moveList = board.getMoveList(currentTurn,dicePoint1,dicePoint2);
-            if (moveList.length>0)
-            {
-                printAvaliableMove();
-            }
-            else
-            {
-                outputTextBox.appendText("There's no available move for you, next turn");
-                passTurn();
-            }
+            plays = board.getPossiblePlays(players.get(0),dice);
         }
-        else if (dicePoint1 !=7 && dicePoint1== dicePoint2)
+        else if (currentTurn == players.get(1).getColor())
         {
+            plays = board.getPossiblePlays(players.get(1),dice);
+        }
+        else
+            throwLogicFailure();
+
+        if (plays.number() == 0)
+        {
+            outputTextBox.appendText("Sorry. No avaliable this turn.\n");
+            passTurn();
+        }
+        else if (plays.number() == 1)
+        {
+            outputTextBox.appendText("There's only move avaliable:" + plays.toString());
+
 
         }
+        else
+        {
+            outputTextBox.appendText("Moves:" + plays.toString());
+        }
+
     }
 
     private void printAvaliableMove()
@@ -657,7 +610,7 @@ public class GameController
     private void startRoll()
     {
         insertbox.clear();
-        Dice dice = new Dice();
+        int dicePoint1 = 7, dicePoint2 = 7;
         if (dicePoint1 == 7)
         {
             outputTextBox.appendText("-----------------------------\n");
@@ -679,8 +632,6 @@ public class GameController
             {
                 outputTextBox.appendText("-----------------------------\n");
                 outputTextBox.appendText("Got same point. Roll again.\n");
-                dicePoint1 = 7;
-                dicePoint2 = 7;
             }
             else if (dicePoint1 > dicePoint2)
             {
@@ -716,28 +667,10 @@ public class GameController
     private void diceInGame()
     {
         insertbox.clear();
-        Dice dice1 = new Dice();
-        Dice dice2 = new Dice();
-
         dice.rollDice();
-
-        if (dice.isDouble())
-        {
-            dicePoint1 = dice.getDie();
-            dicePoint2 = dice.getDie();
-            dicePoint3 = dice.getDie();
-            dicePoint4 = dice.getDie();
-        }
-        else
-        {
-            dicePoint1 = dice.getDie(0);
-            dicePoint2 = dice.getDie(1);
-        }
-
-        diceVisual.diceDisplay(dicePoint1,dicePoint2);
+        diceVisual.diceDisplay(dice.getDie(0),dice.getDie(1));
         diceVisual.DiceVisual();
-        outputTextBox.appendText("Dice point: "+dicePoint1+" and "+dicePoint2+".\n");
-
+        outputTextBox.appendText("Dice point: "+dice.getDie(0)+" and "+dice.getDie(1)+".\n");
     }
 
     //exit game

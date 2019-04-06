@@ -10,11 +10,11 @@ public class Plays implements Iterable<Play>, Iterator<Play> {
     ArrayList<Play> plays;
     private Iterator<Play> iterator;
 
-    Plays() {
+    public Plays() {
         plays = new ArrayList<Play>();
     }
 
-    Plays(Plays plays) {
+    public Plays(Plays plays) {
         this.plays = new ArrayList<Play>();
         for (Play play : plays) {
             this.plays.add(play);
