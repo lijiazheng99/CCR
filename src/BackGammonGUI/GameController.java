@@ -380,18 +380,27 @@ public class GameController
     //enter NEXT to pass to next player
     private void passTurn()
     {
-        insertbox.clear();
-        diceVisual.removeDisplay();
-        currentTurn = changeTurn(currentTurn);
-        currentTurn();
-        dicePoint1 = 7;
-        dicePoint2 = 7;
-        dicePoint3 = 7;
-        dicePoint4 = 7;
-        diceInGame();
-        checkAvailable();
+        if (!board.isGameOver())
+        {
+            insertbox.clear();
+            diceVisual.removeDisplay();
+            currentTurn = changeTurn(currentTurn);
+            currentTurn();
+            dicePoint1 = 7;
+            dicePoint2 = 7;
+            dicePoint3 = 7;
+            dicePoint4 = 7;
+            diceInGame();
+            checkAvailable();
+        }
+        else if (board.isGameOver())
+        {
+            outputTextBox.appendText("Game is Over. The Winner is:\n");
+            outputTextBox.appendText(board.getWinner().toString());
+        }
+        else
+            throwLogicFailure();
     }
-
 
     private void makeMove(String s, int length)
     {
