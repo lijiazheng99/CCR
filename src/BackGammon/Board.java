@@ -62,7 +62,7 @@ public class Board {
         return NUM_PIPS-pip+1;
     }
 
-    public void move(Player player, Move move) {
+    private void move(Player player, Move move) {
         checkers[player.getId()][move.getFromPip()]--;
         checkers[player.getId()][move.getToPip()]++;
         if (move.getToPip()<BAR && move.getToPip()>BEAR_OFF &&

@@ -303,73 +303,73 @@ public class GameController
     //Make a move
     private void cheatMove()
     {
-        insertbox.clear();
-        //Pip number getter
-        int start = -1;
-        int end = -1;
-        //String index getter
-        int firstLBra = -1;
-        int firstRBra = -1;
-        int secondLBra = -1;
-        int secondRBra = -1;
-
-        //Scan whole string get index locations
-        for(int i = 0; i < messegeBuffer.length(); i++)
-        {
-            if (messegeBuffer.charAt(i) == '<' && firstLBra == -1)
-                firstLBra = i;
-            else if (messegeBuffer.charAt(i) == '>' &&  firstRBra == -1 && firstLBra != -1)
-                firstRBra = i;
-            else if (messegeBuffer.charAt(i) == '<' && secondLBra == -1 && firstRBra != -1)
-                secondLBra = i;
-            else if (messegeBuffer.charAt(i) == '>' && secondRBra == -1 && secondLBra != -1)
-                secondRBra = i;
-        }
-
-        if (firstLBra != -1 && firstRBra != -1 && secondLBra != -1 && secondRBra != -1)
-        {
-            start = Integer.parseInt(messegeBuffer.substring(firstLBra+1,firstRBra));
-            end = Integer.parseInt(messegeBuffer.substring(secondLBra+1,secondRBra));
-
-            Boolean status;
-
-            //Judge move valid or not
-            if (start == end)
-            {
-                throwInalidTypo();
-                outputTextBox.appendText("Sorry you can't move into original position\n");
-            }
-            else
-            {
-                if (currentTurn == Checker_Color.WHITE)
-                {
-                    status = board.move(Checker_Color.WHITE,start,end);
-                    boardVisual.removeElements();
-                    boardVisual.BoardVisual(board);
-                    if (status == true)
-                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-                    else
-                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
-                }
-                else if (currentTurn == Checker_Color.RED)
-                {
-                    status = board.move(Checker_Color.RED,25-start,25-end);
-                    boardVisual.removeElements();
-                    boardVisual.BoardVisual(board);
-                    if (status == true)
-                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
-                    else
-                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
-                }
-                else
-                    throwLogicFailure();
-            }
-        }
-        else
-            {
-            throwInalidTypo();
-            outputTextBox.appendText("You must type MOVE<Pip1><Pip2> to make a move.\n");
-        }
+//        insertbox.clear();
+//        //Pip number getter
+//        int start = -1;
+//        int end = -1;
+//        //String index getter
+//        int firstLBra = -1;
+//        int firstRBra = -1;
+//        int secondLBra = -1;
+//        int secondRBra = -1;
+//
+//        //Scan whole string get index locations
+//        for(int i = 0; i < messegeBuffer.length(); i++)
+//        {
+//            if (messegeBuffer.charAt(i) == '<' && firstLBra == -1)
+//                firstLBra = i;
+//            else if (messegeBuffer.charAt(i) == '>' &&  firstRBra == -1 && firstLBra != -1)
+//                firstRBra = i;
+//            else if (messegeBuffer.charAt(i) == '<' && secondLBra == -1 && firstRBra != -1)
+//                secondLBra = i;
+//            else if (messegeBuffer.charAt(i) == '>' && secondRBra == -1 && secondLBra != -1)
+//                secondRBra = i;
+//        }
+//
+//        if (firstLBra != -1 && firstRBra != -1 && secondLBra != -1 && secondRBra != -1)
+//        {
+//            start = Integer.parseInt(messegeBuffer.substring(firstLBra+1,firstRBra));
+//            end = Integer.parseInt(messegeBuffer.substring(secondLBra+1,secondRBra));
+//
+//            Boolean status;
+//
+//            //Judge move valid or not
+//            if (start == end)
+//            {
+//                throwInalidTypo();
+//                outputTextBox.appendText("Sorry you can't move into original position\n");
+//            }
+//            else
+//            {
+//                if (currentTurn == Checker_Color.WHITE)
+//                {
+//                    status = board.move(Checker_Color.WHITE,start,end);
+//                    boardVisual.removeElements();
+//                    boardVisual.BoardVisual(board);
+//                    if (status == true)
+//                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
+//                    else
+//                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
+//                }
+//                else if (currentTurn == Checker_Color.RED)
+//                {
+//                    status = board.move(Checker_Color.RED,25-start,25-end);
+//                    boardVisual.removeElements();
+//                    boardVisual.BoardVisual(board);
+//                    if (status == true)
+//                        outputTextBox.appendText("Move from " + start + " to " + end + "\n");
+//                    else
+//                        outputTextBox.appendText("You tried to move from " + start + " to " +end +" but it's invalid.\n");
+//                }
+//                else
+//                    throwLogicFailure();
+//            }
+//        }
+//        else
+//            {
+//            throwInalidTypo();
+//            outputTextBox.appendText("You must type MOVE<Pip1><Pip2> to make a move.\n");
+//        }
     }
 
     //enter NEXT to pass to next player
@@ -416,8 +416,17 @@ public class GameController
         }
         //outputTextBox.appendText("Number is:" + num +"\n");
 
+        Play play;
+        play = plays.get(num);
 
-
+        if (currentTurn == Checker_Color.RED)
+        {
+            board.move(players.get(0),play);
+        }
+        else if (currentTurn == Checker_Color.WHITE)
+        {
+            board.move(players.get(1),play);
+        }
 
         outputTextBox.appendText("You typed:" + s + "\n");
         boardVisual.removeElements();
@@ -440,130 +449,38 @@ public class GameController
 
         if (plays.number() == 0)
         {
-            outputTextBox.appendText("Sorry. No avaliable this turn.\n");
+            outputTextBox.appendText("No available this turn.\n");
             passTurn();
         }
         else if (plays.number() == 1)
         {
-            outputTextBox.appendText("There's only move avaliable:" + plays.toString());
-
-
+            outputTextBox.appendText("There's only move available:\n");
+            printMoves(plays);
         }
         else
         {
-            outputTextBox.appendText("Moves:" + plays.toString());
-        }
-
-    }
-
-    private void printAvaliableMove()
-    {
-        if (moveList.length != 0)
-        {
-            for (int i = 0; i<moveList.length;i++)
-            {
-                outputTextBox.appendText(printToString(i));
-            }
-            outputTextBox.appendText("Type letter to choose:\n");
-        }
-        else if (doubleMoveList.length != 0)
-        {
-            for (int i = 0; i<doubleMoveList.length;i++)
-            {
-                outputTextBox.appendText(printToString(i));
-            }
-            outputTextBox.appendText("Type letter to choose:\n");
+            outputTextBox.appendText("Available moves:\n");
+            printMoves(plays);
         }
     }
 
-    private String printToString(int num)
+    //print out all possible moves
+    private void printMoves( Plays plays )
     {
-        String string = "->";
-        char charNum;
-        int getcharNum;
-
-        int num1 = num;
-
-        if (num1 == 0)
-            string += 'A';
-        else
-            while(num1>0)
+        int index = 0;
+        for (Play play : plays)
+        {
+            String code;
+            if (index<26)
             {
-                int x = num1/26;
-                int y = num1%26;
-                if (x > 0)
-                {
-                    getcharNum = 'A' + x - 1;
-                    charNum = (char) getcharNum;
-                    string += charNum;
-                    num1-=26;
-                }
-                else
-                {
-                    if (y >= 0)
-                    {
-                        getcharNum = 'A' + y;
-                        charNum = (char) getcharNum;
-                        string += charNum;
-                        num1 = 0;
-                    }
-                }
+                code = "" + (char) (index%26 + (int) 'A');
             }
-
-        string+=".";
-
-        if (moveList[num].start1 == -1 && moveList[num].end1 == -1)
-        {
-            string+= "N/A";
+            else {
+                code = "" + (char) (index/26 - 1 + (int) 'A') + (char) (index % 26 + (int) 'A');
+            }
+            outputTextBox.appendText(code + ". " + plays);
+            index++;
         }
-        else
-        {
-            if (moveList[num].start1 == 25)
-                string+= "Bar";
-            else
-                string += moveList[num].start1;
-
-            string+="-";
-
-            if (moveList[num].end1 == 0)
-                string+= "Off";
-            else
-                string += moveList[num].end1;
-        }
-
-
-        if(moveList[num].hit1 == true)
-            string += "*   ";
-        else
-            string += "   ";
-
-        if (moveList[num].start2 == -1 && moveList[num].end2 == -1)
-        {
-            string+= "N/A";
-        }
-        else
-        {
-            if (moveList[num].start2 == 25)
-                string+= "Bar";
-            else
-                string += moveList[num].start2;
-
-            string+="-";
-
-            if (moveList[num].end2 == 0)
-                string+= "Off";
-            else
-                string += moveList[num].end2;
-        }
-
-        if(moveList[num].hit2 == true)
-            string += "*.";
-        else
-            string += ".";
-
-        string += "\n";
-
-        return string;
     }
 
     //Current turn instruction
