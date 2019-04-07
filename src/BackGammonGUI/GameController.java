@@ -26,12 +26,16 @@ public class GameController
     //Create all needed elements
     private BoardVisual boardVisual = new BoardVisual();
     private DiceVisual diceVisual = new DiceVisual();
+
+    private DoublingCubeVisual doublingCubeVisual = new DoublingCubeVisual(); //EDIT LATER
+
     private PipNumVisual pipNumVisual = new PipNumVisual();
 
     private Players players = new Players();
     private Board board = new Board(players);
     private Dice dice = new Dice();
     private Plays plays = new Plays();
+
 
     private int dicePoint1 = 7;
     private int dicePoint2 = 7;
@@ -95,6 +99,11 @@ public class GameController
         boardVisual.BoardVisual();
         diceVisual.DiceVisual();
         diceVisual.inPutDiceImages();
+
+        doublingCubeVisual.DoublingCubeVisual();       //
+        doublingCubeVisual.inputDoublingDiceImages();  //EDIT THIS LATER
+        doublingCubeVisual.cubeDisplay();              //
+
         pipNumVisual.PipNumVisual();
         initControlVisual();
         instructMessage();
