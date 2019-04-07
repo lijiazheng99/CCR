@@ -34,7 +34,7 @@ public class GameController
     private Board board = new Board(players);
     private Dice dice = new Dice();
     private Plays plays = new Plays();
-    private DoubleCude doubleCude = new DoubleCude();
+    private DoubleCube doubleCube = new DoubleCube();
 
     //dicepoint for start game
     private int dicePoint1 = 7;
@@ -108,7 +108,7 @@ public class GameController
         doublingCubeVisual.inputDoublingDiceImages();
         doublingCubeVisual.cubeDisplay(null,64);
         pipNumVisual.PipNumVisual();
-        doubleCude.reset();
+        doubleCube.reset();
         instructMessage();
         currentTurn = Checker_Color.EMPTY;
         inMatch = true;
@@ -387,17 +387,17 @@ public class GameController
         if (currentTurn == Checker_Color.RED)
         {
             outputTextBox.appendText("You accept doubling cube.\n");
-            if (doubleCude.doubleThePoints(players.get(0)))
+            if (doubleCube.doubleThePoints(players.get(0)))
             {
-                doublingCubeVisual.cubeDisplay(players.get(0),doubleCude.getCurrentPoints());
+                doublingCubeVisual.cubeDisplay(players.get(0),doubleCube.getCurrentPoints());
             }
         }
         else if (currentTurn == Checker_Color.WHITE)
         {
             outputTextBox.appendText("You accept doubling cube.\n");
-            if (doubleCude.doubleThePoints(players.get(1)))
+            if (doubleCube.doubleThePoints(players.get(1)))
             {
-                doublingCubeVisual.cubeDisplay(players.get(1),doubleCude.getCurrentPoints());
+                doublingCubeVisual.cubeDisplay(players.get(1),doubleCube.getCurrentPoints());
             }
         }
         else
