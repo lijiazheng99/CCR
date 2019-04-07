@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,31 +18,24 @@
     <SUITE FILE_PATH="coverage/CCR_BackGammon$BackGammon.ic" NAME="BackGammon Coverage Results" MODIFIED="1549406857668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+            <state relative-caret-position="17">
+              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2598#2599#0" expanded="true" />
-                <element signature="e#2659#2660#0" expanded="true" />
-                <element signature="e#2855#2856#0" expanded="true" />
-                <element signature="e#2887#2888#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BackGammon/DoubleCude.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="90" column="31" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -82,7 +72,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/BackGammon.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Frame.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/Tile.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/testcase.java" />
@@ -133,6 +122,7 @@
         <option value="$PROJECT_DIR$/src/BackGammonGUI/InterruptedException.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/DoubleCude.java" />
       </list>
     </option>
   </component>
@@ -167,18 +157,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="BackGammon" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="BackGammonGUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="BackGammonTests" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -194,7 +172,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554640409056" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554640613577" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -209,17 +187,17 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="BackGammon" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\BackGammon" />
+      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\resources" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/BackGammonPIC" />
+      <recent name="$PROJECT_DIR$/src/BackGammon" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src" />
       <recent name="$PROJECT_DIR$/src/BackGammonGUI" />
       <recent name="$PROJECT_DIR$/src/BackGammon" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/BackGammonPIC" />
-      <recent name="$PROJECT_DIR$/src/BackGammon" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/BackGammonGUI" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -394,13 +372,6 @@
       <workItem from="1554561690419" duration="92000" />
       <workItem from="1554563752446" duration="299000" />
       <workItem from="1554639090228" duration="258000" />
-    </task>
-    <task id="LOCAL-00045" summary="Updated a lot of things">
-      <created>1550980856608</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1550980856608</updated>
     </task>
     <task id="LOCAL-00046" summary="Updated a lot of things">
       <created>1551027364320</created>
@@ -738,11 +709,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554571222338</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Double Cube class update">
+      <created>1554640438950</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1554640438950</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263174000" />
+    <option name="totallyTimeSpent" value="263364000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -754,9 +732,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14878398" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23294243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -765,7 +743,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47130647" visible="true" weight="0.22346939" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47130647" weight="0.22318527" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -774,8 +752,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.495116" weight="0.327551" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.52869356" side_tool="true" weight="0.030612245" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48294243" weight="0.32827735" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48507464" weight="0.094897956" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.48294243" visible="true" weight="0.3575298" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48507464" weight="0.094257854" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -864,7 +842,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates&#10;reEnter function and kicking out function added" />
     <MESSAGE value="updates&#10;functions deleted." />
     <MESSAGE value="updates&#10;re-enter function added." />
     <MESSAGE value="updates&#10;bear off functions added" />
@@ -889,10 +866,10 @@
     <MESSAGE value="update" />
     <MESSAGE value="update boardvisual" />
     <MESSAGE value="update ALL, currently works perfect" />
-    <option name="LAST_COMMIT_MESSAGE" value="update ALL, currently works perfect" />
+    <MESSAGE value="Double Cube class update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Double Cube class update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/CheckerColor.java" />
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/BoardPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/InfoPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/CommandPanel.java" />
@@ -964,7 +941,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/BackGammon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="17">
           <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1083,17 +1060,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" />
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/DoubleCude.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
-            <element signature="e#2855#2856#0" expanded="true" />
-            <element signature="e#2887#2888#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1104,10 +1075,10 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="javaee-facet-resources" />
               <type id="artifact" />
-              <type id="library" />
               <type id="jpa-descriptors" />
+              <type id="library" />
+              <type id="javaee-facet-resources" />
             </show-content>
           </artifact-editor>
           <last-edited>CCR_BackGammon:jar</last-edited>
@@ -1147,7 +1118,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
