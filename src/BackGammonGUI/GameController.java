@@ -188,6 +188,10 @@ public class GameController
         player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.add(player2score, 13, 0);
 
+        totalscore = new Label("0");
+        totalscore.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(totalscore, 14, 0);
+
     }
 
     //event handler for get button click or return key type
@@ -227,10 +231,10 @@ public class GameController
             {
                 exit();
             }
-            else if (messegeBufferForCom.substring(0,4).equals("QUIT") )
+            else if (messegeBufferForCom.substring(0,3).equals("YES"))
             {
-                //Add here
-
+                insertbox.clear();
+                reround();
             }
             else
                 throwLogicFailure();
