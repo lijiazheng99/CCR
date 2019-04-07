@@ -414,8 +414,8 @@ public class GameController
         grid.add(player1score, 6, 0);
 
         player2score = new Label(players.get(1).getScore() + "");
-        player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-        grid.add(player1score, 13, 0);
+        player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(player2score, 13, 0);
 
         if (players.get(0).getScore() < MatchScore && players.get(1).getScore() < MatchScore)
             outputTextBox.appendText(">Type restart\n");
@@ -516,8 +516,8 @@ public class GameController
             grid.add(player1score, 6, 0);
 
             player2score = new Label(players.get(1).getScore() + "");
-            player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-            grid.add(player1score, 13, 0);
+            player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+            grid.add(player2score, 13, 0);
 
             if (players.get(0).getScore() < MatchScore && players.get(1).getScore() < MatchScore)
                 outputTextBox.appendText(">Type restart\n");
