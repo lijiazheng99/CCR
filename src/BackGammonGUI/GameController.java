@@ -136,7 +136,7 @@ public class GameController
         outputTextBox.appendText("Type NAME1+YourName to set player1 name\n");
         outputTextBox.appendText("Type NAME2+YourName to set player2 name\n");
         outputTextBox.appendText("Type CHEAT to do a cheat move\n");
-        outputTextBox.appendText("Type NEXT to pass move right to next player\n");
+        outputTextBox.appendText("Type MATCH to set total match score\n");
         outputTextBox.appendText("Type CLEAR to clear board messages. Type QUIT to exit\n");
         outputTextBox.appendText("***********************\n");
     }
