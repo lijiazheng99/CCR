@@ -51,7 +51,7 @@ public class DoublingCubeVisual extends GridPane {
 
     public void inputDoublingDiceImages() {
         try {
-            images[0] = new Image(new FileInputStream("src//dice_1.png"), 55, 55, false, false) ;
+            images[0] = new Image(new FileInputStream("source?"), 55, 55, false, false) ;
 //            images[1] = new Image(new FileInputStream("source"),55,55,false,false);
 //            images[2] = new Image(new FileInputStream("source"),55,55,false,false);
 //            images[3] = new Image(new FileInputStream("source"),55,55,false,false);
