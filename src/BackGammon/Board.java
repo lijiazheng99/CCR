@@ -21,6 +21,10 @@ public class Board {
     public Bar[] bars = new Bar[25];
 
     private int[][] checkers;
+
+    public int currentMatchScore;
+    public int currentRound;
+
     private Players players;
     // 2D array of checkers
     // 1st index: is the player id
@@ -39,6 +43,8 @@ public class Board {
         for(int i = 1; i <= 24; i++) {
             bars[i] = new Bar();
         }
+        currentMatchScore = 0;
+        currentRound = 0;
 
         barsBuild();
     }
@@ -55,6 +61,8 @@ public class Board {
         for(int i = 1; i <= 24; i++) {
             bars[i] = new Bar();
         }
+        currentMatchScore = 0;
+        currentRound = 0;
 
         barsBuild();
     }
@@ -70,6 +78,8 @@ public class Board {
         for(int i = 1; i <= 24; i++) {
             bars[i] = new Bar();
         }
+        this.currentMatchScore = board.currentMatchScore;
+        this.currentRound = board.currentRound;
         barsBuild();
     }
 
