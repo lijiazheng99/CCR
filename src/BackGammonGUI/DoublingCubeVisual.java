@@ -77,7 +77,7 @@ public class DoublingCubeVisual extends GridPane
         if (player == null)
         {
             doublingDiceImg = new ImageView(images[5]);
-            grid.add(doublingDiceImg,14,0);
+            grid.add(doublingDiceImg,0,17);
         }
         else if (player.getColor() == Checker_Color.RED)
         {
