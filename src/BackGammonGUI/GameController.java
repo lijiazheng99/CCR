@@ -341,7 +341,7 @@ public class GameController
                         else if (messegeBufferForCom.substring(0,5).equals("START"))
                         {
                             outputTextBox.appendText("Sorry START roll dice is not a valid call anymore\n");
-                            clear();
+                            endClear();
                         }
                         else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
                         {
@@ -454,7 +454,7 @@ public class GameController
 
     private void restart()
     {
-        clear();
+        endClear();
         boardVisual.removeElements();
         diceVisual.removeDisplay();
         doublingCubeVisual.removeDisplay();
@@ -464,7 +464,7 @@ public class GameController
 
     private void reround()
     {
-        clear();
+        endClear();
         players = new Players();
         board = new Board(players);
         boardVisual.removeElements();
@@ -767,6 +767,12 @@ public class GameController
         insertbox.clear();
         outputTextBox.clear();
         instructMessage();
+    }
+
+    private void endClear()
+    {
+        insertbox.clear();
+        outputTextBox.clear();
     }
 
     //ReAssign player's name

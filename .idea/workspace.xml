@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="512" column="12" selection-start-line="512" selection-start-column="12" selection-end-line="512" selection-end-column="12" />
+            <state relative-caret-position="400">
+              <caret line="138" column="74" selection-start-line="138" selection-start-column="74" selection-end-line="138" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7186#7187#0" expanded="true" />
@@ -36,10 +34,10 @@
                 <element signature="e#13815#14330#0" />
                 <element signature="e#14336#14982#0" />
                 <element signature="e#14988#15435#0" />
-                <element signature="e#23493#23494#0" expanded="true" />
+                <element signature="e#23473#23474#0" expanded="true" />
                 <element signature="e#15620#18215#0" />
                 <element signature="e#18221#18528#0" />
-                <element signature="e#26484#26485#0" expanded="true" />
+                <element signature="e#26464#26465#0" expanded="true" />
                 <element signature="e#18611#18759#0" />
                 <element signature="e#19370#19969#0" />
               </folding>
@@ -289,7 +287,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554677588210" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554678381760" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -491,14 +489,7 @@
       <workItem from="1554563752446" duration="299000" />
       <workItem from="1554639090228" duration="258000" />
       <workItem from="1554640850570" duration="1619000" />
-      <workItem from="1554643560647" duration="24242000" />
-    </task>
-    <task id="LOCAL-00054" summary="update move functions">
-      <created>1551057121638</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1551057121638</updated>
+      <workItem from="1554643560647" duration="24456000" />
     </task>
     <task id="LOCAL-00055" summary="final version for sprint 2">
       <created>1551058912603</created>
@@ -836,11 +827,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554677092798</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="update match round and scores">
+      <created>1554678150375</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1554678150375</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289249000" />
+    <option name="totallyTimeSpent" value="289463000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -855,7 +853,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15384616" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15384616" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -864,7 +862,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.47008547" weight="0.22653061" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46947497" visible="true" weight="0.22653061" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -872,8 +870,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.495116" weight="0.327551" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.51892555" side_tool="true" visible="true" weight="0.15816326" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48107448" visible="true" weight="0.15816326" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.530525" side_tool="true" visible="true" weight="0.22653061" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48107448" weight="0.15816326" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48507464" weight="0.094257854" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -931,7 +929,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates&#10;bear off functions added" />
     <MESSAGE value="updates&#10;round loop check conditions added" />
     <MESSAGE value="updates&#10;remove 1 useless variable" />
     <MESSAGE value="updates&#10;normal round rules added&#10;Basic rules finished, non-debugged" />
@@ -956,7 +953,8 @@
     <MESSAGE value="Double Cube class update" />
     <MESSAGE value="combined doubling cube in game controller" />
     <MESSAGE value="upgrade controller with doubling cube" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade controller with doubling cube" />
+    <MESSAGE value="update match round and scores" />
+    <option name="LAST_COMMIT_MESSAGE" value="update match round and scores" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceImages.java" />
@@ -1172,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="512" column="12" selection-start-line="512" selection-start-column="12" selection-end-line="512" selection-end-column="12" />
+        <state relative-caret-position="400">
+          <caret line="138" column="74" selection-start-line="138" selection-start-column="74" selection-end-line="138" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7186#7187#0" expanded="true" />
@@ -1182,10 +1180,10 @@
             <element signature="e#13815#14330#0" />
             <element signature="e#14336#14982#0" />
             <element signature="e#14988#15435#0" />
-            <element signature="e#23493#23494#0" expanded="true" />
+            <element signature="e#23473#23474#0" expanded="true" />
             <element signature="e#15620#18215#0" />
             <element signature="e#18221#18528#0" />
-            <element signature="e#26484#26485#0" expanded="true" />
+            <element signature="e#26464#26465#0" expanded="true" />
             <element signature="e#18611#18759#0" />
             <element signature="e#19370#19969#0" />
           </folding>
