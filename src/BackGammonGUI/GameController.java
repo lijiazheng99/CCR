@@ -63,6 +63,7 @@ public class GameController
     private boolean dcInRequest = false;
     private boolean moveInRequest = false;
     private boolean dcAcceptRequest = false;
+    private boolean first = true;
 
     private int MatchScore = 5;
 
@@ -103,12 +104,18 @@ public class GameController
     //Game start settings
     public void gameStart()
     {
-        board = new Board(players);
-        boardVisual.BoardVisual();
+        if (first)
+        {
+            boardVisual.BoardVisual();
+            diceVisual.inPutDiceImages();
+            doublingCubeVisual.inputDoublingDiceImages();
+            first = false;
+        }
+        else
+            boardVisual.BoardVisual(board);
+
         diceVisual.DiceVisual();
-        diceVisual.inPutDiceImages();
         doublingCubeVisual.DoublingCubeVisual();
-        doublingCubeVisual.inputDoublingDiceImages();
         doublingCubeVisual.cubeDisplay(null,64);
         pipNumVisual.PipNumVisual();
         doubleCube.reset();
@@ -120,8 +127,11 @@ public class GameController
         dcAcceptRequest = false;
         dicePoint1 = 7;
         dicePoint2 = 7;
-        players.get(0).setName("Player1");
-        players.get(1).setName("Player2");
+        if (players.get(0).toString() == null || players.get(1).toString() == null)
+        {
+            players.get(0).setName("Player1");
+            players.get(1).setName("Player2");
+        }
         assignPlayerLabel();
         outputTextBox.appendText("Game Start!\nType START to roll start dice\n");
     }
@@ -132,11 +142,11 @@ public class GameController
         outputTextBox.appendText("Welcome to BackGammon!\n");
         outputTextBox.appendText("***********************\n");
         outputTextBox.appendText("Game instruction:\n");
-        outputTextBox.appendText("Type START to do start dice roll\n");
-        outputTextBox.appendText("Type NAME1+YourName to set player1 name\n");
-        outputTextBox.appendText("Type NAME2+YourName to set player2 name\n");
+        outputTextBox.appendText("*Type START to do start dice roll\n");
+        outputTextBox.appendText("*Type NAME1+YourName to set player1 name\n");
+        outputTextBox.appendText("*Type NAME2+YourName to set player2 name\n");
         outputTextBox.appendText("Type CHEAT to do a cheat move\n");
-        outputTextBox.appendText("Type MATCH to set total match score\n");
+        outputTextBox.appendText("*Type MATCH to set total match score\n");
         outputTextBox.appendText("Type CLEAR to clear board messages. Type QUIT to exit\n");
         outputTextBox.appendText("***********************\n");
     }
@@ -162,6 +172,18 @@ public class GameController
         grid.add(outputTextBox,15, 1,4,35);
         outputTextBox.setWrapText(true);
 
+        player1score = new Label("0");
+        player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(player1score, 6, 0);
+
+        player2score = new Label("0");
+        player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(player2score, 13, 0);
+
+        totalscore = new Label(MatchScore + "");
+        totalscore.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(totalscore, 14, 0);
+
         return grid;
     }
 
@@ -174,20 +196,11 @@ public class GameController
         grid.setColumnSpan(player1Lab,5);
         grid.add(player1Lab, 1, 0);
 
-        player1score = new Label("0");
-        player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-        grid.add(player1score, 6, 0);
-
         //Player 2 Label
         player2Lab = new Label("Player2");
         player2Lab.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.setColumnSpan(player2Lab,5);
         grid.add(player2Lab, 8, 0);
-
-        player2score = new Label("0");
-        player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-        grid.add(player2score, 13, 0);
-
     }
 
     //event handler for get button click or return key type
@@ -223,14 +236,14 @@ public class GameController
 
         if (inMatch == false)
         {
-            if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
-            {
-                exit();
-            }
-            else if (messegeBufferForCom.substring(0,3).equals("YES"))
+            if (messegeBufferForCom.substring(0,3).equals("YES"))
             {
                 insertbox.clear();
                 reround();
+            }
+            else if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
+            {
+                exit();
             }
             else
                 throwLogicFailure();
@@ -257,6 +270,7 @@ public class GameController
                             insertbox.clear();
                             MatchScore = Integer.parseInt(messegeBufferForCom.substring(5,messegeBuffer.length()));
                             outputTextBox.appendText("You set match score:" + MatchScore + "\n");
+                            grid.getChildren().remove(totalscore);
                             totalscore = new Label(MatchScore + "");
                             totalscore.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
                             grid.add(totalscore, 14, 0);
@@ -341,7 +355,6 @@ public class GameController
                         else if (messegeBufferForCom.substring(0,5).equals("START"))
                         {
                             outputTextBox.appendText("Sorry START roll dice is not a valid call anymore\n");
-                            endClear();
                         }
                         else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
                         {
@@ -399,8 +412,6 @@ public class GameController
         outputTextBox.appendText("-----------------------------\n");
         outputTextBox.appendText("You didn't accept doubling cube then game over.\n");
 
-        printWinner ();
-
         if (currentTurn == Checker_Color.RED)
             players.get(0).wins(doubleCube);
         else if (currentTurn == Checker_Color.WHITE)
@@ -417,8 +428,10 @@ public class GameController
         player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.add(player2score, 13, 0);
 
+        printWinner ();
+
         if (players.get(0).getScore() < MatchScore && players.get(1).getScore() < MatchScore)
-            outputTextBox.appendText(">Type restart\n");
+            outputTextBox.appendText(">Type RESTART to start next round\n");
         else
         {
             outputTextBox.appendText("Match finished\nType Yes to do another round\n");
@@ -458,7 +471,7 @@ public class GameController
         boardVisual.removeElements();
         diceVisual.removeDisplay();
         doublingCubeVisual.removeDisplay();
-        board = new Board(players,board);
+        board = new Board(players);
         gameStart();
     }
 
@@ -511,6 +524,9 @@ public class GameController
             else if (currentTurn == Checker_Color.WHITE)
                 players.get(1).wins(doubleCube);
 
+            grid.getChildren().remove(player1score);
+            grid.getChildren().remove(player2score);
+
             player1score = new Label(players.get(0).getScore() + "");
             player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
             grid.add(player1score, 6, 0);
@@ -538,9 +554,15 @@ public class GameController
         outputTextBox.appendText("Winner is:\n");
 
         if (currentTurn == Checker_Color.RED)
-            outputTextBox.appendText(players.get(0).toString() + "\n");
+            if (players.get(0).toString()!=null)
+                outputTextBox.appendText(players.get(0).toString() + "\n");
+            else
+                outputTextBox.appendText("Player1\n");
         else if (currentTurn == Checker_Color.WHITE)
-            outputTextBox.appendText(players.get(1).toString() + "\n");
+            if (players.get(1).toString()!=null)
+                outputTextBox.appendText(players.get(1).toString() + "\n");
+            else
+                outputTextBox.appendText("Player2\n");
 
         if (currentTurn == Checker_Color.RED)
             outputTextBox.appendText("Score is:" + players.get(0).getScore() +"\n");
