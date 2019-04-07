@@ -47,7 +47,7 @@ public class Player {
 
         public Dice getDice() { return dice; }
 
-        public void wins() { score++; }
+        public void wins(DoubleCube c) { score += c.getCurrentPoints(); }
 
         public String toString() {
             return name;
