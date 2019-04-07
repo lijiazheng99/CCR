@@ -63,6 +63,8 @@ public class GameController
     private boolean moveInRequest = false;
     private boolean dcAcceptRequest = false;
 
+
+
     //Assign gridpane for all the control elements
     public GridPane GameController()
     {
