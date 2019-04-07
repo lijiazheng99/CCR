@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="416" column="78" lean-forward="true" selection-start-line="416" selection-start-column="78" selection-end-line="416" selection-end-column="78" />
+            <state relative-caret-position="346">
+              <caret line="439" column="52" lean-forward="true" selection-start-line="439" selection-start-column="52" selection-end-line="439" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#7026#7027#0" expanded="true" />
@@ -285,7 +284,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554678996737" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554679317884" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -487,14 +486,7 @@
       <workItem from="1554563752446" duration="299000" />
       <workItem from="1554639090228" duration="258000" />
       <workItem from="1554640850570" duration="1619000" />
-      <workItem from="1554643560647" duration="24901000" />
-    </task>
-    <task id="LOCAL-00058" summary="add images">
-      <created>1551094320381</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1551094320382</updated>
+      <workItem from="1554643560647" duration="25141000" />
     </task>
     <task id="LOCAL-00059" summary="add images">
       <created>1551095064129</created>
@@ -832,11 +824,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554678713559</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="fixed resign score lebal may caused panel fail bugs">
+      <created>1554679058575</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1554679058575</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289908000" />
+    <option name="totallyTimeSpent" value="290148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -927,7 +926,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates&#10;remove 1 useless variable" />
     <MESSAGE value="updates&#10;normal round rules added&#10;Basic rules finished, non-debugged" />
     <MESSAGE value="update&#10;&#10;make producing list functionally" />
     <MESSAGE value="re-enter from the bar updated" />
@@ -952,7 +950,8 @@
     <MESSAGE value="upgrade controller with doubling cube" />
     <MESSAGE value="update match round and scores" />
     <MESSAGE value="fixed instruction box and bugs from clear" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed instruction box and bugs from clear" />
+    <MESSAGE value="fixed resign score lebal may caused panel fail bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed resign score lebal may caused panel fail bugs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceImages.java" />
@@ -1168,8 +1167,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="416" column="78" lean-forward="true" selection-start-line="416" selection-start-column="78" selection-end-line="416" selection-end-column="78" />
+        <state relative-caret-position="346">
+          <caret line="439" column="52" lean-forward="true" selection-start-line="439" selection-start-column="52" selection-end-line="439" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#7026#7027#0" expanded="true" />

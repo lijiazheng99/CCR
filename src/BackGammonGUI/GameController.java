@@ -542,7 +542,10 @@ public class GameController
         else if (currentTurn == Checker_Color.WHITE)
             outputTextBox.appendText(players.get(1).toString() + "\n");
 
-        outputTextBox.appendText("Score is:" + players.get(0).getScore());
+        if (currentTurn == Checker_Color.RED)
+            outputTextBox.appendText("Score is:" + players.get(0).getScore() +"\n");
+        else if (currentTurn == Checker_Color.WHITE)
+            outputTextBox.appendText("Score is:" + players.get(1).getScore() +"\n");
     }
 
     private void getMoveDecision(String s, int length)
