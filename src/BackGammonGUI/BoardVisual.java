@@ -154,7 +154,7 @@ public class BoardVisual
             if (bearred > 0)
             {
                 finishCheckerVisuals[bearCounter] = new FinishCheckerVisual(Checker_Color.RED,0,0);
-                grid.add(finishCheckerVisuals[bearCounter],14,16 - i);
+                grid.add(finishCheckerVisuals[bearCounter],14,15 - i);
                 bearCounter++;
                 bearred--;
             }
@@ -166,7 +166,7 @@ public class BoardVisual
             if (bearwhite > 0)
             {
                 finishCheckerVisuals[bearCounter] = new FinishCheckerVisual(Checker_Color.WHITE,0,0);
-                grid.add(finishCheckerVisuals[bearCounter],14,32 - i);
+                grid.add(finishCheckerVisuals[bearCounter],14,31 - i);
                 bearCounter++;
                 bearwhite--;
             }

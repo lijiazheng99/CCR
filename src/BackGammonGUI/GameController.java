@@ -23,31 +23,25 @@ public class GameController
     private GridPane mainPane = new GridPane();
     private GridPane grid = new GridPane();
 
-    //Create all needed elements
+    //GUI classes
     private BoardVisual boardVisual = new BoardVisual();
     private DiceVisual diceVisual = new DiceVisual();
-
-    private DoublingCubeVisual doublingCubeVisual = new DoublingCubeVisual(); //EDIT LATER
-
+    private DoublingCubeVisual doublingCubeVisual = new DoublingCubeVisual();
     private PipNumVisual pipNumVisual = new PipNumVisual();
 
+    //Algorithm classes
     private Players players = new Players();
     private Board board = new Board(players);
     private Dice dice = new Dice();
     private Plays plays = new Plays();
+    private DoubleCude doubleCude = new DoubleCude();
 
-
+    //dicepoint for start game
     private int dicePoint1 = 7;
     private int dicePoint2 = 7;
 
+    //namebuffer for exchanging name between players
     private String nameBuffer;
-
-
-    //private Board board = new Board();
-//    private Player player1 = new Player();
-//    private Player player2 = new Player();
-//    private MoveRecord[] moveList;
-//    private DoubleMoveRecord[] doubleMoveList;
 
     //Assign all control elements on the girdpane
     private Label backGammon = new Label("BackGammon");
@@ -61,6 +55,11 @@ public class GameController
 
     //current Turn for mark current turn
     private Checker_Color currentTurn;
+
+    //Match controller
+    private boolean inMatch = false;
+    private boolean dcInRequest = false;
+    private boolean moveInRequest = false;
 
     //Assign gridpane for all the control elements
     public GridPane GameController()
@@ -99,15 +98,17 @@ public class GameController
         boardVisual.BoardVisual();
         diceVisual.DiceVisual();
         diceVisual.inPutDiceImages();
-
-        doublingCubeVisual.DoublingCubeVisual();       //
-        doublingCubeVisual.inputDoublingDiceImages();  //EDIT THIS LATER
-        doublingCubeVisual.cubeDisplay();              //
-
+        doublingCubeVisual.DoublingCubeVisual();
+        doublingCubeVisual.inputDoublingDiceImages();
+        doublingCubeVisual.cubeDisplay(null,64);
         pipNumVisual.PipNumVisual();
+        doubleCude.reset();
         initControlVisual();
         instructMessage();
         currentTurn = Checker_Color.EMPTY;
+        inMatch = true;
+        moveInRequest = false;
+        dcInRequest = false;
         players.get(0).setName("Player1");
         players.get(1).setName("Player2");
         assignPlayerLabel();
@@ -200,32 +201,54 @@ public class GameController
         messegeBuffer =  new String(insertbox.getText());
         messegeBufferForCom = messegeBuffer.toUpperCase();
 
-        //Judge current status, if is EMPTY lead user to roll dice
-        if (currentTurn == Checker_Color.EMPTY)
+        if (inMatch == false)
         {
-            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
+            if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
             {
-                if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
+                exit();
+            }
+            else if (messegeBufferForCom.substring(0,4).equals("QUIT") )
+            {
+                //Add here
+
+            }
+            else
+                throwLogicFailure();
+        }
+        else if (inMatch == true)
+        {
+            //Judge current status, if is EMPTY lead user to roll dice
+            if (currentTurn == Checker_Color.EMPTY)
+            {
+                if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
                 {
-                    exit();
-                }
-                else if (insertbox.getText().length()>= 5)
-                {
-                    if (messegeBufferForCom.substring(0,5).equals("START"))
+                    if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT"))
                     {
-                        startRoll();
+                        exit();
                     }
-                    else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                    else if (insertbox.getText().length()>= 5)
                     {
-                        player1Name();
-                    }
-                    else if(messegeBufferForCom.substring(0,5).equals("NAME2"))
-                    {
-                        player2Name();
-                    }
-                    else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
-                    {
-                        clear();
+                        if (messegeBufferForCom.substring(0,5).equals("START"))
+                        {
+                            startRoll();
+                        }
+                        else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                        {
+                            player1Name();
+                        }
+                        else if(messegeBufferForCom.substring(0,5).equals("NAME2"))
+                        {
+                            player2Name();
+                        }
+                        else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
+                        {
+                            clear();
+                        }
+                        else
+                        {
+                            throwInalidTypo();
+                            outputTextBox.appendText("You must type START to do start game roll\n");
+                        }
                     }
                     else
                     {
@@ -239,60 +262,63 @@ public class GameController
                     outputTextBox.appendText("You must type START to do start game roll\n");
                 }
             }
-            else
+            else if(currentTurn == Checker_Color.RED || currentTurn == Checker_Color.WHITE)
             {
-                throwInalidTypo();
-                outputTextBox.appendText("You must type START to do start game roll\n");
-            }
-        }
-        else if(currentTurn == Checker_Color.RED || currentTurn == Checker_Color.WHITE)
-        {
-            if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<=4)
-            {
-                getMoveDecision(messegeBufferForCom,insertbox.getText().length());
-            }
-            else if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
-            {
-                if (messegeBufferForCom.substring(0,4).equals("ROLL"))
+                if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()<4 && moveInRequest == true)
                 {
-                    diceInGame();
+                    getMoveDecision(messegeBufferForCom,insertbox.getText().length());
                 }
-                else if (messegeBufferForCom.substring(0,4).equals("NEXT"))
+                else if ((messegeBufferForCom.substring(0,3).equals("YES") || messegeBufferForCom.substring(0,2).equals("NO")) && dcInRequest == true)
                 {
-                    passTurn();
+                    if (messegeBufferForCom.substring(0,3).equals("YES"))
+                    {
+                        doublingCubeRespond();
+                    }
+                    else if (messegeBufferForCom.substring(0,2).equals("NO"))
+                    {
+                        doublingCubeCauseGameOver();
+                    }
+                    else
+                        throwLogicFailure();
                 }
-                else if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT")  )
+                else if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
                 {
-                    exit();
-                }
-                else if (messegeBufferForCom.length() >= 5 )
-                {
-                    if (messegeBufferForCom.substring(0,4).equals("CHEAT"))
+                    if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT")  )
                     {
-                        cheatMove();
+                        exit();
                     }
-                    else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                    else if (messegeBufferForCom.length() >= 5 )
                     {
-                        player1Name();
-                    }
-                    else if(messegeBufferForCom.substring(0,5).equals("NAME2"))
-                    {
-                        player2Name();
-                    }
-                    else if (messegeBufferForCom.substring(0,5).equals("START"))
-                    {
-                        outputTextBox.appendText("Sorry START roll dice is not a valid call anymore\n");
-                    }
-                    else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
-                    {
-                        clear();
-                    }
-                    else if (messegeBufferForCom.length() >= 7)
-                    {
-                        if (messegeBufferForCom.substring(0,7).equals("RESTART"))
+                        if (messegeBufferForCom.substring(0,5).equals("CHEAT"))
                         {
-                            insertbox.clear();
-                            GameController();
+                            cheatMove();
+                        }
+                        else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
+                        {
+                            player1Name();
+                        }
+                        else if(messegeBufferForCom.substring(0,5).equals("NAME2"))
+                        {
+                            player2Name();
+                        }
+                        else if (messegeBufferForCom.substring(0,5).equals("START"))
+                        {
+                            outputTextBox.appendText("Sorry START roll dice is not a valid call anymore\n");
+                            clear();
+                        }
+                        else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
+                        {
+                            clear();
+                        }
+                        else if (messegeBufferForCom.length() >= 7)
+                        {
+                            if (messegeBufferForCom.substring(0,7).equals("RESTART"))
+                            {
+                                insertbox.clear();
+                                GameController();
+                            }
+                            else
+                                throwInalidTypo();
                         }
                         else
                             throwInalidTypo();
@@ -304,7 +330,7 @@ public class GameController
                     throwInalidTypo();
             }
             else
-                throwInalidTypo();
+                throwLogicFailure();
         }
         else
             throwLogicFailure();
@@ -316,7 +342,40 @@ public class GameController
     //Make a move
     private void cheatMove()
     {
+        currentTurn = Checker_Color.WHITE;
+        moveInRequest = false;
         board.cheat();
+        boardVisual.removeElements();
+        boardVisual.BoardVisual(board);
+        passTurn();
+    }
+
+    private void printDoubleCube (Player player, int num)
+    {
+        doublingCubeVisual.cubeDisplay(player, num);
+    }
+
+    private void doublingCubeRequest()
+    {
+        outputTextBox.appendText("Do you wanna double the cube?\nPlease type yes or no:\n");
+        dcInRequest = true;
+    }
+
+    private void doublingCubeCauseGameOver ()
+    {
+        clear();
+        outputTextBox.appendText("You didn't accept doubling cube then game over.\n");
+    }
+
+    private void doublingCubeRespond ()
+    {
+        clear();
+        dcInRequest = false;
+        if (currentTurn == Checker_Color.RED)
+            doubleCude.doubleThePoints(players.get(0));
+        else if (currentTurn == Checker_Color.WHITE)
+            doubleCude.doubleThePoints(players.get(1));
+
         passTurn();
     }
 
@@ -327,6 +386,7 @@ public class GameController
         if (!board.isGameOver())
         {
             diceVisual.removeDisplay();
+            doublingCubeVisual.removeDisplay();
             currentTurn = changeTurn(currentTurn);
             currentTurn();
             diceInGame();
@@ -364,9 +424,10 @@ public class GameController
         }
         outputTextBox.appendText("You typed:" + s + "\n");
         makeMove(num);
+        moveInRequest = false;
         boardVisual.removeElements();
         boardVisual.BoardVisual(board);
-        passTurn();
+        doublingCubeRequest();
     }
 
     private void makeMove(int num)
@@ -383,8 +444,6 @@ public class GameController
             board.move(players.get(1),play);
         }
     }
-
-
 
     private void checkAvailable()
     {
@@ -417,6 +476,7 @@ public class GameController
             outputTextBox.appendText(">Available moves:\n");
             printMoves(plays);
             outputTextBox.appendText("Please type letter to move:\n");
+            moveInRequest = true;
         }
     }
 
@@ -613,6 +673,7 @@ public class GameController
     {
         mainPane.getChildren().add(boardVisual.BoardVisual(board));
         mainPane.getChildren().add(diceVisual.getGrid());
+        mainPane.getChildren().add(doublingCubeVisual.getGrid());
         mainPane.getChildren().add(pipNumVisual.returnPane());
         mainPane.getChildren().add(grid);
         return this.mainPane;
