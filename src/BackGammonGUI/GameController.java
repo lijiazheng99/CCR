@@ -17,6 +17,7 @@ import javafx.scene.text.FontWeight;
 
 public class GameController
 {
+
     //mainPane for add other pane together, grid for map contollers
     private GridPane mainPane = new GridPane();
     private GridPane grid = new GridPane();
