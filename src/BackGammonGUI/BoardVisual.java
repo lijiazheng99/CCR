@@ -177,6 +177,138 @@ public class BoardVisual
         return this.grid;
     }
 
+    private GridPane BoardTest (Board board)
+    {
+        int indexNum;
+        int bottomNum;
+        int checkerCount = 0;
+
+        for (int i = 1; i < 25; i++)
+        {
+            indexNum = board.bars[i].getCheckerNumber();
+
+            if (i <= 12)
+            {
+                bottomNum = 32;
+                while(indexNum != 0)
+                {
+                    if (i <= 6)
+                    {
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),14 - i,bottomNum);
+                        grid.add(checkers[checkerCount],14-i,bottomNum);
+                        if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                        {
+                            checkerCount++;
+                        }
+                        bottomNum--;
+                        indexNum--;
+                    }
+                    else if (i > 6)
+                    {
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),13-i,bottomNum);
+                        grid.add(checkers[checkerCount],13-i,bottomNum);
+                        if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                        {
+                            checkerCount++;
+                        }
+                        bottomNum--;
+                        indexNum--;
+                    }
+                }
+            }
+
+            else if (i > 12)
+            {
+                bottomNum = 1;
+                while(bottomNum < indexNum + 1)
+                {
+                    if (i <= 18)
+                    {
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),i - 11,bottomNum);
+                        grid.add(checkers[checkerCount],i - 12,bottomNum);
+                        if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                        {
+                            checkerCount++;
+                        }
+                        bottomNum++;
+                    }
+                    else if (i > 18)
+                    {
+                        checkers[checkerCount] = new CheckerVisual(board.bars[i].getColor(),i - 12,bottomNum);
+                        grid.add(checkers[checkerCount],i - 11,bottomNum);
+                        if (checkers[checkerCount].getType() != Checker_Color.EMPTY)
+                        {
+                            checkerCount++;
+                        }
+                        bottomNum++;
+                    }
+                }
+            }
+        }
+
+
+
+        int hitred = board.getRedHit();
+        int hitwhite = board.getWhiteHit();
+        int hitCounter = 0;
+
+
+        for (int i = 0; i < 15; i++)
+        {
+            if (hitred > 0)
+            {
+                hitcheckers[hitCounter] = new CheckerVisual(Checker_Color.RED,0,0);
+                grid.add(hitcheckers[hitCounter],7,16-i);
+                hitCounter++;
+                hitred--;
+            }
+            else break;
+        }
+
+        for (int i = 0; i < 15; i++)
+        {
+            if (hitwhite > 0)
+            {
+                hitcheckers[hitCounter] = new CheckerVisual(Checker_Color.WHITE,0,0);
+                grid.add(hitcheckers[hitCounter],7,19+i);
+                hitCounter++;
+                hitwhite--;
+            }
+            else break;
+        }
+
+        int bearred = board.getRedBear();
+        int bearwhite = board.getWhiteBear();
+        int bearCounter = 0;
+
+        for (int i = 0; i < 15; i++)
+        {
+            if (bearred > 0)
+            {
+                finishCheckerVisuals[bearCounter] = new FinishCheckerVisual(Checker_Color.RED,0,0);
+                grid.add(finishCheckerVisuals[bearCounter],14,31 - i);
+                bearCounter++;
+                bearred--;
+            }
+            else break;
+        }
+
+        for (int i = 0; i < 15; i++)
+        {
+            if (bearwhite > 0)
+            {
+                finishCheckerVisuals[bearCounter] = new FinishCheckerVisual(Checker_Color.WHITE,0,0);
+                grid.add(finishCheckerVisuals[bearCounter],14,15 - i);
+                bearCounter++;
+                bearwhite--;
+            }
+            else break;
+        }
+
+        System.out.println("BackGammonGUI.BoardVisual.BoardVisual(board): Checkers map on gridpane successful");
+        return this.grid;
+    }
+
     //Remove all checkers on the gridpane
     public void removeElements()
     {
