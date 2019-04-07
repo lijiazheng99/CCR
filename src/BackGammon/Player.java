@@ -8,7 +8,7 @@ public class Player {
         private Checker_Color color;
         private String name;
         private Dice dice;
-        private int currentScore;
+        private int score;
 
         public Player(int id, String colorName, Checker_Color color) {
             this.id = id;
@@ -16,7 +16,7 @@ public class Player {
             this.colorName = colorName;
             this.color = color;
             dice = new Dice();
-            currentScore = 0;
+            score = 0;
         }
 
         public Player(Player player) {
@@ -31,7 +31,7 @@ public class Player {
             this.name = name;
         }
 
-        public int getCurrentScore(){   return currentScore; }
+        public int getScore(){   return score; }
 
         public int getId() {
             return id;
@@ -46,6 +46,8 @@ public class Player {
         }
 
         public Dice getDice() { return dice; }
+
+        public void wins() { score++; }
 
         public String toString() {
             return name;
