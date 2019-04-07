@@ -1,13 +1,13 @@
 package BackGammon;
 
-public class DoubleCude
+public class DoubleCube
 {
 	private Player currentPlayer;
 	private int currentPoints;
 	private final int MAX = 64;
 	private final int RESET = 1;
 	
-	public DoubleCude()
+	public DoubleCube()
 	{
 		reset();
 	}
