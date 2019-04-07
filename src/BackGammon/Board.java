@@ -43,6 +43,22 @@ public class Board {
         barsBuild();
     }
 
+    public void reset ()
+    {
+        this.players = players;
+        checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];
+        for (int player=0; player<BackGammon.NUM_PLAYERS; player++)  {
+            for (int pip=0; pip<NUM_SLOTS; pip++)   {
+                checkers[player][pip] = RESET[pip];
+            }
+        }
+        for(int i = 1; i <= 24; i++) {
+            bars[i] = new Bar();
+        }
+
+        barsBuild();
+    }
+
     public Board(Players players, Board board) {
         this.players = players;
         this.checkers = new int[BackGammon.NUM_PLAYERS][NUM_SLOTS];

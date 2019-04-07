@@ -50,12 +50,12 @@ public class DoublingCubeVisual extends GridPane
     {
         try
         {
-            images[0] = new Image(new FileInputStream("src//doubleCube_2.png"), 55, 55, false, false) ;
-            images[1] = new Image(new FileInputStream("src//doubleCube_4.png"),55,55,false,false);
-            images[2] = new Image(new FileInputStream("src//doubleCube_8.png"),55,55,false,false);
-            images[3] = new Image(new FileInputStream("src//doubleCube_16.png"),55,55,false,false);
-            images[4] = new Image(new FileInputStream("src//doubleCube_32.png"),55,55,false,false);
-            images[5] = new Image(new FileInputStream("src//doubleCube_64.png"),55,55,false,false);
+            images[0] = new Image(new FileInputStream("src//doublecube_2.png"), 55, 55, false, false) ;
+            images[1] = new Image(new FileInputStream("src//doublecube_4.png"),55,55,false,false);
+            images[2] = new Image(new FileInputStream("src//doublecube_8.png"),55,55,false,false);
+            images[3] = new Image(new FileInputStream("src//doublecube_16.png"),55,55,false,false);
+            images[4] = new Image(new FileInputStream("src//doublecube_32.png"),55,55,false,false);
+            images[5] = new Image(new FileInputStream("src//doublecube_64.png"),55,55,false,false);
         }
         catch (java.io.IOException e)
         {
@@ -81,7 +81,7 @@ public class DoublingCubeVisual extends GridPane
         }
         else if (player.getColor() == Checker_Color.RED)
         {
-            grid.add(doublingDiceImg,7,1);
+            grid.add(doublingDiceImg,7,0);
 
         }
         else if (player.getColor() == Checker_Color.WHITE)

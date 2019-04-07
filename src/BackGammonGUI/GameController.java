@@ -55,11 +55,13 @@ public class GameController
 
     //current Turn for mark current turn
     private Checker_Color currentTurn;
+    private Checker_Color requestStarter;
 
     //Match controller
     private boolean inMatch = false;
     private boolean dcInRequest = false;
     private boolean moveInRequest = false;
+    private boolean dcAcceptRequest = false;
 
     //Assign gridpane for all the control elements
     public GridPane GameController()
@@ -89,12 +91,16 @@ public class GameController
             else
                 grid.getRowConstraints().add(new RowConstraints(35));
         }
+
+        initControlVisual();
+
         return this.grid;
     }
 
     //Game start settings
     public void gameStart()
     {
+        board = new Board(players);
         boardVisual.BoardVisual();
         diceVisual.DiceVisual();
         diceVisual.inPutDiceImages();
@@ -103,12 +109,14 @@ public class GameController
         doublingCubeVisual.cubeDisplay(null,64);
         pipNumVisual.PipNumVisual();
         doubleCude.reset();
-        initControlVisual();
         instructMessage();
         currentTurn = Checker_Color.EMPTY;
         inMatch = true;
         moveInRequest = false;
         dcInRequest = false;
+        dcAcceptRequest = false;
+        dicePoint1 = 7;
+        dicePoint2 = 7;
         players.get(0).setName("Player1");
         players.get(1).setName("Player2");
         assignPlayerLabel();
@@ -268,18 +276,21 @@ public class GameController
                 {
                     getMoveDecision(messegeBufferForCom,insertbox.getText().length());
                 }
-                else if ((messegeBufferForCom.substring(0,3).equals("YES") || messegeBufferForCom.substring(0,2).equals("NO")) && dcInRequest == true)
+                else if (messegeBufferForCom.substring(0,2).equals("NO") && dcInRequest == true && dcAcceptRequest == false )
                 {
-                    if (messegeBufferForCom.substring(0,3).equals("YES"))
-                    {
-                        doublingCubeRespond();
-                    }
-                    else if (messegeBufferForCom.substring(0,2).equals("NO"))
-                    {
-                        doublingCubeCauseGameOver();
-                    }
-                    else
-                        throwLogicFailure();
+                    noDoublingCubeThisTurn();
+                }
+                else if (messegeBufferForCom.substring(0,2).equals("NO") && dcInRequest == false && dcAcceptRequest == true )
+                {
+                    doublingCubeCauseGameOver();
+                }
+                else if (messegeBufferForCom.substring(0,3).equals("YES") && dcInRequest == true && dcAcceptRequest == false)
+                {
+                    doublingCubeRespond();
+                }
+                else if (messegeBufferForCom.substring(0,3).equals("YES") && dcInRequest == false && dcAcceptRequest == true)
+                {
+                    doublingCubeAccept();
                 }
                 else if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
                 {
@@ -315,7 +326,13 @@ public class GameController
                             if (messegeBufferForCom.substring(0,7).equals("RESTART"))
                             {
                                 insertbox.clear();
-                                GameController();
+                                clear();
+                                boardVisual.removeElements();
+                                diceVisual.removeDisplay();
+                                doublingCubeVisual.removeDisplay();
+                                players = new Players();
+                                board = new Board(players);
+                                gameStart();
                             }
                             else
                                 throwInalidTypo();
@@ -350,33 +367,61 @@ public class GameController
         passTurn();
     }
 
-    private void printDoubleCube (Player player, int num)
-    {
-        doublingCubeVisual.cubeDisplay(player, num);
-    }
-
     private void doublingCubeRequest()
     {
         outputTextBox.appendText("Do you wanna double the cube?\nPlease type yes or no:\n");
         dcInRequest = true;
     }
 
-    private void doublingCubeCauseGameOver ()
+    private void doublingCubeCauseGameOver () // No
     {
-        clear();
+        insertbox.clear();
+        outputTextBox.appendText("-----------------------------\n");
         outputTextBox.appendText("You didn't accept doubling cube then game over.\n");
+        outputTextBox.appendText(">Type restart\n");
     }
 
-    private void doublingCubeRespond ()
+    private void doublingCubeAccept()//Yes
     {
-        clear();
-        dcInRequest = false;
+        insertbox.clear();
         if (currentTurn == Checker_Color.RED)
-            doubleCude.doubleThePoints(players.get(0));
+        {
+            outputTextBox.appendText("You accept doubling cube.\n");
+            if (doubleCude.doubleThePoints(players.get(0)))
+            {
+                doublingCubeVisual.cubeDisplay(players.get(0),doubleCude.getCurrentPoints());
+            }
+        }
         else if (currentTurn == Checker_Color.WHITE)
-            doubleCude.doubleThePoints(players.get(1));
+        {
+            outputTextBox.appendText("You accept doubling cube.\n");
+            if (doubleCude.doubleThePoints(players.get(1)))
+            {
+                doublingCubeVisual.cubeDisplay(players.get(1),doubleCude.getCurrentPoints());
+            }
+        }
+        else
+            outputTextBox.appendText("Can't do doubling cube anymore.\n");
 
+        dcAcceptRequest = false;
         passTurn();
+    }
+
+
+    private void noDoublingCubeThisTurn()
+    {
+        insertbox.clear();
+        passTurn();
+    }
+
+    private void doublingCubeRespond () //Start request
+    {
+        insertbox.clear();
+        dcInRequest = false;
+        requestStarter = currentTurn;
+        dcAcceptRequest = true;
+        outputTextBox.appendText("-----------------------------\n");
+        outputTextBox.appendText("Do you accept doubling cube?\nPlease type yes or no:\n");
     }
 
     //enter NEXT to pass to next player
@@ -386,7 +431,6 @@ public class GameController
         if (!board.isGameOver())
         {
             diceVisual.removeDisplay();
-            doublingCubeVisual.removeDisplay();
             currentTurn = changeTurn(currentTurn);
             currentTurn();
             diceInGame();
