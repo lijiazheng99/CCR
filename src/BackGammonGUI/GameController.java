@@ -294,6 +294,11 @@ public class GameController
                 {
                     doublingCubeAccept();
                 }
+                else if (messegeBufferForCom.substring(0,3).equals("YES") && inMatch == false)
+                {
+                    insertbox.clear();
+                    gameStart();
+                }
                 else if ((insertbox.getText() != null && !insertbox.getText().isEmpty()) && insertbox.getText().length()>= 4)
                 {
                     if (messegeBufferForCom.substring(0,4).equals("QUIT") || messegeBufferForCom.substring(0,4).equals("EXIT")  )
@@ -379,6 +384,9 @@ public class GameController
         insertbox.clear();
         outputTextBox.appendText("-----------------------------\n");
         outputTextBox.appendText("You didn't accept doubling cube then game over.\n");
+
+        board.currentMatchScore();
+
         outputTextBox.appendText(">Type restart\n");
     }
 
@@ -406,6 +414,16 @@ public class GameController
 
         dcAcceptRequest = false;
         passTurn();
+    }
+
+    private void restart()
+    {
+        clear();
+        boardVisual.removeElements();
+        diceVisual.removeDisplay();
+        doublingCubeVisual.removeDisplay();
+        board = new Board(players,board);
+        gameStart();
     }
 
 
@@ -441,6 +459,7 @@ public class GameController
         {
             outputTextBox.appendText("Game is Over. The Winner is:\n");
             outputTextBox.appendText(board.getWinner().toString());
+
         }
         else
             throwLogicFailure();
