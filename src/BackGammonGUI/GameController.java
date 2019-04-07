@@ -188,10 +188,6 @@ public class GameController
         player2score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
         grid.add(player2score, 13, 0);
 
-        totalscore = new Label("0");
-        totalscore.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
-        grid.add(totalscore, 14, 0);
-
     }
 
     //event handler for get button click or return key type
@@ -261,8 +257,9 @@ public class GameController
                             insertbox.clear();
                             MatchScore = Integer.parseInt(messegeBufferForCom.substring(5,messegeBuffer.length()));
                             outputTextBox.appendText("You set match score:" + MatchScore + "\n");
-
-
+                            totalscore = new Label(MatchScore + "");
+                            totalscore.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+                            grid.add(totalscore, 14, 0);
                         }
                         else if (messegeBufferForCom.substring(0,5).equals("NAME1"))
                         {
@@ -409,6 +406,17 @@ public class GameController
         else if (currentTurn == Checker_Color.WHITE)
             players.get(1).wins(doubleCube);
 
+        grid.getChildren().remove(player1score);
+        grid.getChildren().remove(player2score);
+
+        player1score = new Label(players.get(0).getScore() + "");
+        player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(player1score, 6, 0);
+
+        player2score = new Label(players.get(1).getScore() + "");
+        player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+        grid.add(player1score, 13, 0);
+
         if (players.get(0).getScore() < MatchScore && players.get(1).getScore() < MatchScore)
             outputTextBox.appendText(">Type restart\n");
         else
@@ -502,6 +510,14 @@ public class GameController
                 players.get(0).wins(doubleCube);
             else if (currentTurn == Checker_Color.WHITE)
                 players.get(1).wins(doubleCube);
+
+            player1score = new Label(players.get(0).getScore() + "");
+            player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+            grid.add(player1score, 6, 0);
+
+            player2score = new Label(players.get(1).getScore() + "");
+            player1score.setFont(Font.font("Comic Sans MS", FontWeight.BOLD, 30));
+            grid.add(player1score, 13, 0);
 
             if (players.get(0).getScore() < MatchScore && players.get(1).getScore() < MatchScore)
                 outputTextBox.appendText(">Type restart\n");
