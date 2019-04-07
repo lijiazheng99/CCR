@@ -332,8 +332,7 @@ public class GameController
                                 boardVisual.removeElements();
                                 diceVisual.removeDisplay();
                                 doublingCubeVisual.removeDisplay();
-                                players = new Players();
-                                board = new Board(players);
+                                board = new Board(players,board);
                                 gameStart();
                             }
                             else

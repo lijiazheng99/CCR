@@ -6,11 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="upgrade controller with doubling cube">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackGammon/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="286" column="20" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="48" />
+            <state relative-caret-position="582">
+              <caret line="336" column="29" lean-forward="true" selection-start-line="336" selection-start-column="29" selection-end-line="336" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6588#6589#0" expanded="true" />
@@ -38,10 +36,10 @@
                 <element signature="e#13815#14330#0" />
                 <element signature="e#14336#14982#0" />
                 <element signature="e#14988#15435#0" />
-                <element signature="e#19831#19832#0" expanded="true" />
+                <element signature="e#19772#19773#0" expanded="true" />
                 <element signature="e#15620#18215#0" />
                 <element signature="e#18221#18528#0" />
-                <element signature="e#22822#22823#0" expanded="true" />
+                <element signature="e#22763#22764#0" expanded="true" />
                 <element signature="e#18611#18759#0" />
                 <element signature="e#18765#19364#0" />
                 <element signature="e#19370#19969#0" />
@@ -95,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+            <state relative-caret-position="30">
+              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -128,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="471">
               <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -230,9 +228,9 @@
         <option value="$PROJECT_DIR$/src/BackGammon/Dice.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/InterruptedException.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/DoubleCude.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java" />
+        <option value="$PROJECT_DIR$/src/BackGammon/Board.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
       </list>
     </option>
@@ -295,7 +293,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554672392817" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554672911458" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -497,14 +495,7 @@
       <workItem from="1554563752446" duration="299000" />
       <workItem from="1554639090228" duration="258000" />
       <workItem from="1554640850570" duration="1619000" />
-      <workItem from="1554643560647" duration="19183000" />
-    </task>
-    <task id="LOCAL-00048" summary="Put comments">
-      <created>1551039334055</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1551039334055</updated>
+      <workItem from="1554643560647" duration="19742000" />
     </task>
     <task id="LOCAL-00049" summary="Put comments">
       <created>1551040117023</created>
@@ -842,11 +833,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554669732289</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="upgrade controller with doubling cube">
+      <created>1554672466989</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1554672466989</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284190000" />
+    <option name="totallyTimeSpent" value="284749000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -878,8 +876,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.495116" weight="0.327551" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.518315" side_tool="true" visible="true" weight="0.15612245" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48168498" visible="true" weight="0.15612245" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.518315" side_tool="true" visible="true" weight="0.15816326" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.48168498" visible="true" weight="0.15816326" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48507464" weight="0.094257854" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1115,16 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/FinishCheckerVisual.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1159,13 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1176,10 +1157,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="79" column="41" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="286" column="20" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="48" />
+        <state relative-caret-position="582">
+          <caret line="336" column="29" lean-forward="true" selection-start-line="336" selection-start-column="29" selection-end-line="336" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6588#6589#0" expanded="true" />
@@ -1188,10 +1186,10 @@
             <element signature="e#13815#14330#0" />
             <element signature="e#14336#14982#0" />
             <element signature="e#14988#15435#0" />
-            <element signature="e#19831#19832#0" expanded="true" />
+            <element signature="e#19772#19773#0" expanded="true" />
             <element signature="e#15620#18215#0" />
             <element signature="e#18221#18528#0" />
-            <element signature="e#22822#22823#0" expanded="true" />
+            <element signature="e#22763#22764#0" expanded="true" />
             <element signature="e#18611#18759#0" />
             <element signature="e#18765#19364#0" />
             <element signature="e#19370#19969#0" />
