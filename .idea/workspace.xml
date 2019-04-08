@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackGammon/DoubleCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammon/DoubleCube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,12 +25,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="372" column="99" lean-forward="true" selection-start-line="372" selection-start-column="99" selection-end-line="372" selection-end-column="99" />
+            <state relative-caret-position="346">
+              <caret line="366" column="46" selection-start-line="366" selection-start-column="46" selection-end-line="366" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#26015#26016#0" expanded="true" />
-                <element signature="e#29006#29007#0" expanded="true" />
+                <element signature="e#7540#7541#0" expanded="true" />
+                <element signature="e#7585#7586#0" expanded="true" />
+                <element signature="e#26080#26081#0" expanded="true" />
+                <element signature="e#29071#29072#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
+            <state relative-caret-position="582">
               <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,7 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>movein</find>
       <find>bars[</find>
       <find>int j</find>
       <find>int j =</find>
@@ -156,7 +155,6 @@
       <find>boardVisual</find>
       <find>clear</find>
       <find>gameStart</find>
-      <find>restart</find>
       <find>checka</find>
       <find>checkavailable</find>
       <find>first</find>
@@ -165,10 +163,15 @@
       <find>start</find>
       <find>makemove</find>
       <find>passTurn()</find>
-      <find>passTurn</find>
       <find>request</find>
       <find>passturn</find>
       <find>ROLL</find>
+      <find>passTurn</find>
+      <find>doublingCubeRespond();</find>
+      <find>reround</find>
+      <find>round</find>
+      <find>printwinner</find>
+      <find>restart</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -496,20 +499,6 @@
       <workItem from="1554643560647" duration="27569000" />
       <workItem from="1554681946245" duration="84000" />
       <workItem from="1554718553534" duration="235000" />
-    </task>
-    <task id="LOCAL-00063" summary="updates&#10;reEnter function and kicking out function added">
-      <created>1553180348168</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1553180348168</updated>
-    </task>
-    <task id="LOCAL-00064" summary="updates&#10;functions deleted.">
-      <created>1553181000492</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1553181000492</updated>
     </task>
     <task id="LOCAL-00065" summary="updates&#10;functions deleted.">
       <created>1553186075924</created>
@@ -840,11 +829,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554681900633</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="remake REAL Doubling Cube. Debuged a lot of bugs --- jiazheng li">
+      <created>1554723766392</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1554723766392</updated>
+    </task>
+    <task id="LOCAL-00113" summary="remake REAL Doubling Cube. Debuged a lot of bugs --- jiazheng li">
+      <created>1554724492470</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1554724492471</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295949000" />
+    <option name="totallyTimeSpent" value="296929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,7 +871,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46886447" visible="true" weight="0.25955057" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46825397" visible="true" weight="0.25955057" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -876,8 +879,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.495116" weight="0.327551" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.53113556" side_tool="true" visible="true" weight="0.25955057" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.47802198" weight="0.15842697" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.53174603" side_tool="true" visible="true" weight="0.25955057" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.47741148" weight="0.43820226" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.48507464" weight="0.094257854" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -967,7 +970,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="normal round updated" />
     <MESSAGE value="newest algorithm version structures so far" />
     <MESSAGE value="when Hitnum = 1&#10; use the first number to do re-enter&#10; second for normal move" />
     <MESSAGE value="re-enter full finished&#10;some functions deleted" />
@@ -992,7 +994,8 @@
     <MESSAGE value="fixed bug 1: error display when user didn't insert name, 2: extra clear in start detection 3.restart checkers display 4. can't set white color label 5. auto update scores" />
     <MESSAGE value="Seems no more Errors right now --- Jiazheng Li" />
     <MESSAGE value="Seems no more Errors right now --- Jiazheng Li &amp; update comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seems no more Errors right now --- Jiazheng Li &amp; update comments" />
+    <MESSAGE value="remake REAL Doubling Cube. Debuged a lot of bugs --- jiazheng li" />
+    <option name="LAST_COMMIT_MESSAGE" value="remake REAL Doubling Cube. Debuged a lot of bugs --- jiazheng li" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceImages.java" />
@@ -1125,30 +1128,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/FinishCheckerVisual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1200,14 +1183,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="372" column="99" lean-forward="true" selection-start-line="372" selection-start-column="99" selection-end-line="372" selection-end-column="99" />
+        <state relative-caret-position="582">
+          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#26015#26016#0" expanded="true" />
-            <element signature="e#29006#29007#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/FinishCheckerVisual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="366" column="46" selection-start-line="366" selection-start-column="46" selection-end-line="366" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7540#7541#0" expanded="true" />
+            <element signature="e#7585#7586#0" expanded="true" />
+            <element signature="e#26080#26081#0" expanded="true" />
+            <element signature="e#29071#29072#0" expanded="true" />
           </folding>
         </state>
       </provider>

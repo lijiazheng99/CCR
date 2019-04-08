@@ -364,6 +364,7 @@ public class GameController
                         }
                         else if (messegeBufferForCom.substring(0,5).equals("START"))
                         {
+                            insertbox.clear();
                             outputTextBox.appendText("Sorry START roll dice is not a valid call anymore\n");
                         }
                         else if (messegeBufferForCom.substring(0,5).equals("CLEAR"))
