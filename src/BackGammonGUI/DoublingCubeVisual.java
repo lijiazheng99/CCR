@@ -41,7 +41,7 @@ public class DoublingCubeVisual extends GridPane
             else
                 grid.getRowConstraints().add(new RowConstraints(35));
         }
-        System.out.println("BackGammonGUI.DoublingDiceVisual.DiceVisual(): DoublingDice gridpane assign successful");
+        System.out.println("BackGammonGUI.DoublingDiceVisual.DiceVisual(): DoublingDice gridpane assign Successful.");
         return this.grid;
     }
 
