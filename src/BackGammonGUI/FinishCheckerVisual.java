@@ -43,7 +43,7 @@ public class FinishCheckerVisual extends StackPane
         ellipse.setTranslateY((TILE_SIZE - TILE_SIZE * 0.1 * 2) / 2);
 
         getChildren().addAll(bg, ellipse);
-        System.out.println("BackGammonGUI.FinishCheckerVisual.FinishCheckerVisual(): Checker images assign successful");
+        System.out.println("BackGammonGUI.FinishCheckerVisual.FinishCheckerVisual(): Checker images assign Successful.");
     }
 
     public void move(int x, int y) {
