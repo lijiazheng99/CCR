@@ -390,7 +390,7 @@ public class GameController
     /*
     Game turn controls
      */
-    //Make a move
+    //Make a cheat move
     private void cheatMove()
     {
         currentTurn = Checker_Color.WHITE;
@@ -401,12 +401,14 @@ public class GameController
         passTurn();
     }
 
+    //Ask next player accept or not
     private void doublingCubeRequest()
     {
         outputTextBox.appendText("Do you wanna double the cube?\nPlease type yes or no:\n");
         dcInRequest = true;
     }
 
+    //Didn't accept doubling cube led to game over
     private void doublingCubeCauseGameOver () // No
     {
         insertbox.clear();
@@ -440,6 +442,8 @@ public class GameController
         }
     }
 
+
+    //Doubling cube request got accept
     private void doublingCubeAccept()//Yes
     {
         insertbox.clear();
@@ -466,6 +470,7 @@ public class GameController
         passTurn();
     }
 
+    //Restart game
     private void restart()
     {
         endClear();
@@ -476,6 +481,7 @@ public class GameController
         gameStart();
     }
 
+    //Start another roung
     private void reround()
     {
         endClear();
@@ -488,12 +494,14 @@ public class GameController
         gameStart();
     }
 
+    //declined doubling cube in this turn
     private void noDoublingCubeThisTurn()
     {
         insertbox.clear();
         passTurn();
     }
 
+    //Start doubling cube request
     private void doublingCubeRespond () //Start request
     {
         insertbox.clear();
@@ -549,7 +557,7 @@ public class GameController
             throwLogicFailure();
     }
 
-
+    //Print winner at end of match
     private void printWinner ()
     {
         outputTextBox.appendText("Winner is:\n");
@@ -571,6 +579,7 @@ public class GameController
             outputTextBox.appendText("Score is:" + players.get(1).getScore() +"\n");
     }
 
+    //Get move decisions
     private void getMoveDecision(String s, int length)
     {
         insertbox.clear();
@@ -600,6 +609,7 @@ public class GameController
         doublingCubeRequest();
     }
 
+    //Do a move from the mvoe list
     private void makeMove(int num)
     {
         Play play;
@@ -615,6 +625,8 @@ public class GameController
         }
     }
 
+
+    //Check available moves
     private void checkAvailable()
     {
         if (currentTurn == players.get(0).getColor())
