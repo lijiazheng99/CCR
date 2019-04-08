@@ -59,7 +59,7 @@ public class DoublingCubeVisual extends GridPane
         }
         catch (java.io.IOException e)
         {
-            System.out.println("BackGammonGUI.DoublingDiceVisual.inputDoublingDiceImages(): DoublingDice image input Failed");
+            System.out.println("BackGammonGUI.DoublingDiceVisual.inputDoublingDiceImages(): DoublingDice image input Failed.");
         }
         System.out.println("BackGammonGUI.DoublingDiceVisual.inputDoublingDiceImages(): DoublingDice image input Successful.");
 
