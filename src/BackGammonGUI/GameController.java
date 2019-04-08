@@ -375,7 +375,7 @@ public class GameController
                             insertbox.clear();
                             dcInRequest = true;
                             beforeRoll = false;
-                            passTurn();
+                            doublingCubeRespond();
                         }
                         else if (messegeBufferForCom.length() >= 7)
                         {
@@ -531,12 +531,12 @@ public class GameController
     private void passTurn()
     {
         insertbox.clear();
-        if (!board.isGameOver() && dcInRequest && beforeRoll)
-        {
-            insertbox.clear();
-            doublingCubeRespond();
-        }
-        else if (!board.isGameOver() && !dcInRequest && beforeRoll)
+//        if (!board.isGameOver() && dcInRequest && beforeRoll)
+//        {
+//            insertbox.clear();
+//            doublingCubeRespond();
+//        }
+        if (!board.isGameOver() && !dcInRequest && beforeRoll)
         {
             diceVisual.removeDisplay();
             currentTurn = changeTurn(currentTurn);
@@ -609,6 +609,8 @@ public class GameController
         else if (currentTurn == Checker_Color.WHITE)
             outputTextBox.appendText("Score is:" + players.get(1).getScore() +"\n");
     }
+
+
 
     //Get move decisions
     private void getMoveDecision(String s, int length)
