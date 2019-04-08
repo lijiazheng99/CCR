@@ -64,11 +64,11 @@ public class BackGammon extends Application
         try
         {
             background = new Image(new FileInputStream("src//board.jpg"));
-            System.out.println("BackGammon.BackGammon: Background image load successful");
+            System.out.println("BackGammon.BackGammon: Background image load Successful.");
         }
         catch(java.io.IOException e)
         {
-            System.out.println("Load image failed");
+            System.out.println("BackGammon.BackGammon: Load image failed.");
         }
 
         backgroundPic.add(new ImageView(background), 0, 0);
