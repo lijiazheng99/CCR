@@ -33,6 +33,17 @@ public class DoubleCube
 		else
 			return false;
 	}
+
+	public boolean checkDouble(Checker_Color current)
+	{
+		if (currentPlayer == null)
+			return true;
+		else if (current == currentPlayer.getColor())
+			return false;
+		else
+			return true;
+
+	}
 	
 	public void reset()
 	{
