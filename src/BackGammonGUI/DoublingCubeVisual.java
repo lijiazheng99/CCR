@@ -81,12 +81,12 @@ public class DoublingCubeVisual extends GridPane
         }
         else if (player.getColor() == Checker_Color.RED)
         {
-            grid.add(doublingDiceImg,7,0);
+            grid.add(doublingDiceImg,0,0);
 
         }
         else if (player.getColor() == Checker_Color.WHITE)
         {
-            grid.add(doublingDiceImg,7,33);
+            grid.add(doublingDiceImg,7,0);
         }
     }
 
