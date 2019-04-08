@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -95,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="61" column="124" selection-start-line="61" selection-start-column="124" selection-end-line="61" selection-end-column="124" />
+            <state relative-caret-position="138">
+              <caret line="43" column="105" selection-start-line="43" selection-start-column="105" selection-end-line="43" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -477,14 +475,7 @@
       <workItem from="1554639090228" duration="258000" />
       <workItem from="1554640850570" duration="1619000" />
       <workItem from="1554643560647" duration="27539000" />
-      <workItem from="1554682237419" duration="245000" />
-    </task>
-    <task id="LOCAL-00062" summary="updates&#10;basic rule added">
-      <created>1553174067308</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1553174067308</updated>
+      <workItem from="1554682237419" duration="602000" />
     </task>
     <task id="LOCAL-00063" summary="updates&#10;reEnter function and kicking out function added">
       <created>1553180348168</created>
@@ -822,11 +813,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554681107698</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="update">
+      <created>1554682598556</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1554682598556</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292791000" />
+    <option name="totallyTimeSpent" value="293148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -841,7 +839,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15593705" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15593705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -850,7 +848,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733475" weight="0.13163266" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46852645" visible="true" weight="0.036144577" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46852645" visible="true" weight="0.036144577" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -930,7 +928,6 @@
     <MESSAGE value="update operation controller" />
     <MESSAGE value="finished" />
     <MESSAGE value="sprint3 sofar" />
-    <MESSAGE value="update" />
     <MESSAGE value="update boardvisual" />
     <MESSAGE value="update ALL, currently works perfect" />
     <MESSAGE value="Double Cube class update" />
@@ -942,7 +939,8 @@
     <MESSAGE value="fixed bug 1: no doubling cube for white 2. only print red winning info" />
     <MESSAGE value="fixed bug 1: error display when user didn't insert name, 2: extra clear in start detection 3.restart checkers display 4. can't set white color label 5. auto update scores" />
     <MESSAGE value="Seems no more Errors right now --- Jiazheng Li" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seems no more Errors right now --- Jiazheng Li" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceImages.java" />
@@ -1152,8 +1150,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="61" column="124" selection-start-line="61" selection-start-column="124" selection-end-line="61" selection-end-column="124" />
+        <state relative-caret-position="138">
+          <caret line="43" column="105" selection-start-line="43" selection-start-column="105" selection-end-line="43" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

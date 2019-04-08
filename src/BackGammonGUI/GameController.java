@@ -18,7 +18,7 @@ import javafx.scene.text.FontWeight;
 public class GameController
 {
 
-    //mainPane for add other pane together, grid for map contollers
+    //mainPane for add other pane together, grid for map controllers
     private GridPane mainPane = new GridPane();
     private GridPane grid = new GridPane();
 
@@ -35,11 +35,11 @@ public class GameController
     private Plays plays = new Plays();
     private DoubleCube doubleCube = new DoubleCube();
 
-    //dicepoint for start game
+    //dice point for start game
     private int dicePoint1 = 7;
     private int dicePoint2 = 7;
 
-    //namebuffer for exchanging name between players
+    //name buffer for exchanging name between players
     private String nameBuffer;
 
     //Assign all control elements on the girdpane
