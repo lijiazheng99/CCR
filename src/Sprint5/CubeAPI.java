@@ -1,3 +1,4 @@
+package Sprint5;
 public interface CubeAPI {
 
     int getValue();

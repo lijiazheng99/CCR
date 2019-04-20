@@ -1,3 +1,4 @@
+package Sprint5;
 class Dice {
     // Dice holds the details for two dice
 

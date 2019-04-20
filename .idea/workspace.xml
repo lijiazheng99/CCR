@@ -7,8 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Backgammon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Backgammon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/BoardAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/BoardAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Bot0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Bot0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Bot1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Bot1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/BotAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/BotAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/CommandPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/CommandPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Cube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Cube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/CubeAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/CubeAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/InfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/InfoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/InfoPanelAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/InfoPanelAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/MatchAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/MatchAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Movements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Movements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Play.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/PlayerAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/PlayerAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Players.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Players.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/Plays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/Plays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sprint5/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sprint5/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,113 +46,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Match.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/MatchAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Move.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Movements.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Play.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/PlayerAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Players.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/Plays.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/GameController.java">
+        <entry file="file://$PROJECT_DIR$/src/Sprint5/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="366" column="46" selection-start-line="366" selection-start-column="46" selection-end-line="366" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7540#7541#0" expanded="true" />
-                <element signature="e#7585#7586#0" expanded="true" />
-                <element signature="e#26027#26028#0" expanded="true" />
-                <element signature="e#26080#26081#0" expanded="true" />
-                <element signature="e#29041#29042#0" expanded="true" />
-                <element signature="e#29071#29072#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/BoardVisual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5083">
-              <caret line="303" column="13" selection-start-line="303" selection-start-column="13" selection-end-line="303" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammon/DoubleCube.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/PipNumVisual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammon/Checker_Color.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammon/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceVisual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/FinishCheckerVisual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -183,31 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/BackGammon/Tile.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/testcase.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Checker_Color" />
-        <option value="$PROJECT_DIR$/Patch Notes" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Backgammon.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/BoardPanel.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/InfoPanel.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/UI.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Slot.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Checker.java" />
-        <option value="$PROJECT_DIR$/sprint1/Player.java" />
-        <option value="$PROJECT_DIR$/src/Player.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/JiweiTestcase.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/CommandPanel.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/CommandPanel.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/InfoPanel.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Color.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/CheckerColor.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/BuildScene.java" />
-        <option value="$PROJECT_DIR$/sprint1/BackGammon.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/UI.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonGUI/BoardPanel.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonTests/LorandTestcase.java" />
-        <option value="$PROJECT_DIR$/src/BackGammonTests/JiweiTestcase.java" />
-        <option value="$PROJECT_DIR$/src/BackGammon/Checker_vis.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/BackGroundImage.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/Checker_vis.java" />
         <option value="$PROJECT_DIR$/src/BackGammonTests/JiazhengTestcase.java" />
@@ -234,6 +212,31 @@
         <option value="$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java" />
         <option value="$PROJECT_DIR$/src/BackGammon/DoubleCube.java" />
         <option value="$PROJECT_DIR$/src/BackGammonGUI/GameController.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Board.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Backgammon.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/BoardAPI.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/BoardPanel.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Bot0.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Bot1.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/BotAPI.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Command.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/CommandPanel.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Cube.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/CubeAPI.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Dice.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Game.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/InfoPanel.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/InfoPanelAPI.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Match.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/MatchAPI.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Move.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Movements.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Play.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Player.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/PlayerAPI.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Players.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/Plays.java" />
+        <option value="$PROJECT_DIR$/src/Sprint5/UI.java" />
       </list>
     </option>
   </component>
@@ -252,6 +255,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,26 +273,12 @@
               <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
               <item name="CCR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="BackGammon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="BackGammonGUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CCR_BackGammon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CCR" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="BackGammonTests" type="462c0819:PsiDirectoryNode" />
+              <item name="Sprint5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,7 +288,7 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="ccr_backgammon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555770628548" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555779745090" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -312,18 +303,18 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="BackGammon" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/resources" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\BackGammon" />
-      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\resources" />
-      <recent name="$PROJECT_DIR$/src/BackGammonPIC" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src" />
       <recent name="$PROJECT_DIR$/src/BackGammonGUI" />
       <recent name="$PROJECT_DIR$/src/BackGammon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\Sprint5" />
+      <recent name="$PROJECT_DIR$/src/resources" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\BackGammon" />
+      <recent name="C:\Users\victo\OneDrive\Documents\GitHub\CCR\src\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -502,14 +493,8 @@
       <workItem from="1554643560647" duration="27569000" />
       <workItem from="1554681946245" duration="84000" />
       <workItem from="1554718553534" duration="235000" />
-      <workItem from="1555755706775" duration="1337000" />
-    </task>
-    <task id="LOCAL-00065" summary="updates&#10;functions deleted.">
-      <created>1553186075924</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1553186075924</updated>
+      <workItem from="1555755706775" duration="1567000" />
+      <workItem from="1555779473665" duration="163000" />
     </task>
     <task id="LOCAL-00066" summary="updates&#10;re-enter function added.">
       <created>1553195898276</created>
@@ -847,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554724492471</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="Chris code import">
+      <created>1555770703857</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1555770703858</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298266000" />
+    <option name="totallyTimeSpent" value="298659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,7 +858,7 @@
     <frame x="107" y="14" width="1682" height="982" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16276202" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1646116" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -974,7 +966,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="newest algorithm version structures so far" />
     <MESSAGE value="when Hitnum = 1&#10; use the first number to do re-enter&#10; second for normal move" />
     <MESSAGE value="re-enter full finished&#10;some functions deleted" />
     <MESSAGE value="non-double situation finished" />
@@ -999,52 +990,10 @@
     <MESSAGE value="Seems no more Errors right now --- Jiazheng Li" />
     <MESSAGE value="Seems no more Errors right now --- Jiazheng Li &amp; update comments" />
     <MESSAGE value="remake REAL Doubling Cube. Debuged a lot of bugs --- jiazheng li" />
-    <option name="LAST_COMMIT_MESSAGE" value="remake REAL Doubling Cube. Debuged a lot of bugs --- jiazheng li" />
+    <MESSAGE value="Chris code import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chris code import" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DiceImages.java" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/Dice.java" />
-    <entry file="file://$PROJECT_DIR$/src/dice_1.png" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammonTests/JiazhengTestcase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Checker.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/com/sun/javafx/tk/quantum/GlassViewEventHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/DoubleMoveRecord.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/CommandPanel.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/BoardPanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/MoveRecord.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Command.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/InfoPanel.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Play.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Dice.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Board.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/UI.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Move.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Movements.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Players.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Player.java" />
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Plays.java" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammonTests/LorandTestcase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Sprint3/Backgammon.java" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/InterruptedException.java" />
-    <entry file="file://$PROJECT_DIR$/src/BackGammon/Bar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1220,6 +1169,197 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Backgammon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/BoardAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/BoardPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Bot0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Bot1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/BotAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="16" />
+          <folding>
+            <element signature="e#1380#1381#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#1653#1654#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1715#1716#0" expanded="true" />
+            <element signature="e#1747#1748#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/CommandPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/CubeAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Dice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/InfoPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/InfoPanelAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/MatchAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Movements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Play.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/PlayerAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Players.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/Plays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sprint5/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
