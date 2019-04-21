@@ -8,10 +8,10 @@ public class BotCCR implements BotAPI{
     //SLOPE HERE:
     //TODO
     private final int BASIC_SLOPE = 1;
-    private final int BAR_SLOPE = -5;
-    private final int BEAR_OFF_SLOPE = 5;
-    private final int SINGLE_SLOPE = -3;
-    private final int KICK_SLOPE = 2;
+    private final int BAR_SLOPE = -3;
+    private final int BEAR_OFF_SLOPE = 3;
+    private final int SINGLE_SLOPE = -2;
+    private final int KICK_SLOPE = 1;
 
 
 
