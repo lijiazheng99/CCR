@@ -24,12 +24,30 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BotCCR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="71" column="63" lean-forward="true" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
+            <state relative-caret-position="253">
+              <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PlayerAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -154,7 +172,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -171,6 +188,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,20 +396,7 @@
       <workItem from="1555779473665" duration="1551000" />
       <workItem from="1555850130456" duration="5839000" />
       <workItem from="1555864741410" duration="1663000" />
-    </task>
-    <task id="LOCAL-00070" summary="updates&#10;normal round rules added&#10;Basic rules finished, non-debugged">
-      <created>1553242113905</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1553242113905</updated>
-    </task>
-    <task id="LOCAL-00071" summary="update&#10;&#10;make producing list functionally">
-      <created>1553362014403</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1553362014403</updated>
+      <workItem from="1555884431517" duration="196000" />
     </task>
     <task id="LOCAL-00072" summary="re-enter from the bar updated">
       <created>1553409581556</created>
@@ -722,11 +727,25 @@
       <option name="project" value="LOCAL" />
       <updated>1555861650576</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="update">
+      <created>1555882224047</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1555882224047</updated>
+    </task>
+    <task id="LOCAL-00120" summary="add 2 features">
+      <created>1555883876884</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1555883876884</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310835000" />
+    <option name="totallyTimeSpent" value="312714000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -741,7 +760,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20415778" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -849,7 +868,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="non-double situation finished" />
     <MESSAGE value="double move list implement" />
     <MESSAGE value="except the bear off for double number" />
     <MESSAGE value="update print controller" />
@@ -857,7 +875,6 @@
     <MESSAGE value="update operation controller" />
     <MESSAGE value="finished" />
     <MESSAGE value="sprint3 sofar" />
-    <MESSAGE value="update" />
     <MESSAGE value="update boardvisual" />
     <MESSAGE value="update ALL, currently works perfect" />
     <MESSAGE value="Double Cube class update" />
@@ -874,7 +891,9 @@
     <MESSAGE value="Chris code import" />
     <MESSAGE value="Class&quot; CCR_Bot&quot; created" />
     <MESSAGE value="Class&quot; CCR_Bot&quot; structures finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class&quot; CCR_Bot&quot; structures finished" />
+    <MESSAGE value="update" />
+    <MESSAGE value="add 2 features" />
+    <option name="LAST_COMMIT_MESSAGE" value="add 2 features" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
@@ -953,9 +972,6 @@
     <entry file="file://$PROJECT_DIR$/src/Players.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Move.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1020,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PlayerAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bot0.java" />
     <entry file="file://$PROJECT_DIR$/src/BotTest.java">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1040,8 +1049,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BotCCR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="71" column="63" lean-forward="true" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
+        <state relative-caret-position="253">
+          <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PlayerAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>

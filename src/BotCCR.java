@@ -8,6 +8,9 @@ public class BotCCR implements BotAPI{
     //SLOPE HERE:
     //TODO
     private final int BASIC_SLOPE = 1;
+    private final int BAR_SLOPE = -5;
+    private final int BEAR_OFF_SLOPE = 5;
+    private final int SINGLE_SLOPE = -3;
     private final int KICK_SLOPE = 2;
 
 
@@ -111,18 +114,18 @@ public class BotCCR implements BotAPI{
         {
             if(i == 0)
             {
-                counter += 5*boardCopy[player.getId()][i];//more bear off get higher score
+                counter += BEAR_OFF_SLOPE*boardCopy[player.getId()][i];//more bear off get higher score
             }
             else if(i == 25)
             {
-                counter += (-5)*boardCopy[player.getId()][i];//more bar get lower score
+                counter += BAR_SLOPE*boardCopy[player.getId()][i];//more bar get lower score
             }
             else//1-24
             {
                 if(boardCopy[player.getId()][i] == 1)
-                    counter += (-2);//single checker left
+                    counter += SINGLE_SLOPE;//single checker left
                 else if(boardCopy[player.getId()][i] > 1)
-                    counter += 2;//checkers group
+                    counter += BASIC_SLOPE;//checkers group
             }
         }
 
