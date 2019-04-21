@@ -15,7 +15,7 @@ public class BotCCR implements BotAPI{
     }
 
     public String getName() {
-        return "CCR_Bot"; // must match the class name
+        return "BotCCR"; // must match the class name
     }
 
     public String getCommand(Plays possiblePlays) {
@@ -42,8 +42,12 @@ public class BotCCR implements BotAPI{
             myPip += boardCopy[me.getId()][i];
             oppoPip += boardCopy[opponent.getId()][i];
         }
-        if(myPip + getBoardScore(boardCopy) <= 1.2*(oppoPip + getOppositeBoardScore(boardCopy)))
+        if((myPip >= 100) && (myPip + getBoardScore(boardCopy) <= 1.2*(oppoPip + getOppositeBoardScore(boardCopy))))
             return "y";//we may win then just double it
+        else if((myPip >= 50 && myPip <= 100) && (myPip + getBoardScore(boardCopy) <= 1.1*(oppoPip + getOppositeBoardScore(boardCopy))))
+            return "y";
+        else if((myPip >= 10 && myPip <= 50) && (myPip + getBoardScore(boardCopy) <= (oppoPip + getOppositeBoardScore(boardCopy))))
+            return "y";
         else if(me.getScore() < opponent.getScore() && (opponent.getScore() + cube.getValue()) > match.getLength())
             return "y";//if I give up, I will lose the match
         else
@@ -65,6 +69,7 @@ public class BotCCR implements BotAPI{
     {
         int boardScore = 0;
         //boardScore + features calculators;
+        //FORMULA: boardScore += XXX_SLOPE*numOfXXX(boardCopy);
         //TODO
         return boardScore;
     }
