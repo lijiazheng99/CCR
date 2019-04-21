@@ -1,4 +1,4 @@
-public class Bot1 implements BotAPI {
+public class BotTest implements BotAPI {
 
     // The public API of Bot must not change
     // This is ONLY class that you can edit in the program
@@ -12,7 +12,7 @@ public class Bot1 implements BotAPI {
     private MatchAPI match;
     private InfoPanelAPI info;
 
-    Bot1 (PlayerAPI me, PlayerAPI opponent, BoardAPI board, CubeAPI cube, MatchAPI match, InfoPanelAPI info) {
+    BotTest(PlayerAPI me, PlayerAPI opponent, BoardAPI board, CubeAPI cube, MatchAPI match, InfoPanelAPI info) {
         this.me = me;
         this.opponent = opponent;
         this.board = board;
@@ -22,7 +22,7 @@ public class Bot1 implements BotAPI {
     }
 
     public String getName() {
-        return "Bot1"; // must match the class name
+        return "BotTest"; // must match the class name
     }
 
     public String getCommand(Plays possiblePlays) {

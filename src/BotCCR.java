@@ -29,12 +29,25 @@ public class BotCCR implements BotAPI{
             if(boardScores[playNumber] < boardScores[i])
                 playNumber = i;
         }
-        return Integer.toString(playNumber);
+        return Integer.toString(playNumber+1);
     }
 
     public String getDoubleDecision() {
         //TODO
-        return "n";
+        int[][] boardCopy = board.get();
+        int myPip = 0;
+        int oppoPip = 0;
+        for(int i = 0; i <= Board.BAR; i++)
+        {
+            myPip += boardCopy[me.getId()][i];
+            oppoPip += boardCopy[opponent.getId()][i];
+        }
+        if(myPip + getBoardScore(boardCopy) <= 1.2*(oppoPip + getOppositeBoardScore(boardCopy)))
+            return "y";//we may win then just double it
+        else if(me.getScore() < opponent.getScore() && (opponent.getScore() + cube.getValue()) > match.getLength())
+            return "y";//if I give up, I will lose the match
+        else
+            return "n";
     }
 
     public int getBoardScore(Plays possiblePlays, int index)
@@ -43,6 +56,21 @@ public class BotCCR implements BotAPI{
         Play targetPlay = possiblePlays.get(index);
         move(boardCopy,targetPlay);
 
+        int boardScore = getBoardScore(boardCopy);
+
+        return boardScore;
+    }
+
+    public int getBoardScore(int[][] boardCopy)
+    {
+        int boardScore = 0;
+        //boardScore + features calculators;
+        //TODO
+        return boardScore;
+    }
+
+    public int getOppositeBoardScore(int[][] boardCopy)
+    {
         int boardScore = 0;
         //boardScore + features calculators;
         //TODO
