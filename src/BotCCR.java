@@ -31,7 +31,7 @@ public class BotCCR implements BotAPI{
     public String getCommand(Plays possiblePlays) {
         // Add your code here
         int bestChoice = 0;
-        int boardScores[] = new int[possiblePlays.number()];
+        int[] boardScores = new int[possiblePlays.number()];
 
         for(int i = 0; i < possiblePlays.number(); i++)
         {

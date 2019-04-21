@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BotCCR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+            <state relative-caret-position="304">
+              <caret line="33" column="60" lean-forward="true" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -396,14 +396,7 @@
       <workItem from="1555779473665" duration="1551000" />
       <workItem from="1555850130456" duration="5839000" />
       <workItem from="1555864741410" duration="1663000" />
-      <workItem from="1555884431517" duration="196000" />
-    </task>
-    <task id="LOCAL-00072" summary="re-enter from the bar updated">
-      <created>1553409581556</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1553409581556</updated>
+      <workItem from="1555884431517" duration="259000" />
     </task>
     <task id="LOCAL-00073" summary="bear off updated">
       <created>1553412563767</created>
@@ -741,11 +734,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555883876884</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="UPDATE">
+      <created>1555884651562</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1555884651562</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312714000" />
+    <option name="totallyTimeSpent" value="312777000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,7 +868,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="double move list implement" />
     <MESSAGE value="except the bear off for double number" />
     <MESSAGE value="update print controller" />
     <MESSAGE value="debugged" />
@@ -893,7 +892,8 @@
     <MESSAGE value="Class&quot; CCR_Bot&quot; structures finished" />
     <MESSAGE value="update" />
     <MESSAGE value="add 2 features" />
-    <option name="LAST_COMMIT_MESSAGE" value="add 2 features" />
+    <MESSAGE value="UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammon/Player.java">
@@ -1049,8 +1049,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BotCCR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+        <state relative-caret-position="304">
+          <caret line="33" column="60" lean-forward="true" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
         </state>
       </provider>
     </entry>
