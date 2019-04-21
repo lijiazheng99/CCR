@@ -1,4 +1,5 @@
 package Sprint5;
+
 public class Move {
     // Move holds the details of single checker movement from one pip to another.
 

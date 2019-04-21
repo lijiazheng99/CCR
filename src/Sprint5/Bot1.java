@@ -1,4 +1,5 @@
 package Sprint5;
+
 public class Bot1 implements BotAPI {
 
     // The public API of Bot must not change

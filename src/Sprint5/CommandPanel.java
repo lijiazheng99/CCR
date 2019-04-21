@@ -1,11 +1,12 @@
 package Sprint5;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 
-public class CommandPanel extends JPanel  {
+public class CommandPanel extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private static final int FONT_SIZE = 14;

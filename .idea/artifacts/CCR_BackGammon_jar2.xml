@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CCR_BackGammon:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/CCR_BackGammon_jar2</output-path>
+    <root id="archive" name="CCR_BackGammon.jar">
+      <element id="module-output" name="CCR_BackGammon" />
+    </root>
+  </artifact>
+</component>

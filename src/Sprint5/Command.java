@@ -1,4 +1,5 @@
 package Sprint5;
+
 public class Command {
     // Command holds a user entered command and processes its syntax
 

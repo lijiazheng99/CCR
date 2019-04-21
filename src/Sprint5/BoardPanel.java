@@ -1,4 +1,5 @@
 package Sprint5;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -72,12 +73,12 @@ class   BoardPanel extends JPanel {
         g2.setColor(Color.WHITE);
         g2.fill(rectangleBlack);
         g2.setColor(Color.BLACK);
-        g2.setFont(new Font("Courier",Font.BOLD,32));
+        g2.setFont(new Font("Courier", Font.BOLD,32));
         g2.drawString("" + cube, x+2, y+32);
     }
 
     private void displayScore() {
-        g2.setFont(new Font("Courier",Font.BOLD,32));
+        g2.setFont(new Font("Courier", Font.BOLD,32));
         g2.setColor(players.get(0).getColor());
         g2.drawString("" + players.get(0).getScore(), FRAME_WIDTH/4, FRAME_HEIGHT/2+10);
         g2.setColor(players.get(1).getColor());
@@ -109,7 +110,7 @@ class   BoardPanel extends JPanel {
                     y = FRAME_HEIGHT-BORDER_BOTTOM/4;
                 }
                 g2.setColor(players.getCurrent().getColor());
-                g2.setFont(new Font("Courier",Font.BOLD,16));
+                g2.setFont(new Font("Courier", Font.BOLD,16));
                 if (players.getCurrent().getId()==0) {
                     g2.drawString(Integer.toString(pip), x, y);
                 } else {

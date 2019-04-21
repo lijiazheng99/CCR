@@ -1,4 +1,5 @@
 package Sprint5;
+
 public interface BotAPI {
 
     String getName();

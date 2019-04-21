@@ -1,4 +1,5 @@
 package Sprint5;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +16,7 @@ public class Players implements Iterable<Player>, Iterator<Player> {
     Players() {
         players = new ArrayList<Player>();
         players.add(new Player(0,"RED", new Color(255,51,51)));
-        players.add(new Player(1,"GREEN",Color.GREEN));
+        players.add(new Player(1,"GREEN", Color.GREEN));
         currentPlayer = 0;
     }
 

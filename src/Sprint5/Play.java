@@ -1,8 +1,9 @@
 package Sprint5;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Play implements Iterable<Move>, Iterator<Move>  {
+public class Play implements Iterable<Move>, Iterator<Move> {
     // A Play consists of a series of Moves
 
     ArrayList<Move> moves;
