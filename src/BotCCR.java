@@ -6,12 +6,13 @@ public class BotCCR implements BotAPI{
     private InfoPanelAPI info;
 
     //SLOPE HERE:
-    //TODO
     private final int BASIC_SLOPE = 1;
+    private final int PIP_COUNT_SLOPE = 1;
     private final int BAR_SLOPE = -3;
     private final int BEAR_OFF_SLOPE = 3;
-    private final int SINGLE_SLOPE = -2;
-    private final int KICK_SLOPE = 1;
+    private final int SINGLE_SLOPE = -3;
+    private final int KICK_SLOPE = 2;
+    private final int PRIME_SLOPE= 1;
 
 
 
@@ -78,9 +79,9 @@ public class BotCCR implements BotAPI{
         int boardScore = 0;
         //boardScore + features calculators;
         //FORMULA: boardScore += XXX_SLOPE*Finder(player,boardCopy);
-        //TODO:
-        boardScore += BASIC_SLOPE * basicBoardScore(currentPlayer,boardCopy);
+        boardScore += PIP_COUNT_SLOPE * basicBoardScore(currentPlayer,boardCopy);
         boardScore += KICK_SLOPE * kickOffBoardScore(currentPlayer,boardCopy);
+        boardScore += PRIME_SLOPE * primeBoardScore(currentPlayer, boardCopy);
         return boardScore;
     }
 
@@ -120,7 +121,21 @@ public class BotCCR implements BotAPI{
             {
                 counter += BAR_SLOPE*boardCopy[player.getId()][i];//more bar get lower score
             }
-            else//1-24
+            else if(i <= 24 && i >= 22)//4th Quadrant
+            {
+                if(boardCopy[player.getId()][i] == 1)
+                    counter += SINGLE_SLOPE;//single checker left
+                else if(boardCopy[player.getId()][i] > 1)
+                    counter += 0;
+            }
+            else if(i <= 21 && i >= 19)//4th Quadrant
+            {
+                if(boardCopy[player.getId()][i] == 1)
+                    counter += SINGLE_SLOPE;//single checker left
+                else if(boardCopy[player.getId()][i] > 1)
+                    counter += 0.5*BASIC_SLOPE;
+            }
+            else
             {
                 if(boardCopy[player.getId()][i] == 1)
                     counter += SINGLE_SLOPE;//single checker left
@@ -139,4 +154,22 @@ public class BotCCR implements BotAPI{
         else
             return boardCopy[me.getId()][25];
     }
+
+    private int primeBoardScore(PlayerAPI player, int[][] boardCopy)
+    {
+        int counter = 0;
+        for(int i = 1; i <= 24; i++)
+        {
+            int primeLength = 0;
+            int j = i;
+            while(boardCopy[player.getId()][j] >= 2)
+            {
+                primeLength++;
+                j++;
+            }
+            counter += Math.pow(2,primeLength);
+        }
+        return counter;
+    }
 }
+
