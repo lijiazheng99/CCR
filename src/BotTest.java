@@ -6,13 +6,13 @@ public class BotTest implements BotAPI{
     private InfoPanelAPI info;
 
     //SLOPE HERE:
-    private final int BASIC_SLOPE = 1;
-    private final int PIP_COUNT_SLOPE = 1;
+    private final int BASIC_SLOPE = 3;
+    private final int PIP_COUNT_SLOPE = 3;
     private final int BAR_SLOPE = -3;
     private final int BEAR_OFF_SLOPE = 3;
     private final int SINGLE_SLOPE = -3;
-    private final int KICK_SLOPE = 2;
-    private final int PRIME_SLOPE= 1;
+    private final int KICK_SLOPE = 3;
+    private final int PRIME_SLOPE= 3;
 
 
 
@@ -26,7 +26,7 @@ public class BotTest implements BotAPI{
     }
 
     public String getName() {
-        return "BotCCR"; // must match the class name
+        return "BotTest"; // must match the class name
     }
 
     public String getCommand(Plays possiblePlays) {
