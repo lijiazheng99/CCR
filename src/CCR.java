@@ -37,25 +37,13 @@ public class CCR implements BotAPI{
 
         if (requestDouble() && !doublingCube)
         {
+            if (requestDouble())
+                System.out.println("Double>>>>");
+
+
             returnString = "double";
             doublingCube = true;
         }
-//        else if (doublingCube)
-//        {
-//            doublingCube = false;
-//            // Add your code here
-//            int bestChoice = 0;
-//            int[] boardScores = new int[possiblePlays.number()];
-//
-//            for(int i = 0; i < possiblePlays.number(); i++)
-//            {
-//                boardScores[i] = getBoardScore(possiblePlays,i);
-//                if(boardScores[bestChoice] < boardScores[i])
-//                    bestChoice = i;
-//            }
-//
-//            returnString = Integer.toString(bestChoice+1);
-//        }
         else
         {
             doublingCube = false;
@@ -72,9 +60,6 @@ public class CCR implements BotAPI{
 
             returnString = Integer.toString(bestChoice+1);
         }
-
-
-        System.out.println("!!! return string:" + returnString);
 
         return returnString;
     }
@@ -145,10 +130,9 @@ public class CCR implements BotAPI{
             oppoPip += boardCopy[opponent.getId()][i];
         }
 
-        System.out.println("Last pip:" + myLast);
-
         if (myLast < 6 && (oppoLast - myLast) > 5)
         {
+            System.out.println("Entered");
             if((myPip >= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.2*(oppoPip + getBoardScore(opponent,boardCopy))))
                 return true;//we may win then just double it
             else if((myPip >= 50 && myPip <= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.1*(oppoPip + getBoardScore(opponent,boardCopy))))
