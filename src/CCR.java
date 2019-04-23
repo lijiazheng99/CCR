@@ -14,6 +14,8 @@ public class CCR implements BotAPI{
     private final int KICK_SLOPE = 3;
     private final int PRIME_SLOPE= 3;
 
+    private boolean doublingCube = false;
+
 
 
     CCR (PlayerAPI me, PlayerAPI opponent, BoardAPI board, CubeAPI cube, MatchAPI match, InfoPanelAPI info) {
@@ -29,19 +31,52 @@ public class CCR implements BotAPI{
         return "CCR"; // must match the class name 1-1
     }
 
-    public String getCommand(Plays possiblePlays) {
-        // Add your code here
-        int bestChoice = 0;
-        int[] boardScores = new int[possiblePlays.number()];
+    public String getCommand(Plays possiblePlays)
+    {
+        String returnString = "";
 
-        for(int i = 0; i < possiblePlays.number(); i++)
+        if (requestDouble() && !doublingCube)
         {
-            boardScores[i] = getBoardScore(possiblePlays,i);
-            if(boardScores[bestChoice] < boardScores[i])
-                bestChoice = i;
+            returnString = "double";
+            doublingCube = true;
+        }
+//        else if (doublingCube)
+//        {
+//            doublingCube = false;
+//            // Add your code here
+//            int bestChoice = 0;
+//            int[] boardScores = new int[possiblePlays.number()];
+//
+//            for(int i = 0; i < possiblePlays.number(); i++)
+//            {
+//                boardScores[i] = getBoardScore(possiblePlays,i);
+//                if(boardScores[bestChoice] < boardScores[i])
+//                    bestChoice = i;
+//            }
+//
+//            returnString = Integer.toString(bestChoice+1);
+//        }
+        else
+        {
+            doublingCube = false;
+
+            int bestChoice = 0;
+            int[] boardScores = new int[possiblePlays.number()];
+
+            for(int i = 0; i < possiblePlays.number(); i++)
+            {
+                boardScores[i] = getBoardScore(possiblePlays,i);
+                if(boardScores[bestChoice] < boardScores[i])
+                    bestChoice = i;
+            }
+
+            returnString = Integer.toString(bestChoice+1);
         }
 
-        return Integer.toString(bestChoice+1);
+
+        System.out.println("!!! return string:" + returnString);
+
+        return returnString;
     }
 
     public String getDoubleDecision() {
@@ -83,6 +118,49 @@ public class CCR implements BotAPI{
         boardScore += KICK_SLOPE * kickOffBoardScore(currentPlayer,boardCopy);
         boardScore += PRIME_SLOPE * primeBoardScore(currentPlayer, boardCopy);
         return boardScore;
+    }
+
+    private Boolean requestDouble ()
+    {
+        int[][] boardCopy = board.get();
+        int myPip = 0;
+        int oppoPip = 0;
+        int myLast = 0;
+        int oppoLast = 0;
+
+        for(int i = Board.BAR; i > 0; i--)
+        {
+            if (myLast==0 && boardCopy[me.getId()][i]!=0)
+            {
+                myLast = i;
+            }
+
+            if (oppoLast==0 && boardCopy[opponent.getId()][i]!=0)
+            {
+                oppoLast = i;
+            }
+
+            myPip += boardCopy[me.getId()][i];
+            oppoPip += boardCopy[opponent.getId()][i];
+        }
+
+        System.out.println("Last pip:" + myLast);
+
+        if (myLast < 6 && (oppoLast - myLast) > 5)
+        {
+            if((myPip >= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.2*(oppoPip + getBoardScore(opponent,boardCopy))))
+                return true;//we may win then just double it
+            else if((myPip >= 50 && myPip <= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.1*(oppoPip + getBoardScore(opponent,boardCopy))))
+                return true;
+            else if((myPip >= 10 && myPip <= 50) && (myPip + getBoardScore(me,boardCopy) <= (oppoPip + getBoardScore(opponent,boardCopy))))
+                return true;
+            else if(me.getScore() < opponent.getScore() && (opponent.getScore() + cube.getValue()) > match.getLength())
+                return true;//if I give up, I will lose the match
+            else
+                return false;
+        }
+        else
+            return false;
     }
 
     private void move(int[][] boardCopy, Play targetPlay)
