@@ -79,6 +79,7 @@ public class CCR implements BotAPI{
         return returnString;
     }
 
+
     public String getDoubleDecision() {
         int[][] boardCopy = board.get();
         int myPip = 0;
