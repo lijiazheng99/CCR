@@ -22,7 +22,7 @@ public class Backgammon {
     private void setupBots (String[] args) {
         if (args.length < NUM_PLAYERS) {
             botNames[0] = "BotTest";
-            botNames[1] = "BotCCR";
+            botNames[1] = "CCR";
         } else {
             for (int i = 0; i < NUM_PLAYERS; i++) {
                 boolean found = false;

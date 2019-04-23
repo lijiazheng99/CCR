@@ -1,4 +1,4 @@
-public class BotCCR implements BotAPI{
+public class CCR implements BotAPI{
     private PlayerAPI me, opponent;
     private BoardAPI board;
     private CubeAPI cube;
@@ -16,7 +16,7 @@ public class BotCCR implements BotAPI{
 
 
 
-    BotCCR (PlayerAPI me, PlayerAPI opponent, BoardAPI board, CubeAPI cube, MatchAPI match, InfoPanelAPI info) {
+    CCR (PlayerAPI me, PlayerAPI opponent, BoardAPI board, CubeAPI cube, MatchAPI match, InfoPanelAPI info) {
         this.me = me;
         this.opponent = opponent;
         this.board = board;
@@ -26,7 +26,7 @@ public class BotCCR implements BotAPI{
     }
 
     public String getName() {
-        return "BotCCR"; // must match the class name 1-1
+        return "CCR"; // must match the class name 1-1
     }
 
     public String getCommand(Plays possiblePlays) {
