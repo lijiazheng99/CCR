@@ -6,13 +6,13 @@ public class CCR implements BotAPI{
     private InfoPanelAPI info;
 
     //SLOPE HERE:
-    private final int BASIC_SLOPE = 3;
-    private final int PIP_COUNT_SLOPE = 3;
-    private final int BAR_SLOPE = -3;
+    private final int BASIC_SLOPE = 2;
+    private final int PIP_COUNT_SLOPE = 1;
+    private final int BAR_SLOPE = -2;
     private final int BEAR_OFF_SLOPE = 3;
-    private final int SINGLE_SLOPE = -3;
-    private final int KICK_SLOPE = 3;
-    private final int PRIME_SLOPE= 3;
+    private final int SINGLE_SLOPE = -2;
+    private final int KICK_SLOPE = 1;
+    private final int PRIME_SLOPE= 2;
 
     private boolean doublingCube = false;
 
@@ -205,7 +205,7 @@ public class CCR implements BotAPI{
                 if(boardCopy[player.getId()][i] == 1)
                     counter += SINGLE_SLOPE;//single checker left
                 else if(boardCopy[player.getId()][i] > 1)
-                    counter += 0;
+                    counter += (-1);
             }
             else if(i <= 21 && i >= 19)//4th Quadrant
             {
