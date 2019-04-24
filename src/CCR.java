@@ -37,8 +37,6 @@ public class CCR implements BotAPI{
 
         if (requestDouble() && !doublingCube)
         {
-//            if (requestDouble())
-//                System.out.println("Double>>>>");
             returnString = "double";
             doublingCube = true;
         }
