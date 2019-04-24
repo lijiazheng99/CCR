@@ -226,6 +226,7 @@ public class CCR implements BotAPI{
                 primeLength++;
                 j++;
             }
+
             counter += Math.pow(2,primeLength);
         }
         return counter;
