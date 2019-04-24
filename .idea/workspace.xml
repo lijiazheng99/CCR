@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CCR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CCR.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,8 +82,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CCR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="192" column="13" lean-forward="true" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
+            <state relative-caret-position="352">
+              <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
               <folding>
                 <element signature="e#838#839#0" expanded="true" />
                 <element signature="e#899#900#0" expanded="true" />
@@ -226,7 +226,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="259" />
+    <option name="x" value="860" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -478,13 +478,6 @@
       <workItem from="1555864741410" duration="1663000" />
       <workItem from="1555884431517" duration="445000" />
       <workItem from="1556047145928" duration="4308000" />
-    </task>
-    <task id="LOCAL-00075" summary="newest algorithm version structures so far">
-      <created>1553453750982</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1553453750982</updated>
     </task>
     <task id="LOCAL-00076" summary="when Hitnum = 1&#10; use the first number to do re-enter&#10; second for normal move">
       <created>1553455781251</created>
@@ -822,11 +815,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555884863776</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="UPDATE parameter">
+      <created>1556065679503</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1556065679504</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318187000" />
+    <option name="totallyTimeSpent" value="319164000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,7 +838,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="665" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="860" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18131869" />
@@ -850,7 +850,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4968017" weight="0.13109426" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46642247" visible="true" weight="0.257754" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46642247" visible="true" weight="0.257754" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -858,7 +858,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4945055" weight="0.3272727" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.53357756" side_tool="true" visible="true" weight="0.257754" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.53357756" side_tool="true" visible="true" weight="0.257754" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.47741148" weight="0.43820226" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4847375" weight="0.033707865" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -949,7 +949,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="except the bear off for double number" />
     <MESSAGE value="update print controller" />
     <MESSAGE value="debugged" />
     <MESSAGE value="update operation controller" />
@@ -974,7 +973,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="add 2 features" />
     <MESSAGE value="UPDATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE" />
+    <MESSAGE value="UPDATE parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE parameter" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BackGammonGUI/DoublingCubeVisual.java">
@@ -1134,8 +1134,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CCR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="192" column="13" lean-forward="true" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
+        <state relative-caret-position="352">
+          <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
           <folding>
             <element signature="e#838#839#0" expanded="true" />
             <element signature="e#899#900#0" expanded="true" />
