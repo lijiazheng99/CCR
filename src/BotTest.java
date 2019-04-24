@@ -7,11 +7,11 @@ public class BotTest implements BotAPI{
 
     //SLOPE HERE:
     private final int BASIC_SLOPE = 3;
-    private final int PIP_COUNT_SLOPE = 4;
+    private final int PIP_COUNT_SLOPE = 3;
     private final int BAR_SLOPE = -3;
     private final int BEAR_OFF_SLOPE = 3;
     private final int SINGLE_SLOPE = -3;
-    private final int KICK_SLOPE = 4;
+    private final int KICK_SLOPE = 3;
     private final int PRIME_SLOPE= 3;
 
 
