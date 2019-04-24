@@ -189,7 +189,7 @@ public class CCR implements BotAPI{
                 if(boardCopy[player.getId()][i] == 1)
                     counter += SINGLE_SLOPE;//single checker left
                 else if(boardCopy[player.getId()][i] > 1)
-                    counter += (-1);
+                    counter += 1;
             }
             else if(i <= 21 && i >= 19)//4th Quadrant
             {
