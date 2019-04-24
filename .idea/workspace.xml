@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/BotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BotTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e0159ca0-77f9-4f66-ba85-9c9bae66f994" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +25,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BotTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="70">
               <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
             </state>
           </provider>
@@ -463,35 +461,7 @@
       <workItem from="1555864741410" duration="1663000" />
       <workItem from="1555884431517" duration="445000" />
       <workItem from="1556047145928" duration="4308000" />
-      <workItem from="1556071235268" duration="489000" />
-    </task>
-    <task id="LOCAL-00083" summary="debugged">
-      <created>1553511322927</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1553511322927</updated>
-    </task>
-    <task id="LOCAL-00084" summary="update operation controller">
-      <created>1553515169353</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1553515169353</updated>
-    </task>
-    <task id="LOCAL-00085" summary="update operation controller">
-      <created>1553515176755</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1553515176755</updated>
-    </task>
-    <task id="LOCAL-00086" summary="finished">
-      <created>1553517892241</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1553517892242</updated>
+      <workItem from="1556071235268" duration="597000" />
     </task>
     <task id="LOCAL-00087" summary="finished">
       <created>1553518157616</created>
@@ -808,11 +778,39 @@
       <option name="project" value="LOCAL" />
       <updated>1556071688172</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="UPDATE parameter">
+      <created>1556071737791</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1556071737791</updated>
+    </task>
+    <task id="LOCAL-00133" summary="UPDATE parameter">
+      <created>1556071757281</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1556071757281</updated>
+    </task>
+    <task id="LOCAL-00134" summary="UPDATE parameter">
+      <created>1556071799696</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1556071799696</updated>
+    </task>
+    <task id="LOCAL-00135" summary="UPDATE parameter">
+      <created>1556071814944</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1556071814944</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322123000" />
+    <option name="totallyTimeSpent" value="322169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,7 +834,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4968017" weight="0.13109426" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46566522" visible="true" weight="0.2574932" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46566522" weight="0.2574932" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.19481865" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1118,7 +1116,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BotTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="70">
           <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
         </state>
       </provider>
