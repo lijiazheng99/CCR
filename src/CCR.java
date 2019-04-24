@@ -128,7 +128,7 @@ public class CCR implements BotAPI{
 
         if (myLast < 6 && (oppoLast - myLast) > 5 && oppoLast < 15)
         {
-            System.out.println(">>>>Entered");
+            //System.out.println(">>>>Entered");
             if((myPip >= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.2*(oppoPip + getBoardScore(opponent,boardCopy))))
                 return true;//we may win then just double it
             else if((myPip >= 50 && myPip <= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.1*(oppoPip + getBoardScore(opponent,boardCopy))))
