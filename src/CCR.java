@@ -14,6 +14,7 @@ public class CCR implements BotAPI{
     private final int KICK_SLOPE = 1;
     private final int PRIME_SLOPE= 2;
 
+
     private boolean doublingCube = false;
 
 
