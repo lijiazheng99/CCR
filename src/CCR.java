@@ -51,6 +51,7 @@ public class CCR implements BotAPI{
             {
                 boardScores[i] = getBoardScore(possiblePlays,i);
                 if(boardScores[bestChoice] < boardScores[i])
+
                     bestChoice = i;
             }
 
