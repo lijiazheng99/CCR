@@ -37,10 +37,8 @@ public class CCR implements BotAPI{
 
         if (requestDouble() && !doublingCube)
         {
-            if (requestDouble())
-                System.out.println("Double>>>>");
-
-
+//            if (requestDouble())
+//                System.out.println("Double>>>>");
             returnString = "double";
             doublingCube = true;
         }
@@ -130,9 +128,9 @@ public class CCR implements BotAPI{
             oppoPip += boardCopy[opponent.getId()][i];
         }
 
-        if (myLast < 6 && (oppoLast - myLast) > 5)
+        if (myLast < 6 && (oppoLast - myLast) > 5 && oppoLast < 15)
         {
-            System.out.println("Entered");
+            System.out.println(">>>>Entered");
             if((myPip >= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.2*(oppoPip + getBoardScore(opponent,boardCopy))))
                 return true;//we may win then just double it
             else if((myPip >= 50 && myPip <= 100) && (myPip + getBoardScore(me,boardCopy) <= 1.1*(oppoPip + getBoardScore(opponent,boardCopy))))
@@ -140,7 +138,7 @@ public class CCR implements BotAPI{
             else if((myPip >= 10 && myPip <= 50) && (myPip + getBoardScore(me,boardCopy) <= (oppoPip + getBoardScore(opponent,boardCopy))))
                 return true;
             else if(me.getScore() < opponent.getScore() && (opponent.getScore() + cube.getValue()) > match.getLength())
-                return true;//if I give up, I will lose the match
+                return false;//if I give up, I will lose the match
             else
                 return false;
         }
